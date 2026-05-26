@@ -1,0 +1,53 @@
+{
+  "regulation": "R13",
+  "terms": [
+    {
+      "term": "braking system",
+      "definition_en": "The combination of parts whose function is to progressively reduce the speed of a moving vehicle, bring it to a halt, or keep it stationary if it is already halted.",
+      "definition_ja": "走行中の車両の速度を漸進的に低下させ、停止させ、あるいは停止状態を保つ機能を持つ部品の組み合わせ。",
+      "paragraph_ref": "2.1"
+    },
+    {
+      "term": "service braking system",
+      "definition_en": "The braking system which allows the driver to control the movement of the vehicle and bring it to a halt safely, quickly and effectively.",
+      "definition_ja": "運転者が車両の動きを制御し、安全、迅速かつ効果的に停止させることを可能にする制動装置。",
+      "paragraph_ref": "2.2"
+    },
+    {
+      "term": "secondary braking system",
+      "definition_en": "The braking system which allows the driver to halt the vehicle in the event of failure of the service braking system.",
+      "definition_ja": "主制動装置が故障した場合に車両を停止させることができる制動装置。",
+      "paragraph_ref": "2.3"
+    },
+    {
+      "term": "parking braking system",
+      "definition_en": "The braking system which allows the vehicle to be held stationary on an inclined surface even in the absence of the driver.",
+      "definition_ja": "運転者が不在であっても、傾斜面に車両を静止保持できる制動装置。",
+      "paragraph_ref": "2.4"
+    },
+    {
+      "term": "endurance braking system",
+      "definition_en": "A supplementary braking system able to stabilize vehicle speed over a long downhill section, with little or no wear to the conventional friction-based braking system.",
+      "definition_ja": "従来の摩擦式制動装置の摩耗をほとんど、またはまったく生じさせることなく、長い下り坂での車両速度を安定させる補助制動装置。",
+      "paragraph_ref": "2.5"
+    },
+    {
+      "term": "axle",
+      "definition_en": "A common axis of rotation for two or more wheels on the same side or opposite sides of the vehicle.",
+      "definition_ja": "車両の同側または反対側の2輪以上の車輪に共通する回転軸。",
+      "paragraph_ref": "2.6"
+    },
+    {
+      "term": "ABS",
+      "definition_en": "Anti-lock Braking System. A system which automatically controls the degree of slip in the direction of rotation of one or more vehicle wheels during braking.",
+      "definition_ja": "アンチロック・ブレーキング・システム。制動中に1つ以上の車輪の回転方向のスリップ度を自動的に制御するシステム。",
+      "paragraph_ref": "2.14"
+    },
+    {
+      "term": "EBS",
+      "definition_en": "Electronic Braking System. A braking system which uses electronic means to transmit and process brake application signals.",
+      "definition_ja": "電子制動装置。電子的手段によりブレーキ作動信号の伝達および処理を行う制動装置。",
+      "paragraph_ref": "2.15"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R13 - UN法規日本語訳</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">UN Regulations 日本語訳</a>
+    <div class="header-meta">
+      <span class="reg-badge">R13</span>
+      <span class="version-tag">rev2 (2023-06-15)</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- 左ペイン: 章ツリー -->
+  <nav class="pane pane-left" id="pane-chapters" aria-label="章一覧">
+    <div class="pane-header">章・節</div>
+    <ul class="tree-list" id="chapter-tree">
+      <li class="tree-item tree-level-1" data-number="1">
+        <button class="tree-btn" onclick="selectChapter('1')">
+          <span class="tree-num">1</span>
+          <span class="tree-title">Scope</span>
+        </button>
+        <ul class="tree-list tree-sub">
+          <li class="tree-item tree-level-2" data-number="1.1">
+            <button class="tree-btn" onclick="selectParagraph('R13-b2c3d4e5')">
+              <span class="tree-num">1.1</span>
+              <span class="tree-title">Vehicles of categories M2 and M3</span>
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li class="tree-item tree-level-1" data-number="2">
+        <button class="tree-btn" onclick="selectChapter('2')">
+          <span class="tree-num">2</span>
+          <span class="tree-title">Definitions</span>
+        </button>
+        <ul class="tree-list tree-sub">
+          <li class="tree-item tree-level-2" data-number="2.1">
+            <button class="tree-btn" onclick="selectParagraph('R13-d4e5f6a7')">
+              <span class="tree-num">2.1</span>
+              <span class="tree-title">Braking system</span>
+            </button>
+          </li>
+          <li class="tree-item tree-level-2" data-number="2.2">
+            <button class="tree-btn" onclick="selectParagraph('R13-e5f6a7b8')">
+              <span class="tree-num">2.2</span>
+              <span class="tree-title">Service braking system</span>
+            </button>
+          </li>
+          <li class="tree-item tree-level-2" data-number="2.3">
+            <button class="tree-btn" onclick="selectParagraph('R13-f6a7b8c9')">
+              <span class="tree-num">2.3</span>
+              <span class="tree-title">Secondary braking system</span>
+            </button>
+          </li>
+          <li class="tree-item tree-level-2" data-number="2.4">
+            <button class="tree-btn" onclick="selectParagraph('R13-a7b8c9d0')">
+              <span class="tree-num">2.4</span>
+              <span class="tree-title">Parking braking system</span>
+            </button>
+          </li>
+          <li class="tree-item tree-level-2" data-number="2.5">
+            <button class="tree-btn" onclick="selectParagraph('R13-NEW1a2b')">
+              <span class="tree-num">2.5</span>
+              <span class="tree-title">Endurance braking system</span>
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li class="tree-item tree-level-1" data-number="5">
+        <button class="tree-btn" onclick="selectChapter('5')">
+          <span class="tree-num">5</span>
+          <span class="tree-title">General requirements</span>
+        </button>
+        <ul class="tree-list tree-sub">
+          <li class="tree-item tree-level-2 tree-modified" data-number="5.1">
+            <button class="tree-btn tree-modified" onclick="selectParagraph('R13-c9d0e1f2')">
+              <span class="tree-num">5.1</span>
+              <span class="tree-title">Functions of braking systems</span>
+              <span class="badge-modified badge" title="変更あり">M</span>
+            </button>
+          </li>
+          <li class="tree-item tree-level-2 tree-modified" data-number="5.2">
+            <button class="tree-btn tree-modified" onclick="selectParagraph('R13-d0e1f2a3-mod')">
+              <span class="tree-num">5.2</span>
+              <span class="tree-title">Braking surfaces</span>
+              <span class="badge-modified badge" title="変更あり">M</span>
+            </button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 中ペイン: 段落ツリー -->
+  <nav class="pane pane-middle" id="pane-paragraphs" aria-label="段落一覧">
+    <div class="pane-header">段落</div>
+    <ul class="tree-list" id="paragraph-tree">
+      <li class="tree-item para-nav-item" data-uid="R13-a1b2c3d4" data-parent="">
+        <button class="tree-btn" onclick="selectParagraph('R13-a1b2c3d4')">
+          <span class="tree-num">1</span><span class="tree-title">Scope</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-b2c3d4e5" data-parent="1">
+        <button class="tree-btn" onclick="selectParagraph('R13-b2c3d4e5')">
+          <span class="tree-num">1.1</span><span class="tree-title">Vehicles M2 &amp; M3</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-c3d4e5f6" data-parent="">
+        <button class="tree-btn" onclick="selectParagraph('R13-c3d4e5f6')">
+          <span class="tree-num">2</span><span class="tree-title">Definitions</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-d4e5f6a7" data-parent="2">
+        <button class="tree-btn" onclick="selectParagraph('R13-d4e5f6a7')">
+          <span class="tree-num">2.1</span><span class="tree-title">Braking system</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-e5f6a7b8" data-parent="2">
+        <button class="tree-btn" onclick="selectParagraph('R13-e5f6a7b8')">
+          <span class="tree-num">2.2</span><span class="tree-title">Service braking system</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-f6a7b8c9" data-parent="2">
+        <button class="tree-btn" onclick="selectParagraph('R13-f6a7b8c9')">
+          <span class="tree-num">2.3</span><span class="tree-title">Secondary braking system</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-a7b8c9d0" data-parent="2">
+        <button class="tree-btn" onclick="selectParagraph('R13-a7b8c9d0')">
+          <span class="tree-num">2.4</span><span class="tree-title">Parking braking system</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-NEW1a2b" data-parent="2">
+        <button class="tree-btn" onclick="selectParagraph('R13-NEW1a2b')">
+          <span class="tree-num">2.5</span><span class="tree-title">Endurance braking system</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item" data-uid="R13-b8c9d0e1" data-parent="">
+        <button class="tree-btn" onclick="selectParagraph('R13-b8c9d0e1')">
+          <span class="tree-num">5</span><span class="tree-title">General requirements</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item para-nav-modified" data-uid="R13-c9d0e1f2" data-parent="5">
+        <button class="tree-btn" onclick="selectParagraph('R13-c9d0e1f2')">
+          <span class="tree-num">5.1</span><span class="tree-title">Functions of braking systems</span>
+          <span class="badge badge-modified">M</span>
+        </button>
+      </li>
+      <li class="tree-item para-nav-item para-nav-modified" data-uid="R13-d0e1f2a3-mod" data-parent="5">
+        <button class="tree-btn" onclick="selectParagraph('R13-d0e1f2a3-mod')">
+          <span class="tree-num">5.2</span><span class="tree-title">Braking surfaces</span>
+          <span class="badge badge-modified">M</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 右ペイン: 本文 -->
+  <main class="pane pane-main" id="pane-content" aria-label="本文">
+    <div class="content-header">
+      <h1 class="content-title">Uniform provisions concerning the approval of vehicles of categories M, N and O with regard to braking</h1>
+    </div>
+
+    <div class="paragraphs-container" id="paragraphs-container">
+
+      <!-- 1. Scope -->
+      <article class="para-card" id="para-R13-a1b2c3d4" data-uid="R13-a1b2c3d4" data-number="1" data-parent="">
+        <div class="para-card-header" onclick="toggleParagraph('R13-a1b2c3d4')">
+          <div class="para-meta">
+            <span class="para-number">1</span>
+            <span class="para-title-text">Scope</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Scope</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-a1b2c3d4" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">This Regulation applies to vehicles of categories M2, M3, N and O with regard to braking.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 1.1 -->
+      <article class="para-card" id="para-R13-b2c3d4e5" data-uid="R13-b2c3d4e5" data-number="1.1" data-parent="1">
+        <div class="para-card-header" onclick="toggleParagraph('R13-b2c3d4e5')">
+          <div class="para-meta">
+            <span class="para-number">1.1</span>
+            <span class="para-title-text">Vehicles of categories M2 and M3</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Vehicles of categories M2 and M3</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-b2c3d4e5" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">In the case of vehicles of categories M2 and M3, the braking requirements set out in Annex 4 shall apply.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Definitions -->
+      <article class="para-card" id="para-R13-c3d4e5f6" data-uid="R13-c3d4e5f6" data-number="2" data-parent="">
+        <div class="para-card-header" onclick="toggleParagraph('R13-c3d4e5f6')">
+          <div class="para-meta">
+            <span class="para-number">2</span>
+            <span class="para-title-text">Definitions</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Definitions</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-c3d4e5f6" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">For the purposes of this Regulation, the following definitions shall apply:</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2.1 Braking system -->
+      <article class="para-card" id="para-R13-d4e5f6a7" data-uid="R13-d4e5f6a7" data-number="2.1" data-parent="2">
+        <div class="para-card-header" onclick="toggleParagraph('R13-d4e5f6a7')">
+          <div class="para-meta">
+            <span class="para-number">2.1</span>
+            <span class="para-title-text">Braking system</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Braking system</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-d4e5f6a7" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">"<span class="glossary-term" data-term="braking system" data-definition="走行中の車両の速度を漸進的に低下させ、停止させ、あるいは停止状態を保つ機能を持つ部品の組み合わせ。" data-ref="2.1">Braking system</span>" means the combination of parts whose function is to progressively reduce the speed of a moving vehicle, bring it to a halt, or keep it stationary if it is already halted; these functions are specified in paragraph 5.1. The system comprises the control, the transmission and the brake(s) proper.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2.2 Service braking system -->
+      <article class="para-card" id="para-R13-e5f6a7b8" data-uid="R13-e5f6a7b8" data-number="2.2" data-parent="2">
+        <div class="para-card-header" onclick="toggleParagraph('R13-e5f6a7b8')">
+          <div class="para-meta">
+            <span class="para-number">2.2</span>
+            <span class="para-title-text">Service braking system</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Service braking system</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-e5f6a7b8" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">"<span class="glossary-term" data-term="service braking system" data-definition="運転者が車両の動きを制御し、安全、迅速かつ効果的に停止させることを可能にする制動装置。" data-ref="2.2">Service braking system</span>" means the braking system which allows the driver to control the movement of the vehicle and bring it to a halt safely, quickly and effectively, whatever its conditions of loading, and whatever the upward or downward gradient on which it is standing.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2.3 Secondary braking system -->
+      <article class="para-card" id="para-R13-f6a7b8c9" data-uid="R13-f6a7b8c9" data-number="2.3" data-parent="2">
+        <div class="para-card-header" onclick="toggleParagraph('R13-f6a7b8c9')">
+          <div class="para-meta">
+            <span class="para-number">2.3</span>
+            <span class="para-title-text">Secondary braking system</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Secondary braking system</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-f6a7b8c9" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">"<span class="glossary-term" data-term="secondary braking system" data-definition="主制動装置が故障した場合に車両を停止させることができる制動装置。" data-ref="2.3">Secondary braking system</span>" means the braking system which allows the driver to halt the vehicle in the event of failure of the service braking system. It does not exclude the use of a control shared with that of the service braking system.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2.4 Parking braking system -->
+      <article class="para-card" id="para-R13-a7b8c9d0" data-uid="R13-a7b8c9d0" data-number="2.4" data-parent="2">
+        <div class="para-card-header" onclick="toggleParagraph('R13-a7b8c9d0')">
+          <div class="para-meta">
+            <span class="para-number">2.4</span>
+            <span class="para-title-text">Parking braking system</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Parking braking system</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-a7b8c9d0" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">"<span class="glossary-term" data-term="parking braking system" data-definition="運転者が不在であっても、傾斜面に車両を静止保持できる制動装置。" data-ref="2.4">Parking braking system</span>" means the braking system which allows the vehicle to be held stationary on an inclined surface even in the absence of the driver, the active parts being then held in the locked position by a purely mechanical device.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2.5 Endurance braking system (NEW) -->
+      <article class="para-card" id="para-R13-NEW1a2b" data-uid="R13-NEW1a2b" data-number="2.5" data-parent="2">
+        <div class="para-card-header" onclick="toggleParagraph('R13-NEW1a2b')">
+          <div class="para-meta">
+            <span class="para-number">2.5</span>
+            <span class="para-title-text">Endurance braking system</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Endurance braking system</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-NEW1a2b" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">"<span class="glossary-term" data-term="endurance braking system" data-definition="従来の摩擦式制動装置の摩耗をほとんど、またはまったく生じさせることなく、長い下り坂での車両速度を安定させる補助制動装置。" data-ref="2.5">Endurance braking system</span>" means a supplementary braking system able to stabilize vehicle speed over a long downhill section, with little or no wear to the conventional friction-based braking system.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. General requirements -->
+      <article class="para-card" id="para-R13-b8c9d0e1" data-uid="R13-b8c9d0e1" data-number="5" data-parent="">
+        <div class="para-card-header" onclick="toggleParagraph('R13-b8c9d0e1')">
+          <div class="para-meta">
+            <span class="para-number">5</span>
+            <span class="para-title-text">General requirements</span>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）General requirements</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-b8c9d0e1" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">Every vehicle shall be equipped with a <span class="glossary-term" data-term="braking system" data-definition="走行中の車両の速度を漸進的に低下させ、停止させ、あるいは停止状態を保つ機能を持つ部品の組み合わせ。" data-ref="2.1">braking system</span> which shall comply with the requirements set out in Annex 4.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5.1 Functions (MODIFIED) -->
+      <article class="para-card para-card--modified" id="para-R13-c9d0e1f2" data-uid="R13-c9d0e1f2" data-number="5.1" data-parent="5">
+        <div class="para-card-header" onclick="toggleParagraph('R13-c9d0e1f2')">
+          <div class="para-meta">
+            <span class="para-number">5.1</span>
+            <span class="para-title-text">Functions of braking systems</span>
+            <span class="badge badge-modified">Modified</span>
+            <button class="btn-justification" title="Added function (d) for endurance braking systems to align with new definition in paragraph 2.5 and updated Annex 4 requirements." onclick="event.stopPropagation(); showJustification('R13-c9d0e1f2')">&#9432;</button>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Functions of braking systems</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-c9d0e1f2" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">The <span class="glossary-term" data-term="braking system" data-definition="走行中の車両の速度を漸進的に低下させ、停止させ、あるいは停止状態を保つ機能を持つ部品の組み合わせ。" data-ref="2.1">braking system</span> of every vehicle shall fulfil the following functions: (a) <span class="glossary-term" data-term="service braking system" data-definition="運転者が車両の動きを制御し、安全、迅速かつ効果的に停止させることを可能にする制動装置。" data-ref="2.2">service braking</span>, enabling the movement of the vehicle to be controlled and the vehicle to be brought to a halt safely, quickly and effectively; (b) secondary braking, enabling the vehicle to be brought to a halt in the event of failure of the service braking system, though at a reduced efficiency; (c) <span class="glossary-term" data-term="parking braking system" data-definition="運転者が不在であっても、傾斜面に車両を静止保持できる制動装置。" data-ref="2.4">parking braking</span>, enabling the vehicle to be held stationary on an upward or downward gradient, in the absence of the driver, the active parts being then held in the locked position by a purely mechanical device; (d) <span class="glossary-term" data-term="endurance braking system" data-definition="従来の摩擦式制動装置の摩耗をほとんど、またはまったく生じさせることなく、長い下り坂での車両速度を安定させる補助制動装置。" data-ref="2.5">endurance braking</span>, where fitted, enabling the vehicle speed to be stabilized on a long downhill section.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+          <div class="justification-box" id="justification-R13-c9d0e1f2">
+            <strong>変更理由 (Justification):</strong>
+            Added function (d) for endurance braking systems to align with new definition in paragraph 2.5 and updated Annex 4 requirements.
+          </div>
+        </div>
+      </article>
+
+      <!-- 5.2 Braking surfaces (MODIFIED) -->
+      <article class="para-card para-card--modified" id="para-R13-d0e1f2a3-mod" data-uid="R13-d0e1f2a3-mod" data-number="5.2" data-parent="5">
+        <div class="para-card-header" onclick="toggleParagraph('R13-d0e1f2a3-mod')">
+          <div class="para-meta">
+            <span class="para-number">5.2</span>
+            <span class="para-title-text">Braking surfaces</span>
+            <span class="badge badge-modified">Modified</span>
+            <button class="btn-justification" title="Updated to accommodate regenerative braking in electric/hybrid vehicles." onclick="event.stopPropagation(); showJustification('R13-d0e1f2a3-mod')">&#9432;</button>
+            <span class="badge badge-untranslated">未翻訳</span>
+          </div>
+          <div class="para-summary"><em class="no-summary">（要約未生成）Braking surfaces</em></div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+        <div class="para-card-body" id="body-R13-d0e1f2a3-mod" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">The braking systems prescribed in paragraph 5.1 shall be so designed that they act on braking surfaces permanently connected to the wheels through components of adequate strength. Where braking effort on an <span class="glossary-term" data-term="axle" data-definition="車両の同側または反対側の2輪以上の車輪に共通する回転軸。" data-ref="2.6">axle</span> is provided by the engine or an electric motor, a disconnect device shall be permitted provided it is driver-operable and cannot be accidentally activated.</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text"><span class="translation-pending">翻訳中...</span></div>
+            </div>
+          </div>
+          <div class="justification-box" id="justification-R13-d0e1f2a3-mod">
+            <strong>変更理由 (Justification):</strong>
+            Updated to accommodate regenerative braking in electric/hybrid vehicles. Added provision for engine/motor braking disconnect.
+          </div>
+        </div>
+      </article>
+
+    </div><!-- .paragraphs-container -->
+  </main>
+
+</div><!-- .layout -->
+
+<!-- グロッサリー ツールチップ -->
+<div class="tooltip" id="glossary-tooltip" role="tooltip" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-attribution">
+      原文: &copy; United Nations Economic Commission for Europe (UNECE).
+      原文は
+      <a href="https://unece.org/transport/vehicle-regulations" target="_blank" rel="noopener">
+        UNECE 公式サイト
+      </a>
+      より入手可能です。
+    </p>
+    <p class="footer-disclaimer">
+      <strong>免責事項:</strong>
+      本サイトの日本語訳は非公式の参考訳であり、法的効力は国連が発行するオリジナルの英語テキストにのみあります。
+      翻訳の正確性について一切の保証をいたしません。法的判断が必要な場合は必ず原文をご参照ください。
+    </p>
+    <p class="footer-endorsement">
+      本サイトは国連（UN）および国連欧州経済委員会（UNECE）によって承認・後援・公式に認定されたものではありません。
+    </p>
+  </div>
+</footer>
+
+<script src="../js/viewer.js"></script>
+</body>
+</html>

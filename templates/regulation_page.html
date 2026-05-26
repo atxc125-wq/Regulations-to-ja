@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ regulation }} - UN法規日本語訳</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">UN Regulations 日本語訳</a>
+    <div class="header-meta">
+      <span class="reg-badge">{{ regulation }}</span>
+      <span class="version-tag">{{ version }}  ({{ source_date }})</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- 左ペイン: 章ツリー -->
+  <nav class="pane pane-left" id="pane-chapters" aria-label="章一覧">
+    <div class="pane-header">章・節</div>
+    <ul class="tree-list" id="chapter-tree">
+      {% for node in tree %}
+      <li class="tree-item tree-level-{{ node.level }}"
+          data-number="{{ node.number }}">
+        <button class="tree-btn {% if node.modified %}tree-modified{% endif %}"
+                onclick="selectChapter('{{ node.number }}')">
+          <span class="tree-num">{{ node.number }}</span>
+          <span class="tree-title">{{ node.title }}</span>
+          {% if node.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
+        </button>
+        {% if node.children %}
+        <ul class="tree-list tree-sub">
+          {% for child in node.children %}
+          <li class="tree-item tree-level-{{ child.level }}"
+              data-number="{{ child.number }}">
+            <button class="tree-btn {% if child.modified %}tree-modified{% endif %}"
+                    onclick="selectParagraph('{{ child.uid }}')">
+              <span class="tree-num">{{ child.number }}</span>
+              <span class="tree-title">{{ child.title }}</span>
+              {% if child.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
+            </button>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- 中ペイン: 段落ツリー（現在の章） -->
+  <nav class="pane pane-middle" id="pane-paragraphs" aria-label="段落一覧">
+    <div class="pane-header">段落</div>
+    <ul class="tree-list" id="paragraph-tree">
+      {% for p in paragraphs %}
+      <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
+          data-uid="{{ p.uid }}"
+          data-parent="{{ p.parent or '' }}">
+        <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}')">
+          <span class="tree-num">{{ p.number }}</span>
+          <span class="tree-title">{{ p.title }}</span>
+          {% if p.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- 右ペイン: 本文 -->
+  <main class="pane pane-main" id="pane-content" aria-label="本文">
+    <div class="content-header">
+      <h1 class="content-title">{{ title }}</h1>
+    </div>
+
+    <div class="paragraphs-container" id="paragraphs-container">
+      {% for p in paragraphs %}
+      <article class="para-card {% if p.modified %}para-card--modified{% endif %}"
+               id="para-{{ p.uid }}"
+               data-uid="{{ p.uid }}"
+               data-number="{{ p.number }}"
+               data-parent="{{ p.parent or '' }}">
+
+        <div class="para-card-header" onclick="toggleParagraph('{{ p.uid }}')">
+          <div class="para-meta">
+            <span class="para-number">{{ p.number }}</span>
+            <span class="para-title-text">{{ p.title }}</span>
+            {% if p.modified %}
+            <span class="badge badge-modified">Modified</span>
+            {% if p.justification %}
+            <button class="btn-justification"
+                    title="{{ p.justification }}"
+                    onclick="event.stopPropagation(); showJustification('{{ p.uid }}')">
+              &#9432;
+            </button>
+            {% endif %}
+            {% endif %}
+            {% if p.status == 'untranslated' %}
+            <span class="badge badge-untranslated">未翻訳</span>
+            {% endif %}
+          </div>
+          <div class="para-summary">
+            {% if p.summary_ja %}
+              {{ p.summary_ja }}
+            {% else %}
+              <em class="no-summary">（要約未生成）{{ p.title }}</em>
+            {% endif %}
+          </div>
+          <span class="expand-icon" aria-hidden="true">▼</span>
+        </div>
+
+        <div class="para-card-body" id="body-{{ p.uid }}" hidden>
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">{{ p.text_annotated | safe }}</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text">
+                {% if p.translation_annotated %}
+                  {{ p.translation_annotated | safe }}
+                {% else %}
+                  <span class="translation-pending">翻訳中...</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          {% if p.modified and p.justification %}
+          <div class="justification-box" id="justification-{{ p.uid }}">
+            <strong>変更理由 (Justification):</strong>
+            {{ p.justification }}
+          </div>
+          {% endif %}
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+  </main>
+
+</div><!-- .layout -->
+
+<!-- グロッサリー ツールチップ -->
+<div class="tooltip" id="glossary-tooltip" role="tooltip" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-attribution">
+      原文: &copy; United Nations Economic Commission for Europe (UNECE).
+      原文は
+      <a href="https://unece.org/transport/vehicle-regulations" target="_blank" rel="noopener">
+        UNECE 公式サイト
+      </a>
+      より入手可能です。
+    </p>
+    <p class="footer-disclaimer">
+      <strong>免責事項:</strong>
+      本サイトの日本語訳は非公式の参考訳であり、法的効力は国連が発行するオリジナルの英語テキストにのみあります。
+      翻訳の正確性について一切の保証をいたしません。法的判断が必要な場合は必ず原文をご参照ください。
+    </p>
+    <p class="footer-endorsement">
+      本サイトは国連（UN）および国連欧州経済委員会（UNECE）によって承認・後援・公式に認定されたものではありません。
+    </p>
+  </div>
+</footer>
+
+<script src="../js/viewer.js"></script>
+</body>
+</html>

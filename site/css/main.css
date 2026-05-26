@@ -430,6 +430,54 @@ button { cursor: pointer; font-family: inherit; }
   /* 3ペインレイアウト外のフッターとして機能させるため非表示 */
 }
 
+/* ---------- 図表ブロック ---------- */
+.para-figure {
+  margin: .5rem 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+}
+.para-figure-label {
+  padding: .45rem 1rem;
+  background: #f1f3f5;
+  border-bottom: 1px solid var(--color-border);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-align: left;
+  letter-spacing: .04em;
+}
+.para-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: .75rem;
+  object-fit: contain;
+}
+.para-figure figcaption.para-figure-caption {
+  padding: .5rem 1rem .75rem;
+  font-size: .82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  border-top: 1px solid var(--color-border);
+  text-align: left;
+}
+/* 画像読み込み失敗時 */
+.para-figure--broken img {
+  display: none;
+}
+.para-figure--broken::after {
+  content: '（画像を読み込めませんでした）';
+  display: block;
+  padding: 2rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: .85rem;
+}
+
 /* ---------- スクロールバーをシンプルに ---------- */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

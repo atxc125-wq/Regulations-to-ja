@@ -29,12 +29,16 @@ def load_json(path: Path) -> dict:
 
 
 def build_tree(paragraphs: list[dict]) -> list[dict]:
-    """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。"""
-    # level=1 がルートノード、level=2 以上は子ノード
+    """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
+    type=="image" のブロックはナビツリーに含めない。
+    """
     chapters = []
     chapter_map = {}
 
     for p in paragraphs:
+        # 画像ブロックはツリーナビに表示しない
+        if p.get("type") == "image":
+            continue
         node = {
             "uid": p["uid"],
             "number": p["number"],
@@ -51,7 +55,6 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
             if parent_num and parent_num in chapter_map:
                 chapter_map[parent_num]["children"].append(node)
             else:
-                # 親が見つからなければトップに追加
                 chapters.append(node)
         chapter_map[p["number"]] = node
 
@@ -98,10 +101,12 @@ def build_regulation_page(regulation: str, version: str) -> None:
             for t in glossary_data.get("terms", [])
         }
 
-    # 段落テキストに用語アノテーションを付与
+    # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
     for p in paragraphs:
-        p["text_annotated"] = annotate_glossary(p.get("text", ""), glossary_terms)
+        if p.get("type") == "image":
+            continue
+        p["text_annotated"] = annotate_glossary(p.get("text", "") or "", glossary_terms)
         if p.get("translation"):
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)
         else:
@@ -141,17 +146,20 @@ def build_index_page(regulations: list[str]) -> None:
 
     reg_data = []
     for reg in regulations:
-        # 最新バージョンを探す（日付降順でソート）
+        # 最新バージョンを探す（バージョンディレクトリを日付降順でソート）
         versions = sorted(
-            [d.name for d in (DATA_DIR / reg).iterdir() if d.is_dir() and d.name.startswith("rev")],
+            [d.name for d in (DATA_DIR / reg).iterdir()
+             if d.is_dir() and not d.name.startswith('.')],
             reverse=True,
         )
         latest = versions[0] if versions else None
         if latest:
             try:
                 data = load_json(DATA_DIR / reg / latest / "structured.json")
-                total = len(data["paragraphs"])
-                translated = sum(1 for p in data["paragraphs"] if p.get("status") == "translated")
+                # 画像ブロックは翻訳カウントから除外
+                text_blocks = [p for p in data["paragraphs"] if p.get("type", "paragraph") == "paragraph"]
+                total = len(text_blocks)
+                translated = sum(1 for p in text_blocks if p.get("status") == "translated")
                 reg_data.append({
                     "number": reg,
                     "title": data.get("title", reg),
@@ -193,7 +201,7 @@ def all():
     for reg in regulations:
         versions = sorted(
             [d.name for d in (DATA_DIR / reg).iterdir()
-             if d.is_dir() and d.name.startswith("rev")],
+             if d.is_dir() and not d.name.startswith('.')],
             reverse=True,
         )
         if versions:

@@ -79,6 +79,24 @@
 
     <div class="paragraphs-container" id="paragraphs-container">
       {% for p in paragraphs %}
+
+      {% if p.type == "image" %}
+      {# ---- 画像ブロック ---- #}
+      <figure class="para-figure" id="para-{{ p.uid }}" data-uid="{{ p.uid }}">
+        {% if p.label %}
+        <div class="para-figure-label">{{ p.label }}</div>
+        {% endif %}
+        <img src="{{ p.src }}"
+             alt="{{ p.label or 'Figure' }}"
+             loading="lazy"
+             onerror="this.closest('.para-figure').classList.add('para-figure--broken')">
+        {% if p.caption %}
+        <figcaption class="para-figure-caption">{{ p.caption }}</figcaption>
+        {% endif %}
+      </figure>
+
+      {% else %}
+      {# ---- テキスト段落ブロック ---- #}
       <article class="para-card {% if p.modified %}para-card--modified{% endif %}"
                id="para-{{ p.uid }}"
                data-uid="{{ p.uid }}"
@@ -140,6 +158,8 @@
         </div>
 
       </article>
+      {% endif %}
+
       {% endfor %}
     </div>
   </main>

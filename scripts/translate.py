@@ -140,19 +140,41 @@ _HEADING_SCHEMA = {
 }
 
 
-def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.5-pro") -> dict:
-    """Gemini API に POST して生レスポンス dict を返す共通関数。"""
+def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.0-flash",
+                 max_retries: int = 3) -> dict:
+    """Gemini API に POST して生レスポンス dict を返す共通関数。
+    429 (RESOURCE_EXHAUSTED) の場合は retryDelay に従って待機後リトライする。
+    """
     url = f"{_GEMINI_BASE_URL}/{model}:generateContent?key={api_key}"
     body = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        url, data=body,
-        headers={"Content-Type": "application/json"}, method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"Gemini API HTTP {e.code}: {e.read().decode('utf-8','replace')[:400]}")
+
+    for attempt in range(max_retries + 1):
+        req = urllib.request.Request(
+            url, data=body,
+            headers={"Content-Type": "application/json"}, method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            raw = e.read().decode("utf-8", "replace")
+            if e.code == 429 and attempt < max_retries:
+                # retryDelay を解析して待機（例: "44.389s" → 44.4秒）
+                wait = 60.0  # デフォルト待機
+                try:
+                    err_data = json.loads(raw)
+                    for detail in err_data.get("error", {}).get("details", []):
+                        if detail.get("@type", "").endswith("RetryInfo"):
+                            delay_str = detail.get("retryDelay", "60s")
+                            wait = float(delay_str.rstrip("s")) + 2
+                            break
+                except Exception:
+                    pass
+                click.echo(f"  ⚠ 429 Rate limit. Waiting {wait:.0f}s before retry "
+                           f"(attempt {attempt+1}/{max_retries})...", err=True)
+                time.sleep(wait)
+            else:
+                raise RuntimeError(f"Gemini API HTTP {e.code}: {raw[:400]}")
 
 
 def _translate_gemini(
@@ -264,19 +286,20 @@ def translate_paragraph(
     number: str,
     title: str,
     text: str,
+    model: str = "gemini-2.0-flash",
 ) -> dict:
     """エンジンを選択して翻訳を実行する。"""
     if engine == "gemini":
         api_key = os.environ.get("GEMINI_API_KEY", "")
         if not api_key:
             raise RuntimeError("GEMINI_API_KEY 環境変数が設定されていません。")
-        return _translate_gemini(api_key, system_prompt, number, title, text)
+        return _translate_gemini(api_key, system_prompt, number, title, text, model)
 
     elif engine == "anthropic":
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY 環境変数が設定されていません。")
-        return _translate_anthropic(api_key, system_prompt, number, title, text)
+        return _translate_anthropic(api_key, system_prompt, number, title, text, model)
 
     else:
         raise ValueError(f"Unknown engine: {engine!r}. Use 'gemini' or 'anthropic'.")
@@ -314,12 +337,14 @@ def cli():
 @click.option('--engine',  default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
               show_default=True,                                help='使用する翻訳エンジン')
+@click.option('--model',   default='gemini-2.0-flash',
+              show_default=True,                                help='使用するモデル名')
 @click.option('--dry-run', is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
 @click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
 @click.option('--delay',   default=1.0, type=float,            help='API呼び出し間隔（秒）')
 @click.option('--show-glossary', is_flag=True,                 help='用語集とシステムプロンプトを表示して終了')
 def body_cmd(
-    reg: str, version: str, engine: str,
+    reg: str, version: str, engine: str, model: str,
     dry_run: bool, limit: int, delay: float, show_glossary: bool,
 ):
     """
@@ -385,6 +410,7 @@ def body_cmd(
             result = translate_paragraph(
                 engine, system_prompt,
                 p['number'], p['title'], p['text'],
+                model=model,
             )
             p['translation'] = result['translation'].strip()
             p['summary_ja']  = result['summary_ja'].strip()
@@ -413,9 +439,11 @@ def body_cmd(
 @click.option('--engine',  default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
               show_default=True,                                help='使用する翻訳エンジン')
+@click.option('--model',   default='gemini-2.0-flash',
+              show_default=True,                                help='使用するモデル名')
 @click.option('--overwrite', is_flag=True,                     help='既存の title_ja も上書きする')
 @click.option('--dry-run',   is_flag=True,                     help='API未使用。対象見出しを一覧表示して終了')
-def headings_cmd(reg: str, version: str, engine: str, overwrite: bool, dry_run: bool):
+def headings_cmd(reg: str, version: str, engine: str, model: str, overwrite: bool, dry_run: bool):
     """
     段落・章の見出し（title）を一括翻訳し title_ja フィールドに保存する。
     1回のAPI呼び出しで全見出しをまとめて処理するため低コスト。
@@ -451,7 +479,7 @@ def headings_cmd(reg: str, version: str, engine: str, overwrite: bool, dry_run: 
 
     try:
         if engine == "gemini":
-            results = translate_headings_gemini(api_key, system_prompt, heading_pairs)
+            results = translate_headings_gemini(api_key, system_prompt, heading_pairs, model)
         else:
             # Anthropic: 見出しを1件ずつ翻訳（バッチAPIがないため）
             results = {}

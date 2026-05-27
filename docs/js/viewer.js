@@ -1,11 +1,5 @@
 /**
  * viewer.js  --  3ペインビューワの操作ロジック
- *
- * 担当:
- *  - アコーディオン開閉
- *  - 左ペイン章クリック → 中ペインに該当段落を絞り込み
- *  - 中ペイン段落クリック → 右ペインにスクロール
- *  - グロッサリー ツールチップ
  */
 
 (function () {
@@ -13,10 +7,6 @@
 
   // ---------- アコーディオン ----------
 
-  /**
-   * 段落カードの展開/折りたたみを切り替える。
-   * @param {string} uid
-   */
   window.toggleParagraph = function (uid) {
     const card = document.getElementById('para-' + uid);
     const body = document.getElementById('body-' + uid);
@@ -33,28 +23,38 @@
 
   // ---------- 中ペイン: 段落ナビをクリックでスクロール ----------
 
-  /**
-   * 右ペインの特定段落にスクロールし、中ペインのアクティブを更新する。
-   * @param {string} uid
-   */
   window.selectParagraph = function (uid) {
     const target = document.getElementById('para-' + uid);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    setActiveNavItem(uid);
+  };
 
-    // 中ペインのactiveを更新
+  function setActiveNavItem(uid) {
     document.querySelectorAll('.para-nav-item').forEach(function (el) {
       el.classList.toggle('active', el.dataset.uid === uid);
     });
-  };
+    // ロックされていなければ中ペインをスクロール
+    if (!lockedUid) {
+      scrollMiddlePaneTo(uid);
+    }
+  }
+
+  function scrollMiddlePaneTo(uid) {
+    const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    const pane = document.getElementById('pane-paragraphs');
+    if (!item || !pane) return;
+    const paneRect = pane.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    // アイテムがペインの表示範囲外なら中央へスクロール
+    if (itemRect.top < paneRect.top || itemRect.bottom > paneRect.bottom) {
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
 
   // ---------- 左ペイン: 章クリック → 中ペイン絞り込み ----------
 
-  /**
-   * 中ペインの段落ナビを、指定した章番号の子段落のみ表示する。
-   * @param {string} chapterNumber
-   */
   window.selectChapter = function (chapterNumber) {
     const allItems = document.querySelectorAll('.para-nav-item');
     allItems.forEach(function (el) {
@@ -62,21 +62,20 @@
       const uid = el.dataset.uid;
       const card = document.getElementById('para-' + uid);
 
-      // chapterNumber の直接子 or 孫を表示（parent が chapterNumber で始まる）
       const isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
-      // chapterNumber そのものの段落も表示
       const isSelf = card && card.dataset.number === chapterNumber;
 
       el.style.display = (isChild || isSelf) ? '' : 'none';
     });
 
-    // 左ペインのactiveを更新
     document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {
       const item = btn.closest('.tree-item');
       btn.classList.toggle('active', item && item.dataset.number === chapterNumber);
     });
 
-    // 右ペインを章の最初の段落にスクロール
+    // ロック解除して章頭へ
+    unlockMiddlePane();
+
     const firstVisible = document.querySelector('.para-card[data-number="' + chapterNumber + '"]')
                       || document.querySelector('.para-card[data-parent="' + chapterNumber + '"]');
     if (firstVisible) {
@@ -90,16 +89,103 @@
     const box = document.getElementById('justification-' + uid);
     const body = document.getElementById('body-' + uid);
     if (!box) return;
-
-    // 本文が閉じていれば開く
     if (body && body.hidden) {
       window.toggleParagraph(uid);
     }
-    // スクロール
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     box.style.outline = '2px solid #e9a80b';
     setTimeout(function () { box.style.outline = ''; }, 1500);
   };
+
+  // ---------- ロック機能 ----------
+
+  var lockedUid = null;
+
+  window.toggleLock = function (uid, btn) {
+    if (lockedUid === uid) {
+      unlockMiddlePane();
+    } else {
+      lockMiddlePaneTo(uid, btn);
+    }
+  };
+
+  function lockMiddlePaneTo(uid, btn) {
+    // 既存のロックを解除
+    unlockMiddlePane();
+
+    lockedUid = uid;
+
+    // ボタンとリストアイテムをロック状態に
+    const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    if (item) {
+      item.classList.add('nav-locked');
+      const lockBtn = item.querySelector('.lock-btn');
+      if (lockBtn) {
+        lockBtn.classList.add('lock-btn--active');
+        lockBtn.title = 'ロック解除';
+        lockBtn.setAttribute('aria-label', 'ロック解除');
+      }
+      // ロックされたアイテムを中ペインの上部に固定表示
+      item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    const hint = document.getElementById('lock-hint');
+    if (hint) hint.textContent = '🔒 ロック中';
+  }
+
+  function unlockMiddlePane() {
+    if (!lockedUid) return;
+    const item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
+    if (item) {
+      item.classList.remove('nav-locked');
+      const lockBtn = item.querySelector('.lock-btn');
+      if (lockBtn) {
+        lockBtn.classList.remove('lock-btn--active');
+        lockBtn.title = 'この段落でスクロールをロック';
+        lockBtn.setAttribute('aria-label', 'この位置にロック');
+      }
+    }
+    lockedUid = null;
+    const hint = document.getElementById('lock-hint');
+    if (hint) hint.textContent = '';
+  }
+
+  // ---------- 右ペインスクロール → 中ペイン自動追従 ----------
+
+  function setupScrollSync() {
+    const mainPane = document.getElementById('pane-content');
+    if (!mainPane || !window.IntersectionObserver) return;
+
+    var activeUid = null;
+
+    const observer = new IntersectionObserver(function (entries) {
+      // 最も上にある表示中の段落を探す
+      var topEntry = null;
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          if (!topEntry || e.boundingClientRect.top < topEntry.boundingClientRect.top) {
+            topEntry = e;
+          }
+        }
+      });
+
+      if (topEntry) {
+        var uid = topEntry.target.dataset.uid;
+        if (uid && uid !== activeUid) {
+          activeUid = uid;
+          setActiveNavItem(uid);
+        }
+      }
+    }, {
+      root: mainPane,
+      rootMargin: '0px 0px -60% 0px',
+      threshold: 0
+    });
+
+    document.querySelectorAll('.para-card[data-uid]').forEach(function (card) {
+      observer.observe(card);
+    });
+  }
 
   // ---------- グロッサリー ツールチップ ----------
 
@@ -167,8 +253,8 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     attachGlossaryListeners();
+    setupScrollSync();
 
-    // 最初のMutationObserverで動的に追加された用語スパンにも対応
     const observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {
         m.addedNodes.forEach(function (node) {
@@ -183,7 +269,6 @@
     });
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // URLハッシュで特定段落に直リンク対応 (#para-UIDXXX)
     if (location.hash && location.hash.startsWith('#para-')) {
       const uid = location.hash.slice('#para-'.length);
       const target = document.getElementById('para-' + uid);

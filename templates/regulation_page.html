@@ -61,7 +61,10 @@
 
   <!-- 中ペイン: 段落ツリー（現在の章） -->
   <nav class="pane pane-middle" id="pane-paragraphs" aria-label="段落一覧">
-    <div class="pane-header">段落</div>
+    <div class="pane-header">
+      段落
+      <span class="lock-hint" id="lock-hint" aria-live="polite"></span>
+    </div>
     <ul class="tree-list" id="paragraph-tree">
       {% for p in paragraphs %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
@@ -75,6 +78,8 @@
           </span>
           {% if p.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
+        <button class="lock-btn" aria-label="この位置にロック" title="この段落でスクロールをロック"
+                onclick="toggleLock('{{ p.uid }}', this)">&#128274;</button>
       </li>
       {% endfor %}
     </ul>

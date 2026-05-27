@@ -110,6 +110,8 @@ button { cursor: pointer; font-family: inherit; }
   text-transform: uppercase;
   padding: .55rem 1rem;
   z-index: 10;
+  display: flex;
+  align-items: center;
 }
 
 /* ---------- ツリーナビ ---------- */
@@ -362,10 +364,60 @@ button { cursor: pointer; font-family: inherit; }
 .tooltip-ref  { font-size: .75rem; opacity: .7; margin-top: .3rem; }
 
 /* ---------- 中ペイン: 段落ナビ ---------- */
+.para-nav-item {
+  display: flex;
+  align-items: stretch;
+}
+.para-nav-item .tree-btn {
+  flex: 1;
+  min-width: 0;
+}
 .para-nav-item.para-nav-modified .tree-btn { color: var(--color-modified); }
 .para-nav-item.active .tree-btn {
   background: var(--color-en);
   border-left-color: var(--color-primary);
+}
+
+/* ロックボタン */
+.lock-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0 .4rem;
+  font-size: .85rem;
+  opacity: 0;
+  transition: opacity .15s, color .15s;
+  color: var(--color-text-muted);
+  align-self: center;
+}
+.para-nav-item:hover .lock-btn,
+.lock-btn--active {
+  opacity: 1 !important;
+}
+.lock-btn--active {
+  color: var(--color-primary);
+}
+.nav-locked .tree-btn {
+  background: #e8f0fe;
+  border-left-color: var(--color-primary);
+  font-weight: 600;
+}
+.nav-locked {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* ヘッダーのロックヒント */
+.lock-hint {
+  font-size: .72rem;
+  font-weight: 400;
+  opacity: .85;
+  margin-left: .5rem;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* ---------- インデックスページ ---------- */

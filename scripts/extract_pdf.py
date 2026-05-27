@@ -619,7 +619,7 @@ def apply_diff_to_new(new_paras: list[Paragraph], diff_entries: list[DiffEntry])
 # --------------------------------------------------------------------------- #
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-SITE_DIR = Path(__file__).parent.parent / "site"
+SITE_DIR = Path(__file__).parent.parent / "docs"
 
 
 def _block_to_dict(block) -> dict:

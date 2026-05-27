@@ -30,7 +30,10 @@
         <button class="tree-btn {% if node.modified %}tree-modified{% endif %}"
                 onclick="selectChapter('{{ node.number }}')">
           <span class="tree-num">{{ node.number }}</span>
-          <span class="tree-title">{{ node.title }}</span>
+          <span class="tree-title-block">
+            {% if node.title_ja %}<span class="tree-title-ja">{{ node.title_ja }}</span>{% endif %}
+            <span class="tree-title-en">{{ node.title }}</span>
+          </span>
           {% if node.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
         {% if node.children %}
@@ -41,7 +44,10 @@
             <button class="tree-btn {% if child.modified %}tree-modified{% endif %}"
                     onclick="selectParagraph('{{ child.uid }}')">
               <span class="tree-num">{{ child.number }}</span>
-              <span class="tree-title">{{ child.title }}</span>
+              <span class="tree-title-block">
+                {% if child.title_ja %}<span class="tree-title-ja">{{ child.title_ja }}</span>{% endif %}
+                <span class="tree-title-en">{{ child.title }}</span>
+              </span>
               {% if child.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
             </button>
           </li>
@@ -63,7 +69,10 @@
           data-parent="{{ p.parent or '' }}">
         <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}')">
           <span class="tree-num">{{ p.number }}</span>
-          <span class="tree-title">{{ p.title }}</span>
+          <span class="tree-title-block">
+            {% if p.title_ja %}<span class="tree-title-ja">{{ p.title_ja }}</span>{% endif %}
+            <span class="tree-title-en">{{ p.title }}</span>
+          </span>
           {% if p.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
       </li>

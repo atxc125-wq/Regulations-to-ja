@@ -122,21 +122,37 @@ def build_user_prompt(number: str, title: str, text: str) -> str:
 
 _GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models"
 
-# JSON Schema（responseSchema で translation/summary_ja を確実に返させる）
+# JSON Schema: 本文翻訳用
 _RESPONSE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
-        "translation": {
-            "type": "STRING",
-            "description": "完全な日本語翻訳文（法令文体）",
-        },
-        "summary_ja": {
-            "type": "STRING",
-            "description": "1〜2文の日本語要約",
-        },
+        "translation": {"type": "STRING", "description": "完全な日本語翻訳文（法令文体）"},
+        "summary_ja":  {"type": "STRING", "description": "1〜2文の日本語要約"},
     },
     "required": ["translation", "summary_ja"],
 }
+
+# JSON Schema: 見出し一括翻訳用（段落番号→日本語訳のオブジェクト）
+_HEADING_SCHEMA = {
+    "type": "OBJECT",
+    "description": "段落番号をキー、日本語見出し訳を値とするオブジェクト",
+    "additionalProperties": {"type": "STRING"},
+}
+
+
+def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.5-pro") -> dict:
+    """Gemini API に POST して生レスポンス dict を返す共通関数。"""
+    url = f"{_GEMINI_BASE_URL}/{model}:generateContent?key={api_key}"
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        url, data=body,
+        headers={"Content-Type": "application/json"}, method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"Gemini API HTTP {e.code}: {e.read().decode('utf-8','replace')[:400]}")
 
 
 def _translate_gemini(
@@ -147,47 +163,60 @@ def _translate_gemini(
     text: str,
     model: str = "gemini-2.5-pro",
 ) -> dict:
-    """
-    Google Gemini API で翻訳を実行する（urllib 直接呼び出し）。
-    responseMimeType + responseSchema で Structured Outputs を使用する。
-    """
-    url = f"{_GEMINI_BASE_URL}/{model}:generateContent?key={api_key}"
-
+    """本文1段落をGemini APIで翻訳する。"""
     payload = {
-        "systemInstruction": {
-            "parts": [{"text": system_prompt}]
-        },
-        "contents": [
-            {"role": "user", "parts": [{"text": build_user_prompt(number, title, text)}]}
-        ],
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": build_user_prompt(number, title, text)}]}],
         "generationConfig": {
             "responseMimeType": "application/json",
             "responseSchema": _RESPONSE_SCHEMA,
             "temperature": 0.2,
         },
     }
-
-    body = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=body,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        err_body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"Gemini API HTTP {e.code}: {err_body[:400]}")
-
-    # レスポンスから候補テキストを取得
+    data = _gemini_post(api_key, payload, model)
     try:
         raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except (KeyError, IndexError) as e:
-        raise ValueError(f"Unexpected Gemini response structure: {data}")
+    except (KeyError, IndexError):
+        raise ValueError(f"Unexpected Gemini response: {data}")
+    return json.loads(raw)
 
+
+def translate_headings_gemini(
+    api_key: str,
+    system_prompt: str,
+    headings: list[tuple[str, str]],   # [(number, title_en), ...]
+    model: str = "gemini-2.5-pro",
+) -> dict[str, str]:
+    """
+    複数の見出しを1回のAPI呼び出しで一括翻訳する。
+    headings: [(段落番号, 英語タイトル), ...]
+    Returns: {段落番号: 日本語タイトル, ...}
+    """
+    lines = "\n".join(f'"{num}": "{title}"' for num, title in headings)
+    user_msg = textwrap.dedent(f"""\
+        以下は UN法規の段落見出し（英語）の一覧です。
+        各見出しを簡潔な日本語に翻訳してください。
+        用語集の訳語を必ず使用し、法令用語として自然な表現にすること。
+        見出しは名詞句（体言止め）で訳すこと。長くても15文字以内を目安にすること。
+
+        {lines}
+
+        段落番号をキー、日本語訳を値とするJSONオブジェクトで回答してください。
+    """)
+    payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": _HEADING_SCHEMA,
+            "temperature": 0.1,
+        },
+    }
+    data = _gemini_post(api_key, payload, model)
+    try:
+        raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except (KeyError, IndexError):
+        raise ValueError(f"Unexpected Gemini response: {data}")
     return json.loads(raw)
 
 
@@ -271,7 +300,13 @@ def save_structured(data: dict, regulation: str, version: str) -> None:
 # CLI
 # --------------------------------------------------------------------------- #
 
-@click.command()
+@click.group()
+def cli():
+    """UN法規テキスト翻訳ツール"""
+
+
+@cli.command("body")
+
 @click.option('--reg',     required=True,                      help='法規番号 (例: R13)')
 @click.option('--version', default='',                         help='バージョン (例: Rev9)。--show-glossary 時は省略可')
 @click.option('--engine',  default='gemini',
@@ -281,7 +316,7 @@ def save_structured(data: dict, regulation: str, version: str) -> None:
 @click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
 @click.option('--delay',   default=1.0, type=float,            help='API呼び出し間隔（秒）')
 @click.option('--show-glossary', is_flag=True,                 help='用語集とシステムプロンプトを表示して終了')
-def main(
+def body_cmd(
     reg: str, version: str, engine: str,
     dry_run: bool, limit: int, delay: float, show_glossary: bool,
 ):
@@ -370,5 +405,77 @@ def main(
     click.echo(f"Saved → data/{reg}/{version}/structured.json")
 
 
+@cli.command("headings")
+@click.option('--reg',     required=True,                      help='法規番号 (例: R13)')
+@click.option('--version', required=True,                      help='バージョン (例: Rev9)')
+@click.option('--engine',  default='gemini',
+              type=click.Choice(['gemini', 'anthropic']),
+              show_default=True,                                help='使用する翻訳エンジン')
+@click.option('--overwrite', is_flag=True,                     help='既存の title_ja も上書きする')
+@click.option('--dry-run',   is_flag=True,                     help='API未使用。対象見出しを一覧表示して終了')
+def headings_cmd(reg: str, version: str, engine: str, overwrite: bool, dry_run: bool):
+    """
+    段落・章の見出し（title）を一括翻訳し title_ja フィールドに保存する。
+    1回のAPI呼び出しで全見出しをまとめて処理するため低コスト。
+    """
+    glossary_terms = load_glossary(reg)
+    system_prompt  = build_system_prompt(glossary_terms)
+
+    data   = load_structured(reg, version)
+    blocks = data['paragraphs']
+
+    # 翻訳が必要な見出しを収集
+    targets = [
+        b for b in blocks
+        if b.get('type', 'paragraph') == 'paragraph'
+        and (overwrite or not b.get('title_ja'))
+    ]
+
+    click.echo(f"Headings to translate: {len(targets)}  (reg={reg} ver={version})")
+
+    if dry_run:
+        for b in targets:
+            click.echo(f"  [{b['number']:6s}] {b['title']}")
+        return
+
+    key_var = "GEMINI_API_KEY" if engine == "gemini" else "ANTHROPIC_API_KEY"
+    api_key = os.environ.get(key_var, "")
+    if not api_key:
+        raise click.ClickException(f"{key_var} 環境変数が設定されていません。")
+
+    click.echo(f"Translating {len(targets)} headings via {engine} API (single batch call)...")
+
+    heading_pairs = [(b['number'], b['title']) for b in targets]
+
+    try:
+        if engine == "gemini":
+            results = translate_headings_gemini(api_key, system_prompt, heading_pairs)
+        else:
+            # Anthropic: 見出しを1件ずつ翻訳（バッチAPIがないため）
+            results = {}
+            anthropic_client = anthropic_sdk.Anthropic(api_key=api_key)
+            for num, title in heading_pairs:
+                r = _translate_anthropic(api_key, system_prompt, num, title, title)
+                results[num] = r.get('translation', title)
+
+        # title_ja を書き込む
+        written = 0
+        for b in targets:
+            ja = results.get(b['number'], '').strip()
+            if ja:
+                b['title_ja'] = ja
+                written += 1
+                click.echo(f"  [{b['number']:6s}] {b['title']:40s} → {ja}")
+            else:
+                click.echo(f"  [{b['number']:6s}] WARNING: no result for this entry")
+
+        save_structured(data, reg, version)
+        click.echo(f"\n✓ {written}/{len(targets)} headings translated.")
+        click.echo(f"Saved → data/{reg}/{version}/structured.json")
+
+    except Exception as e:
+        raise click.ClickException(str(e))
+
+
 if __name__ == '__main__':
-    main()
+    cli()

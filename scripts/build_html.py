@@ -20,7 +20,7 @@ except ImportError:
 BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 TEMPLATES_DIR = BASE_DIR / "templates"
-SITE_DIR = BASE_DIR / "site"
+SITE_DIR = BASE_DIR / "docs"
 
 
 def load_json(path: Path) -> dict:
@@ -43,6 +43,7 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
             "uid": p["uid"],
             "number": p["number"],
             "title": p["title"],
+            "title_ja": p.get("title_ja", ""),
             "level": p["level"],
             "modified": p.get("modified", False),
             "children": [],
@@ -95,7 +96,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
         glossary_data = load_json(glossary_path)
         glossary_terms = {
             t["term"]: {
-                "definition_ja": t["definition_ja"],
+                "definition_ja": t.get("description") or t.get("ja", ""),
                 "paragraph_ref": t.get("paragraph_ref", ""),
             }
             for t in glossary_data.get("terms", [])
@@ -150,6 +151,7 @@ def build_index_page(regulations: list[str]) -> None:
         versions = sorted(
             [d.name for d in (DATA_DIR / reg).iterdir()
              if d.is_dir() and not d.name.startswith('.')],
+            key=lambda v: v.lower(),
             reverse=True,
         )
         latest = versions[0] if versions else None
@@ -202,6 +204,7 @@ def all():
         versions = sorted(
             [d.name for d in (DATA_DIR / reg).iterdir()
              if d.is_dir() and not d.name.startswith('.')],
+            key=lambda v: v.lower(),
             reverse=True,
         )
         if versions:

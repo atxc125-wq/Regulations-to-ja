@@ -657,12 +657,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「車両の型式承認」とは、制動に関する車両型式の承認をいう。",
+      "summary_ja": "制動に関する車両型式の承認。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両の型式承認"
     },
     {
       "uid": "R13-e71ea5e9",
@@ -672,12 +673,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「車両型式」とは、次のような本質的な点において相違しない車両のカテゴリーをいう：",
+      "summary_ja": "本質的な点で相違しない車両のカテゴリー。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両型式"
     },
     {
       "uid": "R13-5f6ede3b",
@@ -957,12 +959,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動装置」とは、走行中の車両の速度を漸進的に低下させ若しくはこれを停止させ、又はすでに停止している場合にこれを静止状態に保つ機能を担う部品の組合せをいう。これらの機能は、段落5.1.2.に規定する。当該装置は、制御装置、伝達装置及び制動機から構成される。",
+      "summary_ja": "車両の速度低下・停止・静止保持を担う制御装置、伝達装置及び制動機の組合せ。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動装置"
     },
     {
       "uid": "R13-fe7a77e3",
@@ -972,12 +975,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制御装置」とは、運転者（又は一部のトレーラーの場合はアシスタント）が直接操作し、制動若しくは制御に必要なエネルギーを伝達装置に供給する部品をいう。このエネルギーは、運転者の筋力エネルギー、運転者が制御する別の供給源からのエネルギー、適切な場合にはトレーラーの運動エネルギー、又はこれらの各種エネルギーの組合せであってよい。",
+      "summary_ja": "運転者が直接操作し制動エネルギーを伝達装置へ供給する部品で、筋力・外部エネルギー源・運動エネルギー等を利用できる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制御装置"
     },
     {
       "uid": "R13-15e25f6e",
@@ -1002,12 +1006,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「伝達装置」とは、制御装置と制動機との間に介在し、それらを機能的に連結する部品の組合せをいう。伝達装置は、機械式、液圧式、空圧式、電気式又はこれらの混合式であってよい。制動力が運転者から独立したエネルギー源から得られる又はその支援を受ける場合は、当該システム内のエネルギー蓄積量も伝達装置の一部をなす。伝達装置は、「制御伝達装置」と「エネルギー伝達装置」という二つの独立した機能に分けられる。本規則において「伝達装置」という語を単独で使用する場合は、「制御伝達装置」と「エネルギー伝達装置」の双方を意味する。牽引車とトレーラー間の制御管路及び供給管路は、伝達装置の一部とはみなさない。",
+      "summary_ja": "制御装置と制動機を機能的に連結する部品の組合せで、機械式・液圧式・空圧式・電気式等があり、制御伝達装置とエネルギー伝達装置に分けられる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "伝達装置"
     },
     {
       "uid": "R13-855a43a8",
@@ -1047,12 +1052,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動機」とは、車両の移動に対抗する力が発生する部品をいう。摩擦制動機（相対的に移動する車両の二つの部品間の摩擦によって力が発生するもの）、電気制動機（相対的に移動する車両の二つの部品間の電磁作用によって力が発生するもので互いに接触しないもの）、流体制動機（相互に相対的に移動する車両の二つの部品間に置かれた流体の作用によって力が発生するもの）又はエンジン制動機（エンジンの制動作用を車輪に伝達することによって人工的に増大させた制動作用から力が得られるもの）であってよい。",
+      "summary_ja": "車両の移動に対抗する力が発生する部品で、摩擦式・電気式・流体式・エンジン式がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動機"
     },
     {
       "uid": "R13-367cce1f",
@@ -1062,12 +1068,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「異なる型式の制動装置」とは、次のような本質的な点において相違する装置をいう：",
+      "summary_ja": "本質的な点で相違する制動装置の型式。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "異なる型式の制動装置"
     },
     {
       "uid": "R13-30c2e6da",
@@ -1122,12 +1129,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動装置の構成部品」とは、組み合わせることで制動装置を構成する個々の部品の一つをいう。",
+      "summary_ja": "制動装置を構成する個々の部品の一つ。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動装置の構成部品"
     },
     {
       "uid": "R13-33de6f62",
@@ -1137,12 +1145,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「連続制動」とは、次の特性を有する設備による連結車両の制動をいう：",
+      "summary_ja": "特定の特性を持つ設備による連結車両の制動。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "連続制動"
     },
     {
       "uid": "R13-f4cd72a6",
@@ -1197,12 +1206,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「半連続制動」とは、次の特性を有する設備による連結車両の制動をいう：",
+      "summary_ja": "特定の特性を持つ設備による連結車両の半連続的な制動。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "半連続制動"
     },
     {
       "uid": "R13-f4cd72a6",
@@ -1257,12 +1267,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「自動制動」とは、結合した車両の構成部分の分離（連結部の破損による分離も含む）が生じた場合に、連結した残りの部分の制動効果がそれによって損なわれることなく、自動的に発動するトレーラー又は複数のトレーラーの制動をいう。",
+      "summary_ja": "連結車両の分離時に自動的に発動するトレーラーの制動で、残余連結部分の制動効果を維持する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "自動制動"
     },
     {
       "uid": "R13-50583f8d",
@@ -1272,12 +1283,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「慣性（又はオーバーラン）制動」とは、トレーラーが牽引車に乗り上げる際に生じる力を利用した制動をいう。",
+      "summary_ja": "トレーラーが牽引車に乗り上げる際の力を利用した制動。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "慣性（オーバーラン）制動"
     },
     {
       "uid": "R13-42c7ccfc",
@@ -1287,12 +1299,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「漸進・段階的制動」とは、装置の通常の動作範囲内及び制動器の操作中（段落2.4.1.参照）における制動をいう：",
+      "summary_ja": "装置の通常動作範囲内で漸進的かつ段階的に行われる制動。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "漸進・段階的制動"
     },
     {
       "uid": "R13-ce29f98b",
@@ -1347,12 +1360,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「段階的制動」とは、共通の制御装置から二つ以上の制動源が作動する場合に使用できる手段であり、一方の制動源を段階的に後退させることにより他の制動源を優先させることができ、それらが作動を開始する前に増加した制御動作が必要となるようにするものをいう。",
+      "summary_ja": "共通制御から複数の制動源を段階的に制御し、一方の制動源を優先させる手段。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "段階的制動"
     },
     {
       "uid": "R13-e8802f61",
@@ -1362,12 +1376,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「持続制動装置」とは、長時間にわたって著しい性能低下なしに制動効果を提供し維持する能力を有する追加の制動装置をいう。「持続制動装置」という用語は、制御装置を含む完全なシステムを指す。",
+      "summary_ja": "長時間にわたって著しい性能低下なしに制動効果を維持できる追加制動装置で、制御装置を含む完全なシステム。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "持続制動装置"
     },
     {
       "uid": "R13-3b3e8252",
@@ -1452,12 +1467,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「積載車両」とは、特に断りのない限り、「最大質量」に達するまで積載された車両をいう。",
+      "summary_ja": "最大質量に達するまで積載された車両。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "積載車両"
     },
     {
       "uid": "R13-588f6821",
@@ -1467,12 +1483,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「最大質量」とは、車両製造者が技術的に許容できると申告した最大質量をいう（この質量は、国の行政機関が定めた「許容最大質量」より高い場合がある）。",
+      "summary_ja": "車両製造者が技術的に許容できると申告した最大質量（行政機関が定める許容最大質量より高いことがある）。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "最大質量"
     },
     {
       "uid": "R13-17a8dc4b",
@@ -1482,12 +1499,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「軸間質量配分」とは、車両及び／又はその積載物の質量に対する重力の影響を車軸間に配分することをいう。",
+      "summary_ja": "車両及び積載物の質量に対する重力の影響を各車軸へ配分すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "軸間質量配分"
     },
     {
       "uid": "R13-3ac19e23",
@@ -1497,12 +1515,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「車輪／車軸荷重」とは、車軸の車輪の接触面における路面の垂直静的反力（力）をいう。",
+      "summary_ja": "車軸の車輪接触面における路面の垂直静的反力。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車輪・車軸荷重"
     },
     {
       "uid": "R13-0c6cefe5",
@@ -1512,12 +1531,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「最大静止車輪／車軸荷重」とは、積載車両の条件下で達成される静止車輪／車軸荷重をいう。",
+      "summary_ja": "積載状態で達成される静止時の車輪・車軸荷重。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "最大静止車輪・車軸荷重"
     },
     {
       "uid": "R13-57b2d28c",
@@ -1527,12 +1547,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「電気回生制動」とは、減速時に車両の運動エネルギーを電気エネルギーに変換する制動装置をいう。",
+      "summary_ja": "減速時に車両運動エネルギーを電気エネルギーへ変換する制動装置。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "電気回生制動"
     },
     {
       "uid": "R13-0927aad2",
@@ -1617,12 +1638,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「蓄圧式液圧制動装置」とは、一つ以上の圧力ポンプから供給される一つ以上のアキュムレーターに蓄積された加圧液圧油によってエネルギーが供給される制動装置をいい、各ポンプには圧力を最大値に制限する手段が取り付けられている。この値は、製造者が規定しなければならない。",
+      "summary_ja": "アキュムレーターに蓄積した加圧液圧油でエネルギーを供給する制動装置で、圧力制限手段を備える。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "蓄圧式液圧制動装置"
     },
     {
       "uid": "R13-66f4226b",
@@ -1632,12 +1654,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「前後輪の同時ロック」とは、後車軸の最後（第2）輪の最初のロック発生と前車軸の最後（第2）輪の最初のロック発生の間の時間間隔が0.1秒未満である状態をいう。",
+      "summary_ja": "後軸と前軸の最後輪のロック発生時間差が0.1秒未満の状態。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "前後輪の同時ロック"
     },
     {
       "uid": "R13-40f0fd3a",
@@ -1647,12 +1670,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「電気制御管路」とは、連結体内の被牽引車両に制動制御機能を提供する2車両間の電気的接続をいう。電気配線及びコネクターを含み、データ通信用及びトレーラー制御伝達装置への電気エネルギー供給用部品を含む。",
+      "summary_ja": "連結体内の被牽引車に制動制御機能を提供する車両間の電気的接続で、配線・コネクター・データ通信部品を含む。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "電気制御管路"
     },
     {
       "uid": "R13-544442d3",
@@ -1662,12 +1686,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「データ通信」とは、プロトコルの規則に従ったデジタルデータの転送をいう。",
+      "summary_ja": "プロトコル規則に従ったデジタルデータの転送。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "データ通信"
     },
     {
       "uid": "R13-b3d13196",
@@ -1677,12 +1702,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「ポイント・ツー・ポイント」とは、2つのユニットのみで構成される通信ネットワークのトポロジーをいう。各ユニットは通信線の終端抵抗を内蔵する。",
+      "summary_ja": "2ユニットのみの通信ネットワークトポロジーで、各ユニットは終端抵抗を内蔵する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ポイント・ツー・ポイント"
     },
     {
       "uid": "R13-fd391a01",
@@ -1692,12 +1718,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「連結力制御」とは、牽引車とトレーラーの制動率を自動的に均衡させるシステム／機能をいう。",
+      "summary_ja": "牽引車とトレーラーの制動率を自動的に均衡させるシステム・機能。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "連結力制御"
     },
     {
       "uid": "R13-b21115a1",
@@ -1707,12 +1734,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「公称値」とは、制動基準性能の定義であり、車両単独時及び連結使用時における制動装置の入力に対する出力の伝達関数に数値を付与するために必要なものをいう。",
+      "summary_ja": "制動装置の入出力伝達関数に数値を与えるための制動基準性能の公称値定義。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "公称値"
     },
     {
       "uid": "R13-ac961383",
@@ -1767,12 +1795,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「自動制動指令」とは、車上発信情報の自動評価から生じた、運転者の直接操作の有無にかかわらず、特定の車軸の制動装置又は制動機を作動させて車両の減速を生じさせる複雑な電子制御システム内の機能をいう。",
+      "summary_ja": "車上発信情報の自動評価により運転者操作の有無にかかわらず特定車軸の制動装置を作動させる電子制御機能。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "自動制動指令"
     },
     {
       "uid": "R13-6199ed36",
@@ -1782,12 +1811,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「選択的制動」とは、車両の挙動修正を主目的とし車両減速を副次的な効果として、自動的手段により個別の制動機を作動させる複雑な電子制御システム内の機能をいう。",
+      "summary_ja": "車両挙動修正を主目的として個別制動機を自動的に作動させる電子制御システム内の機能。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "選択的制動"
     },
     {
       "uid": "R13-a691f371",
@@ -1797,12 +1827,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「基準制動力」とは、型式承認時に申告された、ブレーキアクチュエーター圧力に対してローラー制動試験機上でタイヤの周上に発生する一軸の制動力をいう。",
+      "summary_ja": "型式承認時に申告されたローラー制動試験機上での一軸の制動力（アクチュエーター圧力との関係）。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "基準制動力"
     },
     {
       "uid": "R13-2c4a7a34",
@@ -1812,12 +1843,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動信号」とは、段落5.2.1.30.に規定する制動作動を示す論理信号をいう。",
+      "summary_ja": "段落5.2.1.30.に規定する制動作動を示す論理信号。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動信号"
     },
     {
       "uid": "R13-5296b54b",
@@ -1827,12 +1859,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「緊急制動信号」とは、段落5.2.1.31.に規定する緊急制動を示す論理信号をいう。",
+      "summary_ja": "段落5.2.1.31.に規定する緊急制動を示す論理信号。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "緊急制動信号"
     },
     {
       "uid": "R13-c03e2447",
@@ -1842,12 +1875,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「車両安定機能」とは、車両の動的安定性を向上させる車両の電子制御機能をいう。",
+      "summary_ja": "車両の動的安定性を向上させる電子制御機能。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両安定機能"
     },
     {
       "uid": "R13-9a382269",
@@ -1917,12 +1951,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「対象トレーラー」とは、型式承認の申請が求められるトレーラー型式を代表するトレーラーをいう。",
+      "summary_ja": "型式承認申請対象のトレーラー型式を代表するトレーラー。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "対象トレーラー"
     },
     {
       "uid": "R13-638e49bd",
@@ -1932,12 +1967,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動係数（BF）」とは、制動機の入力に対する出力の増幅比をいう。",
+      "summary_ja": "制動機の入力に対する出力の増幅比（制動係数BF）。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動係数（BF）"
     },
     {
       "uid": "R13-414d5caf",
@@ -1947,12 +1983,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「識別コード」とは、本規則に基づく制動装置の承認に含まれるブレーキディスク又はブレーキドラムを識別するものをいう。少なくとも製造者の商号又は商標及び識別番号を含む。",
+      "summary_ja": "制動装置承認に含まれるブレーキディスク・ドラムを識別するコードで、製造者商標と識別番号を含む。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "識別コード"
     },
     {
       "uid": "R13-09929740",
@@ -1962,12 +1999,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「軸グループ」とは、隣接する車軸間の軸距が2.0m以下の複数の車軸をいう。隣接する車軸間の軸距が2.0mを超える場合は、各単一車軸を独立した軸グループとみなす。",
+      "summary_ja": "隣接軸間距離が2.0m以下の複数車軸のグループ（超える場合は各軸を独立したグループとみなす）。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "軸グループ"
     },
     {
       "uid": "R13-b4146092",
@@ -1977,12 +2015,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「車両の性格」とは、車両の説明的な用語をいう。例：セミトレーラー用トラクター、トラック、バス、セミトレーラー、フルトレーラー、センターアクスルトレーラー。",
+      "summary_ja": "セミトレーラートラクター・トラック・バス等、車両を表す説明的な分類用語。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両の性格"
     },
     {
       "uid": "R13-2b436320",
@@ -1992,12 +2031,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動用電気／電子インターフェース」とは、牽引車と被牽引車の間の分離可能な電気／電子接続のうち、制動装置専用の部分をいう。",
+      "summary_ja": "牽引車と被牽引車の間の分離可能な電気・電子接続のうち制動装置専用の部分。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動用電気・電子インターフェース"
     },
     {
       "uid": "R13-9a48eedb",
@@ -2007,12 +2047,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「自動コネクター」とは、牽引車と被牽引車の間の電気的及び空気圧的な接続を、人間のオペレーターの直接介入なしに自動的に行うシステムをいう。",
+      "summary_ja": "牽引車と被牽引車間の電気・空気圧接続をオペレーター介入なしに自動で行うシステム。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "自動コネクター"
     },
     {
       "uid": "R13-50341fbe",
@@ -2022,12 +2063,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「制動性能推定器」とは、ブレーキの種類と位置、制動回数と強度、車速又は周囲温度等の入力を考慮したモデルを用いてブレーキ熱の影響を勘案しつつ、利用可能な摩擦制動性能を推定する機能をいう。",
+      "summary_ja": "ブレーキ熱の影響を考慮したモデルにより利用可能な摩擦制動性能を推定する機能。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "制動性能推定器"
     },
     {
       "uid": "R13-2c53e5f8",
@@ -2037,12 +2079,13 @@
       "level": 2,
       "parent": "2",
       "type": "paragraph",
-      "status": "untranslated",
-      "translation": null,
-      "summary_ja": null,
+      "status": "translated",
+      "translation": "「牽引トレーラー」とは、別のトレーラーを牽引できるように装備されたトレーラーをいう。",
+      "summary_ja": "別のトレーラーを牽引するために装備されたトレーラー。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "牽引トレーラー"
     },
     {
       "uid": "R13-15352968",

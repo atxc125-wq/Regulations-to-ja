@@ -3,51 +3,98 @@
   "terms": [
     {
       "term": "braking system",
-      "definition_en": "The combination of parts whose function is to progressively reduce the speed of a moving vehicle, bring it to a halt, or keep it stationary if it is already halted.",
-      "definition_ja": "走行中の車両の速度を漸進的に低下させ、停止させ、あるいは停止状態を保つ機能を持つ部品の組み合わせ。",
+      "ja": "制動装置",
+      "description": "走行中の車両を減速・停止させ、または停止状態を保持するための部品の集合体。制御部、伝達部、制動部（ブレーキ本体）で構成される。",
+      "definition_en": "The combination of parts whose function is to progressively reduce the speed of a moving vehicle, bring it to a halt, or keep it stationary if it is already halted. The system comprises the control, the transmission and the brake(s) proper.",
       "paragraph_ref": "2.1"
     },
     {
       "term": "service braking system",
-      "definition_en": "The braking system which allows the driver to control the movement of the vehicle and bring it to a halt safely, quickly and effectively.",
-      "definition_ja": "運転者が車両の動きを制御し、安全、迅速かつ効果的に停止させることを可能にする制動装置。",
+      "ja": "主制動装置",
+      "description": "運転者が車両の速度を制御し、安全・迅速・効果的に停止させるための主たる制動装置。積載状態や路面勾配に関わらず機能することが求められる。",
+      "definition_en": "The braking system which allows the driver to control the movement of the vehicle and bring it to a halt safely, quickly and effectively, whatever its conditions of loading, and whatever the upward or downward gradient on which it is standing.",
       "paragraph_ref": "2.2"
     },
     {
       "term": "secondary braking system",
-      "definition_en": "The braking system which allows the driver to halt the vehicle in the event of failure of the service braking system.",
-      "definition_ja": "主制動装置が故障した場合に車両を停止させることができる制動装置。",
+      "ja": "副制動装置",
+      "description": "主制動装置が故障した場合に車両を停止させるための補助制動装置。主制動装置と操作部を共用することを妨げない。",
+      "definition_en": "The braking system which allows the driver to halt the vehicle in the event of failure of the service braking system. It does not exclude the use of a control shared with that of the service braking system.",
       "paragraph_ref": "2.3"
     },
     {
       "term": "parking braking system",
-      "definition_en": "The braking system which allows the vehicle to be held stationary on an inclined surface even in the absence of the driver.",
-      "definition_ja": "運転者が不在であっても、傾斜面に車両を静止保持できる制動装置。",
+      "ja": "駐車制動装置",
+      "description": "運転者不在時でも傾斜面上で車両を静止保持できる制動装置。作動部は純機械的手段でロック状態に保持される。",
+      "definition_en": "The braking system which allows the vehicle to be held stationary on an inclined surface even in the absence of the driver, the active parts being then held in the locked position by a purely mechanical device.",
       "paragraph_ref": "2.4"
     },
     {
       "term": "endurance braking system",
+      "ja": "耐久制動装置",
+      "description": "長い下り坂での車速安定に使用する補助制動装置。摩擦式制動装置の摩耗をほとんど生じさせずに使用できる。リターダ（渦電流式・流体式など）がこれに該当する。",
       "definition_en": "A supplementary braking system able to stabilize vehicle speed over a long downhill section, with little or no wear to the conventional friction-based braking system.",
-      "definition_ja": "従来の摩擦式制動装置の摩耗をほとんど、またはまったく生じさせることなく、長い下り坂での車両速度を安定させる補助制動装置。",
+      "paragraph_ref": "2.5",
+      "aliases": ["retarder", "リターダ"]
+    },
+    {
+      "term": "retarder",
+      "ja": "リターダ",
+      "description": "エンジンブレーキを補助する耐久制動装置の一種。渦電流式・流体式・電磁式などがある。耐久制動装置（endurance braking system）と同義で用いられることが多い。",
+      "definition_en": "A supplementary endurance braking device, typically electromagnetic, hydrodynamic, or engine-exhaust based, used to maintain vehicle speed on long downhill grades.",
       "paragraph_ref": "2.5"
     },
     {
-      "term": "axle",
-      "definition_en": "A common axis of rotation for two or more wheels on the same side or opposite sides of the vehicle.",
-      "definition_ja": "車両の同側または反対側の2輪以上の車輪に共通する回転軸。",
-      "paragraph_ref": "2.6"
-    },
-    {
-      "term": "ABS",
-      "definition_en": "Anti-lock Braking System. A system which automatically controls the degree of slip in the direction of rotation of one or more vehicle wheels during braking.",
-      "definition_ja": "アンチロック・ブレーキング・システム。制動中に1つ以上の車輪の回転方向のスリップ度を自動的に制御するシステム。",
-      "paragraph_ref": "2.14"
+      "term": "Electronic Braking System",
+      "ja": "電子制御制動装置（EBS）",
+      "description": "電子的手段でブレーキ作動信号を伝達・処理する制動装置。従来の空気圧のみによる伝達に代わり、電気信号でブレーキ圧を精密に制御する。",
+      "definition_en": "A braking system which uses electronic means to transmit and process brake application signals, enabling more precise and faster brake control than purely pneumatic systems.",
+      "paragraph_ref": "2.15",
+      "aliases": ["EBS"]
     },
     {
       "term": "EBS",
-      "definition_en": "Electronic Braking System. A braking system which uses electronic means to transmit and process brake application signals.",
-      "definition_ja": "電子制動装置。電子的手段によりブレーキ作動信号の伝達および処理を行う制動装置。",
+      "ja": "EBS（電子制御制動装置）",
+      "description": "Electronic Braking System の略。電子的手段によりブレーキ作動信号を伝達・処理する制動装置。",
+      "definition_en": "Electronic Braking System. A braking system using electronic signals to transmit and process braking commands.",
       "paragraph_ref": "2.15"
+    },
+    {
+      "term": "control line",
+      "ja": "制御管",
+      "description": "トレーラのブレーキを制御するため、牽引車からブレーキ制御信号（空気圧または電気）を伝達する管路または電線。コントロールラインとも呼ばれる。",
+      "definition_en": "A pneumatic or electric line connecting the towing vehicle to the trailer, used to transmit braking control signals to actuate the trailer brakes.",
+      "paragraph_ref": "2.16",
+      "aliases": ["コントロールライン"]
+    },
+    {
+      "term": "supply line",
+      "ja": "供給管",
+      "description": "牽引車からトレーラへ制動エネルギー源（圧縮空気）を供給するための管路。サプライラインとも呼ばれ、制御管とは役割が異なる。",
+      "definition_en": "A pneumatic line connecting the towing vehicle to the trailer for the purpose of supplying energy (compressed air) to the trailer braking system.",
+      "paragraph_ref": "2.17",
+      "aliases": ["サプライライン"]
+    },
+    {
+      "term": "spring brake",
+      "ja": "スプリングブレーキ",
+      "description": "ばね力によって制動力を発生させるブレーキ。通常はばね力を圧縮空気で解放して走行し、空気圧が失われると自動的にブレーキが作動する。駐車ブレーキや非常用ブレーキとして用いられる。",
+      "definition_en": "A brake actuator in which spring force is used to apply the brake. The spring force is counteracted by air pressure to release the brake; loss of air pressure causes automatic brake application.",
+      "paragraph_ref": "2.18"
+    },
+    {
+      "term": "ABS",
+      "ja": "ABS（アンチロック・ブレーキング・システム）",
+      "description": "制動中に車輪のロックを防止するため、車輪のスリップ量を自動制御するシステム。操舵安定性と制動距離の改善に寄与する。",
+      "definition_en": "Anti-lock Braking System. A system which automatically controls the degree of slip in the direction of rotation of one or more vehicle wheels during braking.",
+      "paragraph_ref": "2.14"
+    },
+    {
+      "term": "axle",
+      "ja": "車軸",
+      "description": "車両の同側または反対側の2輪以上の車輪に共通する回転軸。",
+      "definition_en": "A common axis of rotation for two or more wheels on the same side or opposite sides of the vehicle.",
+      "paragraph_ref": "2.6"
     }
   ]
 }

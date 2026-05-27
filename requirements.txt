@@ -1,7 +1,9 @@
-pdfplumber>=0.10.0
 pymupdf>=1.23.0
-anthropic>=0.25.0
 jinja2>=3.1.0
 click>=8.1.0
 python-dotenv>=1.0.0
-difflib2>=1.0.0
+# 翻訳エンジン (いずれか一方、またはどちらも)
+anthropic>=0.25.0           # --engine anthropic 使用時
+# google-genai>=1.0.0       # --engine gemini 使用時 (SDK方式, cryptography要)
+# urllib 直接呼び出し方式(デフォルト)は追加インストール不要
+

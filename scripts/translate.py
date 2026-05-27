@@ -178,7 +178,8 @@ def _translate_gemini(
         raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
     except (KeyError, IndexError):
         raise ValueError(f"Unexpected Gemini response: {data}")
-    return json.loads(raw)
+    result = json.loads(raw)
+    return {k: v.strip() if isinstance(v, str) else v for k, v in result.items()}
 
 
 def translate_headings_gemini(
@@ -217,7 +218,8 @@ def translate_headings_gemini(
         raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
     except (KeyError, IndexError):
         raise ValueError(f"Unexpected Gemini response: {data}")
-    return json.loads(raw)
+    result = json.loads(raw)
+    return {k: v.strip() if isinstance(v, str) else v for k, v in result.items()}
 
 
 # --------------------------------------------------------------------------- #
@@ -384,8 +386,8 @@ def body_cmd(
                 engine, system_prompt,
                 p['number'], p['title'], p['text'],
             )
-            p['translation'] = result['translation']
-            p['summary_ja']  = result['summary_ja']
+            p['translation'] = result['translation'].strip()
+            p['summary_ja']  = result['summary_ja'].strip()
             p['status']      = 'done'
             processed += 1
             preview = p['summary_ja'][:70].replace('\n', ' ')

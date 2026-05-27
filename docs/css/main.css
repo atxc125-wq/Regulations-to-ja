@@ -391,23 +391,21 @@ button { cursor: pointer; font-family: inherit; }
   border-left-color: var(--color-primary);
 }
 
-/* ロックボタン */
+/* ロックボタン: デスクトップでは非表示、モバイルのみ */
 .lock-btn {
+  display: none;
   flex-shrink: 0;
   background: none;
   border: none;
   padding: 0 .4rem;
   font-size: .85rem;
-  opacity: 0;
+  opacity: .45;
   transition: opacity .15s, color .15s;
   color: var(--color-text-muted);
   align-self: center;
 }
-.para-nav-item:hover .lock-btn,
 .lock-btn--active {
-  opacity: 1 !important;
-}
-.lock-btn--active {
+  opacity: 1;
   color: var(--color-primary);
 }
 .nav-locked .tree-btn {
@@ -592,11 +590,7 @@ button { cursor: pointer; font-family: inherit; }
   .layout { flex-direction: column; height: auto; overflow: visible; }
   .pane { height: auto; width: 100% !important; border-right: none; border-bottom: 1px solid var(--color-border); }
   .pane-left, .pane-middle { max-height: 240px; }
-  /* タッチ端末ではホバーがないのでロックボタンを常時表示 */
-  .lock-btn { opacity: .45; }
-}
-
-/* タッチデバイス全般（hover非対応） */
-@media (hover: none) {
-  .lock-btn { opacity: .45; }
+  /* モバイルでのみロックボタンを表示 */
+  .lock-btn { display: flex; }
+  .nav-locked .lock-btn { opacity: 1; }
 }

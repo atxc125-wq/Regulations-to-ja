@@ -183,7 +183,7 @@ def _translate_gemini(
     number: str,
     title: str,
     text: str,
-    model: str = "gemini-2.5-pro",
+    model: str = "gemini-2.0-flash",
 ) -> dict:
     """本文1段落をGemini APIで翻訳する。"""
     payload = {
@@ -208,7 +208,7 @@ def translate_headings_gemini(
     api_key: str,
     system_prompt: str,
     headings: list[tuple[str, str]],   # [(number, title_en), ...]
-    model: str = "gemini-2.5-pro",
+    model: str = "gemini-2.0-flash",
 ) -> dict[str, str]:
     """
     複数の見出しを1回のAPI呼び出しで一括翻訳する。

@@ -392,10 +392,23 @@ def extract_text_only(pdf_path: Path) -> str:
 # --------------------------------------------------------------------------- #
 
 _PARA_HEADER = re.compile(
-    r'^(?P<number>\d+(?:\.\d+)*)\.?\s+(?P<title>[A-Z][^\n]{0,120})',
+    r'^\s*(?P<number>\d+(?:\.\d+)*)\.?\s+(?P<title>[A-Z"“”][^\n]{0,120})',
     re.MULTILINE,
 )
 _FOOTNOTE = re.compile(r'^\s*\d+\)\s+', re.MULTILINE)
+
+# UN法規定義章のインライン定義ヘッダー: “2.x.  “term” means...”
+# UN文書の書式: 定義番号 + ピリオド + 2スペース以上 + 引用符
+# 参照（”paragraph 2.5. above”）と区別するため2スペース以上を要求
+_INLINE_DEF_SPLIT = re.compile(
+    r'(\d+\.\d+(?:\.\d+)*)\.[ \t]{2,4}(?=["\u201c\u201d])',
+)
+
+# ページヘッダーパターン（除去対象）
+_PAGE_HEADER_RE = re.compile(
+    r'^E/ECE/[^\n]*$',
+    re.MULTILINE,
+)
 
 
 def _infer_level(number: str) -> int:
@@ -422,6 +435,53 @@ def _clean_text(text: str) -> str:
     return ' '.join(l for l in result if l)
 
 
+def _strip_page_headers(text: str) -> str:
+    """E/ECE/で始まるページヘッダー行をテキストから除去する。"""
+    return _PAGE_HEADER_RE.sub('', text)
+
+
+def _split_inline_definitions(para: 'Paragraph', regulation: str) -> list:
+    """段落テキスト内のインライン定義ヘッダー（; 2.x. "term"）で分割する。
+    分割不要な場合は [para] を返す。
+    """
+    text = para.text
+    matches = list(_INLINE_DEF_SPLIT.finditer(text))
+    if not matches:
+        return [para]
+
+    result = []
+
+    # 最初のマッチ前の部分 → 元の段落のテキストを縮小
+    first_text = text[:matches[0].start()].rstrip(' ;:\n')
+    if first_text:
+        para.text = first_text
+        para.uid = make_uid(regulation, first_text)
+        result.append(para)
+
+    # 各インライン定義 → 新規 Paragraph
+    for i, m in enumerate(matches):
+        emb_number = m.group(1)
+        content_start = m.end()
+        content_end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        emb_content = text[content_start:content_end].rstrip(' ;:\n')
+
+        # タイトル: “ term “ の部分を抽出（ASCII引用符 U+0022 対応）
+        title_m = re.match(r'”([^”]+)”', emb_content)
+        emb_title = (f'"{title_m.group(1).strip()}"'
+                     if title_m else emb_content[:80].rstrip())
+
+        result.append(Paragraph(
+            uid=make_uid(regulation, emb_content),
+            number=emb_number,
+            title=emb_title,
+            text=emb_content,
+            level=_infer_level(emb_number),
+            parent=_infer_parent(emb_number),
+        ))
+
+    return result
+
+
 def parse_blocks(
     text_with_markers: str,
     regulation: str,
@@ -442,11 +502,16 @@ def parse_blocks(
             break
     body = "\n".join(lines[start_line:])
 
+    # ページヘッダー（E/ECE/...）をテキストから除去
+    body = _strip_page_headers(body)
+
     # マーカー位置と段落ヘッダ位置を両方記録してスキャン
-    # アイテムを (pos_in_body, type, data) のリストとして構築
     events: list[tuple[int, str, object]] = []
 
     for m in _PARA_HEADER.finditer(body):
+        # ページヘッダー由来の偽陽性を除去（タイトルがE/ECE/で始まる場合）
+        if m.group('title').strip().startswith('E/ECE/'):
+            continue
         events.append((m.start(), "para_header", m))
 
     for m in _IMG_MARKER_RE.finditer(body):
@@ -456,15 +521,12 @@ def parse_blocks(
 
     events.sort(key=lambda x: x[0])
 
-    # 段落ヘッダとその内容テキストを収集
-    para_headers = [(pos, data) for pos, t, data in events if t == "para_header"]
-    result: list = []
-    para_idx = 0
+    raw_result: list = []
 
     # イベントを走査して Paragraph と ImageBlock を順番に出力
     for event_idx, (pos, etype, data) in enumerate(events):
         if etype == "image":
-            result.append(img_by_uid[data])
+            raw_result.append(img_by_uid[data])
 
         elif etype == "para_header":
             m = data
@@ -483,12 +545,11 @@ def parse_blocks(
 
             content_end = next_para_start if next_para_start else len(body)
             raw_content = body[m.end():content_end]
-            # IMG マーカー自体はテキストから除去
             raw_content = _IMG_MARKER_RE.sub('', raw_content)
             text = _clean_text(raw_content)
             full_text = f"{title} {text}".strip() if text else title
 
-            result.append(Paragraph(
+            raw_result.append(Paragraph(
                 uid=make_uid(regulation, full_text),
                 number=number,
                 title=title,
@@ -496,6 +557,24 @@ def parse_blocks(
                 level=_infer_level(number),
                 parent=_infer_parent(number),
             ))
+
+    # ポストプロセス: インライン定義を分割し、ページヘッダー段落を除去
+    result: list = []
+    seen_content = False  # level>=2 の段落が出た後の単純整数段落は脚注とみなす
+    for block in raw_result:
+        if isinstance(block, ImageBlock):
+            result.append(block)
+            continue
+        # level>=2 段落を見たら seen_content=True
+        if block.level >= 2:
+            seen_content = True
+        # 脚注段落を除外: level=1、数字のみの番号、本文コンテンツ以降に出現
+        if (seen_content and block.level == 1
+                and re.fullmatch(r'\d{1,2}', block.number)):
+            continue
+        # インライン定義を分割して追加
+        for split_block in _split_inline_definitions(block, regulation):
+            result.append(split_block)
 
     return result
 

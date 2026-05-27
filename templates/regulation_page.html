@@ -129,9 +129,9 @@
             {% if p.status == 'untranslated' %}
             <span class="badge badge-untranslated">未翻訳</span>
             {% endif %}
+            <span class="expand-icon" aria-hidden="true">▼</span>
           </div>
           <div class="para-summary">{% if p.summary_ja %}{{ p.summary_ja }}{% else %}<em class="no-summary">（要約未生成）{{ p.title }}</em>{% endif %}</div>
-          <span class="expand-icon" aria-hidden="true">▼</span>
         </div>
 
         <div class="para-card-body" id="body-{{ p.uid }}" hidden>

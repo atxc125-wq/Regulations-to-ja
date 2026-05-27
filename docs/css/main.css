@@ -230,8 +230,8 @@ button { cursor: pointer; font-family: inherit; }
 
 .para-card-header {
   display: flex;
-  align-items: flex-start;
-  gap: .75rem;
+  flex-direction: column;
+  gap: .35rem;
   padding: .75rem 1rem;
   cursor: pointer;
   user-select: none;
@@ -239,31 +239,35 @@ button { cursor: pointer; font-family: inherit; }
 }
 .para-card-header:hover { background: #f0f4ff; }
 
+/* 上段: 番号・タイトル・バッジ・展開アイコンを横並び */
 .para-meta {
   display: flex;
   align-items: center;
   gap: .5rem;
   min-width: 0;
-  flex-shrink: 0;
+  width: 100%;
 }
 .para-number {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: var(--color-primary);
   min-width: 2.8rem;
+  flex-shrink: 0;
   font-size: .9rem;
 }
 .para-title-text {
   font-weight: 600;
   font-size: .9rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+/* 下段: 要約テキスト（全幅） */
 .para-summary {
-  flex: 1;
-  font-size: .88rem;
+  font-size: .85rem;
   color: var(--color-text-muted);
-  line-height: 1.5;
-  padding: 0 .5rem;
+  line-height: 1.55;
+  padding: 0 .25rem;
 }
 .para-summary em.no-summary { font-style: italic; font-size: .83rem; }
 
@@ -272,7 +276,7 @@ button { cursor: pointer; font-family: inherit; }
   font-size: .75rem;
   color: var(--color-text-muted);
   transition: transform .2s;
-  align-self: center;
+  margin-left: auto;   /* para-meta 内で右端に押し出す */
 }
 .para-card.expanded .expand-icon { transform: rotate(180deg); }
 
@@ -509,10 +513,18 @@ button { cursor: pointer; font-family: inherit; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
 
-/* ---------- レスポンシブ (タブレット以下は折りたたみ) ---------- */
+/* ---------- レスポンシブ ---------- */
+
+/* 中幅 (タブレット・狭いPC): 3ペインを縦積み、バイリンガルは横並び維持 */
+@media (max-width: 1100px) {
+  .bilingual-container { flex-direction: column; }
+  .bilingual-col { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .bilingual-col:last-child { border-bottom: none; }
+}
+
+/* 狭い幅 (スマホ): 3ペインを縦積み */
 @media (max-width: 900px) {
   .layout { flex-direction: column; height: auto; overflow: visible; }
   .pane { height: auto; width: 100% !important; border-right: none; border-bottom: 1px solid var(--color-border); }
   .pane-left, .pane-middle { max-height: 240px; }
-  .bilingual-container { flex-direction: column; }
 }

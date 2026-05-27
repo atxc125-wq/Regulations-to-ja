@@ -67,6 +67,7 @@
     </div>
     <ul class="tree-list" id="paragraph-tree">
       {% for p in paragraphs %}
+      {% if not p._nav_hidden and p.type != 'image' %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
           data-uid="{{ p.uid }}"
           data-parent="{{ p.parent or '' }}">
@@ -81,6 +82,7 @@
         <button class="lock-btn" aria-label="この位置にロック" title="この段落でスクロールをロック"
                 onclick="toggleLock('{{ p.uid }}', this)">&#128274;</button>
       </li>
+      {% endif %}
       {% endfor %}
     </ul>
   </nav>
@@ -108,6 +110,25 @@
         <figcaption class="para-figure-caption">{{ p.caption }}</figcaption>
         {% endif %}
       </figure>
+
+      {% elif p._nav_hidden %}
+      {# ---- ページヘッダー・ノイズ段落（右ペインでは折りたたみなしで表示） ---- #}
+      <div class="para-noise" id="para-{{ p.uid }}"
+           data-uid="{{ p.uid }}"
+           data-number="{{ p.number }}">
+        <div class="para-noise-body">
+          <div class="bilingual-container">
+            <div class="bilingual-col bilingual-en">
+              <div class="col-label">English (Original)</div>
+              <div class="para-text en-text">{{ p.text_annotated | safe }}</div>
+            </div>
+            <div class="bilingual-col bilingual-ja">
+              <div class="col-label">日本語訳</div>
+              <div class="para-text ja-text">{% if p.translation_annotated %}{{ p.translation_annotated | safe }}{% else %}<span class="translation-pending">翻訳中...</span>{% endif %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {% else %}
       {# ---- テキスト段落ブロック ---- #}

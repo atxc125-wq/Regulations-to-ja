@@ -28,16 +28,46 @@ def load_json(path: Path) -> dict:
         return json.load(f)
 
 
+def is_nav_noise(p: dict) -> bool:
+    """ナビゲーションツリーに表示すべきでないノイズ段落かどうかを判定する。
+    - PDFページヘッダー（文書番号行）
+    - 目次ドット行
+    """
+    text = (p.get("text") or "").strip()
+    title = (p.get("title") or "").strip()
+    if text.startswith("E/ECE/"):
+        return True
+    if "......" in title or "......" in text:
+        return True
+    return False
+
+
+def mark_footnote_noise(paragraphs: list[dict]) -> None:
+    """本文内容（level 2以上）の後に出現する level=1 かつ数字のみ番号の段落を
+    ページ脚注とみなし _nav_hidden=True にする（インプレース変更）。
+    """
+    import re
+    seen_content = False
+    for p in paragraphs:
+        if p.get("type") == "image":
+            continue
+        level = p.get("level", 1)
+        if level >= 2:
+            seen_content = True
+        if seen_content and level == 1 and re.fullmatch(r"\d{1,2}", p.get("number", "")):
+            p["_nav_hidden"] = True
+
+
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
-    type=="image" のブロックはナビツリーに含めない。
+    type=="image" およびノイズ段落はナビツリーに含めない。
     """
     chapters = []
     chapter_map = {}
 
     for p in paragraphs:
-        # 画像ブロックはツリーナビに表示しない
-        if p.get("type") == "image":
+        # 画像ブロック・ノイズはツリーナビに表示しない
+        if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
         node = {
             "uid": p["uid"],
@@ -104,9 +134,15 @@ def build_regulation_page(regulation: str, version: str) -> None:
 
     # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
+
+    # まずノイズフラグを付与してから脚注マークを追加
+    mark_footnote_noise(paragraphs)
     for p in paragraphs:
         if p.get("type") == "image":
             continue
+        # ナビゲーションノイズフラグを付与（ページヘッダー・目次ドット行）
+        if not p.get("_nav_hidden"):
+            p["_nav_hidden"] = is_nav_noise(p)
         p["text_annotated"] = annotate_glossary(p.get("text", "") or "", glossary_terms)
         if p.get("translation"):
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)

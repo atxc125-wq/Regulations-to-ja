@@ -230,6 +230,19 @@ button { cursor: pointer; font-family: inherit; }
 }
 .para-card--modified .para-card-header { background: #fffde7; }
 
+/* ページヘッダー・ノイズ段落（折りたたみなし、薄いスタイル） */
+.para-noise {
+  margin: .25rem .75rem;
+  border-left: 2px solid var(--color-border);
+  opacity: .65;
+  font-size: .8rem;
+}
+.para-noise-body {
+  padding: .4rem .75rem;
+}
+.para-noise .bilingual-container { gap: .5rem; }
+.para-noise .para-text { font-size: .78rem; line-height: 1.45; }
+
 .para-card-header {
   display: flex;
   flex-direction: column;

@@ -54,24 +54,6 @@
           </span>
           {% if node.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
-        {% if node.children %}
-        <ul class="tree-list tree-sub">
-          {% for child in node.children %}
-          <li class="tree-item tree-level-{{ child.level }}"
-              data-number="{{ child.number }}">
-            <button class="tree-btn {% if child.modified %}tree-modified{% endif %}"
-                    onclick="selectParagraph('{{ child.uid }}')">
-              <span class="tree-num">{{ child.number }}</span>
-              <span class="tree-title-block">
-                {% if child.title_ja %}<span class="tree-title-ja">{{ child.title_ja }}</span>{% endif %}
-                <span class="tree-title-en">{{ child.title }}</span>
-              </span>
-              {% if child.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
-            </button>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -84,6 +66,7 @@
       <span class="lock-hint" id="lock-hint" aria-live="polite"></span>
     </div>
     <ul class="tree-list" id="paragraph-tree">
+      <li class="para-nav-placeholder" id="para-nav-placeholder">← 章・附属書を選択してください</li>
       {% for p in paragraphs %}
       {% if not p._nav_hidden and p.type != 'image' %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"

@@ -634,6 +634,14 @@ button { cursor: pointer; font-family: inherit; }
 .mobile-nav-row[aria-expanded="true"] .mobile-nav-arrow { transform: rotate(180deg); }
 .mobile-nav-row[aria-expanded="true"] { background: var(--color-en); }
 
+/* 中ペイン：章未選択時のプレースホルダー */
+.para-nav-placeholder {
+  padding: .9rem 1rem;
+  color: var(--color-text-muted);
+  font-size: .82rem;
+  font-style: italic;
+}
+
 /* トップへ戻るボタン */
 .back-to-top {
   display: none; /* JS で表示制御 */

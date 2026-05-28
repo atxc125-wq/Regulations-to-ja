@@ -61,6 +61,7 @@
   // ---------- 左ペイン: 章クリック → 中ペイン絞り込み ----------
 
   window.selectChapter = function (chapterNumber) {
+    var anyVisible = false;
     var allItems = document.querySelectorAll('.para-nav-item');
     allItems.forEach(function (el) {
       var parent = el.dataset.parent || '';
@@ -69,9 +70,14 @@
 
       var isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
       var isSelf = card && card.dataset.number === chapterNumber;
+      var show = isChild || isSelf;
 
-      el.style.display = (isChild || isSelf) ? '' : 'none';
+      el.style.display = show ? '' : 'none';
+      if (show) anyVisible = true;
     });
+
+    var placeholder = document.getElementById('para-nav-placeholder');
+    if (placeholder) placeholder.style.display = anyVisible ? 'none' : '';
 
     document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {
       var item = btn.closest('.tree-item');
@@ -353,6 +359,11 @@
   // ---------- 初期化 ----------
 
   document.addEventListener('DOMContentLoaded', function () {
+    // 中ペインは章選択前は全て非表示
+    document.querySelectorAll('.para-nav-item').forEach(function (el) {
+      el.style.display = 'none';
+    });
+
     attachGlossaryListeners();
     setupScrollSync();
     setupBackToTop();

@@ -88,6 +88,8 @@ button { cursor: pointer; font-family: inherit; }
   flex: 1;
   height: calc(100vh - var(--header-h));
   overflow: hidden;
+  position: sticky;
+  top: var(--header-h);
 }
 
 .pane {

@@ -232,9 +232,9 @@
     closeMobilePane();
 
     if (!isOpen) {
-      // ドロワーを開く: モバイルナビバーの直下に表示
+      // ドロワーを開く: モバイルナビバーの直下に表示（position:fixed なので viewport 基準）
       var mobileNav = document.getElementById('mobile-nav');
-      var navBottom = mobileNav ? (mobileNav.getBoundingClientRect().bottom + window.scrollY) : 0;
+      var navBottom = mobileNav ? mobileNav.getBoundingClientRect().bottom : 0;
       pane.style.top = navBottom + 'px';
       pane.classList.add('mobile-open');
       if (row) row.setAttribute('aria-expanded', 'true');

@@ -61,9 +61,13 @@ def mark_footnote_noise(paragraphs: list[dict]) -> None:
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
     type=="image" およびノイズ段落はナビツリーに含めない。
+    左ペインには主要章のみ表示（整数番号が重複し始めたら附属書扱いで除外）。
     """
+    import re as _re
     chapters = []
     chapter_map = {}
+    seen_top_numbers: set[str] = set()
+    top_level_closed = False  # 主要章の番号が重複した時点で左ペイン追加を終了
 
     for p in paragraphs:
         # 画像ブロック・ノイズはツリーナビに表示しない
@@ -72,21 +76,27 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
         node = {
             "uid": p["uid"],
             "number": p["number"],
-            "title": p["title"],
-            "title_ja": p.get("title_ja", ""),
+            "title": p["title"].rstrip(". "),
+            "title_ja": p.get("title_ja", "").rstrip(". "),
             "level": p["level"],
             "modified": p.get("modified", False),
             "children": [],
         }
         if p["level"] == 1:
-            chapters.append(node)
-            chapter_map[p["number"]] = node
+            num = p["number"]
+            is_integer = bool(_re.fullmatch(r"\d+", num))
+            if is_integer and num in seen_top_numbers:
+                top_level_closed = True  # 附属書の繰り返し番号が始まった
+            if not top_level_closed:
+                chapters.append(node)
+                if is_integer:
+                    seen_top_numbers.add(num)
+            chapter_map[num] = node
         else:
             parent_num = p.get("parent")
             if parent_num and parent_num in chapter_map:
                 chapter_map[parent_num]["children"].append(node)
-            else:
-                chapters.append(node)
+            # 親が見つからない孤立ノードは左ペインに追加しない
         chapter_map[p["number"]] = node
 
     return chapters
@@ -135,7 +145,11 @@ def build_regulation_page(regulation: str, version: str) -> None:
     # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
 
-    # まずノイズフラグを付与してから脚注マークを追加
+    # ノイズフラグ付与より前にツリーを構築する
+    # （is_nav_noise が目次エントリを隠してしまう前に章リストを確定させる）
+    tree = build_tree(paragraphs)
+
+    # ノイズフラグを付与してから用語アノテーションを追加
     mark_footnote_noise(paragraphs)
     for p in paragraphs:
         if p.get("type") == "image":
@@ -148,8 +162,6 @@ def build_regulation_page(regulation: str, version: str) -> None:
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)
         else:
             p["translation_annotated"] = None
-
-    tree = build_tree(paragraphs)
 
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),

@@ -406,6 +406,37 @@ button { cursor: pointer; font-family: inherit; }
   border-left-color: var(--color-primary);
 }
 
+/* 階層インデント */
+.para-nav-item[data-level="1"] { padding-left: 0; }
+.para-nav-item[data-level="2"] { padding-left: .75rem; }
+.para-nav-item[data-level="3"] { padding-left: 1.5rem; }
+.para-nav-item[data-level="4"] { padding-left: 2.25rem; }
+.para-nav-item[data-level="5"] { padding-left: 3rem; }
+.para-nav-item[data-level="6"] { padding-left: 3.75rem; }
+
+/* 展開ボタン */
+.nav-expand-btn {
+  visibility: hidden;
+  flex-shrink: 0;
+  width: 1.25rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-size: .55rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s;
+}
+.has-nav-children > .nav-expand-btn {
+  visibility: visible;
+}
+.nav-expanded > .nav-expand-btn {
+  transform: rotate(90deg);
+}
+
 
 /* ---------- インデックスページ ---------- */
 .page-index .layout { display: none; }

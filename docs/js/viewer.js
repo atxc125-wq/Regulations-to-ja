@@ -68,7 +68,33 @@
       var show = (isChild || isSelf) && isFirstOcc;
 
       el.style.display = show ? '' : 'none';
+      el.classList.remove('has-nav-children', 'nav-expanded');
+      delete el.dataset.deepHidden;
       if (show) anyVisible = true;
+    });
+
+    // level > 3 を折りたたむ
+    allItems.forEach(function (el) {
+      if (el.style.display === 'none') return;
+      var level = parseInt(el.dataset.level || '1', 10);
+      if (level > 3) {
+        el.style.display = 'none';
+        el.dataset.deepHidden = '1';
+      }
+    });
+
+    // has-nav-children を付与（直接の子が deepHidden な項目）
+    allItems.forEach(function (el) {
+      if (el.style.display === 'none' && !el.dataset.deepHidden) return;
+      var num = el.dataset.number;
+      if (!num) return;
+      var hasHiddenChild = false;
+      allItems.forEach(function (child) {
+        if (child.dataset.deepHidden && child.dataset.parent === num) {
+          hasHiddenChild = true;
+        }
+      });
+      el.classList.toggle('has-nav-children', hasHiddenChild);
     });
 
     var placeholder = document.getElementById('para-nav-placeholder');
@@ -110,6 +136,49 @@
     box.style.outline = '2px solid #e9a80b';
     setTimeout(function () { box.style.outline = ''; }, 1500);
   };
+
+  // ---------- 中ペイン: 折りたたみツリー ----------
+
+  window.toggleNavExpand = function (uid) {
+    var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    if (!item || !item.classList.contains('has-nav-children')) return;
+
+    var isExpanded = item.classList.contains('nav-expanded');
+    item.classList.toggle('nav-expanded', !isExpanded);
+
+    var num = item.dataset.number;
+    if (isExpanded) {
+      collapseNavChildren(num);
+    } else {
+      expandNavChildren(num);
+    }
+  };
+
+  function expandNavChildren(parentNum) {
+    document.querySelectorAll('.para-nav-item[data-parent="' + parentNum + '"]').forEach(function (child) {
+      if (!child.dataset.deepHidden) return;
+      child.style.display = '';
+      delete child.dataset.deepHidden;
+      // この子にもさらに子があれば has-nav-children を付与
+      var childNum = child.dataset.number;
+      var hasHiddenGrandchild = document.querySelector('.para-nav-item[data-parent="' + childNum + '"][data-deep-hidden]') !== null
+        || (function () {
+          var all = document.querySelectorAll('.para-nav-item[data-parent="' + childNum + '"]');
+          for (var i = 0; i < all.length; i++) { if (all[i].dataset.deepHidden) return true; }
+          return false;
+        })();
+      child.classList.toggle('has-nav-children', hasHiddenGrandchild);
+    });
+  }
+
+  function collapseNavChildren(parentNum) {
+    document.querySelectorAll('.para-nav-item[data-parent="' + parentNum + '"]').forEach(function (child) {
+      child.style.display = 'none';
+      child.dataset.deepHidden = '1';
+      child.classList.remove('nav-expanded', 'has-nav-children');
+      collapseNavChildren(child.dataset.number);
+    });
+  }
 
   // ---------- モバイルナビバー ----------
 

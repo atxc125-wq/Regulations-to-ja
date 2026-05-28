@@ -350,10 +350,11 @@ def cli():
 @click.option('--dry-run', is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
 @click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
 @click.option('--delay',   default=1.0, type=float,            help='API呼び出し間隔（秒）')
+@click.option('--prefix',  default='',                         help='段落番号のプレフィックスでフィルタ (例: 5.1)')
 @click.option('--show-glossary', is_flag=True,                 help='用語集とシステムプロンプトを表示して終了')
 def body_cmd(
     reg: str, version: str, engine: str, model: str,
-    dry_run: bool, limit: int, delay: float, show_glossary: bool,
+    dry_run: bool, limit: int, delay: float, prefix: str, show_glossary: bool,
 ):
     """
     未翻訳段落を Gemini API（デフォルト）または Anthropic API で翻訳・要約する。
@@ -385,6 +386,7 @@ def body_cmd(
         b for b in blocks
         if b.get('type', 'paragraph') == 'paragraph'
         and b.get('status') == 'untranslated'
+        and (not prefix or b.get('number', '') == prefix or b.get('number', '').startswith(prefix + '.'))
     ]
 
     click.echo(f"Target: {reg}/{version}  |  untranslated: {len(targets)}  |  engine: {engine}")

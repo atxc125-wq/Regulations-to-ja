@@ -73,7 +73,10 @@
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
           data-uid="{{ p.uid }}"
           data-parent="{{ p.parent or '' }}"
+          data-number="{{ p.number }}"
+          data-level="{{ p.level }}"
           {% if not p._first_occ %}data-dup="1"{% endif %}>
+        <button class="nav-expand-btn" onclick="toggleNavExpand('{{ p.uid }}')" tabindex="-1" aria-label="展開">▶</button>
         <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}')">
           <span class="tree-num">{{ p.number }}</span>
           <span class="tree-title-block">

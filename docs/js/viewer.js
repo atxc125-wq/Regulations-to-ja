@@ -70,7 +70,9 @@
 
       var isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
       var isSelf = card && card.dataset.number === chapterNumber;
-      var show = isChild || isSelf;
+      // 同じ番号が附属書でも出現するため、最初の出現のみ表示
+      var isFirstOcc = el.dataset.dup !== '1';
+      var show = (isChild || isSelf) && isFirstOcc;
 
       el.style.display = show ? '' : 'none';
       if (show) anyVisible = true;

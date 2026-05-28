@@ -717,8 +717,8 @@ button { cursor: pointer; font-family: inherit; }
     border-bottom: 2px solid var(--color-primary);
   }
 
-  /* メインコンテンツのみ表示 */
-  .layout { flex-direction: column; height: auto; overflow: visible; }
+  /* メインコンテンツのみ表示（sticky はモバイルで無効化） */
+  .layout { flex-direction: column; height: auto; overflow: visible; position: static; }
   .pane { height: auto; width: 100% !important; border-right: none; }
   .pane-main { border-bottom: none; }
 

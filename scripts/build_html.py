@@ -163,6 +163,19 @@ def build_regulation_page(regulation: str, version: str) -> None:
         else:
             p["translation_annotated"] = None
 
+    # 中ペインの重複排除: 同じ number が複数回出現する場合（附属書が同じ番号を繰り返す）
+    # 文書順で最初に出現した可視段落のみ _first_occ=True とする
+    seen_para_numbers: set[str] = set()
+    for p in paragraphs:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        num = p.get("number", "")
+        if num and num not in seen_para_numbers:
+            p["_first_occ"] = True
+            seen_para_numbers.add(num)
+        else:
+            p["_first_occ"] = False
+
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         autoescape=select_autoescape(["html"]),

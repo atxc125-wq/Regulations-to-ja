@@ -71,7 +71,8 @@
       {% if not p._nav_hidden and p.type != 'image' %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
           data-uid="{{ p.uid }}"
-          data-parent="{{ p.parent or '' }}">
+          data-parent="{{ p.parent or '' }}"
+          {% if not p._first_occ %}data-dup="1"{% endif %}>
         <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}')">
           <span class="tree-num">{{ p.number }}</span>
           <span class="tree-title-block">

@@ -340,11 +340,22 @@
     });
   }
 
+  // ---------- トップへ戻るボタン ----------
+
+  function setupBackToTop() {
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+  }
+
   // ---------- 初期化 ----------
 
   document.addEventListener('DOMContentLoaded', function () {
     attachGlossaryListeners();
     setupScrollSync();
+    setupBackToTop();
 
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {

@@ -634,6 +634,35 @@ button { cursor: pointer; font-family: inherit; }
 .mobile-nav-row[aria-expanded="true"] .mobile-nav-arrow { transform: rotate(180deg); }
 .mobile-nav-row[aria-expanded="true"] { background: var(--color-en); }
 
+/* トップへ戻るボタン */
+.back-to-top {
+  display: none; /* JS で表示制御 */
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.25rem;
+  z-index: 200;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s, transform .2s;
+  opacity: 0;
+  transform: translateY(8px);
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top:active { transform: scale(.92); }
+
 /* オーバーレイ背景 */
 .mobile-overlay {
   display: none;
@@ -686,4 +715,7 @@ button { cursor: pointer; font-family: inherit; }
   /* ピン留めボタンを表示 */
   .lock-btn { display: flex; }
   .nav-pinned .lock-btn { opacity: 1; }
+
+  /* トップへ戻るボタンを表示可能にする */
+  .back-to-top { display: flex; }
 }

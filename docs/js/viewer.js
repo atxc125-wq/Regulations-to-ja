@@ -35,20 +35,20 @@
     document.querySelectorAll('.para-nav-item').forEach(function (el) {
       el.classList.toggle('active', el.dataset.uid === uid);
     });
-    // ロックされていなければ中ペインをスクロール
-    if (!lockedUid) {
-      scrollMiddlePaneTo(uid);
-    }
+    scrollMiddlePaneTo(uid);
   }
 
   function scrollMiddlePaneTo(uid) {
     const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
     const pane = document.getElementById('pane-paragraphs');
     if (!item || !pane) return;
+    // ピン留めアイテムの高さ分オフセットを取る
+    const pinned = document.querySelector('.nav-pinned');
+    const pinnedH = (pinned && pinned !== item) ? pinned.offsetHeight : 0;
     const paneRect = pane.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
-    // アイテムがペインの表示範囲外なら中央へスクロール
-    if (itemRect.top < paneRect.top || itemRect.bottom > paneRect.bottom) {
+    const topBound = paneRect.top + pinnedH;
+    if (itemRect.top < topBound || itemRect.bottom > paneRect.bottom) {
       item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
@@ -97,7 +97,7 @@
     setTimeout(function () { box.style.outline = ''; }, 1500);
   };
 
-  // ---------- ロック機能 ----------
+  // ---------- ピン留め機能 ----------
 
   var lockedUid = null;
 
@@ -110,39 +110,43 @@
   };
 
   function lockMiddlePaneTo(uid, btn) {
-    // 既存のロックを解除
     unlockMiddlePane();
-
     lockedUid = uid;
 
-    // ボタンとリストアイテムをロック状態に
     const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
     if (item) {
-      item.classList.add('nav-locked');
+      item.classList.add('nav-pinned');
+      // pane-header の直下にスティックするよう top を動的設定
+      const pane = document.getElementById('pane-paragraphs');
+      const header = pane && pane.querySelector('.pane-header');
+      item.style.top = (header ? header.offsetHeight : 0) + 'px';
       const lockBtn = item.querySelector('.lock-btn');
       if (lockBtn) {
         lockBtn.classList.add('lock-btn--active');
-        lockBtn.title = 'ロック解除';
-        lockBtn.setAttribute('aria-label', 'ロック解除');
+        lockBtn.title = 'ピン留め解除';
+        lockBtn.setAttribute('aria-label', 'ピン留め解除');
       }
-      // ロックされたアイテムを中ペインの上部に固定表示
-      item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // ピン留めアイテムをペイン上部へスクロール
+      if (pane) {
+        pane.scrollTop = item.offsetTop - pane.offsetTop;
+      }
     }
 
     const hint = document.getElementById('lock-hint');
-    if (hint) hint.textContent = '🔒 ロック中';
+    if (hint) hint.textContent = '📌 ピン留め中';
   }
 
   function unlockMiddlePane() {
     if (!lockedUid) return;
     const item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
     if (item) {
-      item.classList.remove('nav-locked');
+      item.classList.remove('nav-pinned');
+      item.style.top = '';
       const lockBtn = item.querySelector('.lock-btn');
       if (lockBtn) {
         lockBtn.classList.remove('lock-btn--active');
-        lockBtn.title = 'この段落でスクロールをロック';
-        lockBtn.setAttribute('aria-label', 'この位置にロック');
+        lockBtn.title = 'ここにピン留め';
+        lockBtn.setAttribute('aria-label', 'ここにピン留め');
       }
     }
     lockedUid = null;

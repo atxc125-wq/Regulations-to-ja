@@ -391,7 +391,7 @@ button { cursor: pointer; font-family: inherit; }
   border-left-color: var(--color-primary);
 }
 
-/* ロックボタン: デスクトップでは非表示、モバイルのみ */
+/* ピン留めボタン: デスクトップでは非表示、モバイルのみ */
 .lock-btn {
   display: none;
   flex-shrink: 0;
@@ -408,16 +408,17 @@ button { cursor: pointer; font-family: inherit; }
   opacity: 1;
   color: var(--color-primary);
 }
-.nav-locked .tree-btn {
+.nav-pinned .tree-btn {
   background: #e8f0fe;
   border-left-color: var(--color-primary);
   font-weight: 600;
 }
-.nav-locked {
+/* position: sticky の top は JS で動的設定（pane-header の高さ分） */
+.nav-pinned {
   position: sticky;
-  top: 0;
   z-index: 5;
   background: var(--color-surface);
+  border-bottom: 2px solid var(--color-primary);
   box-shadow: 0 2px 6px rgba(0,0,0,.12);
 }
 
@@ -590,7 +591,7 @@ button { cursor: pointer; font-family: inherit; }
   .layout { flex-direction: column; height: auto; overflow: visible; }
   .pane { height: auto; width: 100% !important; border-right: none; border-bottom: 1px solid var(--color-border); }
   .pane-left, .pane-middle { max-height: 240px; }
-  /* モバイルでのみロックボタンを表示 */
+  /* モバイルでのみピン留めボタンを表示 */
   .lock-btn { display: flex; }
-  .nav-locked .lock-btn { opacity: 1; }
+  .nav-pinned .lock-btn { opacity: 1; }
 }

@@ -79,8 +79,8 @@
           </span>
           {% if p.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
-        <button class="lock-btn" aria-label="この位置にロック" title="この段落でスクロールをロック"
-                onclick="toggleLock('{{ p.uid }}', this)">&#128274;</button>
+        <button class="lock-btn" aria-label="ここにピン留め" title="この段落をトップにピン留め"
+                onclick="toggleLock('{{ p.uid }}', this)">&#128204;</button>
       </li>
       {% endif %}
       {% endfor %}

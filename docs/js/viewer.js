@@ -8,11 +8,11 @@
   // ---------- アコーディオン ----------
 
   window.toggleParagraph = function (uid) {
-    const card = document.getElementById('para-' + uid);
-    const body = document.getElementById('body-' + uid);
+    var card = document.getElementById('para-' + uid);
+    var body = document.getElementById('body-' + uid);
     if (!card || !body) return;
 
-    const isExpanded = !body.hidden;
+    var isExpanded = !body.hidden;
     body.hidden = isExpanded;
     card.classList.toggle('expanded', !isExpanded);
 
@@ -24,11 +24,12 @@
   // ---------- 中ペイン: 段落ナビをクリックでスクロール ----------
 
   window.selectParagraph = function (uid) {
-    const target = document.getElementById('para-' + uid);
+    var target = document.getElementById('para-' + uid);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setActiveNavItem(uid);
+    closeMobilePane();
   };
 
   function setActiveNavItem(uid) {
@@ -36,18 +37,22 @@
       el.classList.toggle('active', el.dataset.uid === uid);
     });
     scrollMiddlePaneTo(uid);
+
+    // ピン留め中でなければモバイルナビバーの段落行を更新
+    if (!lockedUid) {
+      updateMobileParaRow(uid);
+    }
   }
 
   function scrollMiddlePaneTo(uid) {
-    const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
-    const pane = document.getElementById('pane-paragraphs');
+    var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    var pane = document.getElementById('pane-paragraphs');
     if (!item || !pane) return;
-    // ピン留めアイテムの高さ分オフセットを取る
-    const pinned = document.querySelector('.nav-pinned');
-    const pinnedH = (pinned && pinned !== item) ? pinned.offsetHeight : 0;
-    const paneRect = pane.getBoundingClientRect();
-    const itemRect = item.getBoundingClientRect();
-    const topBound = paneRect.top + pinnedH;
+    var pinned = document.querySelector('.nav-pinned');
+    var pinnedH = (pinned && pinned !== item) ? pinned.offsetHeight : 0;
+    var paneRect = pane.getBoundingClientRect();
+    var itemRect = item.getBoundingClientRect();
+    var topBound = paneRect.top + pinnedH;
     if (itemRect.top < topBound || itemRect.bottom > paneRect.bottom) {
       item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
@@ -56,28 +61,37 @@
   // ---------- 左ペイン: 章クリック → 中ペイン絞り込み ----------
 
   window.selectChapter = function (chapterNumber) {
-    const allItems = document.querySelectorAll('.para-nav-item');
+    var allItems = document.querySelectorAll('.para-nav-item');
     allItems.forEach(function (el) {
-      const parent = el.dataset.parent || '';
-      const uid = el.dataset.uid;
-      const card = document.getElementById('para-' + uid);
+      var parent = el.dataset.parent || '';
+      var uid = el.dataset.uid;
+      var card = document.getElementById('para-' + uid);
 
-      const isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
-      const isSelf = card && card.dataset.number === chapterNumber;
+      var isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
+      var isSelf = card && card.dataset.number === chapterNumber;
 
       el.style.display = (isChild || isSelf) ? '' : 'none';
     });
 
     document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {
-      const item = btn.closest('.tree-item');
+      var item = btn.closest('.tree-item');
       btn.classList.toggle('active', item && item.dataset.number === chapterNumber);
     });
 
-    // ロック解除して章頭へ
     unlockMiddlePane();
+    closeMobilePane();
 
-    const firstVisible = document.querySelector('.para-card[data-number="' + chapterNumber + '"]')
-                      || document.querySelector('.para-card[data-parent="' + chapterNumber + '"]');
+    // モバイルナビバーの章行を更新
+    var chapterItem = document.querySelector('#chapter-tree .tree-item[data-number="' + chapterNumber + '"]');
+    if (chapterItem) {
+      var jaEl = chapterItem.querySelector('.tree-title-ja');
+      var enEl = chapterItem.querySelector('.tree-title-en');
+      var title = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+      updateMobileChapterRow(chapterNumber, title);
+    }
+
+    var firstVisible = document.querySelector('.para-card[data-number="' + chapterNumber + '"]')
+                    || document.querySelector('.para-card[data-parent="' + chapterNumber + '"]');
     if (firstVisible) {
       firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -86,8 +100,8 @@
   // ---------- 変更理由ポップアップ ----------
 
   window.showJustification = function (uid) {
-    const box = document.getElementById('justification-' + uid);
-    const body = document.getElementById('body-' + uid);
+    var box = document.getElementById('justification-' + uid);
+    var body = document.getElementById('body-' + uid);
     if (!box) return;
     if (body && body.hidden) {
       window.toggleParagraph(uid);
@@ -97,48 +111,43 @@
     setTimeout(function () { box.style.outline = ''; }, 1500);
   };
 
-  // ---------- ピン留め機能 ----------
+  // ---------- ピン留め機能（デスクトップ） ----------
 
   var lockedUid = null;
 
-  window.toggleLock = function (uid, btn) {
+  window.toggleLock = function (uid) {
     if (lockedUid === uid) {
       unlockMiddlePane();
     } else {
-      lockMiddlePaneTo(uid, btn);
+      lockMiddlePaneTo(uid);
     }
   };
 
-  function lockMiddlePaneTo(uid, btn) {
+  function lockMiddlePaneTo(uid) {
     unlockMiddlePane();
     lockedUid = uid;
 
-    const pane = document.getElementById('pane-paragraphs');
-    const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    var pane = document.getElementById('pane-paragraphs');
+    var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
     if (item) {
       item.classList.add('nav-pinned');
-      // pane-header の直下にスティックするよう top を動的設定（デスクトップ用）
-      const header = pane && pane.querySelector('.pane-header');
+      var header = pane && pane.querySelector('.pane-header');
       item.style.top = (header ? header.offsetHeight : 0) + 'px';
-      const lockBtn = item.querySelector('.lock-btn');
+      var lockBtn = item.querySelector('.lock-btn');
       if (lockBtn) {
         lockBtn.classList.add('lock-btn--active');
         lockBtn.title = 'ピン留め解除';
         lockBtn.setAttribute('aria-label', 'ピン留め解除');
       }
-      // ピン留めアイテムをペイン上部へスクロール
       if (pane) {
         pane.scrollTop = item.offsetTop - pane.offsetTop;
       }
-    }
-
-    // モバイル: 中ペインをウィンドウ上部に固定し、ピン留め項目のみ表示
-    if (pane && window.innerWidth <= 900) {
-      pane.classList.add('pane-pin-active');
-      requestAnimationFrame(function () {
-        var layout = document.querySelector('.layout');
-        if (layout) layout.style.paddingTop = pane.offsetHeight + 'px';
-      });
+      // モバイルナビバーの段落行をピン留め項目で固定表示
+      var numEl = item.querySelector('.tree-num');
+      var jaEl  = item.querySelector('.tree-title-ja');
+      var enEl  = item.querySelector('.tree-title-en');
+      var title = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+      updateMobileParaRow(null, (numEl ? numEl.textContent.trim() : ''), title, true);
     }
 
     var hint = document.getElementById('lock-hint');
@@ -147,8 +156,6 @@
 
   function unlockMiddlePane() {
     if (!lockedUid) return;
-    var pane = document.getElementById('pane-paragraphs');
-    var layout = document.querySelector('.layout');
     var item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
     if (item) {
       item.classList.remove('nav-pinned');
@@ -160,24 +167,96 @@
         lockBtn.setAttribute('aria-label', 'ここにピン留め');
       }
     }
-    // モバイル固定解除
-    if (pane) pane.classList.remove('pane-pin-active');
-    if (layout) layout.style.paddingTop = '';
     lockedUid = null;
     var hint = document.getElementById('lock-hint');
     if (hint) hint.textContent = '';
+
+    // モバイルナビバーのピン留め表示を解除
+    var paraText = document.getElementById('mobile-para-text');
+    if (paraText) paraText.removeAttribute('data-pinned');
   }
+
+  // ---------- モバイルナビバー ----------
+
+  function updateMobileChapterRow(num, title) {
+    var el = document.getElementById('mobile-chapter-text');
+    if (!el) return;
+    el.textContent = num + (title ? ' ' + title : '');
+  }
+
+  function updateMobileParaRow(uid, num, title, pinned) {
+    var el = document.getElementById('mobile-para-text');
+    if (!el) return;
+    // ピン留め中はUIDベースの自動更新を無視
+    if (!pinned && el.dataset.pinned) return;
+
+    var displayNum = num;
+    var displayTitle = title;
+
+    if (uid) {
+      var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+      if (item) {
+        var numEl  = item.querySelector('.tree-num');
+        var jaEl   = item.querySelector('.tree-title-ja');
+        var enEl   = item.querySelector('.tree-title-en');
+        displayNum   = numEl  ? numEl.textContent.trim()  : '';
+        displayTitle = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+      }
+    }
+
+    el.textContent = displayNum + (displayTitle ? ' ' + displayTitle : '');
+    if (pinned) {
+      el.dataset.pinned = '1';
+    } else {
+      delete el.dataset.pinned;
+    }
+  }
+
+  // ドロワー開閉
+  window.toggleMobilePane = function (side) {
+    var paneId = side === 'left' ? 'pane-chapters' : 'pane-paragraphs';
+    var rowId  = side === 'left' ? 'mobile-chapter-row' : 'mobile-para-row';
+    var pane   = document.getElementById(paneId);
+    var row    = document.getElementById(rowId);
+    var overlay = document.getElementById('mobile-overlay');
+
+    if (!pane) return;
+
+    var isOpen = pane.classList.contains('mobile-open');
+    closeMobilePane();
+
+    if (!isOpen) {
+      // ドロワーを開く: モバイルナビバーの直下に表示
+      var mobileNav = document.getElementById('mobile-nav');
+      var navBottom = mobileNav ? (mobileNav.getBoundingClientRect().bottom + window.scrollY) : 0;
+      pane.style.top = navBottom + 'px';
+      pane.classList.add('mobile-open');
+      if (row) row.setAttribute('aria-expanded', 'true');
+      if (overlay) overlay.classList.add('visible');
+    }
+  };
+
+  window.closeMobilePane = function () {
+    document.querySelectorAll('.pane-left, .pane-middle').forEach(function (p) {
+      p.classList.remove('mobile-open');
+      p.style.top = '';
+    });
+    document.querySelectorAll('.mobile-nav-row').forEach(function (r) {
+      r.setAttribute('aria-expanded', 'false');
+    });
+    var overlay = document.getElementById('mobile-overlay');
+    if (overlay) overlay.classList.remove('visible');
+  };
 
   // ---------- 右ペインスクロール → 中ペイン自動追従 ----------
 
   function setupScrollSync() {
-    const mainPane = document.getElementById('pane-content');
+    var mainPane = document.getElementById('pane-content');
     if (!mainPane || !window.IntersectionObserver) return;
 
     var activeUid = null;
 
-    const observer = new IntersectionObserver(function (entries) {
-      // 最も上にある表示中の段落を探す
+    var observer = new IntersectionObserver(function (entries) {
       var topEntry = null;
       entries.forEach(function (e) {
         if (e.isIntersecting) {
@@ -207,13 +286,13 @@
 
   // ---------- グロッサリー ツールチップ ----------
 
-  const tooltip = document.getElementById('glossary-tooltip');
+  var tooltip = document.getElementById('glossary-tooltip');
 
   function showTooltip(event) {
-    const el = event.currentTarget;
-    const term = el.dataset.term;
-    const definition = el.dataset.definition;
-    const ref = el.dataset.ref;
+    var el = event.currentTarget;
+    var term = el.dataset.term;
+    var definition = el.dataset.definition;
+    var ref = el.dataset.ref;
 
     if (!tooltip) return;
     tooltip.innerHTML =
@@ -225,9 +304,7 @@
     positionTooltip(event);
   }
 
-  function moveTooltip(event) {
-    positionTooltip(event);
-  }
+  function moveTooltip(event) { positionTooltip(event); }
 
   function hideTooltip() {
     if (tooltip) tooltip.classList.remove('visible');
@@ -235,18 +312,14 @@
 
   function positionTooltip(event) {
     if (!tooltip) return;
-    const margin = 12;
-    const tw = tooltip.offsetWidth;
-    const th = tooltip.offsetHeight;
-    let x = event.clientX + margin;
-    let y = event.clientY + margin;
+    var margin = 12;
+    var tw = tooltip.offsetWidth;
+    var th = tooltip.offsetHeight;
+    var x = event.clientX + margin;
+    var y = event.clientY + margin;
 
-    if (x + tw > window.innerWidth - margin) {
-      x = event.clientX - tw - margin;
-    }
-    if (y + th > window.innerHeight - margin) {
-      y = event.clientY - th - margin;
-    }
+    if (x + tw > window.innerWidth  - margin) x = event.clientX - tw - margin;
+    if (y + th > window.innerHeight - margin) y = event.clientY - th - margin;
     tooltip.style.left = x + 'px';
     tooltip.style.top  = y + 'px';
   }
@@ -273,7 +346,7 @@
     attachGlossaryListeners();
     setupScrollSync();
 
-    const observer = new MutationObserver(function (mutations) {
+    var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {
         m.addedNodes.forEach(function (node) {
           if (node.nodeType !== 1) return;
@@ -288,8 +361,8 @@
     observer.observe(document.body, { childList: true, subtree: true });
 
     if (location.hash && location.hash.startsWith('#para-')) {
-      const uid = location.hash.slice('#para-'.length);
-      const target = document.getElementById('para-' + uid);
+      var uid = location.hash.slice('#para-'.length);
+      var target = document.getElementById('para-' + uid);
       if (target) {
         setTimeout(function () {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });

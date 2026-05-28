@@ -18,6 +18,24 @@
   </div>
 </header>
 
+<!-- モバイルナビバー: 現在の章・段落を1行ずつ表示（スマホ縦画面のみ） -->
+<div id="mobile-nav" class="mobile-nav" aria-label="現在位置ナビ">
+  <button class="mobile-nav-row" id="mobile-chapter-row"
+          onclick="toggleMobilePane('left')" aria-expanded="false">
+    <span class="mobile-nav-label">章</span>
+    <span class="mobile-nav-text" id="mobile-chapter-text">—</span>
+    <span class="mobile-nav-arrow" aria-hidden="true">▾</span>
+  </button>
+  <button class="mobile-nav-row" id="mobile-para-row"
+          onclick="toggleMobilePane('middle')" aria-expanded="false">
+    <span class="mobile-nav-label">段</span>
+    <span class="mobile-nav-text" id="mobile-para-text">—</span>
+    <span class="mobile-nav-arrow" aria-hidden="true">▾</span>
+  </button>
+</div>
+<!-- オーバーレイ背景 -->
+<div id="mobile-overlay" class="mobile-overlay" onclick="closeMobilePane()"></div>
+
 <div class="layout">
 
   <!-- 左ペイン: 章ツリー -->

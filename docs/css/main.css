@@ -586,35 +586,104 @@ button { cursor: pointer; font-family: inherit; }
   .bilingual-col:last-child { border-bottom: none; }
 }
 
-/* 狭い幅 (スマホ): 3ペインを縦積み */
-@media (max-width: 900px) {
-  .layout { flex-direction: column; height: auto; overflow: visible; }
-  .pane { height: auto; width: 100% !important; border-right: none; border-bottom: 1px solid var(--color-border); }
-  .pane-left, .pane-middle { max-height: 240px; }
-  /* モバイルでのみピン留めボタンを表示 */
-  .lock-btn { display: flex; }
-  .nav-pinned .lock-btn { opacity: 1; }
+/* ----- モバイルナビバー（共通スタイル） ----- */
+.mobile-nav { display: none; }
 
-  /* ピン留めアクティブ時: 中ペインをウィンドウ上部に固定 */
-  .pane-middle.pane-pin-active {
-    position: fixed;
+.mobile-nav-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .75rem;
+  background: var(--color-surface);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .82rem;
+  color: var(--color-text);
+  min-height: 38px;
+  transition: background .1s;
+}
+.mobile-nav-row:active { background: var(--color-bg); }
+.mobile-nav-row:last-child { border-bottom: none; }
+
+.mobile-nav-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--color-text-muted);
+  min-width: 1.4rem;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.mobile-nav-text {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.mobile-nav-arrow {
+  color: var(--color-text-muted);
+  font-size: .72rem;
+  flex-shrink: 0;
+  transition: transform .15s;
+}
+.mobile-nav-row[aria-expanded="true"] .mobile-nav-arrow { transform: rotate(180deg); }
+.mobile-nav-row[aria-expanded="true"] { background: var(--color-en); }
+
+/* オーバーレイ背景 */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 80;
+}
+.mobile-overlay.visible { display: block; }
+
+/* 狭い幅 (スマホ): モバイルナビバーに切り替え */
+@media (max-width: 900px) {
+  /* モバイルナビバーを固定表示 */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
     top: var(--header-h);
+    z-index: 90;
+    background: var(--color-surface);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+
+  /* 通常フローのpane-left/middleを非表示 */
+  .pane-left, .pane-middle { display: none; }
+
+  /* ドロワーとして開く */
+  .pane-left.mobile-open,
+  .pane-middle.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* top は JS で設定 */
     left: 0;
     right: 0;
-    width: 100% !important;
-    max-height: none;
-    z-index: 50;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 85;
+    background: var(--color-surface);
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
     border-bottom: 2px solid var(--color-primary);
-    box-shadow: 0 2px 10px rgba(0,0,0,.2);
   }
-  /* ピン留めアクティブ時: ピン留め項目以外を非表示にしてスリム化 */
-  .pane-middle.pane-pin-active .para-nav-item:not(.nav-pinned) {
-    display: none;
-  }
-  /* ピン留めアクティブ時: nav-pinned は position: static でよい（pane自体が fixed） */
-  .pane-middle.pane-pin-active .nav-pinned {
-    position: static;
-    box-shadow: none;
-    border-bottom: none;
-  }
+
+  /* メインコンテンツのみ表示 */
+  .layout { flex-direction: column; height: auto; overflow: visible; }
+  .pane { height: auto; width: 100% !important; border-right: none; }
+  .pane-main { border-bottom: none; }
+
+  /* ピン留めボタンを表示 */
+  .lock-btn { display: flex; }
+  .nav-pinned .lock-btn { opacity: 1; }
 }

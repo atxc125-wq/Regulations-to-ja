@@ -148,7 +148,7 @@ _HEADING_SCHEMA = {
 }
 
 
-def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.0-flash",
+def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.5-flash",
                  max_retries: int = 3) -> dict:
     """Gemini API に POST して生レスポンス dict を返す共通関数。
     429 (RESOURCE_EXHAUSTED) の場合は retryDelay に従って待機後リトライする。
@@ -191,7 +191,7 @@ def _translate_gemini(
     number: str,
     title: str,
     text: str,
-    model: str = "gemini-2.0-flash",
+    model: str = "gemini-2.5-flash",
 ) -> dict:
     """本文1段落をGemini APIで翻訳する。"""
     payload = {
@@ -216,7 +216,7 @@ def translate_headings_gemini(
     api_key: str,
     system_prompt: str,
     headings: list[tuple[str, str]],   # [(number, title_en), ...]
-    model: str = "gemini-2.0-flash",
+    model: str = "gemini-2.5-flash",
 ) -> dict[str, str]:
     """
     複数の見出しを1回のAPI呼び出しで一括翻訳する。
@@ -294,7 +294,7 @@ def translate_paragraph(
     number: str,
     title: str,
     text: str,
-    model: str = "gemini-2.0-flash",
+    model: str = "gemini-2.5-flash",
 ) -> dict:
     """エンジンを選択して翻訳を実行する。"""
     if engine == "gemini":
@@ -345,7 +345,7 @@ def cli():
 @click.option('--engine',  default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
               show_default=True,                                help='使用する翻訳エンジン')
-@click.option('--model',   default='gemini-2.0-flash',
+@click.option('--model',   default='gemini-2.5-flash',
               show_default=True,                                help='使用するモデル名')
 @click.option('--dry-run', is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
 @click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
@@ -447,7 +447,7 @@ def body_cmd(
 @click.option('--engine',  default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
               show_default=True,                                help='使用する翻訳エンジン')
-@click.option('--model',   default='gemini-2.0-flash',
+@click.option('--model',   default='gemini-2.5-flash',
               show_default=True,                                help='使用するモデル名')
 @click.option('--overwrite', is_flag=True,                     help='既存の title_ja も上書きする')
 @click.option('--dry-run',   is_flag=True,                     help='API未使用。対象見出しを一覧表示して終了')

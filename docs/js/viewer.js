@@ -113,11 +113,11 @@
     unlockMiddlePane();
     lockedUid = uid;
 
+    const pane = document.getElementById('pane-paragraphs');
     const item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
     if (item) {
       item.classList.add('nav-pinned');
-      // pane-header の直下にスティックするよう top を動的設定
-      const pane = document.getElementById('pane-paragraphs');
+      // pane-header の直下にスティックするよう top を動的設定（デスクトップ用）
       const header = pane && pane.querySelector('.pane-header');
       item.style.top = (header ? header.offsetHeight : 0) + 'px';
       const lockBtn = item.querySelector('.lock-btn');
@@ -132,25 +132,39 @@
       }
     }
 
-    const hint = document.getElementById('lock-hint');
+    // モバイル: 中ペインをウィンドウ上部に固定し、ピン留め項目のみ表示
+    if (pane && window.innerWidth <= 900) {
+      pane.classList.add('pane-pin-active');
+      requestAnimationFrame(function () {
+        var layout = document.querySelector('.layout');
+        if (layout) layout.style.paddingTop = pane.offsetHeight + 'px';
+      });
+    }
+
+    var hint = document.getElementById('lock-hint');
     if (hint) hint.textContent = '📌 ピン留め中';
   }
 
   function unlockMiddlePane() {
     if (!lockedUid) return;
-    const item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
+    var pane = document.getElementById('pane-paragraphs');
+    var layout = document.querySelector('.layout');
+    var item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
     if (item) {
       item.classList.remove('nav-pinned');
       item.style.top = '';
-      const lockBtn = item.querySelector('.lock-btn');
+      var lockBtn = item.querySelector('.lock-btn');
       if (lockBtn) {
         lockBtn.classList.remove('lock-btn--active');
         lockBtn.title = 'ここにピン留め';
         lockBtn.setAttribute('aria-label', 'ここにピン留め');
       }
     }
+    // モバイル固定解除
+    if (pane) pane.classList.remove('pane-pin-active');
+    if (layout) layout.style.paddingTop = '';
     lockedUid = null;
-    const hint = document.getElementById('lock-hint');
+    var hint = document.getElementById('lock-hint');
     if (hint) hint.textContent = '';
   }
 

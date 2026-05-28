@@ -594,4 +594,27 @@ button { cursor: pointer; font-family: inherit; }
   /* モバイルでのみピン留めボタンを表示 */
   .lock-btn { display: flex; }
   .nav-pinned .lock-btn { opacity: 1; }
+
+  /* ピン留めアクティブ時: 中ペインをウィンドウ上部に固定 */
+  .pane-middle.pane-pin-active {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-height: none;
+    z-index: 50;
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  }
+  /* ピン留めアクティブ時: ピン留め項目以外を非表示にしてスリム化 */
+  .pane-middle.pane-pin-active .para-nav-item:not(.nav-pinned) {
+    display: none;
+  }
+  /* ピン留めアクティブ時: nav-pinned は position: static でよい（pane自体が fixed） */
+  .pane-middle.pane-pin-active .nav-pinned {
+    position: static;
+    box-shadow: none;
+    border-bottom: none;
+  }
 }

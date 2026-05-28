@@ -411,6 +411,48 @@ _PAGE_HEADER_RE = re.compile(
 )
 
 
+def _is_valid_para_number(number: str) -> bool:
+    """段落番号として有効かどうかを検証する。
+    UN法規の段落番号は正整数ドット区切りで、各コンポーネントは 1 以上。
+    図中のY軸ラベル（0.7, 0.3 等）を除外するためのガード。
+    """
+    try:
+        return all(int(x) >= 1 for x in number.split('.'))
+    except ValueError:
+        return False
+
+
+def _num_tuple(number: str) -> tuple:
+    """段落番号を整数タプルに変換する。"""
+    try:
+        return tuple(int(x) for x in number.split('.'))
+    except ValueError:
+        return ()
+
+
+def _is_valid_sequence(last_tuple: tuple, new_tuple: tuple) -> bool:
+    """
+    new_tuple が last_tuple の有効な後続番号かを判定する。
+
+    有効なケース:
+      - 子・兄弟・叔父方向（単調増加）: new_tuple > last_tuple
+      - 附属書リスタート: 最初の成分が大幅減少（例: (12,...) → (1,...) や (1,...)）
+        ただし 0 始まりは _is_valid_para_number で除去済み
+
+    無効なケース:
+      - 図のラベル等で軽微な後退: (5,2,1,28,5) → (5,2,1,27,...) など
+    """
+    if not last_tuple:
+        return True
+    if new_tuple >= last_tuple:
+        return True
+    # 附属書リスタート: 最初の成分が現在より小さく、かつ現在の最初の成分が大きい場合
+    # 例: 12章終了後に Annex 1 が始まる (last=(12,...) → new=(1,...))
+    if new_tuple[0] < last_tuple[0]:
+        return True  # 章番号の後退は附属書移行として許可
+    return False
+
+
 def _infer_level(number: str) -> int:
     return number.count('.') + 1
 
@@ -512,6 +554,9 @@ def parse_blocks(
         # ページヘッダー由来の偽陽性を除去（タイトルがE/ECE/で始まる場合）
         if m.group('title').strip().startswith('E/ECE/'):
             continue
+        # 図中のラベル（0.7, 0.3 等）を除去: 各コンポーネントは 1 以上が必須
+        if not _is_valid_para_number(m.group('number')):
+            continue
         events.append((m.start(), "para_header", m))
 
     for m in _IMG_MARKER_RE.finditer(body):
@@ -522,6 +567,7 @@ def parse_blocks(
     events.sort(key=lambda x: x[0])
 
     raw_result: list = []
+    last_num_tuple: tuple = ()  # 単調増加チェック用
 
     # イベントを走査して Paragraph と ImageBlock を順番に出力
     for event_idx, (pos, etype, data) in enumerate(events):
@@ -532,6 +578,12 @@ def parse_blocks(
             m = data
             number = m.group('number')
             title = m.group('title').strip()
+
+            # 単調増加チェック: 同一章内で番号が後退するケースは図内ラベル等と判断
+            num_tuple = _num_tuple(number)
+            if not _is_valid_sequence(last_num_tuple, num_tuple):
+                continue
+            last_num_tuple = num_tuple
 
             # コンテンツ範囲: このヘッダの終わりから次のヘッダ or 次のIMGマーカーまで
             next_para_start = None

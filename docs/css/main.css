@@ -37,9 +37,9 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  /* PC: layout は fixed なので body 自体はスクロール不要 */
+  overflow: hidden;
+  height: 100vh;
 }
 
 a { color: var(--color-primary); text-decoration: none; }
@@ -49,8 +49,10 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ---------- ヘッダー ---------- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-h);
   background: var(--color-primary);
@@ -85,11 +87,12 @@ button { cursor: pointer; font-family: inherit; }
 /* ---------- 3ペインレイアウト ---------- */
 .layout {
   display: flex;
-  flex: 1;
-  height: calc(100vh - var(--header-h));
-  overflow: hidden;
-  position: sticky;
+  position: fixed;
   top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .pane {
@@ -436,6 +439,8 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ---------- インデックスページ ---------- */
 .page-index .layout { display: none; }
+.page-index body,
+body.page-index { overflow: auto; height: auto; min-height: 100vh; }
 .index-main {
   max-width: 960px;
   margin: 2rem auto;
@@ -717,8 +722,10 @@ button { cursor: pointer; font-family: inherit; }
     border-bottom: 2px solid var(--color-primary);
   }
 
-  /* メインコンテンツのみ表示（sticky はモバイルで無効化） */
-  .layout { flex-direction: column; height: auto; overflow: visible; position: static; }
+  /* モバイルはフレームではなく通常フロー */
+  body { overflow: auto; height: auto; min-height: 100vh; }
+  .site-header { position: sticky; left: auto; right: auto; }
+  .layout { position: static; flex-direction: column; height: auto; overflow: visible; }
   .pane { height: auto; width: 100% !important; border-right: none; }
   .pane-main { border-bottom: none; }
 

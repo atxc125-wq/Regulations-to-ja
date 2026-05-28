@@ -63,9 +63,10 @@
 
       var isChild = parent === chapterNumber || parent.startsWith(chapterNumber + '.');
       var isSelf = card && card.dataset.number === chapterNumber;
-      // 同じ番号が附属書でも出現するため、最初の出現のみ表示
+      // 附属書段落・重複番号は非表示
       var isFirstOcc = el.dataset.dup !== '1';
-      var show = (isChild || isSelf) && isFirstOcc;
+      var isAnnex = el.dataset.annex === '1';
+      var show = (isChild || isSelf) && isFirstOcc && !isAnnex;
 
       el.style.display = show ? '' : 'none';
       el.classList.remove('has-nav-children', 'nav-expanded');

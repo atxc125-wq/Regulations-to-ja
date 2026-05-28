@@ -58,6 +58,37 @@ def mark_footnote_noise(paragraphs: list[dict]) -> None:
             p["_nav_hidden"] = True
 
 
+def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
+    """附属書（Annex）に属する段落に _in_annex フラグを付与する。
+
+    _nav_hidden（TOC ノイズ）付与後に呼ぶこと。
+    本文の最大トップ章番号の半分以下に章番号が戻った時点で附属書開始と判定する。
+    例: 主要章1-12 → Annex で 2.x が再出現 → 2 < 12//2+1=7 → in_annex=True
+    """
+    max_top = 0
+    in_annex = False
+
+    for p in paragraphs:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        num = p.get("number", "")
+        try:
+            top = int(num.split('.')[0])
+        except (ValueError, IndexError):
+            continue
+        if top <= 0:
+            continue
+
+        if not in_annex:
+            if max_top >= 2 and top < max_top // 2 + 1:
+                in_annex = True
+            else:
+                max_top = max(max_top, top)
+
+        if in_annex:
+            p["_in_annex"] = True
+
+
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
     type=="image" およびノイズ段落はナビツリーに含めない。
@@ -162,6 +193,9 @@ def build_regulation_page(regulation: str, version: str) -> None:
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)
         else:
             p["translation_annotated"] = None
+
+    # _nav_hidden 付与後に附属書フラグを付与（TOCノイズをスキップして正確に判定）
+    mark_annex_paragraphs(paragraphs)
 
     # 中ペインの重複排除: 同じ number が複数回出現する場合（附属書が同じ番号を繰り返す）
     # 文書順で最初に出現した可視段落のみ _first_occ=True とする

@@ -330,6 +330,121 @@ def save_structured(data: dict, regulation: str, version: str) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# 附属書 (Annex) 段落 UID 検索
+# --------------------------------------------------------------------------- #
+
+def _find_annex_indices(paragraphs: list[dict], annex_number: int) -> set[int]:
+    """指定された附属書に属する段落のインデックスセットを返す。
+    Annex 10以上: "Annex N" タイトルの level=1 段落をアンカーにして範囲を特定。
+    Annex 1-9: 章番号のリスタートを追跡して附属書グループを特定。
+    """
+    import re
+
+    # --- Annex 10+ : 明示的なタイトルヘッダーで特定 ---
+    if annex_number >= 10:
+        start_idx = None
+        end_idx = len(paragraphs)
+        for i, p in enumerate(paragraphs):
+            if p.get('type', 'paragraph') != 'paragraph':
+                continue
+            if p.get('level', 1) != 1:
+                continue
+            title = p.get('title', '').strip()
+            if re.match(rf'^Annex\s+{annex_number}\b', title):
+                if start_idx is None:
+                    start_idx = i
+            elif start_idx is not None:
+                m = re.match(r'^Annex\s+(\d+)\b', title)
+                if m and int(m.group(1)) != annex_number:
+                    end_idx = i
+                    break
+        if start_idx is None:
+            return set()
+        return {i for i, p in enumerate(paragraphs[start_idx:end_idx], start_idx)
+                if p.get('type', 'paragraph') == 'paragraph'}
+
+    # --- Annex 1-9 : リスタートグループで特定 ---
+    # 本文終端を特定: 実コンテンツ（TOCノイズ・フォームではない）で章番号12のうち最後の段落
+    main_body_end = 0
+    for i, p in enumerate(paragraphs):
+        if p.get('type', 'paragraph') != 'paragraph':
+            continue
+        num = p.get('number', '')
+        try:
+            top = int(num.split('.')[0])
+        except (ValueError, IndexError):
+            continue
+        if top != 12:
+            continue
+        text = p.get('text', '') or ''
+        title = p.get('title', '') or ''
+        # TOC ドット行・ページヘッダー・フォーム行をスキップ
+        if '....' in text or '....' in title:
+            continue
+        if text.strip().startswith('E/ECE/') or title.strip().startswith('E/ECE/'):
+            continue
+        main_body_end = i
+    if main_body_end == 0:
+        return set()
+
+    # 本文終端以降でリスタートグループを収集（インデックス付き）
+    groups: list[list[int]] = []          # 各グループ: 段落インデックスのリスト
+    current_group: list[int] = []
+    max_top_in_group = 0
+    last_top = 12
+
+    for i, p in enumerate(paragraphs[main_body_end + 1:], main_body_end + 1):
+        if p.get('type', 'paragraph') != 'paragraph':
+            continue
+        # Annex 10以降は別メソッドが担当するので到達したら終了
+        title = p.get('title', '').strip()
+        if re.match(r'^Annex\s+1\d\b', title) and p.get('level', 1) == 1:
+            break
+        num = p.get('number', '')
+        try:
+            top = int(num.split('.')[0])
+        except (ValueError, IndexError):
+            continue
+        if top <= 0:
+            continue
+
+        if top < last_top and last_top > 1:
+            # リスタート検出 → 新グループ開始
+            if current_group:
+                groups.append(current_group)
+            current_group = [i]
+            max_top_in_group = top
+        else:
+            current_group.append(i)
+            max_top_in_group = max(max_top_in_group, top)
+
+        last_top = top
+
+    if current_group:
+        groups.append(current_group)
+
+    # グループを附属書番号に対応付ける
+    # 帳票グループ判定: テキストの半数超が "....." を含む → フォームグループ（Annexes 1-3）
+    def is_form_group(idx_list: list[int]) -> bool:
+        if not idx_list:
+            return True
+        dotted = sum(
+            1 for idx in idx_list
+            if '....' in (paragraphs[idx].get('text', '') or paragraphs[idx].get('title', ''))
+        )
+        return dotted >= len(idx_list) * 0.4
+
+    substantive_groups: list[list[int]] = [g for g in groups if not is_form_group(g)]
+
+    # substantive_groups[0] = Annex 4, [1] = Annex 5, …
+    target_idx = annex_number - 4
+    if target_idx < 0 or target_idx >= len(substantive_groups):
+        return set()
+
+    return set(substantive_groups[target_idx])
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
@@ -351,10 +466,11 @@ def cli():
 @click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
 @click.option('--delay',   default=1.0, type=float,            help='API呼び出し間隔（秒）')
 @click.option('--prefix',  default='',                         help='段落番号のプレフィックスでフィルタ (例: 5.1)')
+@click.option('--annex',   default=0,   type=int,              help='附属書番号でフィルタ (例: 4, 13, 18, 21)')
 @click.option('--show-glossary', is_flag=True,                 help='用語集とシステムプロンプトを表示して終了')
 def body_cmd(
     reg: str, version: str, engine: str, model: str,
-    dry_run: bool, limit: int, delay: float, prefix: str, show_glossary: bool,
+    dry_run: bool, limit: int, delay: float, prefix: str, annex: int, show_glossary: bool,
 ):
     """
     未翻訳段落を Gemini API（デフォルト）または Anthropic API で翻訳・要約する。
@@ -382,11 +498,18 @@ def body_cmd(
     blocks = data['paragraphs']
 
     # type=="paragraph" かつ status=="untranslated" のブロックのみ対象
+    annex_indices: set = set()
+    if annex > 0:
+        annex_indices = _find_annex_indices(blocks, annex)
+        if not annex_indices:
+            raise click.ClickException(f"Annex {annex} が見つかりません。")
+
     targets = [
-        b for b in blocks
+        b for i, b in enumerate(blocks)
         if b.get('type', 'paragraph') == 'paragraph'
         and b.get('status') == 'untranslated'
         and (not prefix or b.get('number', '') == prefix or b.get('number', '').startswith(prefix + '.'))
+        and (not annex_indices or i in annex_indices)
     ]
 
     click.echo(f"Target: {reg}/{version}  |  untranslated: {len(targets)}  |  engine: {engine}")

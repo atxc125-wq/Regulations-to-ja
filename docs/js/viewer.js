@@ -37,23 +37,16 @@
       el.classList.toggle('active', el.dataset.uid === uid);
     });
     scrollMiddlePaneTo(uid);
-
-    // ピン留め中でなければモバイルナビバーの段落行を更新
-    if (!lockedUid) {
-      updateMobileParaRow(uid);
-    }
+    updateMobileParaRow(uid);
   }
 
   function scrollMiddlePaneTo(uid) {
     var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
     var pane = document.getElementById('pane-paragraphs');
     if (!item || !pane) return;
-    var pinned = document.querySelector('.nav-pinned');
-    var pinnedH = (pinned && pinned !== item) ? pinned.offsetHeight : 0;
     var paneRect = pane.getBoundingClientRect();
     var itemRect = item.getBoundingClientRect();
-    var topBound = paneRect.top + pinnedH;
-    if (itemRect.top < topBound || itemRect.bottom > paneRect.bottom) {
+    if (itemRect.top < paneRect.top || itemRect.bottom > paneRect.bottom) {
       item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
@@ -86,7 +79,6 @@
       btn.classList.toggle('active', item && item.dataset.number === chapterNumber);
     });
 
-    unlockMiddlePane();
     closeMobilePane();
 
     // モバイルナビバーの章行を更新
@@ -119,105 +111,25 @@
     setTimeout(function () { box.style.outline = ''; }, 1500);
   };
 
-  // ---------- ピン留め機能（デスクトップ） ----------
-
-  var lockedUid = null;
-
-  window.toggleLock = function (uid) {
-    if (lockedUid === uid) {
-      unlockMiddlePane();
-    } else {
-      lockMiddlePaneTo(uid);
-    }
-  };
-
-  function lockMiddlePaneTo(uid) {
-    unlockMiddlePane();
-    lockedUid = uid;
-
-    var pane = document.getElementById('pane-paragraphs');
-    var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
-    if (item) {
-      item.classList.add('nav-pinned');
-      var header = pane && pane.querySelector('.pane-header');
-      item.style.top = (header ? header.offsetHeight : 0) + 'px';
-      var lockBtn = item.querySelector('.lock-btn');
-      if (lockBtn) {
-        lockBtn.classList.add('lock-btn--active');
-        lockBtn.title = 'ピン留め解除';
-        lockBtn.setAttribute('aria-label', 'ピン留め解除');
-      }
-      if (pane) {
-        pane.scrollTop = item.offsetTop - pane.offsetTop;
-      }
-      // モバイルナビバーの段落行をピン留め項目で固定表示
-      var numEl = item.querySelector('.tree-num');
-      var jaEl  = item.querySelector('.tree-title-ja');
-      var enEl  = item.querySelector('.tree-title-en');
-      var title = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
-      updateMobileParaRow(null, (numEl ? numEl.textContent.trim() : ''), title, true);
-    }
-
-    var hint = document.getElementById('lock-hint');
-    if (hint) hint.textContent = '📌 ピン留め中';
-  }
-
-  function unlockMiddlePane() {
-    if (!lockedUid) return;
-    var item = document.querySelector('.para-nav-item[data-uid="' + lockedUid + '"]');
-    if (item) {
-      item.classList.remove('nav-pinned');
-      item.style.top = '';
-      var lockBtn = item.querySelector('.lock-btn');
-      if (lockBtn) {
-        lockBtn.classList.remove('lock-btn--active');
-        lockBtn.title = 'ここにピン留め';
-        lockBtn.setAttribute('aria-label', 'ここにピン留め');
-      }
-    }
-    lockedUid = null;
-    var hint = document.getElementById('lock-hint');
-    if (hint) hint.textContent = '';
-
-    // モバイルナビバーのピン留め表示を解除
-    var paraText = document.getElementById('mobile-para-text');
-    if (paraText) paraText.removeAttribute('data-pinned');
-  }
-
   // ---------- モバイルナビバー ----------
 
   function updateMobileChapterRow(num, title) {
     var el = document.getElementById('mobile-chapter-text');
     if (!el) return;
-    el.textContent = num + (title ? ' ' + title : '');
+    el.textContent = num + (title ? ' ' + title : '');
   }
 
-  function updateMobileParaRow(uid, num, title, pinned) {
+  function updateMobileParaRow(uid) {
     var el = document.getElementById('mobile-para-text');
-    if (!el) return;
-    // ピン留め中はUIDベースの自動更新を無視
-    if (!pinned && el.dataset.pinned) return;
-
-    var displayNum = num;
-    var displayTitle = title;
-
-    if (uid) {
-      var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
-      if (item) {
-        var numEl  = item.querySelector('.tree-num');
-        var jaEl   = item.querySelector('.tree-title-ja');
-        var enEl   = item.querySelector('.tree-title-en');
-        displayNum   = numEl  ? numEl.textContent.trim()  : '';
-        displayTitle = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
-      }
-    }
-
-    el.textContent = displayNum + (displayTitle ? ' ' + displayTitle : '');
-    if (pinned) {
-      el.dataset.pinned = '1';
-    } else {
-      delete el.dataset.pinned;
-    }
+    if (!el || !uid) return;
+    var item = document.querySelector('.para-nav-item[data-uid="' + uid + '"]');
+    if (!item) return;
+    var numEl  = item.querySelector('.tree-num');
+    var jaEl   = item.querySelector('.tree-title-ja');
+    var enEl   = item.querySelector('.tree-title-en');
+    var num    = numEl  ? numEl.textContent.trim() : '';
+    var title  = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+    el.textContent = num + (title ? ' ' + title : '');
   }
 
   // ドロワー開閉

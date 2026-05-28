@@ -49,8 +49,12 @@
                 onclick="selectChapter('{{ node.number }}')">
           <span class="tree-num">{{ node.number }}</span>
           <span class="tree-title-block">
-            {% if node.title_ja %}<span class="tree-title-ja">{{ node.title_ja }}</span>{% endif %}
-            <span class="tree-title-en">{{ node.title }}</span>
+            {% if node.title_ja %}
+              <span class="tree-title-ja">{{ node.title_ja }}</span>
+              <span class="tree-title-en tree-title-en--sub">{{ node.title }}</span>
+            {% else %}
+              <span class="tree-title-en">{{ node.title }}</span>
+            {% endif %}
           </span>
           {% if node.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
@@ -61,10 +65,7 @@
 
   <!-- 中ペイン: 段落ツリー（現在の章） -->
   <nav class="pane pane-middle" id="pane-paragraphs" aria-label="段落一覧">
-    <div class="pane-header">
-      段落
-      <span class="lock-hint" id="lock-hint" aria-live="polite"></span>
-    </div>
+    <div class="pane-header">段落</div>
     <ul class="tree-list" id="paragraph-tree">
       <li class="para-nav-placeholder" id="para-nav-placeholder">← 章・附属書を選択してください</li>
       {% for p in paragraphs %}
@@ -81,8 +82,6 @@
           </span>
           {% if p.modified %}<span class="badge-modified" title="変更あり">M</span>{% endif %}
         </button>
-        <button class="lock-btn" aria-label="ここにピン留め" title="この段落をトップにピン留め"
-                onclick="toggleLock('{{ p.uid }}', this)">&#128204;</button>
       </li>
       {% endif %}
       {% endfor %}

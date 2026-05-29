@@ -699,13 +699,22 @@ def headings_cmd(reg: str, version: str, engine: str, model: str,
     blocks = data['paragraphs']
 
     # 翻訳が必要な見出しを収集
-    targets = [
+    all_targets = [
         b for b in blocks
         if b.get('type', 'paragraph') == 'paragraph'
         and (overwrite or not b.get('title_ja'))
     ]
 
+    # 重複番号の段落は title_ja が一意に決まらないためスキップ
+    from collections import Counter
+    all_nums = Counter(b['number'] for b in blocks if b.get('type', 'paragraph') == 'paragraph')
+    dup_nums = {n for n, c in all_nums.items() if c > 1}
+    targets = [b for b in all_targets if b['number'] not in dup_nums]
+    skipped = len(all_targets) - len(targets)
+
     click.echo(f"Headings to translate: {len(targets)}  (reg={reg} ver={version})")
+    if skipped:
+        click.echo(f"  Skipped {skipped} duplicate-numbered paragraphs (can't uniquely translate by number)")
 
     if dry_run:
         for b in targets:

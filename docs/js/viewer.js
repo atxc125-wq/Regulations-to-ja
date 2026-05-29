@@ -451,6 +451,12 @@
           window.toggleParagraph(uid);
         }, 300);
       }
+    } else {
+      // デフォルト: 第1章を自動選択して中ペインを表示する
+      var firstChapter = document.querySelector('#chapter-tree .tree-item[data-number]');
+      if (firstChapter) {
+        window.selectChapter(firstChapter.dataset.number);
+      }
     }
   });
 

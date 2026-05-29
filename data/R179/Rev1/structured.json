@@ -17,8 +17,7 @@
       "summary_ja": "本規定の適用範囲を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "適用範囲"
+      "prev_uid": null
     },
     {
       "uid": "R179-734cedac",
@@ -33,8 +32,7 @@
       "summary_ja": "本規定で使用される略語及び記号を定義する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "略語と記号"
+      "prev_uid": null
     },
     {
       "uid": "R179-4432e770",
@@ -49,8 +47,7 @@
       "summary_ja": "本規定で使用される用語の定義を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "定義"
+      "prev_uid": null
     },
     {
       "uid": "R179-49a60363",
@@ -65,8 +62,7 @@
       "summary_ja": "認可の申請に関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "認可申請"
+      "prev_uid": null
     },
     {
       "uid": "R179-4e2ad553",
@@ -81,8 +77,7 @@
       "summary_ja": "認可のプロセスに関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "認可"
+      "prev_uid": null
     },
     {
       "uid": "R179-09267986",
@@ -241,8 +236,7 @@
       "summary_ja": "本項では、情報文書、並びにブレーキコーナー排出ファミリー試験報告書、個別摩擦制動分担係数試験報告書、及び車両型式適合性実証報告書に関する追補を規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "適用範囲"
+      "prev_uid": null
     },
     {
       "uid": "R179-d9d7380e",
@@ -257,8 +251,7 @@
       "summary_ja": "本段落は「略語および記号」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "略語と記号"
+      "prev_uid": null
     },
     {
       "uid": "R179-62a26262",
@@ -273,8 +266,7 @@
       "summary_ja": "本段落は「認可マークの配置」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "定義"
+      "prev_uid": null
     },
     {
       "uid": "R179-85ce7e90",
@@ -289,8 +281,7 @@
       "summary_ja": "本段落は「ブレーキ排出試験手順」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "認可申請"
+      "prev_uid": null
     },
     {
       "uid": "R179-49c4322e",
@@ -305,8 +296,7 @@
       "summary_ja": "本段落は「車両固有の制動分担係数の測定および計算方法」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "認可"
+      "prev_uid": null
     },
     {
       "uid": "R179-2c0d1db2",
@@ -321,8 +311,7 @@
       "summary_ja": "本段落は「略語および記号」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "略語と記号"
+      "prev_uid": null
     },
     {
       "uid": "R179-c12c41dd",
@@ -337,8 +326,7 @@
       "summary_ja": "この規則は、乾燥摩擦材とブレーキディスクまたはブレーキドラムの組み合わせを含む摩擦制動を使用するM1およびN1カテゴリーの車両に適用される。製造者の要請により、N1カテゴリーの車両タイプに由来する最大質量3.5トンから5トンまでのN2カテゴリーの車両にも認可を与えることができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "適用範囲"
+      "prev_uid": null
     },
     {
       "uid": "R179-03c1947e",
@@ -353,8 +341,7 @@
       "summary_ja": "本段落は「略語および記号」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "略語と記号"
+      "prev_uid": null
     },
     {
       "uid": "R179-c722ed04",
@@ -399,8 +386,7 @@
       "summary_ja": "本段落は「車両およびブレーキダイナモメータの設定」について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "車両固有摩擦制動分担係数cの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-ecdb63d4",
@@ -415,8 +401,7 @@
       "summary_ja": "M1カテゴリー車両とは、運転者席を含め9席以下の乗用自動車をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "製造者コード"
+      "prev_uid": null
     },
     {
       "uid": "R179-513b2d96",
@@ -881,8 +866,7 @@
       "summary_ja": "本項では試験設定について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦仕事の決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-f6f7676a",
@@ -897,8 +881,7 @@
       "summary_ja": "「ブレーキダイナモメータ」とは、試験対象ブレーキの機械的・電気的仕事を課し、制御し、記録する技術システムをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦動力の決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-57c96a34",
@@ -913,8 +896,7 @@
       "summary_ja": "「トルク測定センサ」とは、ブレーキアセンブリのねじりひずみを等価出力に変換する電気機械装置であり、等価トルクは角減速度と有効ブレーキ慣性から導出される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦ブレーキトルクの決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-6d12a9cc",
@@ -1154,8 +1136,7 @@
       "summary_ja": "ブレーキハードウェアに関する規定である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cp値の決定"
+      "prev_uid": null
     },
     {
       "uid": "R179-24f225cf",
@@ -1170,8 +1151,7 @@
       "summary_ja": "「試験対象ブレーキ」とは、本規則に基づきブレーキ粒子排出量を測定する際に使用される摩擦ブレーキアセンブリと、その関連車両パラメータ（車両本体、パワートレイン等）を指す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキダイナモメーターの準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-6aa3b7de",
@@ -1186,8 +1166,7 @@
       "summary_ja": "「ブレーキアセンブリ」とは、ディスクブレーキの場合はブレーキディスク、ブレーキパッド、ブレーキキャリパー等のセットを、ドラムブレーキの場合はブレーキドラム、ブレーキシュー等のセットを指し、これらはブレーキ固定具を介してダイナモメータに取り付けられる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "操作"
+      "prev_uid": null
     },
     {
       "uid": "R179-fb43542f",
@@ -1202,8 +1181,7 @@
       "summary_ja": "「常用ブレーキ」とは、運転者が通常の運転時に車両の速度を段階的に制御し、または車両を停止させるための制動システムをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cpの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-5df0b77d",
@@ -1218,8 +1196,7 @@
       "summary_ja": "「完全摩擦ブレーキ」とは、ブレーキディスクまたはドラムと摩擦材との間の摩擦のみを利用する、車両に搭載された常用ブレーキを指す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Ceの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-c5102eb2",
@@ -1789,8 +1766,7 @@
       "summary_ja": "本項はWLTP-ブレーキサイクルについて述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "推進エネルギー変換装置の組み合わせ"
+      "prev_uid": null
     },
     {
       "uid": "R179-9e75e39e",
@@ -1805,8 +1781,7 @@
       "summary_ja": "「走行サイクル」とは、車両の速度と時間を表すデータポイントの連続であり、ブレーキ停止、加速、巡航、減速などのイベントを含む個々のトリップで構成される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ハイブリッド電気自動車"
+      "prev_uid": null
     },
     {
       "uid": "R179-b5cf12a5",
@@ -1821,8 +1796,7 @@
       "summary_ja": "「WLTP-ブレーキサイクル」とは、世界統一軽型車試験手順データベースから導出された走行サイクルであり、総継続時間は15,826秒に冷却区間を加えたもので、10回のトリップと303回のブレーキ減速イベントを含む。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ハイブリッド電気自動車のカテゴリー"
+      "prev_uid": null
     },
     {
       "uid": "R179-439bae03",
@@ -1837,8 +1811,7 @@
       "summary_ja": "「ブレーキ排出ガス試験」とは、試験中のブレーキの粒子排出ガスを特性評価するため、冷却空気調整、ブレーキ慣らし、ブレーキ排出ガス測定の3つの区間からなる試験である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "運転モードスイッチ"
+      "prev_uid": null
     },
     {
       "uid": "R179-0ffad07d",
@@ -1853,8 +1826,7 @@
       "summary_ja": "「冷却空気調整」とは、慣らし及び排出ガス測定区間における適切な冷却気流を定義するための区間であり、「冷却調整区間」とも呼ばれる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "エネルギー貯蔵装置の説明"
+      "prev_uid": null
     },
     {
       "uid": "R179-c64a40f9",
@@ -1869,8 +1841,7 @@
       "summary_ja": "「ブレーキ慣らし」とは、ブレーキ排出ガス測定前に、安定した転写層、ブレーキ効力、排出ガス挙動を形成するための一連のブレーキイベントを含む区間であり、「慣らし手順」又は「慣らし区間」とも称される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "電動機（各電動機の種類を個別に記述）"
+      "prev_uid": null
     },
     {
       "uid": "R179-41989612",
@@ -1885,8 +1856,7 @@
       "summary_ja": "「ブレーキ排出ガス測定」とは、ブレーキ排出ガス試験においてPM及びPN排出ガスがサンプリング及び測定される区間であり、「排出ガス測定区間」とも称される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "制御ユニット"
+      "prev_uid": null
     },
     {
       "uid": "R179-fbe069b1",
@@ -1901,8 +1871,7 @@
       "summary_ja": "「ブレーキ加速イベント」とは、線形速度が既知の割合で所定値まで増加する期間を指し、常にブレーキ巡航イベントまたはブレーキ減速イベントの前に発生する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "パワーコントローラー"
+      "prev_uid": null
     },
     {
       "uid": "R179-264e697d",
@@ -1947,8 +1916,7 @@
       "summary_ja": "公称ブレーキ減速イベントとは、サイクル中に公称線形速度が既知の割合で所定の解除速度まで減少する期間をいい、高速公称線形速度信号で識別される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "FCHV"
+      "prev_uid": null
     },
     {
       "uid": "R179-e6f09132",
@@ -1963,8 +1931,7 @@
       "summary_ja": "実ブレーキ減速イベントとは、サイクル中に線形速度が既知の割合で所定の解除速度まで減少する期間をいい、高速実トルク信号で識別される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "電気エネルギー変換装置"
+      "prev_uid": null
     },
     {
       "uid": "R179-043f4bca",
@@ -3179,8 +3146,7 @@
       "summary_ja": "車両型の承認申請は、車両製造業者又はその認定代理人が提出しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "車両選択"
+      "prev_uid": null
     },
     {
       "uid": "R179-a766901f",
@@ -3210,8 +3176,7 @@
       "summary_ja": "承認される車両型を代表するブレーキ部品のセットを、承認試験を担当する技術機関に提出しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-9e549a16",
@@ -3226,8 +3191,7 @@
       "summary_ja": "型式承認後のシステム、部品、又は独立した技術ユニットの製造者の変更は、車両のブレーキ排出量に悪影響を及ぼす変更がない限り、型式承認を自動的に無効にしない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "データ記録"
+      "prev_uid": null
     },
     {
       "uid": "R179-b4b60bcd",
@@ -3242,8 +3206,7 @@
       "summary_ja": "製造業者は、ブレーキ排出量に影響を与える排出量増加制動機能の概要を型式承認機関に提供しなければならない。この文書は、型式承認の前提条件として承認されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "シャシーダイナモメーター設定"
+      "prev_uid": null
     },
     {
       "uid": "R179-a72b5ed7",
@@ -3258,8 +3221,7 @@
       "summary_ja": "提出された車両型がこの規則のすべての関連要件を満たす場合、その車両型の承認が付与される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "等価性証明のための車両選択"
+      "prev_uid": null
     },
     {
       "uid": "R179-121da180",
@@ -3274,8 +3236,7 @@
       "summary_ja": "承認された各型式には、承認番号が割り当てられなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "代替方法の試験"
+      "prev_uid": null
     },
     {
       "uid": "R179-7369466e",
@@ -3335,8 +3296,7 @@
       "summary_ja": "本規則に基づく車両型式の認証、拡張、または拒否の通知は、附属書2の様式に従い、本規則を適用する1958年協定の締約国に伝達されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "等価性基準"
+      "prev_uid": null
     },
     {
       "uid": "R179-75a316e5",
@@ -3456,8 +3416,7 @@
       "summary_ja": "車両型は、表3の排出ガス限度値に適合しなければならず、その適合性は、前車軸および後車軸のブレーキコーナー排出ガスファミリーの親の試験によって実証されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦制動分担係数のオフセット（「申告」）"
+      "prev_uid": null
     },
     {
       "uid": "R179-f10e434a",
@@ -3472,8 +3431,7 @@
       "summary_ja": "同一の車両型には、前車軸と後車軸で同じブレーキコーナー排出ガスファミリーの組み合わせを持つ車両のみが含まれ、その割り当ては厳密に区別されなければならない。異なる電動化タイプの車両も同一の車両型に含まれ得るが、ブレーキ排出ガスは式7.1に従って計算されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "本附属書に従って計算された車両固有摩擦制動分担係数は、製造者によって増加させることができる"
+      "prev_uid": null
     },
     {
       "uid": "R179-6c224cf8",
@@ -3488,8 +3446,7 @@
       "summary_ja": "車両型は、全ての電動化タイプと補間ファミリーにおいて、最高試験質量の車両の排出ガスが表3の限度値を満たす場合に、本規則に適合するとみなされる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "製造者の要求および認可当局の承認により、製造者は摩擦制動を増加させることができる"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-6550fb7d",
@@ -3534,8 +3491,7 @@
       "summary_ja": "ブレーキコーナー排出ガスファミリーは、キャリパー、ディスク、パッドなどのブレーキアセンブリと特定の車両パラメータによって定義される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "空調ユニットと冷却空気"
+      "prev_uid": null
     },
     {
       "uid": "R179-c22d3ac0",
@@ -3550,8 +3506,7 @@
       "summary_ja": "全ての車両電動化タイプは一つのブレーキコーナー排出ガスファミリーに属し得るが、同一のブレーキコーナー排出ガスファミリーには、特定の特性（キャリパーのタイプ、ブレーキのタイプなど）に関して同一のブレーキアセンブリを持つ車両のみが属することができる。この分類は「オリジナル」および「オリジナル交換用」ブレーキに適用される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却空気調整"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-72a298e1",
@@ -3596,8 +3551,7 @@
       "summary_ja": "ブレーキコーナー排出ガスファミリーの親は、摩擦制動分担係数と試験車輪荷重の積が最も大きい車両として選定され、この積は親の特定にのみ使用される。製造業者の要求により、親の車輪荷重は将来の車両の変動をカバーするために増加させることができるが、その場合、ファミリーメンバーの積は元の親の積の10%を超えてはならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却空気清浄"
+      "prev_uid": null
     },
     {
       "uid": "R179-1689d8d4",
@@ -3612,8 +3566,7 @@
       "summary_ja": "オリジナルおよびオリジナル交換用ブレーキシステムおよび部品は、ブレーキコーナー排出ガスファミリーの親に対応する試験車輪荷重を用いて試験台で試験されなければならない。部品試験では、対応するオリジナル部品と組み合わせて試験を行う必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却気流"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-c91420f3",
@@ -3643,8 +3596,7 @@
       "summary_ja": "全てのデータは少なくとも6桁の有効数字で処理され、中間結果の丸めは禁止される。最終値は附属書4の定義に従って丸めることができるが、分解能は測定不確かさを超えず、設定値は1桁多く報告し、測定システムの分解能は仕様に応じて適切に設定されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキダイナモメーターと自動化システム"
+      "prev_uid": null
     },
     {
       "uid": "R179-e8e1edf0",
@@ -3659,8 +3611,7 @@
       "summary_ja": "データ取得および記録におけるダウンサンプリングは、ナイキスト・シャノン標本化定理を満たすため信号フィルタリングを必要とする。下位サンプリング周波数の25%から50%のカットオフ周波数を持つ2次フィルタがこの要件を満たすものとされる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキエンクロージャ設計"
+      "prev_uid": null
     },
     {
       "uid": "R179-81fbf99e",
@@ -3675,8 +3626,7 @@
       "summary_ja": "ブレーキ排出ガス試験は3つのセクションから成り、各セクションには複数のイベントを含むトリップが含まれる。ブレーキ排出ガスを発生させる主なイベントは減速イベントである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "入力パラメータ"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-dd7da620",
@@ -3706,8 +3656,7 @@
       "summary_ja": "ブレーキ排出ガス試験を正確に実施するためには、試験施設はシステムレイアウト、冷却気流、温度に関する附属書4の7.項の要件を満たしていることを確認し、文書化しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "試験設定準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-502d5f93",
@@ -3722,8 +3671,7 @@
       "summary_ja": "ブレーキ排出ガスに関する車両型の変更や、新しい車両電動化タイプまたは補間ファミリーの追加は、型式承認当局に通知しなければならない。当局は、変更が既存の承認範囲内であると判断するか、追加の試験報告書を要求することができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "一般情報"
+      "prev_uid": null
     },
     {
       "uid": "R179-ab3c3378",
@@ -3783,8 +3731,7 @@
       "summary_ja": "承認の確認または拒否は、変更点を明記し、5.3.項に規定された手続きに従って、本規則を適用する協定締約国に通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル適用"
+      "prev_uid": null
     },
     {
       "uid": "R179-7cd57eff",
@@ -3799,8 +3746,7 @@
       "summary_ja": "承認の延長を発行する型式承認当局は、延長に一連番号を付与し、附属書2の様式に従った通報様式を用いて、本規則を適用する他の締約国に通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル中断"
+      "prev_uid": null
     },
     {
       "uid": "R179-943d742f",
@@ -3815,8 +3761,7 @@
       "summary_ja": "既存の型式承認は、新しい車両モデルの追加などにより延長することができるが、追加される車両は9.1.項の要件を満たさなければならない。これにより、型式承認当局による追加の検証が必要となる場合がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル品質チェック"
+      "prev_uid": null
     },
     {
       "uid": "R179-e1b0b141",
@@ -3831,8 +3776,7 @@
       "summary_ja": "部品試験台におけるブレーキ排出ガス試験のCoP検証チェックは12ヶ月ごとに1回実施され、各ブレーキコーナー排出ガスファミリーから無作為に選ばれたサンプルをWLTP-Brakeサイクルで試験し、その結果をCoP評価に用いるものとする。試験結果は、複数の車両タイプで12ヶ月間使用することができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "方法説明"
+      "prev_uid": null
     },
     {
       "uid": "R179-16ef4ea4",
@@ -3907,8 +3851,7 @@
       "summary_ja": "本規則に基づく車両タイプの承認は、本規則10項の要件が遵守されない場合に限り、取り消されることがある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "前ブレーキ"
+      "prev_uid": null
     },
     {
       "uid": "R179-e74627b9",
@@ -3923,8 +3866,7 @@
       "summary_ja": "本規則を適用する締約国が承認を取り消した場合、附属書2の様式に従う通報書を用いて、他の締約国に直ちに通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "後ブレーキ"
+      "prev_uid": null
     },
     {
       "uid": "R179-4c025fdf",
@@ -3939,8 +3881,7 @@
       "summary_ja": "承認保有者が承認された車両タイプの製造を中止した場合、承認を付与した型式承認機関に通知し、当該機関は附属書2の様式に従う通報書の写しにより他の締約国に通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "粒子状物質質量測定"
+      "prev_uid": null
     },
     {
       "uid": "R179-167f2dee",
@@ -3955,8 +3896,7 @@
       "summary_ja": "本規則を適用する締約国は、承認試験を担当する技術サービスおよび承認を付与する型式承認機関の名称と住所を国連事務局に通知しなければならない。また、他の国で発行された承認関連の様式を送付すべき機関についても通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "イベントベースファイル"
+      "prev_uid": null
     },
     {
       "uid": "R179-c4c60c89",
@@ -3971,8 +3911,7 @@
       "summary_ja": "特殊用途車両に関する規定が定められている。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "一般校正要件"
+      "prev_uid": null
     },
     {
       "uid": "R179-20120571",
@@ -4017,8 +3956,7 @@
       "summary_ja": "制動力配分は1%とする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "制動力配分"
+      "prev_uid": null
     },
     {
       "uid": "R179-feded541",
@@ -4033,8 +3971,7 @@
       "summary_ja": "ブレーキ粒子排出量は3mg/kmとし、摩擦制動分担係数は2とする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキ粒子排出量製造者申告値"
+      "prev_uid": null
     },
     {
       "uid": "R179-4512fe2b",
@@ -4049,8 +3986,7 @@
       "summary_ja": "ブレーキパッドのサイズは1cm²とする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキパッドのサイズ"
+      "prev_uid": null
     },
     {
       "uid": "R179-0256123f",
@@ -4065,8 +4001,7 @@
       "summary_ja": "ブレーキシューのサイズは1cm²とする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキシューのサイズ"
+      "prev_uid": null
     },
     {
       "uid": "R179-ef70d100",
@@ -4081,8 +4016,7 @@
       "summary_ja": "代表的な車両、コンポーネント、または独立技術ユニットの写真及び図面を提出しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "情報文書"
+      "prev_uid": null
     },
     {
       "uid": "R179-7d8b47c0",
@@ -4193,8 +4127,7 @@
       "summary_ja": "推進エネルギー変換装置の製造者を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "車両固有摩擦制動分担係数cの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-2174410e",
@@ -4209,8 +4142,7 @@
       "summary_ja": "推進エネルギー変換装置に表示されている、又はその他の識別方法による製造者コードを記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "製造者コード"
+      "prev_uid": null
     },
     {
       "uid": "R179-0a836ca9",
@@ -4225,8 +4157,7 @@
       "summary_ja": "内燃機関に関する情報を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦仕事の決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-e9bf3efb",
@@ -4337,8 +4268,7 @@
       "summary_ja": "本項は燃料に関する情報を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦ブレーキトルクの決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-d295d281",
@@ -4353,8 +4283,7 @@
       "summary_ja": "本項はディーゼル、ガソリン、LPG、天然ガス、バイオメタン、エタノール (E 85)、バイオディーゼル、水素といった燃料の種類を列挙する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "トルクベース法"
+      "prev_uid": null
     },
     {
       "uid": "R179-2050a0ba",
@@ -4401,8 +4330,7 @@
       "summary_ja": "本項は電動パワートレイン（PEVのみ）に関する情報を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cp値の決定"
+      "prev_uid": null
     },
     {
       "uid": "R179-1b31eff9",
@@ -4417,8 +4345,7 @@
       "summary_ja": "本項は電動パワートレインの一般説明を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキダイナモメーターの準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-026967e7",
@@ -4545,8 +4472,7 @@
       "summary_ja": "駆動用REESSに関する情報が提供されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "操作"
+      "prev_uid": null
     },
     {
       "uid": "R179-4e683601",
@@ -4737,8 +4663,7 @@
       "summary_ja": "電動モーターに関する情報を提供しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cpの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-bfde164b",
@@ -4785,8 +4710,7 @@
       "summary_ja": "電力コントローラーに関する情報を提供しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Ceの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-203ddbb9",
@@ -4865,8 +4789,7 @@
       "summary_ja": "推進エネルギー変換装置の組み合わせに関する情報を提供するものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "推進エネルギー変換装置の組み合わせ"
+      "prev_uid": null
     },
     {
       "uid": "R179-4e59e87d",
@@ -4881,8 +4804,7 @@
       "summary_ja": "当該車両がハイブリッド電気自動車であるか否かを記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ハイブリッド電気自動車"
+      "prev_uid": null
     },
     {
       "uid": "R179-93e1198f",
@@ -4897,8 +4819,7 @@
       "summary_ja": "ハイブリッド電気自動車の区分が外部充電型（OVC）か非外部充電型（NOVC）かを記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ハイブリッド電気自動車のカテゴリー"
+      "prev_uid": null
     },
     {
       "uid": "R179-8c57c53c",
@@ -4913,8 +4834,7 @@
       "summary_ja": "作動モード切替スイッチの有無を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "運転モードスイッチ"
+      "prev_uid": null
     },
     {
       "uid": "R179-48657f1a",
@@ -4993,8 +4913,7 @@
       "summary_ja": "エネルギー貯蔵装置（REESS、コンデンサ、フライホイール/発電機など）について説明しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "エネルギー貯蔵装置の説明"
+      "prev_uid": null
     },
     {
       "uid": "R179-530c5e54",
@@ -5169,8 +5088,7 @@
       "summary_ja": "電動機について、各種類を個別に記述しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "電動機（各電動機の種類を個別に記述）"
+      "prev_uid": null
     },
     {
       "uid": "R179-026967e7",
@@ -5329,8 +5247,7 @@
       "summary_ja": "制御ユニットに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "制御ユニット"
+      "prev_uid": null
     },
     {
       "uid": "R179-530c5e54",
@@ -5393,8 +5310,7 @@
       "summary_ja": "電力コントローラに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "パワーコントローラー"
+      "prev_uid": null
     },
     {
       "uid": "R179-026967e7",
@@ -5457,8 +5373,7 @@
       "summary_ja": "燃料電池ハイブリッド車であるか否かを示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "FCHV"
+      "prev_uid": null
     },
     {
       "uid": "R179-3bfef99e",
@@ -5553,8 +5468,7 @@
       "summary_ja": "電気エネルギー変換装置に関する情報を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "電気エネルギー変換装置"
+      "prev_uid": null
     },
     {
       "uid": "R179-aa99bba9",
@@ -5761,8 +5675,7 @@
       "summary_ja": "クラッチについて記述する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "シャシーダイナモメーター設定"
+      "prev_uid": null
     },
     {
       "uid": "R179-e3a628fc",
@@ -5793,8 +5706,7 @@
       "summary_ja": "変速機に関する情報を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "試験シーケンス"
+      "prev_uid": null
     },
     {
       "uid": "R179-cc0b2333",
@@ -5841,8 +5753,7 @@
       "summary_ja": "ギア比、内部変速機ギア比、最終減速比、および総ギア比を記載しなければならない。CVTの場合は最大値を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "シャシーダイナモメーター試験品質基準"
+      "prev_uid": null
     },
     {
       "uid": "R179-3322c6d3",
@@ -5857,8 +5768,7 @@
       "summary_ja": "ギアチェンジに関する情報を記載しなければならない。ただし、自動変速機には適用しない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "品質チェックに使用される信号の計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-736b1e4c",
@@ -5873,8 +5783,7 @@
       "summary_ja": "1速ギアの除外の有無、各ギアのn_95_high、nmin_driveの各値、加速/定速走行および減速フェーズのn_min_drive_set、初期期間のパラメータ、およびASMの使用の有無を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "実測速度と目標速度"
+      "prev_uid": null
     },
     {
       "uid": "R179-dacd5a6f",
@@ -6529,8 +6438,7 @@
       "summary_ja": "ブレーキパッドのサイズを平方センチメートル単位で記載すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキパッドのサイズ"
+      "prev_uid": null
     },
     {
       "uid": "R179-574cde85",
@@ -6801,8 +6709,7 @@
       "summary_ja": "ブレーキシューのサイズを平方センチメートルで示す情報である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキシューのサイズ"
+      "prev_uid": null
     },
     {
       "uid": "R179-804b269f",
@@ -6929,8 +6836,7 @@
       "summary_ja": "本項では、制動力配分について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "制動力配分"
+      "prev_uid": null
     },
     {
       "uid": "R179-4930640b",
@@ -7009,8 +6915,7 @@
       "summary_ja": "本項では、ブレーキ粒子排出量の製造者申告値について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキ粒子排出量製造者申告値"
+      "prev_uid": null
     },
     {
       "uid": "R179-cd57894d",
@@ -7612,8 +7517,7 @@
       "summary_ja": "本項では、ブレーキの組み合わせについて記述する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "情報文書"
+      "prev_uid": null
     },
     {
       "uid": "R179-5f7346af",
@@ -7876,8 +7780,7 @@
       "summary_ja": "本規則は、ブレーキからの粒子排出量を測定するための標準的な動力計試験方法を定義し、駆動サイクル、冷却空気、動力計制御、ブレーキエンクロージャ、サンプリングトンネル、エアロゾルサンプリングシステム、データ収集を含む複数のサブシステムの統合が必要である。図A4/1は、試験に必要な最低限のサブシステムを含む指示的なレイアウトを示しており、空調ユニット、ブレーキエンクロージャ、サンプリングトンネル、サンプリングプローブ、流量測定装置が含まれる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦制動分担係数のオフセット（「申告」）"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-35358f68",
@@ -7922,8 +7825,7 @@
       "summary_ja": "調整された冷却空気は、ブレーキの冷却とエアロゾルの輸送を担い、温度、湿度、清浄度、流量が安定している必要がある。空調ユニットは、冷却、加熱、加湿機能を備え、広範囲の気流に対応できる可変流量送風機で構成されなければならず、その最小および最大動作流量には特定の要件が適用される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "空調ユニットと冷却空気"
+      "prev_uid": null
     },
     {
       "uid": "R179-68fb1dae",
@@ -7938,8 +7840,7 @@
       "summary_ja": "試験施設は、調整された冷却空気の温度と湿度を継続的に監視・制御するため、ブレーキエンクロージャの上流に高精度の温度センサー（±1℃）と湿度センサー（±5%）を設置しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却空気調整"
+      "prev_uid": null
     },
     {
       "uid": "R179-6e811940",
@@ -7986,8 +7887,7 @@
       "summary_ja": "本項は冷却空気の清浄化に関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却空気清浄"
+      "prev_uid": null
     },
     {
       "uid": "R179-87a37401",
@@ -8098,8 +7998,7 @@
       "summary_ja": "試験施設は、ブレーキ排出ガス試験手順全体を通じて冷却空気流量を測定し、報告しなければならない。冷却空気流量の測定は、以下の要件を満たさなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "冷却気流"
+      "prev_uid": null
     },
     {
       "uid": "R179-2f9359c0",
@@ -8114,8 +8013,7 @@
       "summary_ja": "ブレーキダイナモメータは、試験中のブレーキに制御された運動エネルギーを供給する技術システムである。主に回転運動エネルギーを熱エネルギーに変換する（図A4/2 ‒ S1）。図A4/2は、ブレーキダイナモメータを含む試験システムのレイアウトと、相互作用を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキダイナモメーターと自動化システム"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-4957afbe",
@@ -8145,8 +8043,7 @@
       "summary_ja": "ブレーキエンクロージャは、ブレーキ排出ガス試験中にブレーキアセンブリが取り付けられる試験室である。これは、未処理の空気が侵入してブレーキアセンブリ周囲を流れる空気を汚染するのを防ぐ密閉されたチャンバーである。ブレーキエンクロージャは、均一な調整空気をブレーキに送り込み、エアロゾルをサンプリングトンネルに輸送する。エンクロージャの設計要件は、ブレーキ冷却及び粒子輸送効率に関連するシステムの比較可能性を確保するための一般的なガイドラインを提供することを目的とする。図A4/1は、ブレーキエンクロージャの指示的な位置（要素4）を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキエンクロージャ設計"
+      "prev_uid": null
     },
     {
       "uid": "R179-b2ad45a8",
@@ -8332,8 +8229,7 @@
       "summary_ja": "ブレーキ排出ガス試験を実施する試験設備は、試験中のブレーキおよび車両に関連する特定の入力パラメータを利用可能にしなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "入力パラメータ"
+      "prev_uid": null
     },
     {
       "uid": "R179-3b4c658b",
@@ -8348,8 +8244,7 @@
       "summary_ja": "ブレーキ排出ガス試験を開始する前に、試験設備は試験文書の確認、制御プログラムのアップロード、ブレーキディスク/ドラムの取り付け、およびブレーキ振れの測定を含む準備作業を実施しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "試験設定準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-0e3327ca",
@@ -8533,8 +8428,7 @@
       "summary_ja": "すべてのブレーキの試験サイクルは時間ベースのWLTP-Brakeサイクルであり、ブレーキダイナモメータ上の等価線速度の連続制御を必要とする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "一般情報"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-591475c2",
@@ -8564,8 +8458,7 @@
       "summary_ja": "WLTP-Brakeサイクルの適用に関する規定である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル適用"
+      "prev_uid": null
     },
     {
       "uid": "R179-60c389eb",
@@ -8628,8 +8521,7 @@
       "summary_ja": "WLTP-ブレーキサイクルの中断に関する規定が示される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル中断"
+      "prev_uid": null
     },
     {
       "uid": "R179-da17b35b",
@@ -8692,8 +8584,7 @@
       "summary_ja": "WLTP-ブレーキサイクルの正しい実行を検証するため、品質チェックを実施する必要があり、有効な排出ガス試験はすべての基準を遵守しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "WLTPブレーキサイクル品質チェック"
+      "prev_uid": null
     },
     {
       "uid": "R179-4f780fc4",
@@ -8787,8 +8678,7 @@
       "summary_ja": "本段落は、試験方法の概要を説明する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "方法説明"
+      "prev_uid": null
     },
     {
       "uid": "R179-9b0632f9",
@@ -8993,8 +8883,7 @@
       "summary_ja": "試験施設は、前輪ブレーキの慣らし手順を、冷却気流設定、試験パラメータ、ダイナモメータ設定を排出物測定セクションと同じにして実施しなければならない。WLTP-Brakeサイクルを5回連続して繰り返し、各サイクルの間にソークセクションを適用し、特定の温度で開始すること。慣らしセクションは排出物測定と同じダイナモメータで行い、ブレーキ部品を分解してはならず、分解された場合は新しい部品で最初からやり直さなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "前ブレーキ"
+      "prev_uid": null
     },
     {
       "uid": "R179-2c0d1db2",
@@ -9025,8 +8914,7 @@
       "summary_ja": "試験施設は、後輪ブレーキの慣らし手順を、前輪ブレーキで決定された冷却気流（複数の適合気流がある場合は950 N m3/hに近いものを選択）と、排出物測定セクションと同じ試験パラメータおよびダイナモメータ設定を用いて実施しなければならない。WLTP-Brakeサイクルを5回連続して繰り返し、各サイクルの間にソークセクションを適用し、特定の温度で開始すること。慣らしセクションは排出物測定と同じダイナモメータで行い、ブレーキ部品を分解してはならず、分解された場合は新しい部品で最初からやり直さなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "後ブレーキ"
+      "prev_uid": null
     },
     {
       "uid": "R179-903bcd1e",
@@ -9041,8 +8929,7 @@
       "summary_ja": "本項は、ブレーキ排出物試験における粒子状物質（PM）排出物測定の仕様を定め、PMサンプリングシステムがPM質量を定量化し、排出係数を提供することを規定する。試験システムは、PM10とPM2.5を個別のサンプリングシステムで重量測定し、各システムはトンネル内のPMサンプリングプローブを含むものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "粒子状物質質量測定"
+      "prev_uid": null
     },
     {
       "uid": "R179-d0d48178",
@@ -9917,8 +9804,7 @@
       "summary_ja": "イベントベースファイルは、ブレーキ排出ガス試験のデータを記録するためのファイルである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "イベントベースファイル"
+      "prev_uid": null
     },
     {
       "uid": "R179-8914a988",
@@ -10589,8 +10475,7 @@
       "summary_ja": "この段落は将来の使用のために予約されている。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-ed3d7ad1",
@@ -10605,8 +10490,7 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-ed3d7ad1",
@@ -10621,8 +10505,7 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-97b79a85",
@@ -10637,8 +10520,7 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-3e727662",
@@ -10973,8 +10855,7 @@
       "summary_ja": "本項は、ブレーキ排出ガス試験に使用される装置の最小校正要件を規定しており、表A4/15に主要装置の校正基準と間隔がまとめられている。これには、ブレーキダイナモメータ、トルク測定装置、冷却気流測定装置、各種センサー、PM/PNサイクロン分離器、マイクログラム天秤、およびPM/PNサンプリング流量測定装置が含まれる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "一般校正要件"
+      "prev_uid": null
     },
     {
       "uid": "R179-1d08f826",
@@ -12106,8 +11987,7 @@
       "summary_ja": "車両固有摩擦制動分担係数cは、摩擦ブレーキによる消費エネルギーを、路面負荷を考慮して調整された総減速エネルギーで除することにより算出される。正規化基準値は試験サイクルに応じて表A5/1に定められる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "車両固有摩擦制動分担係数cの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-909b561e",
@@ -12138,8 +12018,7 @@
       "summary_ja": "試験施設は、車両固有摩擦制動分担係数を決定するために、本段落に記載された方法を適用しなければならない。ブレーキごとの摩擦仕事は、参照サイクルの全期間にわたる摩擦動力の積分として計算され、数値積分には台形法が用いられる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦仕事の決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-89aaba26",
@@ -12170,8 +12049,7 @@
       "summary_ja": "摩擦動力は、参照サイクルの減速フェーズにおいて、各ブレーキの摩擦制動トルクと測定された車輪回転速度から式6により計算される。車輪回転速度は、ダイナモローラー回転速度と半径比を用いて算出することができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦動力の決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-f5b3a3b7",
@@ -12186,8 +12064,7 @@
       "summary_ja": "本項では、摩擦制動トルクの決定方法について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦ブレーキトルクの決定方法"
+      "prev_uid": null
     },
     {
       "uid": "R179-eadec606",
@@ -12202,8 +12079,7 @@
       "summary_ja": "トルクベース法は、各ブレーキシステムにおける実際の制動トルクを直接測定することを要求する。測定されたトルクが正の値である場合、制動活動を示すものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "トルクベース法"
+      "prev_uid": null
     },
     {
       "uid": "R179-387798ab",
@@ -12282,8 +12158,7 @@
       "summary_ja": "Cp値は、WLTP-Brakeサイクルをブレーキダイナモメータで実行することにより決定され、同一ブレーキ排出ファミリーの全メンバーに適用されるものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cp値の決定"
+      "prev_uid": null
     },
     {
       "uid": "R179-0183d813",
@@ -12298,8 +12173,7 @@
       "summary_ja": "ブレーキダイナモメータおよび試験装置は、附属書4の仕様に従って設定・操作されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ブレーキダイナモメーターの準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-2c0d1db2",
@@ -12330,8 +12204,7 @@
       "summary_ja": "試験施設は、附属書4の手順に従いブレーキシステムを設置し、WLTP-Brakeサイクルを実行し、ブレーキトルクとブレーキ圧力を記録し、Cp,b値の計算にブレーキ排出測定データを使用しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "操作"
+      "prev_uid": null
     },
     {
       "uid": "R179-e7199941",
@@ -12346,8 +12219,7 @@
       "summary_ja": "Cp値はブレーキ圧力とブレーキトルクの関係を表し、式11で計算されるが、変動を考慮して式12のエネルギー加重Cp,b値を使用しなければならない。また、無効な信号を避けるため、式13および14に従ってブレーキ圧力とブレーキトルクを計算し、車両固有の摩擦ブレーキ分担係数計算時には、WLTP-Brakeサイクルのトリップ#10のデータを使用しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Cpの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-093d3e56",
@@ -12362,8 +12234,7 @@
       "summary_ja": "Ceの計算に関する規定は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "Ceの計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-34481642",
@@ -12378,8 +12249,7 @@
       "summary_ja": "各車両には車両固有の摩擦ブレーキ分担係数が割り当てられ、運転者選択可能モードがある場合は最低回生モードで試験されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "車両選択"
+      "prev_uid": null
     },
     {
       "uid": "R179-fb806e33",
@@ -12410,8 +12280,7 @@
       "summary_ja": "本項では、試験準備に関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "準備"
+      "prev_uid": null
     },
     {
       "uid": "R179-51ce652b",
@@ -12583,8 +12452,7 @@
       "summary_ja": "本項では、データ記録に関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "データ記録"
+      "prev_uid": null
     },
     {
       "uid": "R179-c3437069",
@@ -12631,8 +12499,7 @@
       "summary_ja": "シャシダイナモメータ試験の設定は、国連規則第154号の要件に準拠し、23±5 °Cで実施しなければならない。走行抵抗シミュレーション及び関連設定も、国連規則第154号に従うものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "シャシーダイナモメーター設定"
+      "prev_uid": null
     },
     {
       "uid": "R179-2e1bddcc",
@@ -12647,8 +12514,7 @@
       "summary_ja": "試験車両は国連規則第154号附属書B8に従って慣らし運転を行い、ブレーキを適切に慣らさなければならない。試験シーケンスは前処理、浸漬、再充電（該当する場合）に続き、摩擦ブレーキ分担係数を導出するための性能試験で構成される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "試験シーケンス"
+      "prev_uid": null
     },
     {
       "uid": "R179-img-ab57ac87",
@@ -12678,8 +12544,7 @@
       "summary_ja": "シャシダイナモメータ試験では、WLTPブレーキサイクルの正しい実施を確認するため品質チェックを実施し、すべての基準に適合しなければならない。基準を満たせない場合、本規則の表4に記載の摩擦ブレーキ分担係数をデフォルトで使用するものとする。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "シャシーダイナモメーター試験品質基準"
+      "prev_uid": null
     },
     {
       "uid": "R179-629f3f2b",
@@ -12694,8 +12559,7 @@
       "summary_ja": "本項では、品質チェックに使用される信号の計算方法について述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "品質チェックに使用される信号の計算"
+      "prev_uid": null
     },
     {
       "uid": "R179-e1746cf6",
@@ -12710,8 +12574,7 @@
       "summary_ja": "品質チェック基準の計算には速度信号を使用し、測定速度と参照速度を後処理して目標速度と実走行速度信号を得なければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "実測速度と目標速度"
+      "prev_uid": null
     },
     {
       "uid": "R179-a3839d89",
@@ -12758,8 +12621,7 @@
       "summary_ja": "本段落は、式20に示す実走行加速度の計算方法を説明し、図A5/6で平滑化された信号の例を示している。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-70d6f2bf",
@@ -12854,8 +12716,7 @@
       "summary_ja": "IPDWkは式32で算出され、WLTPブレーキ全体のIPDWは全てのブレーキ減速イベントのIPDWkの二乗平均平方根値として算出される。有効な試験のためには、IPDWが30 J/kg未満でなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-ae59ebfa",
@@ -12886,8 +12747,7 @@
       "summary_ja": "WLTPブレーキ全体のIPDRは、全てのブレーキ減速イベントのIPDRkの二乗平均平方根値として算出され、有効な試験のためにはIPDRが50%未満でなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-c25008ab",
@@ -12918,8 +12778,7 @@
       "summary_ja": "製造者は、代替方法の同等性を証明するため、適用を求める車両電動化タイプごとに少なくとも1台の車両を用いて実証しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "等価性証明のための車両選択"
+      "prev_uid": null
     },
     {
       "uid": "R179-32dd9991",
@@ -12934,8 +12793,7 @@
       "summary_ja": "同等性実証のため、車両は本附属書第4.2項に従いブレーキトルク計等を装備し、本附属書第4.5項の試験シーケンスに従ってWLTP-ブレーキサイクルで試験されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "代替方法の試験"
+      "prev_uid": null
     },
     {
       "uid": "R179-0ef65bbe",
@@ -12950,8 +12808,7 @@
       "summary_ja": "代替方法は、測定された車両固有の摩擦制動分担係数が参照方法と比較して、相対誤差10%以内または絶対誤差0.02以内であれば同等とみなされる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "等価性基準"
+      "prev_uid": null
     },
     {
       "uid": "R179-c3120ce6",
@@ -12966,8 +12823,7 @@
       "summary_ja": "製造者は、WLTP-Brakeサイクルのトリップ#10を実行して車両固有の摩擦制動分担係数を計算することができ、これはWLTP-Brakeサイクルの結果と同等とみなされるが、不一致がある場合はWLTP-Brakeサイクルの結果が優先される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "prev_uid": null
     },
     {
       "uid": "R179-377ca94b",
@@ -12982,8 +12838,7 @@
       "summary_ja": "本項では、摩擦制動分担係数のオフセット（「宣言」）について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "摩擦制動分担係数のオフセット（「申告」）"
+      "prev_uid": null
     },
     {
       "uid": "R179-a29ed3d8",
@@ -12998,8 +12853,7 @@
       "summary_ja": "車両固有の摩擦制動分担係数は、製造者により、測定値の50%または絶対値0.05のいずれか大きい方まで増加させることができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "本附属書に従って計算された車両固有摩擦制動分担係数は、製造者によって増加させることができる"
+      "prev_uid": null
     },
     {
       "uid": "R179-41fe3e69",
@@ -13014,8 +12868,7 @@
       "summary_ja": "製造者は、認可当局の承認を得て、摩擦制動分担係数を、本規則の表4または本附属書7.1.1項のいずれか大きい方の値まで増加させることができる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null,
-      "title_ja": "製造者の要求および認可当局の承認により、製造者は摩擦制動を増加させることができる"
+      "prev_uid": null
     }
   ]
 }

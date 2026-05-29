@@ -411,7 +411,7 @@ def build_index_page(regulations: list[str]) -> None:
                 # 画像ブロックは翻訳カウントから除外
                 text_blocks = [p for p in data["paragraphs"] if p.get("type", "paragraph") == "paragraph"]
                 total = len(text_blocks)
-                translated = sum(1 for p in text_blocks if p.get("status") == "translated")
+                translated = sum(1 for p in text_blocks if p.get("status") in ("done", "translated"))
                 reg_data.append({
                     "number": reg,
                     "title": data.get("title", reg),

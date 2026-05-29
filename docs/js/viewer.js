@@ -186,17 +186,9 @@
     }
 
     // 最初の可視項目へスクロール
-    var firstItem = null;
-    allItems.forEach(function (el) {
-      if (!firstItem && el.dataset.annexId === String(annexId) && el.style.display !== 'none') {
-        firstItem = el;
-      }
-    });
-    if (firstItem) {
-      var uid = firstItem.dataset.uid;
-      var card = document.getElementById('para-' + uid);
-      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    // UID重複があるため getElementById ではなく data-annex-id で右ペインを検索
+    var firstCard = document.querySelector('.para-card[data-annex-id="' + annexId + '"]');
+    if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   // ---------- 変更理由ポップアップ ----------

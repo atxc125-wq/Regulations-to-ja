@@ -162,7 +162,8 @@
                id="para-{{ p.uid }}"
                data-uid="{{ p.uid }}"
                data-number="{{ p.number }}"
-               data-parent="{{ p.parent or '' }}">
+               data-parent="{{ p.parent or '' }}"
+               {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}>
 
         <div class="para-card-header" onclick="toggleParagraph('{{ p.uid }}')">
           <div class="para-meta">

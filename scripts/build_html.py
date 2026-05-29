@@ -89,6 +89,145 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
             p["_in_annex"] = True
 
 
+def build_annex_tree(paragraphs: list[dict]) -> list[dict]:
+    """附属書ツリーを構築する（左ペイン用）。
+    整数番号の第2出現ブロック（附属書 TOC セクション）から各附属書のタイトルを取得する。
+    _nav_hidden フラグ付与前に呼ぶこと。
+    """
+    import re as _re
+
+    # num="1" の出現位置を列挙して TOC セクション境界を特定
+    occ1 = [i for i, p in enumerate(paragraphs)
+            if p.get("type") != "image" and p.get("number", "") == "1"]
+    if len(occ1) < 2:
+        return []
+
+    # 第2出現 (附属書TOCの先頭) ～ 第3出現 (本文の先頭) が附属書TOCセクション
+    annex_toc_start = occ1[1]
+    annex_toc_end   = occ1[2] if len(occ1) >= 3 else len(paragraphs)
+
+    entries: dict = {}
+    for i, p in enumerate(paragraphs):
+        if i < annex_toc_start or i >= annex_toc_end:
+            continue
+        if p.get("type") == "image":
+            continue
+        num = p.get("number", "")
+        if not _re.fullmatch(r"\d+", num):
+            continue
+        n = int(num)
+        if not (1 <= n <= 22):
+            continue
+        title = (p.get("title") or "").strip()
+        # "......" ドットリーダーを除去
+        clean = _re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
+        if clean.lower().startswith("appendix"):
+            continue
+        if n not in entries:
+            entries[n] = {
+                "number": n,
+                "title": clean,
+                "title_ja": (p.get("title_ja") or "").rstrip(". "),
+            }
+
+    return [entries[n] for n in sorted(entries.keys())]
+
+
+def mark_annex_ids(paragraphs: list[dict]) -> None:
+    """附属書段落に _annex_id（1–22）を付与する。
+    mark_annex_paragraphs() の後に呼ぶこと。
+    Annex 10+ は level=1 の "Annex N" タイトルで識別。
+    Annex 1–9 は番号リスタートで識別。
+    """
+    import re as _re
+
+    # Step 1: main_body_end（最後の実質的な chapter 12 段落）を特定
+    main_body_end = -1
+    for i, p in enumerate(paragraphs):
+        if p.get("type") == "image":
+            continue
+        num = p.get("number", "")
+        try:
+            top = int(num.split('.')[0])
+        except (ValueError, IndexError):
+            continue
+        if top != 12:
+            continue
+        text = p.get("text", "") or ""
+        title = p.get("title", "") or ""
+        if "......" in text or "......" in title:
+            continue
+        if text.strip().startswith("E/ECE/") or title.strip().startswith("E/ECE/"):
+            continue
+        main_body_end = i
+
+    if main_body_end < 0:
+        return
+
+    # Step 2: Annex 10+ の明示ヘッダー位置を収集
+    annex_10plus = []  # list of (annex_num, start_idx)
+    for i, p in enumerate(paragraphs):
+        if i <= main_body_end or p.get("type") == "image":
+            continue
+        if p.get("level", 1) != 1:
+            continue
+        title = (p.get("title") or "").strip()
+        m = _re.match(r'^Annex\s+(\d+)\b', title, _re.IGNORECASE)
+        if m:
+            n = int(m.group(1))
+            if n >= 10:
+                annex_10plus.append((n, i))
+
+    # Step 3: Annex 1–9 グループを検出（リスタート検出）
+    annex_10_start = annex_10plus[0][1] if annex_10plus else len(paragraphs)
+    groups = []  # list of list[int]
+    cur = []
+    last_top = None
+
+    for i, p in enumerate(paragraphs):
+        if i <= main_body_end or i >= annex_10_start:
+            continue
+        if p.get("type") == "image":
+            continue
+        num = p.get("number", "")
+        try:
+            top = int(num.split('.')[0])
+        except (ValueError, IndexError):
+            continue
+        if top <= 0:
+            continue
+        if last_top is not None and top < last_top and last_top > 1:
+            if cur:
+                groups.append(cur)
+            cur = [i]
+        else:
+            cur.append(i)
+        last_top = top
+
+    if cur:
+        groups.append(cur)
+
+    # Step 4: グループ → Annex 1, 2, 3, … に ID を付与
+    # mark_annex_paragraphs() がフォームグループを取りこぼす場合があるため
+    # _in_annex も確実にセットする
+    # Annex 1–9 の範囲を超えたグループ（Appendix 等）は最後の Annex に含める
+    last_assigned = 0
+    for g_idx, indices in enumerate(groups):
+        annex_num = min(g_idx + 1, 9)
+        last_assigned = annex_num
+        for idx in indices:
+            paragraphs[idx]["_annex_id"] = annex_num
+            paragraphs[idx]["_in_annex"] = True
+
+    # Step 5: Annex 10+ に ID を付与
+    for j, (annex_num, start) in enumerate(annex_10plus):
+        end = annex_10plus[j + 1][1] if j + 1 < len(annex_10plus) else len(paragraphs)
+        for i in range(start, end):
+            if paragraphs[i].get("type") != "image":
+                paragraphs[i]["_annex_id"] = annex_num
+                paragraphs[i]["_in_annex"] = True
+
+
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
     type=="image" およびノイズ段落はナビツリーに含めない。
@@ -176,9 +315,9 @@ def build_regulation_page(regulation: str, version: str) -> None:
     # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
 
-    # ノイズフラグ付与より前にツリーを構築する
-    # （is_nav_noise が目次エントリを隠してしまう前に章リストを確定させる）
+    # ノイズフラグ付与前にツリーを構築する
     tree = build_tree(paragraphs)
+    annex_tree = build_annex_tree(paragraphs)
 
     # ノイズフラグを付与してから用語アノテーションを追加
     mark_footnote_noise(paragraphs)
@@ -196,6 +335,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
 
     # _nav_hidden 付与後に附属書フラグを付与（TOCノイズをスキップして正確に判定）
     mark_annex_paragraphs(paragraphs)
+    mark_annex_ids(paragraphs)
 
     # 中ペインの重複排除: 同じ number が複数回出現する場合（附属書が同じ番号を繰り返す）
     # 文書順で最初に出現した可視段落のみ _first_occ=True とする
@@ -227,6 +367,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
         source_date=data.get("source_date", ""),
         paragraphs=paragraphs,
         tree=tree,
+        annex_tree=annex_tree,
         glossary_terms=glossary_terms,
     )
     output_path.write_text(html, encoding="utf-8")

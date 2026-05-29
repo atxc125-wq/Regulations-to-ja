@@ -124,6 +124,81 @@
     }
   };
 
+  // ---------- 左ペイン: 附属書クリック → 中ペイン絞り込み ----------
+
+  window.selectAnnex = function (annexId) {
+    var anyVisible = false;
+    var allItems = document.querySelectorAll('.para-nav-item');
+    allItems.forEach(function (el) {
+      el.classList.remove('has-nav-children', 'nav-expanded');
+      delete el.dataset.deepHidden;
+      var show = el.dataset.annexId === String(annexId);
+      el.style.display = show ? '' : 'none';
+      if (show) anyVisible = true;
+    });
+
+    // level > 3 を折りたたむ
+    allItems.forEach(function (el) {
+      if (el.style.display === 'none') return;
+      var level = parseInt(el.dataset.level || '1', 10);
+      if (level > 3) {
+        el.style.display = 'none';
+        el.dataset.deepHidden = '1';
+      }
+    });
+
+    // has-nav-children を付与（直接の子が deepHidden な項目）
+    allItems.forEach(function (el) {
+      if (el.style.display === 'none' && !el.dataset.deepHidden) return;
+      var num = el.dataset.number;
+      if (!num) return;
+      var hasHiddenChild = false;
+      allItems.forEach(function (child) {
+        if (child.dataset.deepHidden && child.dataset.parent === num) {
+          hasHiddenChild = true;
+        }
+      });
+      el.classList.toggle('has-nav-children', hasHiddenChild);
+    });
+
+    var placeholder = document.getElementById('para-nav-placeholder');
+    if (placeholder) placeholder.style.display = anyVisible ? 'none' : '';
+
+    // 章ツリーのアクティブを解除し、附属書ツリーのアクティブを更新
+    document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {
+      btn.classList.remove('active');
+    });
+    document.querySelectorAll('#annex-tree .tree-btn').forEach(function (btn) {
+      var item = btn.closest('.tree-item');
+      btn.classList.toggle('active', item && item.dataset.number === 'annex-' + annexId);
+    });
+
+    closeMobilePane();
+
+    // モバイルナビバーを更新
+    var annexItem = document.querySelector('#annex-tree .tree-item[data-number="annex-' + annexId + '"]');
+    if (annexItem) {
+      var jaEl = annexItem.querySelector('.tree-title-ja');
+      var enEl = annexItem.querySelector('.tree-title-en');
+      var title = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+      var mobileEl = document.getElementById('mobile-chapter-text');
+      if (mobileEl) mobileEl.textContent = 'Annex ' + annexId + (title ? ' ' + title : '');
+    }
+
+    // 最初の可視項目へスクロール
+    var firstItem = null;
+    allItems.forEach(function (el) {
+      if (!firstItem && el.dataset.annexId === String(annexId) && el.style.display !== 'none') {
+        firstItem = el;
+      }
+    });
+    if (firstItem) {
+      var uid = firstItem.dataset.uid;
+      var card = document.getElementById('para-' + uid);
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   // ---------- 変更理由ポップアップ ----------
 
   window.showJustification = function (uid) {

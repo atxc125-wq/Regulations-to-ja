@@ -23,8 +23,17 @@
 
   // ---------- 中ペイン: 段落ナビをクリックでスクロール ----------
 
-  window.selectParagraph = function (uid) {
-    var target = document.getElementById('para-' + uid);
+  window.selectParagraph = function (uid, annexId) {
+    var target = null;
+    // UID重複対策: AnnexIDが指定されていれば data-annex-id+data-uid で絞り込む
+    if (annexId) {
+      target = document.querySelector(
+        '.para-card[data-annex-id="' + annexId + '"][data-uid="' + uid + '"]'
+      );
+    }
+    if (!target) {
+      target = document.getElementById('para-' + uid);
+    }
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

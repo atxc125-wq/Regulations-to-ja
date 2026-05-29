@@ -30,14 +30,20 @@ def load_json(path: Path) -> dict:
 
 def is_nav_noise(p: dict) -> bool:
     """ナビゲーションツリーに表示すべきでないノイズ段落かどうかを判定する。
-    - PDFページヘッダー（文書番号行）
-    - 目次ドット行
+    - PDFページヘッダー（文書番号行、"E/ECE/..."）
+    - 目次ドット行（"......"）
+    - PDFページ走りヘッダー（3桁以上の純整数番号 = ページ番号）
+      → 章番号は最大でも2桁（22章以下）なので3桁以上は全てページヘッダー
     """
+    import re as _re
     text = (p.get("text") or "").strip()
     title = (p.get("title") or "").strip()
-    if text.startswith("E/ECE/"):
+    number = (p.get("number") or "").strip()
+    if text.startswith("E/ECE/") or title.startswith("E/ECE/"):
         return True
     if "......" in title or "......" in text:
+        return True
+    if _re.fullmatch(r"\d{3,}", number):
         return True
     return False
 

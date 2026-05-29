@@ -140,12 +140,6 @@ _RESPONSE_SCHEMA = {
     "required": ["translation", "summary_ja"],
 }
 
-# JSON Schema: 見出し一括翻訳用（段落番号→日本語訳のオブジェクト）
-_HEADING_SCHEMA = {
-    "type": "OBJECT",
-    "description": "段落番号をキー、日本語見出し訳を値とするオブジェクト",
-    "additionalProperties": {"type": "STRING"},
-}
 
 
 def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.5-flash",
@@ -239,7 +233,6 @@ def translate_headings_gemini(
         "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
         "generationConfig": {
             "responseMimeType": "application/json",
-            "responseSchema": _HEADING_SCHEMA,
             "temperature": 0.1,
         },
     }

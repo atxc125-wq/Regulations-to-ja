@@ -673,19 +673,24 @@ def body_cmd(
 
 
 @cli.command("headings")
-@click.option('--reg',     required=True,                      help='法規番号 (例: R13)')
-@click.option('--version', required=True,                      help='バージョン (例: Rev9)')
-@click.option('--engine',  default='gemini',
+@click.option('--reg',        required=True,                      help='法規番号 (例: R13)')
+@click.option('--version',    required=True,                      help='バージョン (例: Rev9)')
+@click.option('--engine',     default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
-              show_default=True,                                help='使用する翻訳エンジン')
-@click.option('--model',   default='gemini-2.5-flash',
-              show_default=True,                                help='使用するモデル名')
-@click.option('--overwrite', is_flag=True,                     help='既存の title_ja も上書きする')
-@click.option('--dry-run',   is_flag=True,                     help='API未使用。対象見出しを一覧表示して終了')
-def headings_cmd(reg: str, version: str, engine: str, model: str, overwrite: bool, dry_run: bool):
+              show_default=True,                                   help='使用する翻訳エンジン')
+@click.option('--model',      default='gemini-2.5-flash',
+              show_default=True,                                   help='使用するモデル名')
+@click.option('--overwrite',  is_flag=True,                       help='既存の title_ja も上書きする')
+@click.option('--dry-run',    is_flag=True,                       help='API未使用。対象見出しを一覧表示して終了')
+@click.option('--chunk-size', default=200, type=int, show_default=True,
+              help='1回のAPI呼び出しで送る見出し数。大きすぎると漏れが発生する')
+@click.option('--delay',      default=2.0, type=float, show_default=True,
+              help='チャンク間の待機秒数')
+def headings_cmd(reg: str, version: str, engine: str, model: str,
+                 overwrite: bool, dry_run: bool, chunk_size: int, delay: float):
     """
     段落・章の見出し（title）を一括翻訳し title_ja フィールドに保存する。
-    1回のAPI呼び出しで全見出しをまとめて処理するため低コスト。
+    --chunk-size で分割して複数回のAPI呼び出しに分けることができる。
     """
     glossary_terms = load_glossary(reg)
     system_prompt  = build_system_prompt(glossary_terms)
@@ -712,38 +717,42 @@ def headings_cmd(reg: str, version: str, engine: str, model: str, overwrite: boo
     if not api_key:
         raise click.ClickException(f"{key_var} 環境変数が設定されていません。")
 
-    click.echo(f"Translating {len(targets)} headings via {engine} API (single batch call)...")
-
     heading_pairs = [(b['number'], b['title']) for b in targets]
+    chunks = [heading_pairs[i:i+chunk_size] for i in range(0, len(heading_pairs), chunk_size)]
+    click.echo(f"Translating in {len(chunks)} chunk(s) of up to {chunk_size} headings each...")
 
-    try:
-        if engine == "gemini":
-            results = translate_headings_gemini(api_key, system_prompt, heading_pairs, model)
-        else:
-            # Anthropic: 見出しを1件ずつ翻訳（バッチAPIがないため）
-            results = {}
-            anthropic_client = anthropic_sdk.Anthropic(api_key=api_key)
-            for num, title in heading_pairs:
-                r = _translate_anthropic(api_key, system_prompt, num, title, title)
-                results[num] = r.get('translation', title)
-
-        # title_ja を書き込む
-        written = 0
-        for b in targets:
-            ja = results.get(b['number'], '').strip()
-            if ja:
-                b['title_ja'] = ja
-                written += 1
-                click.echo(f"  [{b['number']:6s}] {b['title']:40s} → {ja}")
+    all_results: dict[str, str] = {}
+    for ci, chunk in enumerate(chunks):
+        click.echo(f"\n  Chunk {ci+1}/{len(chunks)} ({len(chunk)} headings)...")
+        try:
+            if engine == "gemini":
+                results = translate_headings_gemini(api_key, system_prompt, chunk, model)
             else:
-                click.echo(f"  [{b['number']:6s}] WARNING: no result for this entry")
+                results = {}
+                for num, title in chunk:
+                    r = _translate_anthropic(api_key, system_prompt, num, title, title)
+                    results[num] = r.get('translation', title)
+            all_results.update(results)
+        except Exception as e:
+            click.echo(f"  ✗ Chunk {ci+1} ERROR: {e}", err=True)
 
-        save_structured(data, reg, version)
-        click.echo(f"\n✓ {written}/{len(targets)} headings translated.")
-        click.echo(f"Saved → data/{reg}/{version}/structured.json")
+        if delay > 0 and ci + 1 < len(chunks):
+            time.sleep(delay)
 
-    except Exception as e:
-        raise click.ClickException(str(e))
+    # title_ja を書き込む
+    written = 0
+    for b in targets:
+        ja = all_results.get(b['number'], '').strip()
+        if ja:
+            b['title_ja'] = ja
+            written += 1
+            click.echo(f"  [{b['number']:6s}] {b['title']:40s} → {ja}")
+        else:
+            click.echo(f"  [{b['number']:6s}] WARNING: no result for this entry")
+
+    save_structured(data, reg, version)
+    click.echo(f"\n✓ {written}/{len(targets)} headings translated.")
+    click.echo(f"Saved → data/{reg}/{version}/structured.json")
 
 
 if __name__ == '__main__':

@@ -70,14 +70,19 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
     _nav_hidden（TOC ノイズ）付与後に呼ぶこと。
     本文の最大トップ章番号の半分以下に章番号が戻った時点で附属書開始と判定する。
     例: 主要章1-12 → Annex で 2.x が再出現 → 2 < 12//2+1=7 → in_annex=True
+
+    seen_body フラグ: level>=2 段落が出現して初めて max_top を更新する。
+    本文前の Introduction や附属書 TOC ノイズ漏れが max_top に影響しないようにする。
     """
     max_top = 0
     in_annex = False
+    seen_body = False  # level>=2 段落が出現したら True（本文に入ったと判定）
 
     for p in paragraphs:
         if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
         num = p.get("number", "")
+        level = p.get("level", 1)
         try:
             top = int(num.split('.')[0])
         except (ValueError, IndexError):
@@ -85,10 +90,13 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
         if top <= 0:
             continue
 
+        if level >= 2:
+            seen_body = True
+
         if not in_annex:
-            if max_top >= 2 and top < max_top // 2 + 1:
+            if seen_body and max_top >= 2 and top < max_top // 2 + 1:
                 in_annex = True
-            else:
+            elif seen_body:
                 max_top = max(max_top, top)
 
         if in_annex:

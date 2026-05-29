@@ -532,6 +532,7 @@ def body_cmd(
 
     processed = 0
     errors    = 0
+    SAVE_INTERVAL = 20  # 20段落ごとに中間保存
 
     for p in targets:
         if limit > 0 and processed >= limit:
@@ -556,6 +557,10 @@ def body_cmd(
             click.echo(f"  ✗ ERROR: {e}", err=True)
             p['status'] = 'error'
             errors += 1
+
+        if (processed + errors) % SAVE_INTERVAL == 0:
+            save_structured(data, reg, version)
+            click.echo(f"  [checkpoint: {processed} saved]")
 
         if delay > 0 and (processed + errors) < len(targets):
             time.sleep(delay)

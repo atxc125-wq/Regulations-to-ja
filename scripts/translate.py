@@ -130,7 +130,7 @@ def build_user_prompt(number: str, title: str, text: str) -> str:
 
 _GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models"
 
-# JSON Schema: 本文翻訳用
+# JSON Schema: 本文翻訳用（単一段落）
 _RESPONSE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
@@ -139,6 +139,23 @@ _RESPONSE_SCHEMA = {
     },
     "required": ["translation", "summary_ja"],
 }
+
+# JSON Schema: バッチ翻訳用（複数段落）
+_BATCH_RESPONSE_SCHEMA = {
+    "type": "ARRAY",
+    "items": {
+        "type": "OBJECT",
+        "properties": {
+            "number":      {"type": "STRING", "description": "段落番号（原文のまま）"},
+            "translation": {"type": "STRING", "description": "完全な日本語翻訳文（法令文体）"},
+            "summary_ja":  {"type": "STRING", "description": "1〜2文の日本語要約"},
+        },
+        "required": ["number", "translation", "summary_ja"],
+    },
+}
+
+# thinkingConfig: 思考トークンを無効化してコストを削減
+_NO_THINKING = {"thinkingBudget": 0}
 
 
 
@@ -195,6 +212,7 @@ def _translate_gemini(
             "responseMimeType": "application/json",
             "responseSchema": _RESPONSE_SCHEMA,
             "temperature": 0.2,
+            "thinkingConfig": _NO_THINKING,
         },
     }
     data = _gemini_post(api_key, payload, model)
@@ -204,6 +222,49 @@ def _translate_gemini(
         raise ValueError(f"Unexpected Gemini response: {data}")
     result = json.loads(raw)
     return {k: v.strip() if isinstance(v, str) else v for k, v in result.items()}
+
+
+def _translate_gemini_batch(
+    api_key: str,
+    system_prompt: str,
+    paragraphs: list[tuple[str, str, str]],  # [(number, title, text), ...]
+    model: str = "gemini-2.5-flash",
+) -> dict[str, dict]:
+    """複数段落を1回のAPI呼び出しで翻訳する。
+    Returns: {number: {translation, summary_ja}, ...}
+    """
+    lines = []
+    for number, title, text in paragraphs:
+        lines.append(f"[段落 {number}]\nタイトル: {title}\n原文:\n{text}")
+    user_msg = textwrap.dedent(f"""\
+        以下の段落を日本語に翻訳し、各段落の要約を作成してください。
+        法令文体を使用し、用語集の訳語を必ず使用すること。
+
+        {chr(10).join(lines)}
+
+        各段落について「number」「translation」「summary_ja」を含むJSONオブジェクトの配列で回答してください。
+        段落番号は原文のまま返すこと。
+    """)
+    payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": _BATCH_RESPONSE_SCHEMA,
+            "temperature": 0.2,
+            "thinkingConfig": _NO_THINKING,
+        },
+    }
+    data = _gemini_post(api_key, payload, model)
+    try:
+        raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except (KeyError, IndexError):
+        raise ValueError(f"Unexpected Gemini response: {data}")
+    items = json.loads(raw)
+    return {
+        item["number"]: {k: v.strip() if isinstance(v, str) else v for k, v in item.items()}
+        for item in items
+    }
 
 
 def translate_headings_gemini(
@@ -234,6 +295,7 @@ def translate_headings_gemini(
         "generationConfig": {
             "responseMimeType": "application/json",
             "temperature": 0.1,
+            "thinkingConfig": _NO_THINKING,
         },
     }
     data = _gemini_post(api_key, payload, model)
@@ -447,23 +509,25 @@ def cli():
 
 
 @cli.command("body")
-
-@click.option('--reg',     required=True,                      help='法規番号 (例: R13)')
-@click.option('--version', default='',                         help='バージョン (例: Rev9)。--show-glossary 時は省略可')
-@click.option('--engine',  default='gemini',
+@click.option('--reg',        required=True,                      help='法規番号 (例: R13)')
+@click.option('--version',    default='',                         help='バージョン (例: Rev9)。--show-glossary 時は省略可')
+@click.option('--engine',     default='gemini',
               type=click.Choice(['gemini', 'anthropic']),
-              show_default=True,                                help='使用する翻訳エンジン')
-@click.option('--model',   default='gemini-2.5-flash',
-              show_default=True,                                help='使用するモデル名')
-@click.option('--dry-run', is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
-@click.option('--limit',   default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
-@click.option('--delay',   default=1.0, type=float,            help='API呼び出し間隔（秒）')
-@click.option('--prefix',  default='',                         help='段落番号のプレフィックスでフィルタ (例: 5.1)')
-@click.option('--annex',   default=0,   type=int,              help='附属書番号でフィルタ (例: 4, 13, 18, 21)')
-@click.option('--show-glossary', is_flag=True,                 help='用語集とシステムプロンプトを表示して終了')
+              show_default=True,                                   help='使用する翻訳エンジン')
+@click.option('--model',      default='gemini-2.5-flash',
+              show_default=True,                                   help='使用するモデル名')
+@click.option('--dry-run',    is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
+@click.option('--limit',      default=0,   type=int,              help='翻訳する最大段落数（0=無制限）')
+@click.option('--delay',      default=1.0, type=float,            help='API呼び出し間隔（秒）')
+@click.option('--prefix',     default='',                         help='段落番号のプレフィックスでフィルタ (例: 5.1)')
+@click.option('--annex',      default=0,   type=int,              help='附属書番号でフィルタ (例: 4, 13, 18, 21)')
+@click.option('--batch-size', default=10,  type=int, show_default=True,
+              help='1回のAPI呼び出しで翻訳する段落数。Gemini専用。1=単一翻訳モード')
+@click.option('--show-glossary', is_flag=True,                    help='用語集とシステムプロンプトを表示して終了')
 def body_cmd(
     reg: str, version: str, engine: str, model: str,
-    dry_run: bool, limit: int, delay: float, prefix: str, annex: int, show_glossary: bool,
+    dry_run: bool, limit: int, delay: float, prefix: str, annex: int,
+    batch_size: int, show_glossary: bool,
 ):
     """
     未翻訳段落を Gemini API（デフォルト）または Anthropic API で翻訳・要約する。
@@ -505,18 +569,24 @@ def body_cmd(
         and (not annex_indices or i in annex_indices)
     ]
 
+    if limit > 0:
+        targets = targets[:limit]
+
     click.echo(f"Target: {reg}/{version}  |  untranslated: {len(targets)}  |  engine: {engine}")
     click.echo(f"Glossary: {len(glossary_terms)} term(s) loaded.")
+    if engine == "gemini" and batch_size > 1:
+        click.echo(f"Batch size: {batch_size} (thinking disabled)")
 
     if dry_run:
         click.echo("\nDry-run — paragraphs that would be translated:")
-        for p in (targets[:limit] if limit else targets):
+        for p in targets:
             click.echo(f"  [{p['number']:6s}] {p['title']}")
         return
 
     # API キーの存在チェック（早期終了）
     key_var = "GEMINI_API_KEY" if engine == "gemini" else "ANTHROPIC_API_KEY"
-    if not os.environ.get(key_var):
+    api_key = os.environ.get(key_var, "")
+    if not api_key:
         raise click.ClickException(
             f"{key_var} 環境変数が設定されていません。\n"
             f"  export {key_var}=<your-key>\n"
@@ -525,38 +595,76 @@ def body_cmd(
 
     processed = 0
     errors    = 0
-    SAVE_INTERVAL = 20  # 20段落ごとに中間保存
+    SAVE_INTERVAL = 20
 
-    for p in targets:
-        if limit > 0 and processed >= limit:
-            click.echo(f"\nLimit reached ({limit}). Stopping.")
-            break
+    use_batch = (engine == "gemini" and batch_size > 1)
 
-        click.echo(f"\nTranslating [{p['number']}] {p['title']} ...")
-        try:
-            result = translate_paragraph(
-                engine, system_prompt,
-                p['number'], p['title'], p['text'],
-                model=model,
-            )
-            p['translation'] = result['translation'].strip()
-            p['summary_ja']  = result['summary_ja'].strip()
-            p['status']      = 'done'
-            processed += 1
-            preview = p['summary_ja'][:70].replace('\n', ' ')
-            click.echo(f"  ✓ {preview}{'...' if len(p['summary_ja']) > 70 else ''}")
+    if use_batch:
+        # --- バッチ翻訳モード ---
+        for batch_start in range(0, len(targets), batch_size):
+            batch = targets[batch_start:batch_start + batch_size]
+            nums  = ", ".join(p['number'] for p in batch)
+            click.echo(f"\nBatch [{batch_start+1}–{batch_start+len(batch)}] {nums}")
+            try:
+                results = _translate_gemini_batch(
+                    api_key, system_prompt,
+                    [(p['number'], p['title'], p['text']) for p in batch],
+                    model=model,
+                )
+                for p in batch:
+                    if p['number'] in results:
+                        r = results[p['number']]
+                        p['translation'] = r.get('translation', '').strip()
+                        p['summary_ja']  = r.get('summary_ja', '').strip()
+                        p['status']      = 'done'
+                        processed += 1
+                        preview = p['summary_ja'][:60].replace('\n', ' ')
+                        click.echo(f"  ✓ [{p['number']}] {preview}{'...' if len(p['summary_ja']) > 60 else ''}")
+                    else:
+                        click.echo(f"  ✗ [{p['number']}] 結果が返りませんでした", err=True)
+                        p['status'] = 'error'
+                        errors += 1
+            except Exception as e:
+                click.echo(f"  ✗ Batch ERROR: {e}", err=True)
+                for p in batch:
+                    p['status'] = 'error'
+                errors += len(batch)
 
-        except Exception as e:
-            click.echo(f"  ✗ ERROR: {e}", err=True)
-            p['status'] = 'error'
-            errors += 1
+            if (processed + errors) % SAVE_INTERVAL < batch_size:
+                save_structured(data, reg, version)
+                click.echo(f"  [checkpoint: {processed} saved]")
 
-        if (processed + errors) % SAVE_INTERVAL == 0:
-            save_structured(data, reg, version)
-            click.echo(f"  [checkpoint: {processed} saved]")
+            if delay > 0 and batch_start + batch_size < len(targets):
+                time.sleep(delay)
 
-        if delay > 0 and (processed + errors) < len(targets):
-            time.sleep(delay)
+    else:
+        # --- 単一翻訳モード ---
+        for p in targets:
+            click.echo(f"\nTranslating [{p['number']}] {p['title']} ...")
+            try:
+                result = translate_paragraph(
+                    engine, system_prompt,
+                    p['number'], p['title'], p['text'],
+                    model=model,
+                )
+                p['translation'] = result['translation'].strip()
+                p['summary_ja']  = result['summary_ja'].strip()
+                p['status']      = 'done'
+                processed += 1
+                preview = p['summary_ja'][:70].replace('\n', ' ')
+                click.echo(f"  ✓ {preview}{'...' if len(p['summary_ja']) > 70 else ''}")
+
+            except Exception as e:
+                click.echo(f"  ✗ ERROR: {e}", err=True)
+                p['status'] = 'error'
+                errors += 1
+
+            if (processed + errors) % SAVE_INTERVAL == 0:
+                save_structured(data, reg, version)
+                click.echo(f"  [checkpoint: {processed} saved]")
+
+            if delay > 0 and (processed + errors) < len(targets):
+                time.sleep(delay)
 
     save_structured(data, reg, version)
     click.echo(f"\n{'='*52}")

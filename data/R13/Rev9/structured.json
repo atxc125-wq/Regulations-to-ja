@@ -898,11 +898,11 @@
       "parent": "2.2.2",
       "type": "paragraph",
       "status": "done",
-      "translation": "下記2.16項に定義される最大質量。",
-      "summary_ja": "最大質量は、後続の2.16項で定義される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "下記2.16.に定義される最大質量。",
+      "summary_ja": "本項は、下記2.16.で定義される最大質量について述べる。"
     },
     {
       "uid": "R13-68bd87f1",
@@ -1427,12 +1427,12 @@
       "parent": "2.15",
       "type": "paragraph",
       "status": "done",
-      "translation": "耐久制動装置の制御構成",
-      "summary_ja": "本項は耐久制動装置の制御構成に関する事項を扱う。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "耐久制動装置の制御構成"
+      "title_ja": "耐久制動装置の制御構成",
+      "translation": "耐久制動装置の制御構成。",
+      "summary_ja": "本項は、耐久制動装置の制御構成について述べる。"
     },
     {
       "uid": "R13-c39e2447",
@@ -1939,12 +1939,12 @@
       "parent": "2.34",
       "type": "paragraph",
       "status": "done",
-      "translation": "車両安定性機能内の制御機能:",
-      "summary_ja": "本文が提供されていないため、要約を作成することはできません。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車両安定機能内の制御機能"
+      "title_ja": "車両安定機能内の制御機能",
+      "translation": "車両安定性機能内の制御機能。",
+      "summary_ja": "本項は、車両安定性機能に含まれる制御機能について述べる。"
     },
     {
       "uid": "R13-7d538293",
@@ -3075,12 +3075,12 @@
       "parent": "5.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "制動装置の定期技術検査に関する規定",
-      "summary_ja": "本項は、制動装置の定期的な技術検査に関する規定を定めるものである。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "制動装置の定期技術検査規定"
+      "title_ja": "制動装置の定期技術検査規定",
+      "translation": "制動装置の定期技術検査に関する規定。",
+      "summary_ja": "本項は、制動装置の定期的な技術検査に関する規定について述べる。"
     },
     {
       "uid": "R13-d175d0b7",
@@ -4047,12 +4047,12 @@
       "parent": "5.2.1.11",
       "type": "paragraph",
       "status": "done",
-      "translation": "主制動装置の摩擦部品の摩耗の点検",
-      "summary_ja": "主制動装置の摩擦部品の摩耗状態を点検する必要がある。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "主制動摩擦部品の摩耗確認"
+      "title_ja": "主制動摩擦部品の摩耗確認",
+      "translation": "主制動装置の摩擦部品の摩耗点検。",
+      "summary_ja": "本項は、主制動装置の摩擦部品の摩耗点検について述べる。"
     },
     {
       "uid": "R13-1dce505a",
@@ -5151,11 +5151,11 @@
       "parent": "0",
       "type": "paragraph",
       "status": "done",
-      "translation": "黄色 代表的な公称警告要求管路",
-      "summary_ja": "代表的な公称警告要求管路は黄色である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "代表的な公称要求管 黄色 警告信号 0.6 0.5 0.4 150 kPa 150 kPa",
+      "summary_ja": "本項は、代表的な公称要求管の警告信号レベルと圧力値について述べる。"
     },
     {
       "uid": "R13-1be975fa",
@@ -6120,12 +6120,12 @@
       "parent": "5.2.2.8",
       "type": "paragraph",
       "status": "done",
-      "translation": "主制動装置の摩擦部品の摩耗点検",
-      "summary_ja": "主制動装置の摩擦部品の摩耗点検を行うこと。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "主制動摩擦部品の摩耗確認"
+      "title_ja": "主制動摩擦部品の摩耗確認",
+      "translation": "主制動装置の摩擦部品の摩耗点検。",
+      "summary_ja": "本項は、主制動装置の摩擦部品の摩耗点検について述べる。"
     },
     {
       "uid": "R13-5b7fbd35",
@@ -6904,12 +6904,12 @@
       "parent": "5.2.2.24.11",
       "type": "paragraph",
       "status": "done",
-      "translation": "剛性ドローバードリー",
-      "summary_ja": "剛性ドローバードリーに関する規定である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "リジッドドローバードリー"
+      "title_ja": "リジッドドローバードリー",
+      "translation": "本規則の2.43.1.に定義されるリジッドドローバー台車は、附属書4の3.及び附属書10の5.の要件に関して、センターアクスルトレーラとみなされるものとする。",
+      "summary_ja": "本規則2.43.1.に定義されるリジッドドローバー台車は、附属書4の3.及び附属書10の5.の要件においてセンターアクスルトレーラとして扱われる。"
     },
     {
       "uid": "R13-547a454f",
@@ -9962,12 +9962,12 @@
       "parent": "1.7.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "路上試験の条件は以下のとおりとする。",
-      "summary_ja": "路上試験は以下の条件に従って実施されなければならない。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "路上試験条件"
+      "title_ja": "路上試験条件",
+      "translation": "路上試験の条件は次のとおりとする。",
+      "summary_ja": "本項は、路上試験を実施する際の条件について述べる。"
     },
     {
       "uid": "R13-img-dfc63be7",
@@ -10698,11 +10698,11 @@
       "parent": "3.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "O4カテゴリー車両の試験に関する規定:",
-      "summary_ja": "O4カテゴリー車両の試験に関する規定を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "O4カテゴリー車両の試験に関する規定。",
+      "summary_ja": "本項は、O4カテゴリー車両の試験に関する規定について述べる。"
     },
     {
       "uid": "R13-94b2bf78",
@@ -13970,11 +13970,11 @@
       "parent": "3.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "セミトレーラ用トラクタ以外の牽引自動車",
-      "summary_ja": "セミトレーラ用トラクタ以外の牽引自動車に関する規定である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "セミトレーラ用トラクタ以外の牽引自動車",
+      "summary_ja": "本項は、セミトレーラ用トラクタ以外の牽引自動車について述べる。"
     },
     {
       "uid": "R13-00c0b686",
@@ -14767,11 +14767,11 @@
       "parent": "2",
       "type": "paragraph",
       "status": "done",
-      "translation": "空車時の補正係数KVの決定:",
-      "summary_ja": "本項では、空車時の補正係数KVの決定方法を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "空車時の補正係数K V の決定:",
+      "summary_ja": "本項は、空車時の補正係数K V の決定方法について述べる。"
     },
     {
       "uid": "R13-c9c76889",
@@ -14782,11 +14782,11 @@
       "parent": "2.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "係数K2の決定:",
-      "summary_ja": "係数K2は、適切なhR値（1.4m）から開始し、P R /P Rmax線（0.2）に水平移動し、その後垂直軸に移動してK2の値（0.13m）を読み取ることにより決定される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "係数K 2 の決定:",
+      "summary_ja": "係数K 2 は、適切なh R から開始し、P R /P Rmax 線に水平移動し、その後垂直軸に移動して読み取ることにより決定される。"
     },
     {
       "uid": "R13-42830a82",
@@ -14797,11 +14797,11 @@
       "parent": "2.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "係数K1の決定:",
-      "summary_ja": "係数K1は、適切なhR値（1.4m）から開始し、g・P/P R線（1.4）、E R線（6.0m）、P R /P Rmax線（0.2）を順にたどり、水平軸上のK1の値（1.79）を読み取ることにより決定される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "係数K 1 の決定:",
+      "summary_ja": "係数K 1 は、適切なh R から開始し、g . P/P R 線、E R 線、P R /P Rmax 線を順にたどり、その後水平軸に移動して読み取ることにより決定される。"
     },
     {
       "uid": "R13-e79226a4",
@@ -14812,11 +14812,11 @@
       "parent": "2.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "係数KVの決定:",
-      "summary_ja": "空車時の補正係数KVは、K V = K 1 - K 2 の式（K V = 1.66）により算出される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "係数K V の決定:",
+      "summary_ja": "空車補正係数K V は、K V = K 1 - K 2 の式により算出される。"
     },
     {
       "uid": "R13-a73bb340",
@@ -16202,11 +16202,11 @@
       "parent": "3",
       "type": "paragraph",
       "status": "done",
-      "translation": "自動ブレーキ調整装置の性能要件",
-      "summary_ja": "本項では、自動ブレーキ調整装置の性能要件について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "自動ブレーキ調整装置の性能要件",
+      "summary_ja": "本項は、自動ブレーキ調整装置に求められる性能要件について述べる。"
     },
     {
       "uid": "R13-ee694da4",
@@ -17911,11 +17911,11 @@
       "parent": "2",
       "type": "paragraph",
       "status": "done",
-      "translation": "自動ブレーキ調整装置の性能",
-      "summary_ja": "自動ブレーキ調整装置の性能に関する項目である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "自動ブレーキ調整装置の性能",
+      "summary_ja": "本項は、自動ブレーキ調整装置の性能について述べる。"
     },
     {
       "uid": "R13-9d1e129e",
@@ -19157,11 +19157,11 @@
       "parent": "1.6",
       "type": "paragraph",
       "status": "done",
-      "translation": "ブレーキの必須構成部品の決定。",
-      "summary_ja": "ブレーキの必須構成部品を特定しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "ブレーキの主要構成部品の決定。",
+      "summary_ja": "本項は、ブレーキの主要構成部品の決定について述べる。"
     },
     {
       "uid": "R13-e42dcd12",
@@ -19588,12 +19588,12 @@
       "parent": "2.2",
       "type": "paragraph",
       "status": "done",
-      "translation": "R: 動的タイヤ転がり半径（m）。",
-      "summary_ja": "Rはタイヤの動的転がり半径をメートルで表す。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "タイヤ動的転がり半径"
+      "title_ja": "タイヤ動的転がり半径",
+      "translation": "R: タイヤの動的転がり半径（m）；",
+      "summary_ja": "Rはタイヤの動的転がり半径（メートル）を意味する。"
     },
     {
       "uid": "R13-466a0230",
@@ -20787,11 +20787,11 @@
       "parent": "7.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "制動筒内のピストンの表面積F RZ。",
-      "summary_ja": "本項は、制動筒内のピストンの表面積F RZについて述べる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "ブレーキシリンダ内のピストンの表面積F RZ 。",
+      "summary_ja": "本項は、ブレーキシリンダ内のピストンの表面積F RZ について述べる。"
     },
     {
       "uid": "R13-baebe547",
@@ -26680,11 +26680,11 @@
       "parent": "4",
       "type": "paragraph",
       "status": "done",
-      "translation": "ISO 11992牽引車シミュレータ",
-      "summary_ja": "ISO 11992牽引車シミュレータの要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "タイヤ円周と励磁機の分解能との関係:",
+      "summary_ja": "タイヤの円周と励磁機の分解能との関係を明確にする必要がある。"
     },
     {
       "uid": "R13-9d6197e0",
@@ -27422,12 +27422,12 @@
       "parent": "4.3.3.3.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "赤色警告信号要求:",
-      "summary_ja": "後部電気制御管接続において、EBS 22のバイト2、ビット3-4を01b（赤色警告信号要求）および00b（赤色警告信号要求なし）に設定することをシミュレートする。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "赤色警告信号要求"
+      "title_ja": "赤色警告信号要求",
+      "translation": "赤色警報信号要求: EBS 22のバイト2、ビット3〜4が01b（赤色警報信号要求）および00b（赤色警報信号要求なし）に設定されていることを後部電気制御管接続部でシミュレートすること。",
+      "summary_ja": "後部電気制御管接続部において、EBS 22のバイト2、ビット3〜4を操作し、赤色警報信号の要求および非要求をシミュレートしなければならない。"
     },
     {
       "uid": "R13-f9c01563",
@@ -27438,12 +27438,12 @@
       "parent": "4.3.3.3.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "黄色（琥珀色）警告信号要求:",
-      "summary_ja": "後部電気制御管接続において、EBS 22のバイト2、ビット5-6を01b（黄色警告信号要求）および00b（黄色警告信号要求なし）に設定することをシミュレートする。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "黄色（琥珀色）警告信号要求"
+      "title_ja": "黄色（琥珀色）警告信号要求",
+      "translation": "黄色（琥珀色）警報信号要求: EBS 22のバイト2、ビット5〜6が01b（黄色警報信号要求）および00b（黄色警報信号要求なし）に設定されていることを後部電気制御管接続部でシミュレートすること。",
+      "summary_ja": "後部電気制御管接続部において、EBS 22のバイト2、ビット5〜6を操作し、黄色（琥珀色）警報信号の要求および非要求をシミュレートしなければならない。"
     },
     {
       "uid": "R13-802edba4",
@@ -27454,12 +27454,12 @@
       "parent": "4.3.3.3.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "車両の電気供給が十分／不十分:",
-      "summary_ja": "後部電気制御管接続において、EBS 22のバイト2、ビット1-2を01b（供給十分）および00b（供給不十分）に設定することをシミュレートする。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車両電源の十分/不十分"
+      "title_ja": "車両電源の十分/不十分",
+      "translation": "車両の電気供給が十分／不十分: EBS 22のバイト2、ビット1〜2が01b（供給十分）および00b（供給不十分）に設定されていることを後部電気制御管接続部でシミュレートすること。",
+      "summary_ja": "後部電気制御管接続部において、EBS 22のバイト2、ビット1〜2を操作し、車両の電気供給が十分であるか不十分であるかをシミュレートしなければならない。"
     },
     {
       "uid": "R13-ea569525",
@@ -28221,11 +28221,11 @@
       "parent": "1.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "車両安定性機能（6.項を参照）。",
-      "summary_ja": "車両安定性機能の試験手順が6.項に定められている。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "車両安定性機能（第6項を参照すること）。",
+      "summary_ja": "車両安定性機能については、第6項を参照する必要がある。"
     },
     {
       "uid": "R13-561d631b",
@@ -29809,12 +29809,12 @@
       "parent": "4.5.2.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "ブレーキ作動圧力または力の連続記録。",
-      "summary_ja": "ブレーキ作動圧力または力の連続的な記録が必要である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキ圧の連続記録"
+      "title_ja": "ブレーキ圧の連続記録",
+      "translation": "ブレーキ作動圧力または力の連続的な記録。",
+      "summary_ja": "ブレーキ作動圧力または力は連続的に記録されなければならない。"
     },
     {
       "uid": "R13-2465c295",
@@ -31903,11 +31903,11 @@
       "parent": "3",
       "type": "paragraph",
       "status": "done",
-      "translation": "センサーの機能識別（例：部品番号）。",
-      "summary_ja": "センサーは、その機能が部品番号等により識別可能でなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "センサ 機能識別（例：部品番号）",
+      "summary_ja": "センサは機能識別（部品番号など）を有しなければならない。"
     },
     {
       "uid": "R13-f7990bfe",
@@ -32376,11 +32376,11 @@
       "parent": "4",
       "type": "paragraph",
       "status": "done",
-      "translation": "タイヤ周長と励磁装置の分解能との関係",
-      "summary_ja": "この項目は、タイヤの周長と励磁装置の分解能との関係について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "タイヤ円周と励磁機の分解能との関係:",
+      "summary_ja": "タイヤの円周と励磁機の分解能との関係を明確にする必要がある。"
     },
     {
       "uid": "R13-4e42252a",
@@ -32876,11 +32876,11 @@
       "parent": "1",
       "type": "paragraph",
       "status": "done",
-      "translation": "車両安定機能の製造業者（名称及び住所）",
-      "summary_ja": "車両安定機能の製造業者の名称及び住所を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "車両安定性機能の製造業者（名称および住所）",
+      "summary_ja": "車両安定性機能の製造業者の名称および住所を記載する必要がある。"
     },
     {
       "uid": "R13-d2204d0c",
@@ -32936,11 +32936,11 @@
       "parent": "2",
       "type": "paragraph",
       "status": "done",
-      "translation": "適用範囲（トレーラの型式及び車軸数）",
-      "summary_ja": "適用されるトレーラの型式及び車軸数を記載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "適用範囲（トレーラの種類および車軸数）",
+      "summary_ja": "適用範囲として、トレーラの種類および車軸数を記載する必要がある。"
     },
     {
       "uid": "R13-20ef35ab",
@@ -33056,11 +33056,11 @@
       "parent": "3",
       "type": "paragraph",
       "status": "done",
-      "translation": "本規則の附属書18に基づく評価",
-      "summary_ja": "本項は、本規則の附属書18に従って行われた評価に関する情報を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "本規則の附属書18に従った評価",
+      "summary_ja": "本規則の附属書18に基づき評価を実施するものとする。"
     },
     {
       "uid": "R13-c88a1801",
@@ -34190,11 +34190,11 @@
       "parent": "3",
       "type": "paragraph",
       "status": "done",
-      "translation": "エンジン又はその他の動力源の管理。",
-      "summary_ja": "本項はエンジン又はその他の動力源の管理に関する要件を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "機関またはその他の動力源の管理",
+      "summary_ja": "機関またはその他の動力源の管理について定める。"
     },
     {
       "uid": "R13-cb5ac134",
@@ -34445,11 +34445,11 @@
       "parent": "4.3",
       "type": "paragraph",
       "status": "done",
-      "translation": "ヨーレートおよび横加速度センサーの位置",
-      "summary_ja": "ヨーレートおよび横加速度センサーの位置は、車両の動的挙動の正確な測定に不可欠である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "ヨーレートおよび横加速度センサーの位置",
+      "summary_ja": "ヨーレートおよび横加速度センサーの設置位置について規定する。"
     },
     {
       "uid": "R13-891a5171",
@@ -34520,11 +34520,11 @@
       "parent": "4.6",
       "type": "paragraph",
       "status": "done",
-      "translation": "機関又はその他の動力源の管理",
-      "summary_ja": "本項は、機関またはその他の動力源の管理について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "機関またはその他の動力源の管理",
+      "summary_ja": "機関またはその他の動力源の管理について定める。"
     },
     {
       "uid": "R13-514a9f71",
@@ -34779,11 +34779,11 @@
       "parent": "5",
       "type": "paragraph",
       "status": "done",
-      "translation": "本規則の附属書18に従った評価",
-      "summary_ja": "本項は本規則の附属書18に従った評価について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "本規則の附属書18に従った評価",
+      "summary_ja": "本規則の附属書18に基づき評価を実施するものとする。"
     },
     {
       "uid": "R13-5d96bd7f",
@@ -35253,11 +35253,11 @@
       "parent": "4.2.2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "上り坂に面する場合",
-      "summary_ja": "フルトレーラが上り坂に面している場合の計算式を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "上り坂に面している場合",
+      "summary_ja": "上り坂における車両の挙動に関する計算式を示す。"
     },
     {
       "uid": "R13-4bed822d",
@@ -35268,11 +35268,11 @@
       "parent": "4.2.2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "下り坂に面する場合",
-      "summary_ja": "フルトレーラが下り坂に面している場合の計算式を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "下り坂に面している場合",
+      "summary_ja": "下り坂における車両の挙動に関する計算式を示す。"
     },
     {
       "uid": "R13-f9daf08c",
@@ -35313,12 +35313,12 @@
       "parent": null,
       "type": "paragraph",
       "status": "done",
-      "translation": "附属書20",
-      "summary_ja": "本段落は附属書20のタイトルを示す。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "附属書20"
+      "title_ja": "附属書20",
+      "translation": "附属書20",
+      "summary_ja": "本規則の附属書20について定める。"
     },
     {
       "uid": "R13-2769cf04",
@@ -35329,12 +35329,12 @@
       "parent": "4.2.2.2",
       "type": "paragraph",
       "status": "done",
-      "translation": "下り坂に面している場合",
-      "summary_ja": "本段落は、下り坂における計算式を示す。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "下り勾配"
+      "title_ja": "下り勾配",
+      "translation": "下り坂に面している場合",
+      "summary_ja": "下り坂における車両の挙動に関する計算式を示す。"
     },
     {
       "uid": "R13-a81466d8",
@@ -35360,11 +35360,11 @@
       "parent": "4.2.2.3",
       "type": "paragraph",
       "status": "done",
-      "translation": "上り坂に面している場合",
-      "summary_ja": "本段落は、セミトレーラが上り坂に面している場合の計算式を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "上り坂に面している場合",
+      "summary_ja": "上り坂における車両の挙動に関する計算式を示す。"
     },
     {
       "uid": "R13-59ff2603",
@@ -35375,12 +35375,12 @@
       "parent": "4.2.2.3",
       "type": "paragraph",
       "status": "done",
-      "translation": "下り坂に面している場合",
-      "summary_ja": "本段落は、セミトレーラが下り坂に面している場合の計算式を示す。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "下り勾配"
+      "title_ja": "下り勾配",
+      "translation": "下り坂に面している場合、以下の式が適用される: N_RD = (P_E * cos(i) - P_L * tan(i) - P_h * x_E / L_E) / (x_P / L_P - x_E / L_E) - P_s。",
+      "summary_ja": "下り坂における車両の制動性能は、特定の物理的パラメータと勾配を考慮した式によって定義される。"
     },
     {
       "uid": "R13-084a7e5e",
@@ -35865,11 +35865,11 @@
       "parent": "7.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "低速性能：追加の検証は必要ない。",
-      "summary_ja": "低速性能に関する追加検証は不要である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "低速性能については、追加の検証は必要ない。",
+      "summary_ja": "低速性能に関する追加の検証は不要である。"
     },
     {
       "uid": "R13-03f3f12e",
@@ -35880,12 +35880,12 @@
       "parent": "7.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "高速性能：追加の検証は必要ない。",
-      "summary_ja": "高速性能に関する追加検証は不要である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "高速性能"
+      "title_ja": "高速性能",
+      "translation": "高速性能については、追加の検証は必要ない。",
+      "summary_ja": "高速性能に関する追加の検証は不要である。"
     },
     {
       "uid": "R13-11a6ff30",
@@ -35912,12 +35912,12 @@
       "parent": "7.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "路面移行性能：追加の検証は必要ない。",
-      "summary_ja": "路面移行性能に関する追加検証は不要である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "路面移行性能"
+      "title_ja": "路面移行性能",
+      "translation": "路面移行性能については、追加の検証は必要ない。",
+      "summary_ja": "路面移行性能に関する追加の検証は不要である。"
     },
     {
       "uid": "R13-124eb3fe",
@@ -36651,11 +36651,11 @@
       "parent": "1.2",
       "type": "paragraph",
       "status": "done",
-      "translation": "トレーラの場合、車軸の数及び配置。",
-      "summary_ja": "トレーラにおいては、車軸の数及び配置が異なってはならない本質的な点に含まれる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "トレーラの場合、車軸の数及び配置。",
+      "summary_ja": "トレーラにおいては、車軸の数と配置が重要な要素となる。"
     },
     {
       "uid": "R13-6a7ca1ad",
@@ -37423,11 +37423,11 @@
       "parent": "2",
       "type": "paragraph",
       "status": "done",
-      "translation": "検証（この附属書の追補2の2.を参照）",
-      "summary_ja": "検証について、この附属書の追補2の2.を参照して記載すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "妥当性確認（この附属書の付録2の2項を参照）。",
+      "summary_ja": "妥当性確認は、この附属書の付録2の2項に従って実施される。"
     },
     {
       "uid": "R13-0fb1fddb",
@@ -37468,11 +37468,11 @@
       "parent": "3",
       "type": "paragraph",
       "status": "done",
-      "translation": "車両の特性:",
-      "summary_ja": "この項目は車両の特性に関するものである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "車両の特性: 3.3. 車両構成:",
+      "summary_ja": "車両の特性は、その構成によって定義される。"
     },
     {
       "uid": "R13-06c9724c",

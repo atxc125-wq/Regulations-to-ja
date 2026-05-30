@@ -377,12 +377,12 @@
       "parent": "1.2",
       "type": "paragraph",
       "status": "done",
-      "translation": "純粋に空気圧伝達の操舵装置。",
-      "summary_ja": "純粋な空気圧伝達の操舵装置は本規則の適用外である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "純粋な空気圧伝達操舵装置"
+      "title_ja": "純粋な空気圧伝達操舵装置",
+      "translation": "純粋な空気圧伝達式操舵装置。",
+      "summary_ja": "本項は、純粋な空気圧伝達式操舵装置に関する規定である。"
     },
     {
       "uid": "R79-b641e764",
@@ -3455,12 +3455,12 @@
       "parent": "5.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "フルパワー操舵装置に関する特別規定",
-      "summary_ja": "フルパワー操舵装置に特化した規定である。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "全動力操舵装置の特別規定"
+      "title_ja": "全動力操舵装置の特別規定",
+      "translation": "全動力操舵装置に関する特別規定。",
+      "summary_ja": "本項は、全動力操舵装置に適用される特別規定を定める。"
     },
     {
       "uid": "R79-c79283d2",
@@ -3567,11 +3567,11 @@
       "parent": "5",
       "type": "paragraph",
       "status": "done",
-      "translation": "操舵装置の定期技術検査に関する規定",
-      "summary_ja": "操舵装置の定期技術検査に関する規定が定められている。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "操舵装置の定期技術検査に関する規定。",
+      "summary_ja": "本項は、操舵装置の定期的な技術検査に関する規定を定める。"
     },
     {
       "uid": "R79-679de316",
@@ -4475,12 +4475,12 @@
       "parent": "5.6.4",
       "type": "paragraph",
       "status": "done",
-      "translation": "オーバーライド",
-      "summary_ja": "運転者による操舵入力はシステムの操舵動作をオーバーライドしなければならず、オーバーライドに必要な操舵力は50Nを超えてはならない。オーバーライド期間中、運転者に優先権が与えられる限り、システムは作動状態を維持することができる。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "オーバーライド"
+      "title_ja": "オーバーライド",
+      "translation": "上書き。運転者による操舵入力は、システムの操舵動作を上書きしなければならない。システムによって提供される方向制御を上書きするために必要な操舵制御力は、50 Nを超えてはならない。上書き期間中、運転者に優先権が与えられる限り、システムは作動状態を維持することができる。",
+      "summary_ja": "運転者の操舵入力はシステムの操舵動作を上書きしなければならず、その際の操舵制御力は50 Nを超えてはならない。上書き中は運転者に優先権が与えられる限り、システムは作動状態を維持することができる。"
     },
     {
       "uid": "R79-c6129299",
@@ -6774,11 +6774,11 @@
       "parent": "2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "機械式操舵伝達装置",
-      "summary_ja": "機械式操舵伝達装置には、本規則の第5.3.1.1項が適用される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "機械式操舵伝達装置。本規則の5.3.1.1.項が適用される。",
+      "summary_ja": "機械式操舵伝達装置には、本規則の5.3.1.1.項が適用される。"
     },
     {
       "uid": "R79-d323a1ff",
@@ -6789,11 +6789,11 @@
       "parent": "2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "油圧式操舵伝達装置",
-      "summary_ja": "油圧式操舵伝達装置は、最大許容使用圧力を超えないように保護されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "油圧式操舵伝達装置。油圧式操舵伝達装置は、最大許容使用圧力Tを超えることから保護されなければならない。",
+      "summary_ja": "油圧式操舵伝達装置は、最大許容使用圧力を超えないように保護されなければならない。"
     },
     {
       "uid": "R79-735725df",
@@ -6804,11 +6804,11 @@
       "parent": "2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "電気式操舵伝達装置",
-      "summary_ja": "電気式操舵伝達装置は、過剰なエネルギー供給から保護されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "translation": "電気式操舵伝達装置。電気式操舵伝達装置は、過剰なエネルギー供給から保護されなければならない。",
+      "summary_ja": "電気式操舵伝達装置は、過剰なエネルギー供給から保護されなければならない。"
     },
     {
       "uid": "R79-2e546513",
@@ -6819,12 +6819,12 @@
       "parent": "2.1",
       "type": "paragraph",
       "status": "done",
-      "translation": "操舵伝達装置の組み合わせ",
-      "summary_ja": "機械式、油圧式、および電気式の伝達装置の組み合わせは、上記の第2.1.1項、第2.1.2項、および第2.1.3項に規定された要件を遵守しなければならない。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "操舵伝達の組み合わせ"
+      "title_ja": "操舵伝達の組み合わせ",
+      "translation": "操舵伝達装置の組み合わせ。機械式、油圧式及び電気式伝達装置の組み合わせは、上記の2.1.1.項、2.1.2.項及び2.1.3.項に規定される要件を遵守しなければならない。",
+      "summary_ja": "機械式、油圧式、電気式の操舵伝達装置を組み合わせる場合、それぞれの伝達方式に関する要件を遵守しなければならない。"
     },
     {
       "uid": "R79-b8f162fb",
@@ -9429,12 +9429,12 @@
       "parent": "3.5",
       "type": "paragraph",
       "status": "done",
-      "translation": "エンジン始動/走行サイクル試験",
-      "summary_ja": "本項では、エンジン始動/走行サイクル試験について規定する。試験は3つの連続したフェーズに分かれ、車両速度はVsmin + 10km/hとする。",
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "エンジン始動/運転サイクル試験"
+      "title_ja": "エンジン始動/運転サイクル試験",
+      "translation": "エンジン始動/運転サイクル試験。この試験は、以下に規定される3つの連続するフェーズに分けられる。車両速度は、V smin + 10km/hとしなければならない。",
+      "summary_ja": "エンジン始動/運転サイクル試験は3つの連続するフェーズに分かれ、車両速度はV smin + 10km/hとしなければならない。"
     },
     {
       "uid": "R79-12e91f25",

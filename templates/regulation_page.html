@@ -153,7 +153,8 @@
     <div class="paragraphs-container" id="paragraphs-container">
       {% for p in paragraphs %}
 
-      {% if p.type == "image" %}
+      {% if p._table_cell %}{# テーブルセル: 完全に非表示 #}
+      {% elif p.type == "image" %}
       {# ---- 画像ブロック ---- #}
       <figure class="para-figure" id="para-{{ p.uid }}" data-uid="{{ p.uid }}">
         {% if p.label %}

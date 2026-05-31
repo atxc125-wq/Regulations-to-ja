@@ -341,6 +341,13 @@ def build_regulation_page(regulation: str, version: str) -> None:
         # ナビゲーションノイズフラグを付与（ページヘッダー・目次ドット行）
         if not p.get("_nav_hidden"):
             p["_nav_hidden"] = is_nav_noise(p)
+        # テーブルセル検出: "パラメータ名  単位  列番号" 形式（PDFテーブルの誤抽出）
+        if not p.get("_nav_hidden"):
+            import re as _re2
+            title = p.get("title", "") or ""
+            if len(title) < 50 and _re2.search(r'\s{2,}\S+\s{2,}\d\s*$', title):
+                p["_nav_hidden"] = True
+                p["_table_cell"] = True
         p["text_annotated"] = annotate_glossary(p.get("text", "") or "", glossary_terms)
         if p.get("translation"):
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)

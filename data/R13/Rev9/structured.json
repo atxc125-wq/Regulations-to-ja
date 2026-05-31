@@ -14,7 +14,7 @@
       "type": "paragraph",
       "status": "done",
       "translation": "適用範囲",
-      "summary_ja": "この段落は、本法規の適用範囲を示すものである。",
+      "summary_ja": "本規則は車両の制動装置に適用される。",
       "modified": false,
       "justification": null,
       "prev_uid": null
@@ -29,7 +29,7 @@
       "type": "paragraph",
       "status": "done",
       "translation": "定義",
-      "summary_ja": "本章は、本規則において使用される各種用語の定義を規定するものである。",
+      "summary_ja": "本規則における各種用語の定義を定める。",
       "modified": false,
       "justification": null,
       "prev_uid": null
@@ -44,7 +44,7 @@
       "type": "paragraph",
       "status": "done",
       "translation": "承認申請",
-      "summary_ja": "本章では、承認の申請に関する事項を規定する。",
+      "summary_ja": "型式認証の申請手続きについて規定する。",
       "modified": false,
       "justification": null,
       "prev_uid": null
@@ -59,7 +59,7 @@
       "type": "paragraph",
       "status": "done",
       "translation": "承認",
-      "summary_ja": "本章は承認について規定する。",
+      "summary_ja": "型式認証の付与およびその条件を定める。",
       "modified": false,
       "justification": null,
       "prev_uid": null
@@ -74,7 +74,7 @@
       "type": "paragraph",
       "status": "done",
       "translation": "仕様",
-      "summary_ja": "この項目は、車両の仕様に関する要件を規定するものである。",
+      "summary_ja": "制動装置の技術的要件および性能を規定する。",
       "modified": false,
       "justification": null,
       "prev_uid": null

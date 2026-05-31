@@ -157,6 +157,19 @@ _BATCH_RESPONSE_SCHEMA = {
 # thinkingConfig: 思考トークンを無効化してコストを削減
 _NO_THINKING = {"thinkingBudget": 0}
 
+# JSON Schema: 要約のみ更新用（バッチ）
+_SUMMARY_ONLY_BATCH_SCHEMA = {
+    "type": "ARRAY",
+    "items": {
+        "type": "OBJECT",
+        "properties": {
+            "number":     {"type": "STRING"},
+            "summary_ja": {"type": "STRING", "description": "20〜30文字の超短い1文日本語要約"},
+        },
+        "required": ["number", "summary_ja"],
+    },
+}
+
 
 
 def _gemini_post(api_key: str, payload: dict, model: str = "gemini-2.5-flash",
@@ -265,6 +278,47 @@ def _translate_gemini_batch(
         item["number"]: {k: v.strip() if isinstance(v, str) else v for k, v in item.items()}
         for item in items
     }
+
+
+def _summarize_gemini_batch(
+    api_key: str,
+    system_prompt: str,
+    paragraphs: list[tuple[str, str, str]],  # [(number, title, text), ...]
+    model: str = "gemini-2.5-flash",
+) -> dict[str, str]:
+    """複数段落の要約のみを1回のAPI呼び出しで生成する（翻訳は不要）。
+    Returns: {number: summary_ja, ...}
+    """
+    lines = []
+    for number, title, text in paragraphs:
+        lines.append(f"[段落 {number}]\nタイトル: {title}\n原文:\n{text}")
+    user_msg = textwrap.dedent(f"""\
+        以下の各UN法規段落について、20〜30文字の超短い1文日本語要約を作成してください。
+        「最重要な要件・内容を1文で」が目標です。
+        例: 「粘着利用率は0.75以上必要。」「制動距離は所定の計算式で算出する。」
+
+        {chr(10).join(lines)}
+
+        各段落について「number」「summary_ja」を含むJSONオブジェクトの配列で回答してください。
+        段落番号は原文のまま返すこと。
+    """)
+    payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": _SUMMARY_ONLY_BATCH_SCHEMA,
+            "temperature": 0.2,
+            "thinkingConfig": _NO_THINKING,
+        },
+    }
+    data = _gemini_post(api_key, payload, model)
+    try:
+        raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except (KeyError, IndexError):
+        raise ValueError(f"Unexpected Gemini response: {data}")
+    items = json.loads(raw)
+    return {item["number"]: item["summary_ja"].strip() for item in items}
 
 
 def translate_headings_gemini(
@@ -669,6 +723,109 @@ def body_cmd(
     save_structured(data, reg, version)
     click.echo(f"\n{'='*52}")
     click.echo(f"Done: {processed} translated, {errors} error(s).")
+    click.echo(f"Saved → data/{reg}/{version}/structured.json")
+
+
+@cli.command("summary")
+@click.option('--reg',        required=True,                      help='法規番号 (例: R13)')
+@click.option('--version',    required=True,                      help='バージョン (例: Rev9)')
+@click.option('--model',      default='gemini-2.5-flash',
+              show_default=True,                                   help='使用するモデル名')
+@click.option('--dry-run',    is_flag=True,                       help='API未使用。対象段落を一覧表示して終了')
+@click.option('--limit',      default=0,   type=int,              help='更新する最大段落数（0=無制限）')
+@click.option('--delay',      default=1.0, type=float,            help='API呼び出し間隔（秒）')
+@click.option('--prefix',     default='',                         help='段落番号のプレフィックスでフィルタ (例: 5.1)')
+@click.option('--batch-size', default=10,  type=int, show_default=True,
+              help='1回のAPI呼び出しで処理する段落数')
+def summary_cmd(
+    reg: str, version: str, model: str,
+    dry_run: bool, limit: int, delay: float, prefix: str, batch_size: int,
+):
+    """
+    翻訳済み段落の summary_ja を短い1文に更新する（translation は変更しない）。
+
+    status=="done" の段落のみ対象。翻訳文を送らないので通常の body 翻訳より
+    出力トークンが大幅に少なく、コストを約70〜80%削減できる。
+
+    必要な環境変数: GEMINI_API_KEY
+    """
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key and not dry_run:
+        raise click.ClickException(
+            "GEMINI_API_KEY 環境変数が設定されていません。\n"
+            "  export GEMINI_API_KEY=<your-key>\n"
+            "  --dry-run オプションで動作確認のみ行うことができます。"
+        )
+
+    glossary_terms = load_glossary(reg)
+    system_prompt  = build_system_prompt(glossary_terms)
+
+    data   = load_structured(reg, version)
+    blocks = data['paragraphs']
+
+    targets = [
+        b for b in blocks
+        if b.get('type', 'paragraph') == 'paragraph'
+        and b.get('status') in ('done', 'translated')
+        and b.get('text', '').strip()
+        and (not prefix or b.get('number', '') == prefix
+             or b.get('number', '').startswith(prefix + '.'))
+    ]
+
+    if limit > 0:
+        targets = targets[:limit]
+
+    click.echo(f"Target: {reg}/{version}  |  done paragraphs: {len(targets)}")
+    click.echo(f"Glossary: {len(glossary_terms)} term(s) loaded.")
+    click.echo(f"Batch size: {batch_size} (summary-only, thinking disabled)")
+
+    if dry_run:
+        click.echo("\nDry-run — paragraphs that would be updated:")
+        for p in targets[:20]:
+            cur = (p.get('summary_ja') or '')[:50]
+            click.echo(f"  [{p['number']:8s}] {cur}")
+        if len(targets) > 20:
+            click.echo(f"  ... and {len(targets) - 20} more")
+        return
+
+    processed = 0
+    errors    = 0
+    SAVE_INTERVAL = 20
+
+    for batch_start in range(0, len(targets), batch_size):
+        batch = targets[batch_start:batch_start + batch_size]
+        nums  = ", ".join(p['number'] for p in batch)
+        click.echo(f"\nBatch [{batch_start+1}–{batch_start+len(batch)}] {nums}")
+        try:
+            results = _summarize_gemini_batch(
+                api_key, system_prompt,
+                [(p['number'], p['title'], p['text']) for p in batch],
+                model=model,
+            )
+            for p in batch:
+                if p['number'] in results:
+                    old = (p.get('summary_ja') or '')[:40]
+                    new_s = results[p['number']]
+                    p['summary_ja'] = new_s
+                    processed += 1
+                    click.echo(f"  ✓ [{p['number']}] {new_s}  （旧: {old}…）")
+                else:
+                    click.echo(f"  ✗ [{p['number']}] 結果が返りませんでした", err=True)
+                    errors += 1
+        except Exception as e:
+            click.echo(f"  ✗ Batch ERROR: {e}", err=True)
+            errors += len(batch)
+
+        if (processed + errors) % SAVE_INTERVAL < batch_size:
+            save_structured(data, reg, version)
+            click.echo(f"  [checkpoint: {processed} saved]")
+
+        if delay > 0 and batch_start + batch_size < len(targets):
+            time.sleep(delay)
+
+    save_structured(data, reg, version)
+    click.echo(f"\n{'='*52}")
+    click.echo(f"Done: {processed} updated, {errors} error(s).")
     click.echo(f"Saved → data/{reg}/{version}/structured.json")
 
 

@@ -311,6 +311,11 @@ button { cursor: pointer; font-family: inherit; }
 }
 .para-card .tree-title-ja {
   font-size: .92rem;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .para-card .tree-title-en--sub {
   font-size: .72rem;

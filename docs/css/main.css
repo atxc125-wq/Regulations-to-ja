@@ -750,6 +750,11 @@ body.page-index { overflow: auto; height: auto; min-height: 100vh; }
   .pane { height: auto; width: 100% !important; border-right: none; }
   .pane-main { border-bottom: none; }
 
+  /* タップで段落を選択した際、スティッキーヘッダー(52px) + モバイルナビ(76px) + 余白 の分ずらす */
+  .para-card {
+    scroll-margin-top: calc(var(--header-h) + 76px + 8px);
+  }
+
   /* トップへ戻るボタンを表示可能にする */
   .back-to-top { display: flex; }
 }

@@ -110,6 +110,11 @@
     var placeholder = document.getElementById('para-nav-placeholder');
     if (placeholder) placeholder.style.display = anyVisible ? 'none' : '';
 
+    // 中ペイン区切りの表示を同期
+    document.querySelectorAll('.para-nav-divider').forEach(function (div) {
+      div.style.display = (div.dataset.dividerFor === String(chapterNumber)) ? '' : 'none';
+    });
+
     document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {
       var item = btn.closest('.tree-item');
       btn.classList.toggle('active', item && item.dataset.number === chapterNumber);
@@ -172,6 +177,11 @@
 
     var placeholder = document.getElementById('para-nav-placeholder');
     if (placeholder) placeholder.style.display = anyVisible ? 'none' : '';
+
+    // 中ペイン区切りの表示を同期
+    document.querySelectorAll('.para-nav-divider').forEach(function (div) {
+      div.style.display = (div.dataset.dividerAnnex === String(annexId)) ? '' : 'none';
+    });
 
     // 章ツリーのアクティブを解除し、附属書ツリーのアクティブを更新
     document.querySelectorAll('#chapter-tree .tree-btn').forEach(function (btn) {

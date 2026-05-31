@@ -434,6 +434,34 @@ button { cursor: pointer; font-family: inherit; }
 .para-nav-item[data-level="5"] { padding-left: 3rem; }
 .para-nav-item[data-level="6"] { padding-left: 3.75rem; }
 
+/* 中ペイン: 章・附属書セクション区切り */
+.para-nav-divider {
+  list-style: none;
+  padding: .55rem 1rem .35rem;
+  border-top: 2px solid var(--color-border);
+  margin-top: .35rem;
+  pointer-events: none;
+  user-select: none;
+}
+.para-nav-divider-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: .4rem;
+}
+.para-nav-divider-num {
+  font-weight: 700;
+  font-size: .75rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  padding-top: .05rem;
+}
+.para-nav-divider .tree-title-block {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
 /* 展開ボタン */
 .nav-expand-btn {
   visibility: hidden;

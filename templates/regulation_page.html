@@ -88,8 +88,35 @@
     <div class="pane-header">段落</div>
     <ul class="tree-list" id="paragraph-tree">
       <li class="para-nav-placeholder" id="para-nav-placeholder">← 章・附属書を選択してください</li>
+      {% set ns = namespace(last_annex_id=none) %}
       {% for p in paragraphs %}
       {% if not p._nav_hidden and p.type != 'image' %}
+      {% if p._in_annex and p._annex_id and p._annex_id != ns.last_annex_id %}
+      {% set ann_list = annex_tree | selectattr('number', 'equalto', p._annex_id) | list %}
+      {% set ann = ann_list[0] if ann_list else none %}
+      <li class="para-nav-divider" data-divider-annex="{{ p._annex_id }}" style="display:none" aria-hidden="true">
+        <div class="para-nav-divider-inner">
+          <span class="para-nav-divider-num">附属書 {{ p._annex_id }}</span>
+          <span class="tree-title-block">
+            {% if ann and ann.title_ja %}<span class="tree-title-ja">{{ ann.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ ann.title }}</span>
+            {% elif ann %}<span class="tree-title-en">{{ ann.title }}</span>
+            {% endif %}
+          </span>
+        </div>
+      </li>
+      {% set ns.last_annex_id = p._annex_id %}
+      {% elif not p._in_annex and p.level == 1 and p._first_occ %}
+      <li class="para-nav-divider" data-divider-for="{{ p.number }}" style="display:none" aria-hidden="true">
+        <div class="para-nav-divider-inner">
+          <span class="para-nav-divider-num">{{ p.number }}</span>
+          <span class="tree-title-block">
+            {% if p.title_ja %}<span class="tree-title-ja">{{ p.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ p.title }}</span>
+            {% else %}<span class="tree-title-en">{{ p.title }}</span>
+            {% endif %}
+          </span>
+        </div>
+      </li>
+      {% endif %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
           data-uid="{{ p.uid }}"
           data-parent="{{ p.parent or '' }}"

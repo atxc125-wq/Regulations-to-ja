@@ -346,6 +346,10 @@ def build_regulation_page(regulation: str, version: str) -> None:
             p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)
         else:
             p["translation_annotated"] = None
+        # 要約の1文目を抽出（カードヘッダーの短い日本語表示用）
+        summary = p.get("summary_ja", "") or ""
+        dot_idx = summary.find("。")
+        p["summary_ja_short"] = summary[: dot_idx + 1] if dot_idx >= 0 else summary
 
     # _nav_hidden 付与後に附属書フラグを付与（TOCノイズをスキップして正確に判定）
     mark_annex_paragraphs(paragraphs)

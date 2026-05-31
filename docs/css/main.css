@@ -304,18 +304,17 @@ button { cursor: pointer; font-family: inherit; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* 下段: 要約テキスト（全幅） */
-.para-summary {
-  font-size: .85rem;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-  padding: 0 .25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* カードヘッダー内の日英2段タイトルブロック */
+.para-title-block {
+  flex: 1;
+  min-width: 0;
 }
-.para-summary em.no-summary { font-style: italic; font-size: .83rem; }
+.para-card .tree-title-ja {
+  font-size: .92rem;
+}
+.para-card .tree-title-en--sub {
+  font-size: .72rem;
+}
 
 .expand-icon {
   flex-shrink: 0;

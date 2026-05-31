@@ -90,7 +90,7 @@ _SYSTEM_BASE = """\
    - need not  →「〜する必要はない」（免除）
 3. 定義規定（"X" means ...）は「「X」とは、…をいう。」の形式にすること
 4. 列挙（(a), (b), (c)...）は原文の記号を保持すること
-5. 要約は最重要要件を1〜2文で端的に表すこと
+5. 要約は最重要要件を超短い1文（20〜30文字目安）で端的に表すこと（例: 「粘着利用率は0.75以上必要。」「制動距離は所定の計算式で算出する。」）
 
 ## 出力品質の要件
 6. **訳文は完全な日本語にすること。英単語・英略語を訳文に混入させてはならない。**
@@ -117,7 +117,7 @@ def build_user_prompt(number: str, title: str, text: str) -> str:
 
         以下のJSONキーで回答してください:
         - translation: 完全な日本語訳（法令文体）
-        - summary_ja:  1〜2文の日本語要約
+        - summary_ja:  20〜30文字の超短い1文日本語要約（例: 「粘着利用率は0.75以上必要。」）
     """)
 
 
@@ -135,7 +135,7 @@ _RESPONSE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
         "translation": {"type": "STRING", "description": "完全な日本語翻訳文（法令文体）"},
-        "summary_ja":  {"type": "STRING", "description": "1〜2文の日本語要約"},
+        "summary_ja":  {"type": "STRING", "description": "20〜30文字の超短い1文日本語要約"},
     },
     "required": ["translation", "summary_ja"],
 }
@@ -148,7 +148,7 @@ _BATCH_RESPONSE_SCHEMA = {
         "properties": {
             "number":      {"type": "STRING", "description": "段落番号（原文のまま）"},
             "translation": {"type": "STRING", "description": "完全な日本語翻訳文（法令文体）"},
-            "summary_ja":  {"type": "STRING", "description": "1〜2文の日本語要約"},
+            "summary_ja":  {"type": "STRING", "description": "20〜30文字の超短い1文日本語要約"},
         },
         "required": ["number", "translation", "summary_ja"],
     },

@@ -152,6 +152,7 @@
 
     <div class="paragraphs-container" id="paragraphs-container">
       {% set ns2 = namespace(last_annex_id2=none) %}
+      {% set tree_uids = tree | map(attribute='uid') | list %}
       {% for p in paragraphs %}
 
       {% if p._table_cell %}{# テーブルセル: 完全に非表示 #}
@@ -172,7 +173,7 @@
           </div>
         </div>
         {% set ns2.last_annex_id2 = p._annex_id %}
-      {% elif not p._in_annex and not p._nav_hidden and p.level == 1 and p._first_occ %}
+      {% elif not p._in_annex and p.uid in tree_uids %}
         <div class="content-section-divider" aria-hidden="true">
           <div class="content-section-divider-inner">
             <span class="content-section-divider-label">{{ p.number }}</span>

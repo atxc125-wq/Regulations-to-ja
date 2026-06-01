@@ -151,10 +151,41 @@
     </div>
 
     <div class="paragraphs-container" id="paragraphs-container">
+      {% set ns2 = namespace(last_annex_id2=none) %}
       {% for p in paragraphs %}
 
       {% if p._table_cell %}{# テーブルセル: 完全に非表示 #}
-      {% elif p.type == "image" %}
+      {% else %}
+
+      {# ---- 右ペイン: 章・附属書セクション区切り ---- #}
+      {% if p._in_annex and p._annex_id and p._annex_id != ns2.last_annex_id2 %}
+        {% set ann_list = annex_tree | selectattr('number', 'equalto', p._annex_id) | list %}
+        {% set ann = ann_list[0] if ann_list else none %}
+        <div class="content-section-divider" aria-hidden="true">
+          <div class="content-section-divider-inner">
+            <span class="content-section-divider-label">附属書 {{ p._annex_id }}</span>
+            <span class="tree-title-block">
+              {% if ann and ann.title_ja %}<span class="tree-title-ja">{{ ann.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ ann.title }}</span>
+              {% elif ann %}<span class="tree-title-en">{{ ann.title }}</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+        {% set ns2.last_annex_id2 = p._annex_id %}
+      {% elif not p._in_annex and not p._nav_hidden and p.level == 1 and p._first_occ %}
+        <div class="content-section-divider" aria-hidden="true">
+          <div class="content-section-divider-inner">
+            <span class="content-section-divider-label">{{ p.number }}</span>
+            <span class="tree-title-block">
+              {% if p.title_ja %}<span class="tree-title-ja">{{ p.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ p.title }}</span>
+              {% else %}<span class="tree-title-en">{{ p.title }}</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if p.type == "image" %}
       {# ---- 画像ブロック ---- #}
       <figure class="para-figure" id="para-{{ p.uid }}" data-uid="{{ p.uid }}">
         {% if p.label %}
@@ -247,6 +278,7 @@
       </article>
       {% endif %}
 
+      {% endif %}{# end: not p._table_cell #}
       {% endfor %}
     </div>
   </main>

@@ -580,6 +580,43 @@ body.page-index { overflow: auto; height: auto; min-height: 100vh; }
   /* 3ペインレイアウト外のフッターとして機能させるため非表示 */
 }
 
+/* ---------- 右ペイン: 章・附属書セクション区切り ---------- */
+.content-section-divider {
+  margin: 1.5rem 0 .5rem;
+  padding: .6rem 1.25rem .5rem;
+  border-top: 2px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0 0 4px 4px;
+}
+.content-section-divider-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+}
+.content-section-divider-label {
+  font-weight: 700;
+  font-size: .82rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  padding-top: .1rem;
+  min-width: 2rem;
+}
+.content-section-divider .tree-title-block {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.content-section-divider .tree-title-ja {
+  font-size: .95rem;
+  font-weight: 600;
+  white-space: normal;
+}
+.content-section-divider .tree-title-en--sub {
+  font-size: .72rem;
+  opacity: .75;
+}
+
 /* ---------- 図表ブロック ---------- */
 .para-figure {
   margin: .5rem 0;

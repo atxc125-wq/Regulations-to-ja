@@ -4004,6 +4004,27 @@
       "prev_uid": null
     },
     {
+      "uid": "R179-table1-img",
+      "type": "image",
+      "status": "done",
+      "src": "assets/images/table1_info_doc_params.png",
+      "label": "Table 1",
+      "caption": "Table 1  Information Document parameters"
+    },
+    {
+      "uid": "R179-annex1-general",
+      "type": "paragraph",
+      "number": "0",
+      "level": 1,
+      "parent": null,
+      "title": "GENERAL",
+      "title_ja": "一般",
+      "text": "GENERAL",
+      "translation": "一般",
+      "summary_ja": "附属書1情報文書の一般事項。",
+      "status": "done"
+    },
+    {
       "uid": "R179-ef70d100",
       "number": "1.1",
       "title": "Photographs and/or drawings of a representative vehicle/ component/separate technical unit (1): …",

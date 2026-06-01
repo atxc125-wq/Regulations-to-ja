@@ -375,6 +375,35 @@ def build_regulation_page(regulation: str, version: str) -> None:
         else:
             p["_first_occ"] = False
 
+    # 本文章番号のギャップ検出: 本文章番号が連続していない場合（例 ch5→ch7）、
+    # 中間章の区切りを最初に出現する章の直前段落に _gap_chapters_before として付与する。
+    tree_chapter_map: dict[int, dict] = {}
+    for node in tree:
+        n = node["number"]
+        if n.isdigit():
+            tree_chapter_map[int(n)] = node
+    if tree_chapter_map:
+        last_body_ch_int = 0
+        seen_body_ch_ints: set[int] = set()
+        for p in paragraphs:
+            if p.get("type") == "image" or p.get("_nav_hidden") or p.get("_in_annex"):
+                continue
+            num = p.get("number", "")
+            try:
+                top = int(num.split('.')[0])
+            except (ValueError, IndexError):
+                continue
+            if top not in tree_chapter_map:
+                continue
+            if top not in seen_body_ch_ints:
+                seen_body_ch_ints.add(top)
+                gap = [tree_chapter_map[n]
+                       for n in sorted(tree_chapter_map.keys())
+                       if last_body_ch_int < n < top and n not in seen_body_ch_ints]
+                if gap:
+                    p["_gap_chapters_before"] = gap
+                last_body_ch_int = top
+
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         autoescape=select_autoescape(["html"]),

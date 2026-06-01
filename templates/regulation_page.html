@@ -151,8 +151,8 @@
     </div>
 
     <div class="paragraphs-container" id="paragraphs-container">
-      {% set ns2 = namespace(last_annex_id2=none) %}
-      {% set tree_uids = tree | map(attribute='uid') | list %}
+      {% set ns2 = namespace(last_annex_id2=none, last_body_chapter='') %}
+      {% set chapter_numbers = tree | map(attribute='number') | list %}
       {% for p in paragraphs %}
 
       {% if p._table_cell or p._nav_hidden %}{# テーブルセル・ノイズ段落: 完全に非表示 #}
@@ -173,17 +173,39 @@
           </div>
         </div>
         {% set ns2.last_annex_id2 = p._annex_id %}
-      {% elif not p._in_annex and p.uid in tree_uids %}
+      {% elif not p._in_annex %}
+        {% set _ch = (p.number or '').split('.')[0] %}
+        {% if _ch and _ch in chapter_numbers and _ch != ns2.last_body_chapter %}
+          {% set ns2.last_body_chapter = _ch %}
+          {# 欠損章（本文に段落が存在しない章）の区切りを先に出力 #}
+          {% if p._gap_chapters_before %}
+            {% for gap_node in p._gap_chapters_before %}
         <div class="content-section-divider" aria-hidden="true">
           <div class="content-section-divider-inner">
-            <span class="content-section-divider-label">{{ p.number }}</span>
+            <span class="content-section-divider-label">{{ gap_node.number }}</span>
             <span class="tree-title-block">
-              {% if p.title_ja %}<span class="tree-title-ja">{{ p.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ p.title }}</span>
-              {% else %}<span class="tree-title-en">{{ p.title }}</span>
+              {% if gap_node.title_ja %}<span class="tree-title-ja">{{ gap_node.title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ gap_node.title }}</span>
+              {% else %}<span class="tree-title-en">{{ gap_node.title }}</span>
               {% endif %}
             </span>
           </div>
         </div>
+            {% endfor %}
+          {% endif %}
+          {% set _ch_nodes = tree | selectattr('number', 'equalto', _ch) | list %}
+          {% if _ch_nodes %}
+        <div class="content-section-divider" aria-hidden="true">
+          <div class="content-section-divider-inner">
+            <span class="content-section-divider-label">{{ _ch }}</span>
+            <span class="tree-title-block">
+              {% if _ch_nodes[0].title_ja %}<span class="tree-title-ja">{{ _ch_nodes[0].title_ja }}</span><span class="tree-title-en tree-title-en--sub">{{ _ch_nodes[0].title }}</span>
+              {% else %}<span class="tree-title-en">{{ _ch_nodes[0].title }}</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+          {% endif %}
+        {% endif %}
       {% endif %}
 
       {% if p.type == "image" %}

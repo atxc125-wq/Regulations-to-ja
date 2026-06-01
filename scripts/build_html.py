@@ -201,7 +201,7 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
     for i, p in enumerate(paragraphs):
         if i <= main_body_end or i >= annex_10_start:
             continue
-        if p.get("type") == "image":
+        if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
         num = p.get("number", "")
         try:
@@ -222,16 +222,17 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
         groups.append(cur)
 
     # Step 4: グループ → Annex 1, 2, 3, … に ID を付与
-    # mark_annex_paragraphs() がフォームグループを取りこぼす場合があるため
-    # _in_annex も確実にセットする
-    # Annex 1–9 の範囲を超えたグループ（Appendix 等）は最後の Annex に含める
-    last_assigned = 0
+    # グループ間の hidden 段落にも同じ annex_id を付与するため、
+    # グループの先頭〜次グループの先頭までの範囲を連続で塗る。
+    # Annex 1–9 の範囲を超えたグループは最後の Annex に含める。
     for g_idx, indices in enumerate(groups):
         annex_num = min(g_idx + 1, 9)
-        last_assigned = annex_num
-        for idx in indices:
-            paragraphs[idx]["_annex_id"] = annex_num
-            paragraphs[idx]["_in_annex"] = True
+        start_idx = indices[0]
+        end_idx = groups[g_idx + 1][0] if g_idx + 1 < len(groups) else annex_10_start
+        for idx in range(start_idx, end_idx):
+            if paragraphs[idx].get("type") != "image":
+                paragraphs[idx]["_annex_id"] = annex_num
+                paragraphs[idx]["_in_annex"] = True
 
     # Step 5: Annex 10+ に ID を付与
     for j, (annex_num, start) in enumerate(annex_10plus):

@@ -155,7 +155,7 @@
       {% set tree_uids = tree | map(attribute='uid') | list %}
       {% for p in paragraphs %}
 
-      {% if p._table_cell %}{# テーブルセル: 完全に非表示 #}
+      {% if p._table_cell or p._nav_hidden %}{# テーブルセル・ノイズ段落: 完全に非表示 #}
       {% else %}
 
       {# ---- 右ペイン: 章・附属書セクション区切り ---- #}
@@ -200,25 +200,6 @@
         <figcaption class="para-figure-caption">{{ p.caption }}</figcaption>
         {% endif %}
       </figure>
-
-      {% elif p._nav_hidden %}
-      {# ---- ページヘッダー・ノイズ段落（右ペインでは折りたたみなしで表示） ---- #}
-      <div class="para-noise" id="para-{{ p.uid }}"
-           data-uid="{{ p.uid }}"
-           data-number="{{ p.number }}">
-        <div class="para-noise-body">
-          <div class="bilingual-container">
-            <div class="bilingual-col bilingual-en">
-              <div class="col-label">English (Original)</div>
-              <div class="para-text en-text">{{ p.text_annotated | safe }}</div>
-            </div>
-            <div class="bilingual-col bilingual-ja">
-              <div class="col-label">日本語訳</div>
-              <div class="para-text ja-text">{% if p.translation_annotated %}{{ p.translation_annotated | safe }}{% else %}<span class="translation-pending">翻訳中...</span>{% endif %}</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {% else %}
       {# ---- テキスト段落ブロック ---- #}

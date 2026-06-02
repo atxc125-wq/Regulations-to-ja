@@ -311,7 +311,8 @@
       "summary_ja": "ECE/TRANS/WP.29/2026/36文書を指す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-c12c41dd",
@@ -1481,7 +1482,8 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-aa06c129",
@@ -1526,7 +1528,8 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-c9755558",
@@ -1556,7 +1559,8 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-475c9c67",
@@ -1586,7 +1590,8 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-ddddf2cc",
@@ -1616,7 +1621,8 @@
       "summary_ja": "この段落は予約済みである。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-8288b033",
@@ -1766,7 +1772,8 @@
       "summary_ja": "WLTP-Brakeサイクルは、車両の速度と時間の関係を示すデータ点である。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-9e75e39e",
@@ -3956,7 +3963,8 @@
       "summary_ja": "制動力配分はパーセンテージで示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-feded541",
@@ -3971,7 +3979,8 @@
       "summary_ja": "ブレーキ粒子排出量はmg/kmで示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-4512fe2b",
@@ -4037,7 +4046,8 @@
       "summary_ja": "代表車両等の写真または図面を提出する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-7d8b47c0",
@@ -4053,7 +4063,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車輪数"
+      "title_ja": "車輪数",
+      "annex_id": 1
     },
     {
       "uid": "R179-72d78687",
@@ -4069,7 +4080,8 @@
       "prev_uid": null,
       "title_ja": "駆動軸（数、位置、連結）",
       "translation": "駆動車軸（数、位置、相互接続）：…",
-      "summary_ja": "駆動軸の数、位置、相互接続を記載すること。"
+      "summary_ja": "駆動軸の数、位置、相互接続を記載すること。",
+      "annex_id": 1
     },
     {
       "uid": "R179-4989d38f",
@@ -4085,7 +4097,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "運転質量"
+      "title_ja": "運転質量",
+      "annex_id": 1
     },
     {
       "uid": "R179-cc487207",
@@ -4101,7 +4114,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "各軸の質量配分（最大・最小）"
+      "title_ja": "各軸の質量配分（最大・最小）",
+      "annex_id": 1
     },
     {
       "uid": "R179-8fd8cfba",
@@ -4117,7 +4131,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "回転質量"
+      "title_ja": "回転質量",
+      "annex_id": 1
     },
     {
       "uid": "R179-da51f31f",
@@ -4148,7 +4163,8 @@
       "justification": null,
       "prev_uid": null,
       "translation": "推進エネルギー変換装置の製造者：…",
-      "summary_ja": "推進エネルギー変換装置の製造者を記載すること。"
+      "summary_ja": "推進エネルギー変換装置の製造者を記載すること。",
+      "annex_id": 1
     },
     {
       "uid": "R179-2174410e",
@@ -4163,7 +4179,8 @@
       "summary_ja": "推進エネルギー変換装置の製造者コードを記載すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-0a836ca9",
@@ -4178,7 +4195,8 @@
       "summary_ja": "内燃機関に関する情報を記載すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-e9bf3efb",
@@ -4194,7 +4212,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "作動原理"
+      "title_ja": "作動原理",
+      "annex_id": 1
     },
     {
       "uid": "R179-dac779c2",
@@ -4210,7 +4229,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "シリンダー数と配置"
+      "title_ja": "シリンダー数と配置",
+      "annex_id": 1
     },
     {
       "uid": "R179-e5fe5dcf",
@@ -4226,7 +4246,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "エンジン排気量"
+      "title_ja": "エンジン排気量",
+      "annex_id": 1
     },
     {
       "uid": "R179-4a75f80f",
@@ -4242,7 +4263,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "体積圧縮比"
+      "title_ja": "体積圧縮比",
+      "annex_id": 1
     },
     {
       "uid": "R179-c9da1d50",
@@ -4258,7 +4280,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "定格エンジン出力"
+      "title_ja": "定格エンジン出力",
+      "annex_id": 1
     },
     {
       "uid": "R179-353c7abf",
@@ -4274,7 +4297,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "最大正味トルク"
+      "title_ja": "最大正味トルク",
+      "annex_id": 1
     },
     {
       "uid": "R179-51971826",
@@ -4289,7 +4313,8 @@
       "summary_ja": "燃料の種類を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-d295d281",
@@ -4304,7 +4329,8 @@
       "summary_ja": "ディーゼル、ガソリン等の燃料種別を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-2050a0ba",
@@ -4320,7 +4346,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "制御ユニット（ECU）の製造者と型式"
+      "title_ja": "制御ユニット（ECU）の製造者と型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-286ed0c8",
@@ -4336,7 +4363,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECUのソフトウェアバージョン"
+      "title_ja": "ECUのソフトウェアバージョン",
+      "annex_id": 1
     },
     {
       "uid": "R179-531887f0",
@@ -4351,7 +4379,8 @@
       "summary_ja": "電動パワートレインの情報を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-1b31eff9",
@@ -4366,7 +4395,8 @@
       "summary_ja": "電動パワートレインの一般説明を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-026967e7",
@@ -4382,7 +4412,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-e3a628fc",
@@ -4398,7 +4429,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-4fae3201",
@@ -4414,7 +4446,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "用途"
+      "title_ja": "用途",
+      "annex_id": 1
     },
     {
       "uid": "R179-15981136",
@@ -4430,7 +4463,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "トランスミッション配置"
+      "title_ja": "トランスミッション配置",
+      "annex_id": 1
     },
     {
       "uid": "R179-af353852",
@@ -4446,7 +4480,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "試験電圧"
+      "title_ja": "試験電圧",
+      "annex_id": 1
     },
     {
       "uid": "R179-79745272",
@@ -4462,7 +4497,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "モーター定格回転数"
+      "title_ja": "モーター定格回転数",
+      "annex_id": 1
     },
     {
       "uid": "R179-7aef11bc",
@@ -4478,7 +4514,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "最大出力"
+      "title_ja": "最大出力",
+      "annex_id": 1
     },
     {
       "uid": "R179-651e7aa4",
@@ -4493,7 +4530,8 @@
       "summary_ja": "トラクションREESSに関する情報を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-4e683601",
@@ -4509,7 +4547,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "REESSの商標と銘柄"
+      "title_ja": "REESSの商標と銘柄",
+      "annex_id": 1
     },
     {
       "uid": "R179-d9b9c113",
@@ -4525,7 +4564,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "電気化学的対の種類"
+      "title_ja": "電気化学的対の種類",
+      "annex_id": 1
     },
     {
       "uid": "R179-483486c6",
@@ -4541,7 +4581,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "定格電圧"
+      "title_ja": "定格電圧",
+      "annex_id": 1
     },
     {
       "uid": "R179-84ff9ddc",
@@ -4557,7 +4598,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "REESSエネルギー"
+      "title_ja": "REESSエネルギー",
+      "annex_id": 1
     },
     {
       "uid": "R179-b7d7eafd",
@@ -4573,7 +4615,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "REESS容量"
+      "title_ja": "REESS容量",
+      "annex_id": 1
     },
     {
       "uid": "R179-7db70c33",
@@ -4589,7 +4632,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "放電終止電圧値"
+      "title_ja": "放電終止電圧値",
+      "annex_id": 1
     },
     {
       "uid": "R179-5568416f",
@@ -4605,7 +4649,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "セル数"
+      "title_ja": "セル数",
+      "annex_id": 1
     },
     {
       "uid": "R179-bc742ac1",
@@ -4621,7 +4666,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "バッテリー管理システム制御ユニット"
+      "title_ja": "バッテリー管理システム制御ユニット",
+      "annex_id": 1
     },
     {
       "uid": "R179-9e04512a",
@@ -4637,7 +4683,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-c30de941",
@@ -4653,7 +4700,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-25ae345d",
@@ -4669,7 +4717,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-f392270f",
@@ -4684,7 +4733,8 @@
       "summary_ja": "電動モーターに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-bfde164b",
@@ -4716,7 +4766,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "慣性質量"
+      "title_ja": "慣性質量",
+      "annex_id": 1
     },
     {
       "uid": "R179-757ac3b0",
@@ -4731,7 +4782,8 @@
       "summary_ja": "パワーコントローラーに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-203ddbb9",
@@ -4747,7 +4799,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-0539cdf4",
@@ -4763,7 +4816,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-25ae345d",
@@ -4779,7 +4833,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-9c15f9dc",
@@ -4795,7 +4850,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "制御原理"
+      "title_ja": "制御原理",
+      "annex_id": 1
     },
     {
       "uid": "R179-106c5e40",
@@ -4810,7 +4866,8 @@
       "summary_ja": "推進エネルギー変換器の組み合わせを記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-4e59e87d",
@@ -4825,7 +4882,8 @@
       "summary_ja": "ハイブリッド電気自動車であるか否かを特定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-93e1198f",
@@ -4840,7 +4898,8 @@
       "summary_ja": "ハイブリッド車の区分は外部充電式か否か。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-8c57c53c",
@@ -4855,7 +4914,8 @@
       "summary_ja": "走行モード切替スイッチの有無を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-48657f1a",
@@ -4871,7 +4931,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "選択可能モード"
+      "title_ja": "選択可能モード",
+      "annex_id": 1
     },
     {
       "uid": "R179-04837e2b",
@@ -4887,7 +4948,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "純電気"
+      "title_ja": "純電気",
+      "annex_id": 1
     },
     {
       "uid": "R179-fae654d9",
@@ -4903,7 +4965,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "純燃料消費"
+      "title_ja": "純燃料消費",
+      "annex_id": 1
     },
     {
       "uid": "R179-d2b9e01e",
@@ -4919,7 +4982,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ハイブリッドモード"
+      "title_ja": "ハイブリッドモード",
+      "annex_id": 1
     },
     {
       "uid": "R179-32af3858",
@@ -4934,7 +4998,8 @@
       "summary_ja": "エネルギー貯蔵装置の種類を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-530c5e54",
@@ -4950,7 +5015,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-7f41dead",
@@ -4966,7 +5032,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fd4a1b05",
@@ -4982,7 +5049,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-a747325a",
@@ -4998,7 +5066,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "電気化学的対の種類"
+      "title_ja": "電気化学的対の種類",
+      "annex_id": 1
     },
     {
       "uid": "R179-5ba46448",
@@ -5014,7 +5083,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "エネルギー"
+      "title_ja": "エネルギー",
+      "annex_id": 1
     },
     {
       "uid": "R179-73c7a490",
@@ -5030,7 +5100,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "充電器"
+      "title_ja": "充電器",
+      "annex_id": 1
     },
     {
       "uid": "R179-bc742ac1",
@@ -5046,7 +5117,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "バッテリー管理システム制御ユニット"
+      "title_ja": "バッテリー管理システム制御ユニット",
+      "annex_id": 1
     },
     {
       "uid": "R179-9e04512a",
@@ -5062,7 +5134,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-c30de941",
@@ -5078,7 +5151,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-25ae345d",
@@ -5094,7 +5168,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-ad22c78b",
@@ -5109,7 +5184,8 @@
       "summary_ja": "各電動機の種類を個別に記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-026967e7",
@@ -5125,7 +5201,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-e3a628fc",
@@ -5141,7 +5218,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-f0ef3974",
@@ -5157,7 +5235,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "主な用途"
+      "title_ja": "主な用途",
+      "annex_id": 1
     },
     {
       "uid": "R179-c99edd72",
@@ -5173,7 +5252,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "牽引モーターとして使用する場合"
+      "title_ja": "牽引モーターとして使用する場合",
+      "annex_id": 1
     },
     {
       "uid": "R179-7aef11bc",
@@ -5189,7 +5269,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "最大出力"
+      "title_ja": "最大出力",
+      "annex_id": 1
     },
     {
       "uid": "R179-94d46f45",
@@ -5205,7 +5286,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "作動原理"
+      "title_ja": "作動原理",
+      "annex_id": 1
     },
     {
       "uid": "R179-34551ddb",
@@ -5268,7 +5350,8 @@
       "summary_ja": "制御ユニットに関する情報を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-530c5e54",
@@ -5284,7 +5367,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-7f41dead",
@@ -5300,7 +5384,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fd4a1b05",
@@ -5316,7 +5401,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-757ac3b0",
@@ -5331,7 +5417,8 @@
       "summary_ja": "動力制御装置に関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-026967e7",
@@ -5347,7 +5434,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-e3a628fc",
@@ -5363,7 +5451,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fd4a1b05",
@@ -5379,7 +5468,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "識別番号"
+      "title_ja": "識別番号",
+      "annex_id": 1
     },
     {
       "uid": "R179-f0b52f70",
@@ -5394,7 +5484,8 @@
       "summary_ja": "燃料電池ハイブリッド車であるか否かを示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-3bfef99e",
@@ -5410,7 +5501,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "燃料電池の型式"
+      "title_ja": "燃料電池の型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-026967e7",
@@ -5426,7 +5518,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-e3a628fc",
@@ -5442,7 +5535,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-3c9f3fa3",
@@ -5458,7 +5552,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "定格電圧"
+      "title_ja": "定格電圧",
+      "annex_id": 1
     },
     {
       "uid": "R179-8735c7c1",
@@ -5474,7 +5569,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "システム説明"
+      "title_ja": "システム説明",
+      "annex_id": 1
     },
     {
       "uid": "R179-9bf3915f",
@@ -5489,7 +5585,8 @@
       "summary_ja": "電気エネルギー変換器に関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-aa99bba9",
@@ -5505,7 +5602,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "電動機とトラクションREESS間の電気エネルギー変換装置"
+      "title_ja": "電動機とトラクションREESS間の電気エネルギー変換装置",
+      "annex_id": 1
     },
     {
       "uid": "R179-203ddbb9",
@@ -5521,7 +5619,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-0539cdf4",
@@ -5537,7 +5636,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fc412ff3",
@@ -5553,7 +5653,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "申告定格電力"
+      "title_ja": "申告定格電力",
+      "annex_id": 1
     },
     {
       "uid": "R179-52593881",
@@ -5569,7 +5670,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "トラクションREESSと低電圧電源間の電気エネルギー変換装置"
+      "title_ja": "トラクションREESSと低電圧電源間の電気エネルギー変換装置",
+      "annex_id": 1
     },
     {
       "uid": "R179-203ddbb9",
@@ -5585,7 +5687,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-0539cdf4",
@@ -5601,7 +5704,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fc412ff3",
@@ -5617,7 +5721,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "申告定格電力"
+      "title_ja": "申告定格電力",
+      "annex_id": 1
     },
     {
       "uid": "R179-cdb8f225",
@@ -5633,7 +5738,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "充電プラグインとトラクションREESS間の電気エネルギー変換装置"
+      "title_ja": "充電プラグインとトラクションREESS間の電気エネルギー変換装置",
+      "annex_id": 1
     },
     {
       "uid": "R179-203ddbb9",
@@ -5649,7 +5755,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者"
+      "title_ja": "製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-0539cdf4",
@@ -5665,7 +5772,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-fc412ff3",
@@ -5681,7 +5789,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "申告定格電力"
+      "title_ja": "申告定格電力",
+      "annex_id": 1
     },
     {
       "uid": "R179-8161d5fd",
@@ -5696,7 +5805,8 @@
       "summary_ja": "クラッチに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-e3a628fc",
@@ -5712,7 +5822,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-b0bafd01",
@@ -5727,7 +5838,8 @@
       "summary_ja": "ギアボックスに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-cc0b2333",
@@ -5743,7 +5855,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "型式"
+      "title_ja": "型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-612a16ae",
@@ -5759,7 +5872,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "クラッチ数"
+      "title_ja": "クラッチ数",
+      "annex_id": 1
     },
     {
       "uid": "R179-69712ad5",
@@ -5789,7 +5903,8 @@
       "summary_ja": "自動変速機以外は変速機情報を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-736b1e4c",
@@ -5804,7 +5919,8 @@
       "summary_ja": "各ギアの回転数と変速時の回転数を指定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-dacd5a6f",
@@ -5820,7 +5936,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ASM値"
+      "title_ja": "ASM値",
+      "annex_id": 1
     },
     {
       "uid": "R179-bd642d33",
@@ -5836,7 +5953,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車両設計最高速度"
+      "title_ja": "車両設計最高速度",
+      "annex_id": 1
     },
     {
       "uid": "R179-7a0beb97",
@@ -5852,7 +5970,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "タイヤとホイール"
+      "title_ja": "タイヤとホイール",
+      "annex_id": 1
     },
     {
       "uid": "R179-d529273f",
@@ -5868,7 +5987,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "タイヤ/ホイールの組み合わせ"
+      "title_ja": "タイヤ/ホイールの組み合わせ",
+      "annex_id": 1
     },
     {
       "uid": "R179-6771e2ba",
@@ -5884,7 +6004,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車軸"
+      "title_ja": "車軸",
+      "annex_id": 1
     },
     {
       "uid": "R179-b886e424",
@@ -5900,7 +6021,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車軸1"
+      "title_ja": "車軸1",
+      "annex_id": 1
     },
     {
       "uid": "R179-31b7da04",
@@ -5916,7 +6038,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "タイヤサイズ表示"
+      "title_ja": "タイヤサイズ表示",
+      "annex_id": 1
     },
     {
       "uid": "R179-7dc3850b",
@@ -5932,7 +6055,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車軸2"
+      "title_ja": "車軸2",
+      "annex_id": 1
     },
     {
       "uid": "R179-8999090a",
@@ -5948,7 +6072,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "タイヤサイズ表示など"
+      "title_ja": "タイヤサイズ表示など",
+      "annex_id": 1
     },
     {
       "uid": "R179-bf17554f",
@@ -5964,7 +6089,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "転がり半径の上限と下限"
+      "title_ja": "転がり半径の上限と下限",
+      "annex_id": 1
     },
     {
       "uid": "R179-b886e424",
@@ -5980,7 +6106,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車軸1"
+      "title_ja": "車軸1",
+      "annex_id": 1
     },
     {
       "uid": "R179-7dc3850b",
@@ -5996,7 +6123,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車軸2"
+      "title_ja": "車軸2",
+      "annex_id": 1
     },
     {
       "uid": "R179-5e635bd1",
@@ -6012,7 +6140,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "車両製造者が推奨するタイヤ空気圧"
+      "title_ja": "車両製造者が推奨するタイヤ空気圧",
+      "annex_id": 1
     },
     {
       "uid": "R179-6c8992e0",
@@ -6028,7 +6157,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "摩擦ブレーキ"
+      "title_ja": "摩擦ブレーキ",
+      "annex_id": 1
     },
     {
       "uid": "R179-821978a6",
@@ -6044,7 +6174,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシステムアセンブリ"
+      "title_ja": "ブレーキシステムアセンブリ",
+      "annex_id": 1
     },
     {
       "uid": "R179-e0eba73a",
@@ -6060,7 +6191,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシステムアセンブリの型式"
+      "title_ja": "ブレーキシステムアセンブリの型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-1bd4e90e",
@@ -6076,7 +6208,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "前車軸ディスク/ドラム"
+      "title_ja": "前車軸ディスク/ドラム",
+      "annex_id": 1
     },
     {
       "uid": "R179-9c3c10a1",
@@ -6092,7 +6225,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "後車軸ディスク/ドラム"
+      "title_ja": "後車軸ディスク/ドラム",
+      "annex_id": 1
     },
     {
       "uid": "R179-57e4fc35",
@@ -6108,7 +6242,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスク"
+      "title_ja": "ディスク",
+      "annex_id": 1
     },
     {
       "uid": "R179-4d4ddee7",
@@ -6140,7 +6275,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの構造"
+      "title_ja": "ディスクの構造",
+      "annex_id": 1
     },
     {
       "uid": "R179-b015a4f4",
@@ -6156,7 +6292,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの製造者"
+      "title_ja": "ディスクの製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-bf9ada81",
@@ -6172,7 +6309,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの質量と寸法"
+      "title_ja": "ディスクの質量と寸法",
+      "annex_id": 1
     },
     {
       "uid": "R179-63c2b6f6",
@@ -6188,7 +6326,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの質量"
+      "title_ja": "ディスクの質量",
+      "annex_id": 1
     },
     {
       "uid": "R179-f3302839",
@@ -6204,7 +6343,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの直径"
+      "title_ja": "ディスクの直径",
+      "annex_id": 1
     },
     {
       "uid": "R179-0303128a",
@@ -6220,7 +6360,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの厚さ"
+      "title_ja": "ディスクの厚さ",
+      "annex_id": 1
     },
     {
       "uid": "R179-b878cc0a",
@@ -6236,7 +6377,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ディスクの摩擦面"
+      "title_ja": "ディスクの摩擦面",
+      "annex_id": 1
     },
     {
       "uid": "R179-c56dcbac",
@@ -6252,7 +6394,8 @@
       "prev_uid": null,
       "title_ja": "摩擦面の材料配合",
       "translation": "摩擦面の材料配合（例：材料コード）…",
-      "summary_ja": "摩擦面の材料配合を記載すること。"
+      "summary_ja": "摩擦面の材料配合を記載すること。",
+      "annex_id": 1
     },
     {
       "uid": "R179-871c37b9",
@@ -6268,7 +6411,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "コーティング"
+      "title_ja": "コーティング",
+      "annex_id": 1
     },
     {
       "uid": "R179-c2f42205",
@@ -6284,7 +6428,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "コーティングの種類"
+      "title_ja": "コーティングの種類",
+      "annex_id": 1
     },
     {
       "uid": "R179-02489591",
@@ -6300,7 +6445,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "キャリパー"
+      "title_ja": "キャリパー",
+      "annex_id": 1
     },
     {
       "uid": "R179-30815d6e",
@@ -6316,7 +6462,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "キャリパーの型式（識別）"
+      "title_ja": "キャリパーの型式（識別）",
+      "annex_id": 1
     },
     {
       "uid": "R179-7f375508",
@@ -6332,7 +6479,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "キャリパーの構造"
+      "title_ja": "キャリパーの構造",
+      "annex_id": 1
     },
     {
       "uid": "R179-bdee1d9e",
@@ -6348,7 +6496,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "キャリパーの製造者"
+      "title_ja": "キャリパーの製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-62ac6310",
@@ -6364,7 +6513,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ピストン数"
+      "title_ja": "ピストン数",
+      "annex_id": 1
     },
     {
       "uid": "R179-6b42f5c8",
@@ -6380,7 +6530,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ピストンの直径"
+      "title_ja": "ピストンの直径",
+      "annex_id": 1
     },
     {
       "uid": "R179-8526bf1c",
@@ -6396,7 +6547,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "リトラクション要素の型式"
+      "title_ja": "リトラクション要素の型式",
+      "annex_id": 1
     },
     {
       "uid": "R179-c4581573",
@@ -6412,7 +6564,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッド"
+      "title_ja": "ブレーキパッド",
+      "annex_id": 1
     },
     {
       "uid": "R179-0764de6d",
@@ -6428,7 +6581,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッドの型式（識別）"
+      "title_ja": "ブレーキパッドの型式（識別）",
+      "annex_id": 1
     },
     {
       "uid": "R179-1687b567",
@@ -6444,7 +6598,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッドの製造者"
+      "title_ja": "ブレーキパッドの製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-3e1b86ec",
@@ -6475,7 +6630,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッドの形状"
+      "title_ja": "ブレーキパッドの形状",
+      "annex_id": 1
     },
     {
       "uid": "R179-15d95d94",
@@ -6491,7 +6647,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッドの摩擦面"
+      "title_ja": "ブレーキパッドの摩擦面",
+      "annex_id": 1
     },
     {
       "uid": "R179-e0825e50",
@@ -6507,7 +6664,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキパッドの材料配合"
+      "title_ja": "ブレーキパッドの材料配合",
+      "annex_id": 1
     },
     {
       "uid": "R179-4ec61959",
@@ -6523,7 +6681,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "裏金"
+      "title_ja": "裏金",
+      "annex_id": 1
     },
     {
       "uid": "R179-7e11f5c9",
@@ -6539,7 +6698,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキドラム"
+      "title_ja": "ブレーキドラム",
+      "annex_id": 1
     },
     {
       "uid": "R179-523bed45",
@@ -6555,7 +6715,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの型式（識別）"
+      "title_ja": "ドラムの型式（識別）",
+      "annex_id": 1
     },
     {
       "uid": "R179-92d006dd",
@@ -6571,7 +6732,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの構造"
+      "title_ja": "ドラムの構造",
+      "annex_id": 1
     },
     {
       "uid": "R179-1ca2fbb6",
@@ -6587,7 +6749,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの製造者"
+      "title_ja": "ドラムの製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-b36540a0",
@@ -6603,7 +6766,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの質量"
+      "title_ja": "ドラムの質量",
+      "annex_id": 1
     },
     {
       "uid": "R179-d553169a",
@@ -6619,7 +6783,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの直径"
+      "title_ja": "ドラムの直径",
+      "annex_id": 1
     },
     {
       "uid": "R179-5c276a7e",
@@ -6635,7 +6800,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ドラムの摩擦面"
+      "title_ja": "ドラムの摩擦面",
+      "annex_id": 1
     },
     {
       "uid": "R179-8117f5b5",
@@ -6651,7 +6817,8 @@
       "prev_uid": null,
       "title_ja": "ドラムの材料配合",
       "translation": "ドラムの材料配合（例：材料コード）…",
-      "summary_ja": "ドラムの材料配合を記載する。"
+      "summary_ja": "ドラムの材料配合を記載する。",
+      "annex_id": 1
     },
     {
       "uid": "R179-c5e38c2b",
@@ -6667,7 +6834,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシュー"
+      "title_ja": "ブレーキシュー",
+      "annex_id": 1
     },
     {
       "uid": "R179-13809498",
@@ -6683,7 +6851,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシューの型式（識別）"
+      "title_ja": "ブレーキシューの型式（識別）",
+      "annex_id": 1
     },
     {
       "uid": "R179-9b904c7f",
@@ -6699,7 +6868,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシューの構造"
+      "title_ja": "ブレーキシューの構造",
+      "annex_id": 1
     },
     {
       "uid": "R179-608e3186",
@@ -6715,7 +6885,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシューの製造者"
+      "title_ja": "ブレーキシューの製造者",
+      "annex_id": 1
     },
     {
       "uid": "R179-71d39a97",
@@ -6746,7 +6917,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシューの設計"
+      "title_ja": "ブレーキシューの設計",
+      "annex_id": 1
     },
     {
       "uid": "R179-2b0dc7ee",
@@ -6762,7 +6934,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキシューの摩擦面"
+      "title_ja": "ブレーキシューの摩擦面",
+      "annex_id": 1
     },
     {
       "uid": "R179-e2c692f1",
@@ -6794,7 +6967,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "裏金"
+      "title_ja": "裏金",
+      "annex_id": 1
     },
     {
       "uid": "R179-4015a87a",
@@ -6810,7 +6984,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者申告値"
+      "title_ja": "製造者申告値",
+      "annex_id": 1
     },
     {
       "uid": "R179-8ad81c3e",
@@ -6826,7 +7001,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "試験パラメータ"
+      "title_ja": "試験パラメータ",
+      "annex_id": 1
     },
     {
       "uid": "R179-38d1251e",
@@ -6842,7 +7018,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキ粒子排出試験パラメータ"
+      "title_ja": "ブレーキ粒子排出試験パラメータ",
+      "annex_id": 1
     },
     {
       "uid": "R179-f867dc42",
@@ -6857,7 +7034,8 @@
       "summary_ja": "ブレーキ力配分に関する情報を提供すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-4930640b",
@@ -6873,7 +7051,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "公称車輪荷重"
+      "title_ja": "公称車輪荷重",
+      "annex_id": 1
     },
     {
       "uid": "R179-d1b6e5b6",
@@ -6905,7 +7084,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "製造者申告値"
+      "title_ja": "製造者申告値",
+      "annex_id": 1
     },
     {
       "uid": "R179-d82d6cf2",
@@ -6921,7 +7101,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "摩擦制動分担係数製造者申告値"
+      "title_ja": "摩擦制動分担係数製造者申告値",
+      "annex_id": 1
     },
     {
       "uid": "R179-93c0f2c7",
@@ -6936,7 +7117,8 @@
       "justification": null,
       "prev_uid": null,
       "translation": "製造者が宣言するブレーキ粒子排出量…",
-      "summary_ja": "ブレーキ粒子排出量の製造者宣言値を示す。"
+      "summary_ja": "ブレーキ粒子排出量の製造者宣言値を示す。",
+      "annex_id": 1
     },
     {
       "uid": "R179-cd57894d",
@@ -7538,7 +7720,8 @@
       "summary_ja": "ブレーキの組み合わせを示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-5f7346af",
@@ -7554,7 +7737,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "前車軸ブレーキ"
+      "title_ja": "前車軸ブレーキ",
+      "annex_id": 1
     },
     {
       "uid": "R179-22d8a8cf",
@@ -7570,7 +7754,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "後車軸ブレーキ"
+      "title_ja": "後車軸ブレーキ",
+      "annex_id": 1
     },
     {
       "uid": "R179-2a5a2ef5",
@@ -7616,7 +7801,8 @@
       "summary_ja": "ブレーキアセンブリに関する情報を提供する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 1
     },
     {
       "uid": "R179-794cb5e5",
@@ -7908,7 +8094,8 @@
       "summary_ja": "冷却空気は清浄でなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-87a37401",
@@ -7924,7 +8111,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "冷却空気ろ過"
+      "title_ja": "冷却空気ろ過",
+      "annex_id": 4
     },
     {
       "uid": "R179-a38a7719",
@@ -7940,7 +8128,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "粒子バックグラウンド検証"
+      "title_ja": "粒子バックグラウンド検証",
+      "annex_id": 4
     },
     {
       "uid": "R179-8223ba3c",
@@ -7956,7 +8145,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "システムレベルでの粒子バックグラウンド検証"
+      "title_ja": "システムレベルでの粒子バックグラウンド検証",
+      "annex_id": 4
     },
     {
       "uid": "R179-9dd00130",
@@ -8064,7 +8254,8 @@
       "justification": null,
       "prev_uid": null,
       "translation": "ブレーキエンクロージャの設計 ブレーキエンクロージャとは、ブレーキ排出ガス試験中にブレーキアセンブリが設置される試験チャンバをいう。これは、未処理の空気が侵入してブレーキアセンブリ周囲を流れる空気を汚染するのを防ぐ密閉されたチャンバである。ブレーキエンクロージャは、均一な調整空気をブレーキを冷却するために送り、エアロゾルをサンプリングトンネルに輸送する。エンクロージャの設計要件は、ブレーキ冷却及び粒子輸送効率に関連するシステムの比較可能性を確保するための一般的なガイドラインを提供することを目的とする。図A4/1は、ブレーキエンクロージャ（要素4）の指示的な位置を示す。",
-      "summary_ja": "ブレーキエンクロージャは、ブレーキ冷却と粒子輸送効率を確保するよう設計しなければならない。"
+      "summary_ja": "ブレーキエンクロージャは、ブレーキ冷却と粒子輸送効率を確保するよう設計しなければならない。",
+      "annex_id": 4
     },
     {
       "uid": "R179-b2ad45a8",
@@ -8173,7 +8364,8 @@
       "prev_uid": null,
       "title_ja": "ブレーキろ過システム",
       "translation": "ブレーキフィルタリングシステム ブレーキフィルタリングシステム又はその他のブレーキダスト収集装置の設置は、施設の性能に悪影響を与えてはならない。システムホースの配置、長さ、及び曲がりは、実世界での適用を代表するものでなければならない。システムの部品は、ブレーキフィルタシステムの粒子収集効率に影響を与えない限り、エンクロージャの外側に設置することができる。エンクロージャから抽出された流れは、トンネルの入口、ほぼ横断面の中心に戻されなければならない。アクティブシステムが車両用途向けに複数のブレーキに対して1つ又は複数のフィルタと1つのブロワーを使用するように設計されている場合、他のブレーキの体積流量を補償するために必要な追加の体積流量は、エンクロージャの上流（及び体積流量測定の下流）のトンネルによって抽出されなければならない。該当する場合、図2に従って、慣らし運転及び排出ガス測定のために新しいフィルタを使用しなければならない。本GTRのすべての要件は満たされなければならない。例えば、冷却気流の調整は、排出ガス測定中と同様にシステムが設置され、動作している状態で行われなければならない。",
-      "summary_ja": "ブレーキろ過システムは、施設の性能に悪影響を与えてはならない。"
+      "summary_ja": "ブレーキろ過システムは、施設の性能に悪影響を与えてはならない。",
+      "annex_id": 4
     },
     {
       "uid": "R179-86a8cbdd",
@@ -8434,7 +8626,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "キャリパー向き"
+      "title_ja": "キャリパー向き",
+      "annex_id": 4
     },
     {
       "uid": "R179-920a6da9",
@@ -8479,7 +8672,8 @@
       "summary_ja": "WLTP-Brakeサイクルの適用方法を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-60c389eb",
@@ -8542,7 +8736,8 @@
       "summary_ja": "WLTP-Brakeサイクルの中断時の対応を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-da17b35b",
@@ -8558,7 +8753,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "冷却調整セクション"
+      "title_ja": "冷却調整セクション",
+      "annex_id": 4
     },
     {
       "uid": "R179-b2f48a71",
@@ -8574,7 +8770,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "慣らし運転セクション"
+      "title_ja": "慣らし運転セクション",
+      "annex_id": 4
     },
     {
       "uid": "R179-5b6f462f",
@@ -8590,7 +8787,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "排出量測定セクション"
+      "title_ja": "排出量測定セクション",
+      "annex_id": 4
     },
     {
       "uid": "R179-bed223e6",
@@ -8605,7 +8803,8 @@
       "summary_ja": "WLTP-Brakeサイクルは、すべての品質チェック基準を満たす必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-4f780fc4",
@@ -8699,7 +8898,8 @@
       "summary_ja": "試験方法の概要を説明する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-9b0632f9",
@@ -8920,7 +9120,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-e1922e22",
@@ -8997,7 +9198,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "粒子状物質抽出"
+      "title_ja": "粒子状物質抽出",
+      "annex_id": 4
     },
     {
       "uid": "R179-2ed7b674",
@@ -9221,7 +9423,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "サンプリング媒体"
+      "title_ja": "サンプリング媒体",
+      "annex_id": 4
     },
     {
       "uid": "R179-fee7b37e",
@@ -9459,7 +9662,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "サンプル抽出"
+      "title_ja": "サンプル抽出",
+      "annex_id": 4
     },
     {
       "uid": "R179-974e5ea5",
@@ -9475,7 +9679,8 @@
       "prev_uid": null,
       "title_ja": "サンプリング面",
       "translation": "サンプリング平面 サンプリング平面の設計は、段落7.6に記載された仕様に従わなければならない。PNサンプリングプローブの設置のために、以下の追加仕様がサンプリング平面に適用されなければならない。(a) SPN10排出ガス測定のために1つのサンプリングプローブを適用すること。図A4/7の黒点はPNサンプリングプローブを示す。",
-      "summary_ja": "サンプリング面はPNサンプリングプローブの設置要件に従う。"
+      "summary_ja": "サンプリング面はPNサンプリングプローブの設置要件に従う。",
+      "annex_id": 4
     },
     {
       "uid": "R179-e6555ff5",
@@ -9523,7 +9728,8 @@
       "prev_uid": null,
       "title_ja": "PNサンプリングノズル",
       "translation": "PNサンプリングノズル 総抽出サンプリング流量と平均冷却気流に基づいて、等速サンプリングを確保するための適切なノズルを使用しなければならない。試験施設は、以下の要件を満たすSPN10サンプリング用のPNサンプリングノズルを選択しなければならない。(a) 超清浄で超微細な表面を達成するために、内側が電解研磨仕上げ（又は同等品）のステンレス鋼で作られたノズルを使用すること。(b) 0.6から1.5の範囲の等速比を達成するために適切なノズルを使用すること。(c) 本段落の(b)で定義された仕様内に等速比（段落12.1.2.4）を維持するために、適用される流量に応じてノズルサイズを選択すること。内径が4 mm未満のノズルを使用してはならない。(d) ノズルは、少なくとも内径に等しい長さ、又はノズル先端から少なくとも10 mmの長さのいずれか大きい方で、一定の内径を有しなければならない。(e) 流れの歪みを最小限に抑えるために、先端が薄い壁のノズルを使用すること。これらは、ノズル先端で外径と内径の比が1.1未満でなければならない。(f) ノズルのボア径のいかなる変動も、30°未満の円錐角でテーパーが付けられなければならない。(g) ノズルは、吸引角度が15°以下に保たれることを確認しながら、サンプリングトンネルの軸と平行に配置すること。試験施設は、製造業者の方法及び頻度に関する仕様に従って、ノズルを頻繁に清掃しなければならない。そのような仕様が提供されていない場合は、清掃手段に関する製造業者の仕様に従って、すべてのブレーキ排出ガス試験の前にノズルを清掃すること。",
-      "summary_ja": "PNサンプリングノズルは等速吸引を確保し、0.6〜1.5の等速比とする。"
+      "summary_ja": "PNサンプリングノズルは等速吸引を確保し、0.6〜1.5の等速比とする。",
+      "annex_id": 4
     },
     {
       "uid": "R179-e13af5c8",
@@ -9571,7 +9777,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "サンプル処理と調整"
+      "title_ja": "サンプル処理と調整",
+      "annex_id": 4
     },
     {
       "uid": "R179-903a0762",
@@ -9587,7 +9794,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "PNプレ分類器"
+      "title_ja": "PNプレ分類器",
+      "annex_id": 4
     },
     {
       "uid": "R179-b5cac2c3",
@@ -9651,7 +9859,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-448dabd5",
@@ -9667,7 +9876,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "粒子測定"
+      "title_ja": "粒子測定",
+      "annex_id": 4
     },
     {
       "uid": "R179-c9299976",
@@ -9763,7 +9973,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "PNシステム検証手順"
+      "title_ja": "PNシステム検証手順",
+      "annex_id": 4
     },
     {
       "uid": "R179-64cac43b",
@@ -9969,7 +10180,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-6542b555",
@@ -9985,7 +10197,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "質量測定ファイル"
+      "title_ja": "質量測定ファイル",
+      "annex_id": 4
     },
     {
       "uid": "R179-3428d38f",
@@ -10129,7 +10342,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-ad00ab9a",
@@ -10511,7 +10725,8 @@
       "summary_ja": "予約済み。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-ed3d7ad1",
@@ -10526,7 +10741,8 @@
       "summary_ja": "予約済み。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 4
     },
     {
       "uid": "R179-97b79a85",
@@ -10573,7 +10789,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "予約済み"
+      "title_ja": "予約済み",
+      "annex_id": 4
     },
     {
       "uid": "R179-73c12bb5",
@@ -10701,7 +10918,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "予約済み"
+      "title_ja": "予約済み",
+      "annex_id": 4
     },
     {
       "uid": "R179-77e6e4da",
@@ -10797,7 +11015,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "予約済み"
+      "title_ja": "予約済み",
+      "annex_id": 4
     },
     {
       "uid": "R179-96577b21",
@@ -10861,7 +11080,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-e33515e8",
@@ -10956,7 +11176,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-df0a5753",
@@ -10972,7 +11193,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "PMおよび質量損失スケール"
+      "title_ja": "PMおよび質量損失スケール",
+      "annex_id": 4
     },
     {
       "uid": "R179-ba7fce51",
@@ -10988,7 +11210,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "PMフィルター計量用マイクロバランス"
+      "title_ja": "PMフィルター計量用マイクロバランス",
+      "annex_id": 4
     },
     {
       "uid": "R179-00494e18",
@@ -11036,7 +11259,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "予約済み"
+      "title_ja": "予約済み",
+      "annex_id": 4
     },
     {
       "uid": "R179-77d1cef4",
@@ -11162,7 +11386,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-6a3f1191",
@@ -11208,7 +11433,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-00804de1",
@@ -11254,7 +11480,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-5078cee1",
@@ -11300,7 +11527,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-4997d92f",
@@ -11346,7 +11574,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-18d96c12",
@@ -11392,7 +11621,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-9897d55c",
@@ -11438,7 +11668,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-4af2d57d",
@@ -11484,7 +11715,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-4280ad29",
@@ -11530,7 +11762,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-6024b0f3",
@@ -11576,7 +11809,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-56e70c4e",
@@ -11622,7 +11856,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-700a1599",
@@ -11668,7 +11903,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-c9837107",
@@ -11714,7 +11950,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-f4fce901",
@@ -11776,7 +12013,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-70a886f9",
@@ -11807,7 +12045,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-5d124f56",
@@ -11838,7 +12077,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-0df18e44",
@@ -11869,7 +12109,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-bf057bca",
@@ -11900,7 +12141,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-6bf33685",
@@ -11931,7 +12173,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-c569a7a6",
@@ -11962,7 +12205,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-img-b16618a0",
@@ -12085,7 +12329,8 @@
       "summary_ja": "摩擦制動トルクの決定方法を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-eadec606",
@@ -12148,7 +12393,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "電気機械式ブレーキ"
+      "title_ja": "電気機械式ブレーキ",
+      "annex_id": 5
     },
     {
       "uid": "R179-62a25ddd",
@@ -12164,7 +12410,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "代替方法"
+      "title_ja": "代替方法",
+      "annex_id": 5
     },
     {
       "uid": "R179-2a35342a",
@@ -12210,7 +12457,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-96f6f17a",
@@ -12301,7 +12549,8 @@
       "summary_ja": "準備",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-51ce652b",
@@ -12317,7 +12566,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ブレーキトルクセンサー"
+      "title_ja": "ブレーキトルクセンサー",
+      "annex_id": 5
     },
     {
       "uid": "R179-b7c21b15",
@@ -12458,7 +12708,8 @@
       "prev_uid": null,
       "title_ja": "電気機械式ブレーキの力測定用センサー",
       "translation": "電気機械式ブレーキの力測定用センサ 予約済み",
-      "summary_ja": "電気機械式ブレーキの力測定用センサーは予約済みである。"
+      "summary_ja": "電気機械式ブレーキの力測定用センサーは予約済みである。",
+      "annex_id": 5
     },
     {
       "uid": "R179-37acf3ce",
@@ -12473,7 +12724,8 @@
       "summary_ja": "データ記録に関する要件を規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-c3437069",
@@ -12505,7 +12757,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "ECE/TRANS/WP.29/2026/36"
+      "title_ja": "ECE/TRANS/WP.29/2026/36",
+      "annex_id": 4
     },
     {
       "uid": "R179-839ebcba",
@@ -12520,7 +12773,8 @@
       "summary_ja": "シャシダイナモ設定はUN-R154に準拠しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-2e1bddcc",
@@ -12565,7 +12819,8 @@
       "summary_ja": "シャシダイナモ試験は品質基準を全て満たす必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-629f3f2b",
@@ -12580,7 +12835,8 @@
       "summary_ja": "品質チェックに使用する信号を算出する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-e1746cf6",
@@ -12784,7 +13040,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "title_ja": "速度違反チェック"
+      "title_ja": "速度違反チェック",
+      "annex_id": 5
     },
     {
       "uid": "R179-46348861",
@@ -12799,7 +13056,8 @@
       "summary_ja": "代替方法の同等性証明には各電動化タイプで1台以上の車両を使用する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-32dd9991",
@@ -12814,7 +13072,8 @@
       "summary_ja": "同等性証明のため車両はWLTP-Brakeサイクル試験を受ける。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-0ef65bbe",
@@ -12859,7 +13118,8 @@
       "summary_ja": "摩擦制動分担係数のオフセット（宣言）について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "annex_id": 5
     },
     {
       "uid": "R179-a29ed3d8",

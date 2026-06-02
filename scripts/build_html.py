@@ -39,7 +39,8 @@ def is_nav_noise(p: dict) -> bool:
     text = (p.get("text") or "").strip()
     title = (p.get("title") or "").strip()
     number = (p.get("number") or "").strip()
-    if text.startswith("E/ECE/") or title.startswith("E/ECE/"):
+    if (text.startswith("E/ECE/") or text.startswith("ECE/")
+            or title.startswith("E/ECE/") or title.startswith("ECE/")):
         return True
     if "......" in title or "......" in text:
         return True
@@ -68,11 +69,8 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
     """附属書（Annex）に属する段落に _in_annex フラグを付与する。
 
     _nav_hidden（TOC ノイズ）付与後に呼ぶこと。
-    本文の最大トップ章番号の半分以下に章番号が戻った時点で附属書開始と判定する。
-    例: 主要章1-12 → Annex で 2.x が再出現 → 2 < 12//2+1=7 → in_annex=True
-
-    seen_body フラグ: level>=2 段落が出現して初めて max_top を更新する。
-    本文前の Introduction や附属書 TOC ノイズ漏れが max_top に影響しないようにする。
+    番号後退ヒューリスティックで附属書ゾーンを検出する。
+    annex_id フィールドは mark_annex_ids() で附属書ID付与に使用する。
     """
     max_top = 0
     in_annex = False
@@ -150,8 +148,9 @@ def build_annex_tree(paragraphs: list[dict]) -> list[dict]:
 def mark_annex_ids(paragraphs: list[dict]) -> None:
     """附属書段落に _annex_id（1–22）を付与する。
     mark_annex_paragraphs() の後に呼ぶこと。
-    Annex 10+ は level=1 の "Annex N" タイトルで識別。
-    Annex 1–9 は番号リスタートで識別。
+
+    annex_id フィールドが設定されている段落（patch_annex_ids.py でパッチ済み）は
+    それを直接 _annex_id として使用する。未設定の段落は従来のヒューリスティックで判定する。
     """
     import re as _re
 
@@ -241,6 +240,21 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
             if paragraphs[i].get("type") != "image":
                 paragraphs[i]["_annex_id"] = annex_num
                 paragraphs[i]["_in_annex"] = True
+
+    # Step 6: patch_annex_ids.py で設定された annex_id を上書き適用（前向き伝播）。
+    # ページヘッダーから確定した正しい附属書番号でヒューリスティック結果を補正する。
+    current_override = None
+    for p in paragraphs:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        if not p.get("_in_annex"):
+            current_override = None
+            continue
+        aid = p.get("annex_id")
+        if aid is not None:
+            current_override = aid
+        if current_override is not None:
+            p["_annex_id"] = current_override
 
 
 def build_tree(paragraphs: list[dict]) -> list[dict]:
@@ -398,12 +412,15 @@ def build_regulation_page(regulation: str, version: str) -> None:
                 continue
             if top not in seen_body_ch_ints:
                 seen_body_ch_ints.add(top)
-                gap = [tree_chapter_map[n]
-                       for n in sorted(tree_chapter_map.keys())
-                       if last_body_ch_int < n < top and n not in seen_body_ch_ints]
-                if gap:
-                    p["_gap_chapters_before"] = gap
-                last_body_ch_int = top
+                # last_body_ch_int==0 は最初の章なのでギャップ扱いしない
+                # （前に奇妙な章番号が来ても前章扱いしないため）
+                if last_body_ch_int > 0:
+                    gap = [tree_chapter_map[n]
+                           for n in sorted(tree_chapter_map.keys())
+                           if last_body_ch_int < n < top and n not in seen_body_ch_ints]
+                    if gap:
+                        p["_gap_chapters_before"] = gap
+                last_body_ch_int = max(last_body_ch_int, top)
 
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),

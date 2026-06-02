@@ -47,6 +47,7 @@ class Paragraph:
     modified: bool = False
     justification: Optional[str] = None
     prev_uid: Optional[str] = None
+    annex_id: Optional[int] = None
 
 
 @dataclass
@@ -260,6 +261,40 @@ def _crop_and_save(
 
 # [[IMG:uid]] マーカーパターン
 _IMG_MARKER_RE = re.compile(r'\[\[IMG:([^\]]+)\]\]')
+# [[ANNEX:N]] マーカーパターン（ページ先頭の附属書番号）
+_ANNEX_MARKER_RE = re.compile(r'\[\[ANNEX:(\d+)\]\]')
+# ページ先頭の附属書ヘッダー検出
+_PAGE_ANNEX_RE = re.compile(r'^Annex\s+(\d+)', re.IGNORECASE)
+
+
+def _detect_page_annex_id(page) -> Optional[int]:
+    """ページ先頭の数行から附属書番号を検出する。
+
+    UN法規PDFでは附属書ページの先頭に "E/ECE/..." ヘッダーがあり、
+    その直後の行に "Annex N" が現れる。本文ページには現れないため
+    この位置での検出を附属書判定に使う。
+    カンマや 'paragraph' を含む行（本文中の参照）は除外する。
+    """
+    text = page.get_text("text")
+    past_ece = False
+    for line in text.split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith('E/') or line.startswith('ECE/') or line.startswith('ECE-TRANS-'):
+            past_ece = True
+            continue
+        if line.isdigit():
+            continue
+        if not past_ece:
+            break
+        if ',' in line or 'paragraph' in line.lower():
+            break
+        m = _PAGE_ANNEX_RE.match(line)
+        if m:
+            return int(m.group(1))
+        break
+    return None
 
 
 def extract_blocks_with_media(
@@ -285,8 +320,15 @@ def extract_blocks_with_media(
     label_counter = {"figure": 0, "table": 0}
     img_by_uid: dict[str, ImageBlock] = {}
 
+    last_annex_id: Optional[int] = None
     for page_num in range(1, len(doc) + 1):
         page = doc[page_num - 1]
+
+        # ページ先頭の附属書ヘッダーを検出し、変化があればマーカーを挿入
+        page_annex_id = _detect_page_annex_id(page)
+        if page_annex_id is not None and page_annex_id != last_annex_id:
+            text_parts.append(f"\n[[ANNEX:{page_annex_id}]]\n")
+            last_annex_id = page_annex_id
 
         # --- 表・埋め込み画像の検出 ---
         table_bboxes = _find_table_bboxes(page)
@@ -519,6 +561,7 @@ def _split_inline_definitions(para: 'Paragraph', regulation: str) -> list:
             text=emb_content,
             level=_infer_level(emb_number),
             parent=_infer_parent(emb_number),
+            annex_id=para.annex_id,
         ))
 
     return result
@@ -564,14 +607,21 @@ def parse_blocks(
         if uid in img_by_uid:
             events.append((m.start(), "image", uid))
 
+    for m in _ANNEX_MARKER_RE.finditer(body):
+        events.append((m.start(), "annex_marker", int(m.group(1))))
+
     events.sort(key=lambda x: x[0])
 
     raw_result: list = []
     last_num_tuple: tuple = ()  # 単調増加チェック用
+    current_annex_id: Optional[int] = None  # ページヘッダーから検出した附属書番号
 
     # イベントを走査して Paragraph と ImageBlock を順番に出力
     for event_idx, (pos, etype, data) in enumerate(events):
-        if etype == "image":
+        if etype == "annex_marker":
+            current_annex_id = data
+
+        elif etype == "image":
             raw_result.append(img_by_uid[data])
 
         elif etype == "para_header":
@@ -598,6 +648,7 @@ def parse_blocks(
             content_end = next_para_start if next_para_start else len(body)
             raw_content = body[m.end():content_end]
             raw_content = _IMG_MARKER_RE.sub('', raw_content)
+            raw_content = _ANNEX_MARKER_RE.sub('', raw_content)
             text = _clean_text(raw_content)
             full_text = f"{title} {text}".strip() if text else title
 
@@ -608,6 +659,7 @@ def parse_blocks(
                 text=full_text,
                 level=_infer_level(number),
                 parent=_infer_parent(number),
+                annex_id=current_annex_id,
             ))
 
     # ポストプロセス: インライン定義を分割し、ページヘッダー段落を除去

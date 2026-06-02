@@ -261,10 +261,12 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
     type=="image" およびノイズ段落はナビツリーに含めない。
     左ペインには主要章のみ表示（整数番号が重複し始めたら附属書扱いで除外）。
+    同じ整数章番号の後出現（本文）に title_ja があれば既存エントリを更新する。
     """
     import re as _re
     chapters = []
     chapter_map = {}
+    chapter_list_entries: dict[str, dict] = {}  # int-num → chapters リスト内のノード
     seen_top_numbers: set[str] = set()
     top_level_closed = False  # 主要章の番号が重複した時点で左ペイン追加を終了
 
@@ -286,10 +288,17 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
             is_integer = bool(_re.fullmatch(r"\d+", num))
             if is_integer and num in seen_top_numbers:
                 top_level_closed = True  # 附属書の繰り返し番号が始まった
+                # 本文の後出現に title_ja があれば chapters リストのエントリを更新する
+                if num in chapter_list_entries and node["title_ja"]:
+                    existing = chapter_list_entries[num]
+                    if not existing["title_ja"]:
+                        existing["title_ja"] = node["title_ja"]
+                        existing["title"] = node["title"]
             if not top_level_closed:
                 chapters.append(node)
                 if is_integer:
                     seen_top_numbers.add(num)
+                    chapter_list_entries[num] = node
             chapter_map[num] = node
         else:
             parent_num = p.get("parent")

@@ -310,47 +310,102 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
     return chapters
 
 
-_PARA_REF_RE = None  # 遅延初期化
+_PLAIN_REF_RE = None  # 遅延初期化
+_ANNEX_REF_RE = None
+_THIS_REG_RE  = None
 
 
-def find_para_refs(text: str) -> list[str]:
-    """英語テキストから 'paragraph(s) N.N.N...' パターンの段落番号を抽出する。"""
-    global _PARA_REF_RE
-    if _PARA_REF_RE is None:
-        import re as _re_r
-        _PARA_REF_RE = _re_r.compile(
-            r'\bparagraphs?\s+(\d+(?:\.\d+)+)((?:\s*(?:,|and|to|or)\s+\d+(?:\.\d+)+)*)',
-            _re_r.IGNORECASE,
+def find_para_refs(text: str, current_annex_id=None) -> list[dict]:
+    """英語テキストから段落参照を抽出し、参照先のアネックスIDとともに返す。
+
+    Returns: [{number: str, annex_id: int|None}]
+    - "paragraph N.N of Annex M"          → annex_id=M
+    - "paragraph N.N of this Regulation"  → annex_id=None（本則）
+    - 上記以外の "paragraph N.N..."        → annex_id=current_annex_id
+    """
+    global _PLAIN_REF_RE, _ANNEX_REF_RE, _THIS_REG_RE
+    import re as _re
+    if _PLAIN_REF_RE is None:
+        _ANNEX_REF_RE = _re.compile(
+            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+Annex\s+(\d+)',
+            _re.IGNORECASE,
         )
-    import re as _re_r
-    seen: set[str] = set()
-    result: list[str] = []
-    for m in _PARA_REF_RE.finditer(text):
-        for num in _re_r.findall(r'\d+(?:\.\d+)+', m.group()):
-            if num not in seen:
-                seen.add(num)
-                result.append(num)
+        _THIS_REG_RE = _re.compile(
+            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+this\s+Regulation',
+            _re.IGNORECASE,
+        )
+        _PLAIN_REF_RE = _re.compile(
+            r'\bparagraphs?\s+(\d+(?:\.\d+)+\.?)((?:\s*(?:,|and|to|or)\s+\d+(?:\.\d+)+\.?)*)',
+            _re.IGNORECASE,
+        )
+
+    seen: set[tuple] = set()
+    result: list[dict] = []
+
+    def add_ref(number: str, annex_id) -> None:
+        number = number.rstrip('.')
+        if not number:
+            return
+        key = (number, annex_id)
+        if key not in seen:
+            seen.add(key)
+            result.append({'number': number, 'annex_id': annex_id})
+
+    # Annex参照・本則参照の span を記録してから plain 参照と重複スキップ
+    special_spans: list[tuple[int, int]] = []
+
+    for m in _ANNEX_REF_RE.finditer(text):
+        add_ref(m.group(1), int(m.group(2)))
+        special_spans.append((m.start(), m.end()))
+
+    for m in _THIS_REG_RE.finditer(text):
+        add_ref(m.group(1), None)
+        special_spans.append((m.start(), m.end()))
+
+    for m in _PLAIN_REF_RE.finditer(text):
+        if any(s <= m.start() < e for s, e in special_spans):
+            continue
+        for num in _re.findall(r'\d+(?:\.\d+)+\.?', m.group()):
+            add_ref(num, current_annex_id)
+
     return result
 
 
 def annotate_glossary(text: str, glossary_terms: dict[str, dict]) -> str:
-    """テキスト内の用語をツールチップ用のdata属性付きspanに置換する。"""
+    """テキスト内の用語を右→左挿入でHTMLスパンに置換する（大文字小文字無視、最長優先）。"""
     if not text:
         return text
-    for term, info in sorted(glossary_terms.items(), key=lambda x: -len(x[0])):
-        replacement = (
+    terms = sorted(glossary_terms.keys(), key=lambda x: -len(x))
+    if not terms:
+        return text
+    lower_text = text.lower()
+    covered: set[int] = set()
+    matches: list[tuple[int, int, str]] = []
+    for term in terms:
+        lower_term = term.lower()
+        start = 0
+        while True:
+            pos = lower_text.find(lower_term, start)
+            if pos < 0:
+                break
+            end = pos + len(term)
+            if not covered.intersection(range(pos, end)):
+                matches.append((pos, end, term))
+                covered.update(range(pos, end))
+            start = pos + 1
+    matches.sort(key=lambda x: x[0], reverse=True)
+    for pos, end, term in matches:
+        info = glossary_terms[term]
+        defn = info["definition_ja"].replace('"', '&quot;')
+        ref  = info.get("paragraph_ref", "").replace('"', '&quot;')
+        span = (
             f'<span class="glossary-term" '
             f'data-term="{term}" '
-            f'data-definition="{info["definition_ja"]}" '
-            f'data-ref="{info.get("paragraph_ref", "")}">'
-            f'{term}</span>'
+            f'data-definition="{defn}" '
+            f'data-ref="{ref}">'
+            f'{text[pos:end]}</span>'
         )
-        # 大文字小文字を区別しない置換（最初のマッチのみ）
-        lower_text = text.lower()
-        lower_term = term.lower()
-        idx = lower_text.find(lower_term)
-        if idx >= 0:
-            text = text[:idx] + replacement + text[idx + len(term):]
+        text = text[:pos] + span + text[end:]
     return text
 
 
@@ -459,20 +514,22 @@ def build_regulation_page(regulation: str, version: str) -> None:
 
     # 参照段落チップ: "paragraph N.N..." 参照を検出し _refs リストを付与する。
     # _nav_hidden・_annex_id が確定した後に実行すること。
-    _ref_map: dict[str, dict] = {}
+    _ref_map: dict[tuple, dict] = {}  # (number, annex_id) → info
     for p in paragraphs:
         if p.get("type") == "image":
             continue
         num = p.get("number", "")
         if not num:
             continue
-        existing = _ref_map.get(num)
+        annex_id = p.get("_annex_id")
+        key = (num, annex_id)
+        existing = _ref_map.get(key)
         is_hidden = bool(p.get("_nav_hidden"))
         if existing is None or (existing["hidden"] and not is_hidden):
-            _ref_map[num] = {
+            _ref_map[key] = {
                 "uid": p.get("uid", ""),
                 "summary_ja": (p.get("summary_ja") or "").strip(),
-                "annex_id": p.get("_annex_id"),
+                "annex_id": annex_id,
                 "hidden": is_hidden,
             }
     for p in paragraphs:
@@ -480,18 +537,25 @@ def build_regulation_page(regulation: str, version: str) -> None:
             p["_refs"] = []
             continue
         refs: list[dict] = []
-        seen_ref_nums: set[str] = set()
-        for num in find_para_refs(p.get("text", "") or ""):
-            if num in seen_ref_nums:
+        seen_ref_keys: set[tuple] = set()
+        current_annex_id = p.get("_annex_id")
+        for ref_info in find_para_refs(p.get("text", "") or "", current_annex_id):
+            num    = ref_info["number"]
+            ann_id = ref_info["annex_id"]
+            key    = (num, ann_id)
+            if key in seen_ref_keys:
                 continue
-            ref = _ref_map.get(num)
-            if ref and ref["summary_ja"] and not ref["hidden"]:
-                seen_ref_nums.add(num)
+            entry = _ref_map.get(key)
+            # アネックス指定があって見つからない場合は本則でフォールバック
+            if entry is None and ann_id is not None:
+                entry = _ref_map.get((num, None))
+            if entry and entry["summary_ja"] and not entry["hidden"]:
+                seen_ref_keys.add(key)
                 refs.append({
                     "number": num,
-                    "uid": ref["uid"],
-                    "summary_ja": ref["summary_ja"],
-                    "annex_id": ref["annex_id"],
+                    "uid": entry["uid"],
+                    "summary_ja": entry["summary_ja"],
+                    "annex_id": entry["annex_id"],
                 })
         p["_refs"] = refs
 

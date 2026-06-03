@@ -283,7 +283,7 @@
             <span class="para-refs-label">参照段落</span>
             {% for ref in p._refs %}
             <button class="para-ref-chip"
-                    onclick="selectParagraph('{{ ref.uid }}', {{ ref.annex_id if ref.annex_id else 'null' }})">
+                    onclick="selectRefParagraph('{{ p.uid }}', '{{ ref.uid }}', {{ ref.annex_id if ref.annex_id else 'null' }})">
               <span class="para-ref-num">§ {{ ref.number }}</span>
               <span class="para-ref-summary">{{ ref.summary_ja }}</span>
               <span class="para-ref-arrow" aria-hidden="true">↗</span>
@@ -305,6 +305,16 @@
 
 <!-- グロッサリー ツールチップ -->
 <div class="tooltip" id="glossary-tooltip" role="tooltip" aria-hidden="true"></div>
+
+<!-- 参照元に戻るバー -->
+<div id="back-bar" class="back-bar" role="status" aria-live="polite" aria-hidden="true">
+  <button class="back-bar-btn" onclick="goBackFromRef()">
+    <span class="back-bar-arrow" aria-hidden="true">←</span>
+    <span id="back-bar-text" class="back-bar-text"></span>
+    <span class="back-bar-label">に戻る</span>
+  </button>
+  <button class="back-bar-close" onclick="dismissBackBar(event)" aria-label="閉じる">✕</button>
+</div>
 
 <!-- トップへ戻るボタン（モバイルのみ） -->
 <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>

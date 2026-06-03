@@ -210,6 +210,78 @@
     if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  // ---------- 参照元に戻るバー ----------
+
+  var _refBackSource = null; // { uid, number, title, annexId }
+
+  window.selectRefParagraph = function (sourceUid, targetUid, targetAnnexId) {
+    // 呼び出し元カードから段落番号・タイトルを収集
+    var sourceCard = document.getElementById('para-' + sourceUid);
+    var number = sourceCard ? (sourceCard.dataset.number || '') : '';
+    var annexId = sourceCard ? (sourceCard.dataset.annexId || null) : null;
+
+    // タイトルは中ペインのナビ項目 → 右ペインのカードヘッダーの順で取得
+    var title = '';
+    var navItem = document.querySelector('.para-nav-item[data-uid="' + sourceUid + '"]');
+    if (navItem) {
+      var jaEl = navItem.querySelector('.tree-title-ja');
+      var enEl = navItem.querySelector('.tree-title-en');
+      title = (jaEl && jaEl.textContent.trim()) || (enEl && enEl.textContent.trim()) || '';
+    }
+    if (!title && sourceCard) {
+      var hJa = sourceCard.querySelector('.para-title-block .tree-title-ja');
+      var hEn = sourceCard.querySelector('.para-title-block .tree-title-en');
+      title = (hJa && hJa.textContent.trim()) || (hEn && hEn.textContent.trim()) || '';
+    }
+
+    _refBackSource = { uid: sourceUid, number: number, title: title, annexId: annexId };
+    showBackBar();
+    window.selectParagraph(targetUid, targetAnnexId);
+  };
+
+  function showBackBar() {
+    if (!_refBackSource) return;
+    var bar = document.getElementById('back-bar');
+    var textEl = document.getElementById('back-bar-text');
+    if (!bar) return;
+    var label = '§ ' + _refBackSource.number;
+    if (_refBackSource.title) label += '　' + _refBackSource.title;
+    if (textEl) textEl.textContent = label;
+    bar.classList.add('visible');
+    bar.setAttribute('aria-hidden', 'false');
+    // back-to-top ボタンをバーの上に逃がす
+    var btt = document.getElementById('back-to-top');
+    if (btt) btt.style.bottom = '4rem';
+  }
+
+  function hideBackBar() {
+    _refBackSource = null;
+    var bar = document.getElementById('back-bar');
+    if (bar) {
+      bar.classList.remove('visible');
+      bar.setAttribute('aria-hidden', 'true');
+    }
+    var btt = document.getElementById('back-to-top');
+    if (btt) btt.style.bottom = '';
+  }
+
+  window.goBackFromRef = function () {
+    if (!_refBackSource) return;
+    var src = _refBackSource;
+    hideBackBar();
+    window.selectParagraph(src.uid, src.annexId);
+    // 元の段落が閉じていれば開く
+    var body = document.getElementById('body-' + src.uid);
+    if (body && body.hidden) {
+      window.toggleParagraph(src.uid);
+    }
+  };
+
+  window.dismissBackBar = function (event) {
+    event.stopPropagation();
+    hideBackBar();
+  };
+
   // ---------- 変更理由ポップアップ ----------
 
   window.showJustification = function (uid) {

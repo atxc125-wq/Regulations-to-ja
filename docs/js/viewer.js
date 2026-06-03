@@ -238,12 +238,20 @@
     showBackBar();
     window.selectParagraph(targetUid, targetAnnexId);
 
-    // 参照先の段落を自動展開（scrollIntoView と競合しないよう直接操作）
-    var targetBody = document.getElementById('body-' + targetUid);
-    var targetCard = document.getElementById('para-' + targetUid);
-    if (targetBody && targetBody.hidden) {
-      targetBody.hidden = false;
-      if (targetCard) targetCard.classList.add('expanded');
+    // 参照先カードを selectParagraph と同じロジックで特定してから展開
+    var targetCard = null;
+    if (targetAnnexId) {
+      targetCard = document.querySelector(
+        '.para-card[data-annex-id="' + targetAnnexId + '"][data-uid="' + targetUid + '"]'
+      );
+    }
+    if (!targetCard) { targetCard = document.getElementById('para-' + targetUid); }
+    if (targetCard) {
+      var targetBody = targetCard.querySelector('.para-card-body');
+      if (targetBody && targetBody.hidden) {
+        targetBody.hidden = false;
+        targetCard.classList.add('expanded');
+      }
     }
   };
 

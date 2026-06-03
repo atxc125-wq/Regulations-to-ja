@@ -327,7 +327,7 @@ def find_para_refs(text: str, current_annex_id=None) -> list[dict]:
     import re as _re
     if _PLAIN_REF_RE is None:
         _ANNEX_REF_RE = _re.compile(
-            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+Annex\s+(\d+)',
+            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+Annex\s+(\d+)(?:\s+to\s+this\s+Regulation)?',
             _re.IGNORECASE,
         )
         _THIS_REG_RE = _re.compile(
@@ -546,9 +546,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
             if key in seen_ref_keys:
                 continue
             entry = _ref_map.get(key)
-            # アネックス指定があって見つからない場合は本則でフォールバック
-            if entry is None and ann_id is not None:
-                entry = _ref_map.get((num, None))
+            # アネックス指定で見つからない場合はチップ非表示（本則の同番号を誤表示しない）
             if entry and entry["summary_ja"] and not entry["hidden"]:
                 seen_ref_keys.add(key)
                 refs.append({

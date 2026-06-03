@@ -277,6 +277,20 @@
             <strong>変更理由 (Justification):</strong> {{ p.justification }}
           </div>
           {% endif %}
+
+          {% if p._refs %}
+          <div class="para-refs-section">
+            <span class="para-refs-label">参照段落</span>
+            {% for ref in p._refs %}
+            <button class="para-ref-chip"
+                    onclick="selectParagraph('{{ ref.uid }}', {{ ref.annex_id if ref.annex_id else 'null' }})">
+              <span class="para-ref-num">§ {{ ref.number }}</span>
+              <span class="para-ref-summary">{{ ref.summary_ja }}</span>
+              <span class="para-ref-arrow" aria-hidden="true">↗</span>
+            </button>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
 
       </article>

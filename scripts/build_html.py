@@ -310,6 +310,29 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
     return chapters
 
 
+_PARA_REF_RE = None  # 遅延初期化
+
+
+def find_para_refs(text: str) -> list[str]:
+    """英語テキストから 'paragraph(s) N.N.N...' パターンの段落番号を抽出する。"""
+    global _PARA_REF_RE
+    if _PARA_REF_RE is None:
+        import re as _re_r
+        _PARA_REF_RE = _re_r.compile(
+            r'\bparagraphs?\s+(\d+(?:\.\d+)+)((?:\s*(?:,|and|to|or)\s+\d+(?:\.\d+)+)*)',
+            _re_r.IGNORECASE,
+        )
+    import re as _re_r
+    seen: set[str] = set()
+    result: list[str] = []
+    for m in _PARA_REF_RE.finditer(text):
+        for num in _re_r.findall(r'\d+(?:\.\d+)+', m.group()):
+            if num not in seen:
+                seen.add(num)
+                result.append(num)
+    return result
+
+
 def annotate_glossary(text: str, glossary_terms: dict[str, dict]) -> str:
     """テキスト内の用語をツールチップ用のdata属性付きspanに置換する。"""
     if not text:
@@ -385,6 +408,44 @@ def build_regulation_page(regulation: str, version: str) -> None:
     # _nav_hidden 付与後に附属書フラグを付与（TOCノイズをスキップして正確に判定）
     mark_annex_paragraphs(paragraphs)
     mark_annex_ids(paragraphs)
+
+    # 参照段落チップ: "paragraph N.N..." 参照を検出し _refs リストを付与する。
+    # _nav_hidden・_annex_id が確定した後に実行すること。
+    _ref_map: dict[str, dict] = {}
+    for p in paragraphs:
+        if p.get("type") == "image":
+            continue
+        num = p.get("number", "")
+        if not num:
+            continue
+        existing = _ref_map.get(num)
+        is_hidden = bool(p.get("_nav_hidden"))
+        if existing is None or (existing["hidden"] and not is_hidden):
+            _ref_map[num] = {
+                "uid": p.get("uid", ""),
+                "summary_ja": (p.get("summary_ja") or "").strip(),
+                "annex_id": p.get("_annex_id"),
+                "hidden": is_hidden,
+            }
+    for p in paragraphs:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            p["_refs"] = []
+            continue
+        refs: list[dict] = []
+        seen_ref_nums: set[str] = set()
+        for num in find_para_refs(p.get("text", "") or ""):
+            if num in seen_ref_nums:
+                continue
+            ref = _ref_map.get(num)
+            if ref and ref["summary_ja"] and not ref["hidden"]:
+                seen_ref_nums.add(num)
+                refs.append({
+                    "number": num,
+                    "uid": ref["uid"],
+                    "summary_ja": ref["summary_ja"],
+                    "annex_id": ref["annex_id"],
+                })
+        p["_refs"] = refs
 
     # 中ペインの重複排除: 同じ number が複数回出現する場合（附属書が同じ番号を繰り返す）
     # 文書順で最初に出現した可視段落のみ _first_occ=True とする

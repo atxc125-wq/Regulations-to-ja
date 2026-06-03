@@ -387,6 +387,60 @@ button { cursor: pointer; font-family: inherit; }
   vertical-align: middle;
 }
 
+/* ---------- 参照段落チップ ---------- */
+.para-refs-section {
+  padding: .6rem 1rem .5rem;
+  background: #fffde7;
+  border-top: 1px solid #ffe082;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  align-items: center;
+}
+.para-refs-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: #a07000;
+  margin-right: .2rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+.para-ref-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .28rem .65rem;
+  background: #fff;
+  border: 1px solid #f9a825;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.45;
+  transition: background .15s, box-shadow .15s;
+}
+.para-ref-chip:hover {
+  background: #fff9c4;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+}
+.para-ref-num {
+  font-weight: 700;
+  color: #e65100;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  white-space: nowrap;
+}
+.para-ref-summary {
+  color: #5d4037;
+  font-size: .78rem;
+}
+.para-ref-arrow {
+  color: #f9a825;
+  font-size: .8rem;
+  flex-shrink: 0;
+}
+
 /* ---------- グロッサリー ツールチップ ---------- */
 .glossary-term {
   border-bottom: 1px dashed var(--color-primary);

@@ -237,6 +237,14 @@
     _refBackSource = { uid: sourceUid, number: number, title: title, annexId: annexId };
     showBackBar();
     window.selectParagraph(targetUid, targetAnnexId);
+
+    // 参照先の段落を自動展開（scrollIntoView と競合しないよう直接操作）
+    var targetBody = document.getElementById('body-' + targetUid);
+    var targetCard = document.getElementById('para-' + targetUid);
+    if (targetBody && targetBody.hidden) {
+      targetBody.hidden = false;
+      if (targetCard) targetCard.classList.add('expanded');
+    }
   };
 
   function showBackBar() {

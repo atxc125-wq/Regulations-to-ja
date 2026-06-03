@@ -451,7 +451,7 @@ button { cursor: pointer; font-family: inherit; }
   display: none;
   position: fixed;
   z-index: 9999;
-  max-width: 320px;
+  max-width: min(320px, calc(100vw - 16px));
   padding: .6rem .85rem;
   background: #263238;
   color: #fff;
@@ -459,10 +459,11 @@ button { cursor: pointer; font-family: inherit; }
   line-height: 1.55;
   border-radius: var(--radius);
   box-shadow: 0 4px 16px rgba(0,0,0,.3);
-  pointer-events: none;
+  pointer-events: auto;
 }
 .tooltip.visible { display: block; }
 .tooltip-term { font-weight: 700; margin-bottom: .3rem; }
+.tooltip-def  { font-size: .82rem; }
 .tooltip-ref  { font-size: .75rem; opacity: .7; margin-top: .3rem; }
 
 /* ---------- 中ペイン: 段落ナビ ---------- */

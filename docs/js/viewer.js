@@ -363,19 +363,27 @@
   // ---------- グロッサリー ツールチップ ----------
 
   var tooltip = document.getElementById('glossary-tooltip');
+  var _activeGlossaryEl = null;
+
+  function escapeHtml(str) {
+    return (str || '').replace(/[&<>"']/g, function (c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function buildTooltipHtml(el) {
+    var term   = el.dataset.term || '';
+    var jaTerm = el.dataset.jaTerm || '';
+    // 日本語アノテーションの場合: 「日本語用語（英語名）」を見出しに表示
+    var header = jaTerm ? jaTerm + '（' + term + '）' : term;
+    return '<div class="tooltip-term">' + escapeHtml(header) + '</div>' +
+      '<div class="tooltip-def">' + escapeHtml(el.dataset.definition || '') + '</div>' +
+      (el.dataset.ref ? '<div class="tooltip-ref">定義: § ' + escapeHtml(el.dataset.ref) + '</div>' : '');
+  }
 
   function showTooltip(event) {
-    var el = event.currentTarget;
-    var term = el.dataset.term;
-    var definition = el.dataset.definition;
-    var ref = el.dataset.ref;
-
     if (!tooltip) return;
-    tooltip.innerHTML =
-      '<div class="tooltip-term">' + escapeHtml(term) + '</div>' +
-      '<div class="tooltip-def">' + escapeHtml(definition) + '</div>' +
-      (ref ? '<div class="tooltip-ref">定義: § ' + escapeHtml(ref) + '</div>' : '');
-
+    tooltip.innerHTML = buildTooltipHtml(event.currentTarget);
     tooltip.classList.add('visible');
     positionTooltip(event);
   }
@@ -384,36 +392,61 @@
 
   function hideTooltip() {
     if (tooltip) tooltip.classList.remove('visible');
+    _activeGlossaryEl = null;
   }
 
   function positionTooltip(event) {
     if (!tooltip) return;
-    var margin = 12;
+    var margin = 8;
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
     var tw = tooltip.offsetWidth;
     var th = tooltip.offsetHeight;
-    var x = event.clientX + margin;
-    var y = event.clientY + margin;
+    var x, y;
 
-    if (x + tw > window.innerWidth  - margin) x = event.clientX - tw - margin;
-    if (y + th > window.innerHeight - margin) y = event.clientY - th - margin;
+    // タッチ / クリック: 要素の直下（または上）に配置
+    if (event.type === 'click' || (event.touches && event.touches.length > 0)) {
+      var rect = event.currentTarget.getBoundingClientRect();
+      x = rect.left;
+      y = rect.bottom + margin;
+      if (y + th > vh - margin) { y = rect.top - th - margin; }
+    } else {
+      // マウスホバー: カーソルの右下（または左上）に配置
+      x = event.clientX + margin;
+      y = event.clientY + margin;
+      if (y + th > vh - margin) { y = event.clientY - th - margin; }
+    }
+
+    // 画面内に収まるよう最終クランプ
+    x = Math.max(margin, Math.min(x, vw - tw - margin));
+    y = Math.max(margin, Math.min(y, vh - th - margin));
     tooltip.style.left = x + 'px';
     tooltip.style.top  = y + 'px';
   }
 
-  function escapeHtml(str) {
-    return (str || '').replace(/[&<>"']/g, function (c) {
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
+  // モバイル: タップでツールチップをトグル
+  function handleGlossaryTap(event) {
+    if (_activeGlossaryEl === event.currentTarget) {
+      hideTooltip();
+    } else {
+      _activeGlossaryEl = event.currentTarget;
+      tooltip.innerHTML = buildTooltipHtml(event.currentTarget);
+      tooltip.classList.add('visible');
+      positionTooltip(event);
+    }
+  }
+
+  function attachOneGlossaryListener(el) {
+    el.addEventListener('mouseenter', showTooltip);
+    el.addEventListener('mousemove',  moveTooltip);
+    el.addEventListener('mouseleave', hideTooltip);
+    el.addEventListener('focus',      showTooltip);
+    el.addEventListener('blur',       hideTooltip);
+    el.addEventListener('click',      handleGlossaryTap);
   }
 
   function attachGlossaryListeners() {
-    document.querySelectorAll('.glossary-term').forEach(function (el) {
-      el.addEventListener('mouseenter', showTooltip);
-      el.addEventListener('mousemove',  moveTooltip);
-      el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('focus',      showTooltip);
-      el.addEventListener('blur',       hideTooltip);
-    });
+    document.querySelectorAll('.glossary-term').forEach(attachOneGlossaryListener);
   }
 
   // ---------- トップへ戻るボタン ----------
@@ -438,15 +471,20 @@
     setupScrollSync();
     setupBackToTop();
 
+    // タップ: 用語以外の場所をタップでツールチップを閉じる
+    document.addEventListener('click', function (event) {
+      if (!_activeGlossaryEl || !tooltip) return;
+      if (!_activeGlossaryEl.contains(event.target) &&
+          !tooltip.contains(event.target)) {
+        hideTooltip();
+      }
+    });
+
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {
         m.addedNodes.forEach(function (node) {
           if (node.nodeType !== 1) return;
-          node.querySelectorAll && node.querySelectorAll('.glossary-term').forEach(function (el) {
-            el.addEventListener('mouseenter', showTooltip);
-            el.addEventListener('mousemove',  moveTooltip);
-            el.addEventListener('mouseleave', hideTooltip);
-          });
+          node.querySelectorAll && node.querySelectorAll('.glossary-term').forEach(attachOneGlossaryListener);
         });
       });
     });

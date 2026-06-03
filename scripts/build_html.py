@@ -354,6 +354,49 @@ def annotate_glossary(text: str, glossary_terms: dict[str, dict]) -> str:
     return text
 
 
+def annotate_glossary_ja(text: str, glossary_ja_terms: dict[str, dict]) -> str:
+    """日本語テキスト内の用語をツールチップ用のdata属性付きspanに置換する。
+    全マッチを元テキスト上で収集してから右→左に挿入することで、
+    longer-first の優先順位を保ちつつ既挿入 HTML への再マッチを防ぐ。
+    """
+    if not text:
+        return text
+    terms = sorted(glossary_ja_terms.keys(), key=lambda x: -len(x))
+    if not terms:
+        return text
+    # Collect all non-overlapping matches on the original text (longest-term priority)
+    covered: set[int] = set()
+    matches: list[tuple[int, int, str]] = []
+    for term in terms:
+        start = 0
+        while True:
+            pos = text.find(term, start)
+            if pos < 0:
+                break
+            end = pos + len(term)
+            if not covered.intersection(range(pos, end)):
+                matches.append((pos, end, term))
+                covered.update(range(pos, end))
+            start = pos + 1
+    # Insert spans from right to left so earlier positions stay valid
+    matches.sort(key=lambda x: x[0], reverse=True)
+    for pos, end, term in matches:
+        info = glossary_ja_terms[term]
+        en = info["en_term"].replace('"', '&quot;')
+        defn = info["definition_ja"].replace('"', '&quot;')
+        ref = info["paragraph_ref"].replace('"', '&quot;')
+        span = (
+            f'<span class="glossary-term" '
+            f'data-term="{en}" '
+            f'data-ja-term="{term}" '
+            f'data-definition="{defn}" '
+            f'data-ref="{ref}">'
+            f'{term}</span>'
+        )
+        text = text[:pos] + span + text[end:]
+    return text
+
+
 def build_regulation_page(regulation: str, version: str) -> None:
     structured_path = DATA_DIR / regulation / version / "structured.json"
     glossary_path = DATA_DIR / regulation / "glossary.json"
@@ -362,16 +405,20 @@ def build_regulation_page(regulation: str, version: str) -> None:
         raise click.ClickException(f"Not found: {structured_path}")
 
     data = load_json(structured_path)
-    glossary_terms = {}
+    glossary_terms: dict = {}
+    glossary_ja_terms: dict = {}
     if glossary_path.exists():
         glossary_data = load_json(glossary_path)
-        glossary_terms = {
-            t["term"]: {
-                "definition_ja": t.get("description") or t.get("ja", ""),
-                "paragraph_ref": t.get("paragraph_ref", ""),
-            }
-            for t in glossary_data.get("terms", [])
-        }
+        for t in glossary_data.get("terms", []):
+            term = t.get("term", "")
+            defn = t.get("description") or t.get("ja", "")
+            ref  = t.get("paragraph_ref", "")
+            ja   = t.get("ja", "").strip()
+            if term:
+                glossary_terms[term] = {"definition_ja": defn, "paragraph_ref": ref}
+            # 日本語用語マップ（ja フィールドがある場合のみ）
+            if ja and ja not in glossary_ja_terms:
+                glossary_ja_terms[ja] = {"en_term": term, "definition_ja": defn, "paragraph_ref": ref}
 
     # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
@@ -397,7 +444,8 @@ def build_regulation_page(regulation: str, version: str) -> None:
                 p["_table_cell"] = True
         p["text_annotated"] = annotate_glossary(p.get("text", "") or "", glossary_terms)
         if p.get("translation"):
-            p["translation_annotated"] = annotate_glossary(p["translation"], glossary_terms)
+            # 日本語訳は日本語用語アノテーションのみ（英語アノテーション HTML に再適用しない）
+            p["translation_annotated"] = annotate_glossary_ja(p["translation"], glossary_ja_terms)
         else:
             p["translation_annotated"] = None
         # 要約の1文目を抽出（カードヘッダーの短い日本語表示用）

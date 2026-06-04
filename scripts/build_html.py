@@ -242,9 +242,11 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
                 paragraphs[i]["_in_annex"] = True
 
     # Step 6: patch_annex_ids.py で設定された annex_id を上書き適用（前向き伝播）。
-    # ページヘッダーから確定した正しい附属書番号でヒューリスティック結果を補正する。
+    # Annex 1–9 の範囲のみに適用し、Annex 10+ の ID を破壊しない。
     current_override = None
-    for p in paragraphs:
+    for i, p in enumerate(paragraphs):
+        if i >= annex_10_start:
+            break
         if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
         if not p.get("_in_annex"):

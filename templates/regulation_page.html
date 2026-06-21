@@ -210,7 +210,8 @@
 
       {% if p.type == "image" %}
       {# ---- 画像ブロック ---- #}
-      <figure class="para-figure" id="para-{{ p.uid }}" data-uid="{{ p.uid }}">
+      <figure class="para-figure" id="para-{{ p.uid }}" data-uid="{{ p.uid }}"
+              {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}>
         {% if p.label %}
         <div class="para-figure-label">{{ p.label }}</div>
         {% endif %}

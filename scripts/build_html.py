@@ -258,6 +258,17 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
         if current_override is not None:
             p["_annex_id"] = current_override
 
+    # Step 7: 画像のみで構成される附属書（本文段落を持たない）への対応。
+    # 画像段落はステップ1-6で常に除外されるため、annex_id が明示的に
+    # 設定されている画像はここで直接 _annex_id を適用する。
+    for p in paragraphs:
+        if p.get("type") != "image":
+            continue
+        aid = p.get("annex_id")
+        if aid is not None:
+            p["_annex_id"] = aid
+            p["_in_annex"] = True
+
 
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。

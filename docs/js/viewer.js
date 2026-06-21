@@ -206,7 +206,8 @@
 
     // 最初の可視項目へスクロール
     // UID重複があるため getElementById ではなく data-annex-id で右ペインを検索
-    var firstCard = document.querySelector('.para-card[data-annex-id="' + annexId + '"]');
+    // 画像のみの附属書（本文段落なし）にも対応するため para-figure も対象にする
+    var firstCard = document.querySelector('.para-card[data-annex-id="' + annexId + '"], .para-figure[data-annex-id="' + annexId + '"]');
     if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 

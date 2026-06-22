@@ -28,6 +28,21 @@ def load_json(path: Path) -> dict:
         return json.load(f)
 
 
+def reg_sort_key(reg: str):
+    """法規一覧の表示順を決めるソートキー。
+
+    R.E.3（車両全体の定義・分類を定める基礎文書）は常に先頭に固定し、
+    残りは R<番号> の数値順に並べる。
+    """
+    import re as _re
+    if reg == "R.E.3":
+        return (0, 0, reg)
+    m = _re.match(r'^R(\d+)', reg)
+    if m:
+        return (1, int(m.group(1)), reg)
+    return (2, 0, reg)
+
+
 def is_nav_noise(p: dict) -> bool:
     """ナビゲーションツリーに表示すべきでないノイズ段落かどうかを判定する。
     - PDFページヘッダー（文書番号行、"E/ECE/..."）
@@ -700,7 +715,10 @@ def page(reg: str, version: str):
 @cli.command()
 def all():
     """data/ 以下の全法規のHTMLを生成する"""
-    regulations = [d.name for d in DATA_DIR.iterdir() if d.is_dir()]
+    regulations = sorted(
+        (d.name for d in DATA_DIR.iterdir() if d.is_dir()),
+        key=reg_sort_key,
+    )
     for reg in regulations:
         versions = sorted(
             [d.name for d in (DATA_DIR / reg).iterdir()

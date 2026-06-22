@@ -67,6 +67,10 @@ def is_nav_noise(p: dict) -> bool:
 def mark_footnote_noise(paragraphs: list[dict]) -> None:
     """本文内容（level 2以上）の後に出現する level=1 かつ数字のみ番号の段落を
     ページ脚注とみなし _nav_hidden=True にする（インプレース変更）。
+
+    附属書内の段落（annex_id が設定済み）は対象外とする。附属書は1から
+    番号が再始まるのが通常であり、実質的な見出し段落を脚注と誤判定して
+    しまうため（extract_pdf.py の同名フィルタと同じ理由）。
     """
     import re
     seen_content = False
@@ -76,7 +80,8 @@ def mark_footnote_noise(paragraphs: list[dict]) -> None:
         level = p.get("level", 1)
         if level >= 2:
             seen_content = True
-        if seen_content and level == 1 and re.fullmatch(r"\d{1,2}", p.get("number", "")):
+        if (seen_content and level == 1 and p.get("annex_id") is None
+                and re.fullmatch(r"\d{1,2}", p.get("number", ""))):
             p["_nav_hidden"] = True
 
 
@@ -160,16 +165,18 @@ def build_annex_tree(paragraphs: list[dict]) -> list[dict]:
     return [entries[n] for n in sorted(entries.keys())]
 
 
-def mark_annex_ids(paragraphs: list[dict]) -> None:
+def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
     """附属書段落に _annex_id（1–22）を付与する。
     mark_annex_paragraphs() の後に呼ぶこと。
 
     annex_id フィールドが設定されている段落（patch_annex_ids.py でパッチ済み）は
     それを直接 _annex_id として使用する。未設定の段落は従来のヒューリスティックで判定する。
+    last_chapter: 本文の最終章番号（既定12は標準的なUN規則の章数。R.E.3等の
+    異なる章構成の文書では build_tree() の結果から実際の最終章番号を渡すこと）。
     """
     import re as _re
 
-    # Step 1: main_body_end（最後の実質的な chapter 12 段落）を特定
+    # Step 1: main_body_end（最後の実質的な最終章段落）を特定
     main_body_end = -1
     for i, p in enumerate(paragraphs):
         if p.get("type") == "image":
@@ -179,7 +186,7 @@ def mark_annex_ids(paragraphs: list[dict]) -> None:
             top = int(num.split('.')[0])
         except (ValueError, IndexError):
             continue
-        if top != 12:
+        if top != last_chapter:
             continue
         text = p.get("text", "") or ""
         title = p.get("title", "") or ""
@@ -537,8 +544,10 @@ def build_regulation_page(regulation: str, version: str) -> None:
         p["summary_ja_short"] = summary[: dot_idx + 1] if dot_idx >= 0 else summary
 
     # _nav_hidden 付与後に附属書フラグを付与（TOCノイズをスキップして正確に判定）
+    chapter_numbers_int = [int(n["number"]) for n in tree if n["number"].isdigit()]
+    last_chapter = max(chapter_numbers_int) if chapter_numbers_int else 12
     mark_annex_paragraphs(paragraphs)
-    mark_annex_ids(paragraphs)
+    mark_annex_ids(paragraphs, last_chapter=last_chapter)
 
     # 参照段落チップ: "paragraph N.N..." 参照を検出し _refs リストを付与する。
     # _nav_hidden・_annex_id が確定した後に実行すること。

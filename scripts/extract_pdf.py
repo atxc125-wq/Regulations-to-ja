@@ -60,6 +60,7 @@ class ImageBlock:
     src: str = ""
     label: Optional[str] = None   # "Figure 1", "Table 2" など
     caption: Optional[str] = None
+    annex_id: Optional[int] = None
 
 
 def make_uid(regulation: str, text: str) -> str:
@@ -447,8 +448,9 @@ _INLINE_DEF_SPLIT = re.compile(
 )
 
 # ページヘッダーパターン（除去対象）
+# 旧形式: E/ECE/324/... 新形式（WP.29文書）: ECE/TRANS/WP.29/...（先頭の "E/" なし）
 _PAGE_HEADER_RE = re.compile(
-    r'^E/ECE/[^\n]*$',
+    r'^(?:E/)?ECE/[^\n]*$',
     re.MULTILINE,
 )
 
@@ -594,8 +596,8 @@ def parse_blocks(
     events: list[tuple[int, str, object]] = []
 
     for m in _PARA_HEADER.finditer(body):
-        # ページヘッダー由来の偽陽性を除去（タイトルがE/ECE/で始まる場合）
-        if m.group('title').strip().startswith('E/ECE/'):
+        # ページヘッダー由来の偽陽性を除去（タイトルがE/ECE/またはECE/で始まる場合）
+        if re.match(r'(?:E/)?ECE/', m.group('title').strip()):
             continue
         # 図中のラベル（0.7, 0.3 等）を除去: 各コンポーネントは 1 以上が必須
         if not _is_valid_para_number(m.group('number')):
@@ -621,8 +623,36 @@ def parse_blocks(
         if etype == "annex_marker":
             current_annex_id = data
 
+            # マーカーから次のイベント（段落見出し・画像・次の附属書マーカー）
+            # までの先頭テキストを欠落させずに保持する。附属書見出し直後は
+            # 通常 "Annex N" + タイトル行のみで内容は無いが、目次の項番号が
+            # 同一行に連結している等の理由で最初の実段落が検出できない場合
+            # （例: "Contents 1. Preface ...... 99" が改行されず1行になる）、
+            # 本来の実質的な前文コンテンツがここに含まれることがあるため。
+            lead_end = None
+            for npos, ntype, _ in events[event_idx + 1:]:
+                lead_end = npos
+                break
+            content_end = lead_end if lead_end is not None else len(body)
+            raw_content = body[pos:content_end]
+            raw_content = _ANNEX_MARKER_RE.sub('', raw_content)
+            cleaned = _clean_text(raw_content)
+            cleaned = re.sub(r'^Annex\s+\d+\s*', '', cleaned).strip()
+            if cleaned:
+                raw_result.append(Paragraph(
+                    uid=make_uid(regulation, cleaned),
+                    number='',
+                    title=cleaned[:80],
+                    text=cleaned,
+                    level=1,
+                    parent=None,
+                    annex_id=current_annex_id,
+                ))
+
         elif etype == "image":
-            raw_result.append(img_by_uid[data])
+            img = img_by_uid[data]
+            img.annex_id = current_annex_id
+            raw_result.append(img)
 
         elif etype == "para_header":
             m = data
@@ -635,13 +665,11 @@ def parse_blocks(
                 continue
             last_num_tuple = num_tuple
 
-            # コンテンツ範囲: このヘッダの終わりから次のヘッダ or 次のIMGマーカーまで
+            # コンテンツ範囲: このヘッダの終わりから次のヘッダ・次のIMGマーカー・
+            # 次の附属書マーカーまで（附属書境界を越えて内容が混ざるのを防ぐ）
             next_para_start = None
             for npos, ntype, _ in events[event_idx + 1:]:
-                if ntype == "para_header":
-                    next_para_start = npos
-                    break
-                elif ntype == "image":
+                if ntype in ("para_header", "image", "annex_marker"):
                     next_para_start = npos
                     break
 
@@ -673,7 +701,10 @@ def parse_blocks(
         if block.level >= 2:
             seen_content = True
         # 脚注段落を除外: level=1、数字のみの番号、本文コンテンツ以降に出現
+        # ただし附属書内は対象外（附属書は1から番号が再始まるのが通常であり、
+        # 実質的な見出し段落を脚注と誤判定してしまうため）
         if (seen_content and block.level == 1
+                and block.annex_id is None
                 and re.fullmatch(r'\d{1,2}', block.number)):
             continue
         # インライン定義を分割して追加

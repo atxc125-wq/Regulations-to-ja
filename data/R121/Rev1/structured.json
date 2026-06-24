@@ -239,7 +239,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R121-5d34ba26",
@@ -255,7 +256,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "定義"
     },
     {
       "uid": "R121-7a1a270d",

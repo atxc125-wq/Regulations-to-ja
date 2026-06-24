@@ -266,6 +266,10 @@ _IMG_MARKER_RE = re.compile(r'\[\[IMG:([^\]]+)\]\]')
 _ANNEX_MARKER_RE = re.compile(r'\[\[ANNEX:(\d+)\]\]')
 # ページ先頭の附属書ヘッダー検出
 _PAGE_ANNEX_RE = re.compile(r'^Annex\s+(\d+)', re.IGNORECASE)
+# ページ番号行（"21" や "page 21" の両形式に対応）
+_PAGE_NUM_HEADER_RE = re.compile(r'^(?:page\s+)?\d+\s*$', re.IGNORECASE)
+# 一部の古い版では各ページに "Regulation No. N" の繰り返しヘッダーが入る
+_REG_NO_HEADER_RE = re.compile(r'^(?:UN\s+)?Regulation\s+No\.?\s*\d+\s*$', re.IGNORECASE)
 
 
 def _detect_page_annex_id(page) -> Optional[int]:
@@ -275,9 +279,11 @@ def _detect_page_annex_id(page) -> Optional[int]:
     その直後の行に "Annex N" が現れる。本文ページには現れないため
     この位置での検出を附属書判定に使う。
     カンマや 'paragraph' を含む行（本文中の参照）は除外する。
+    ページ番号や "Regulation No. N" の繰り返しヘッダー行はスキップする。
     """
     text = page.get_text("text")
     past_ece = False
+    skipped_reg_header = False
     for line in text.split('\n'):
         line = line.strip()
         if not line:
@@ -285,10 +291,13 @@ def _detect_page_annex_id(page) -> Optional[int]:
         if line.startswith('E/') or line.startswith('ECE/') or line.startswith('ECE-TRANS-'):
             past_ece = True
             continue
-        if line.isdigit():
+        if _PAGE_NUM_HEADER_RE.match(line):
             continue
         if not past_ece:
             break
+        if not skipped_reg_header and _REG_NO_HEADER_RE.match(line):
+            skipped_reg_header = True
+            continue
         if ',' in line or 'paragraph' in line.lower():
             break
         m = _PAGE_ANNEX_RE.match(line)
@@ -360,12 +369,12 @@ def extract_blocks_with_media(
             bbox = block["bbox"]
             if any(_rects_overlap(bbox, ex) for ex in excluded_bboxes):
                 continue
-            block_text = " ".join(
-                span["text"]
-                for line in block.get("lines", [])
-                for span in line.get("spans", [])
-                if span.get("text", "").strip()
-            )
+            line_texts = []
+            for line in block.get("lines", []):
+                line_text = "".join(span.get("text", "") for span in line.get("spans", []))
+                if line_text.strip():
+                    line_texts.append(line_text)
+            block_text = "\n".join(line_texts)
             if block_text.strip():
                 text_block_events.append((bbox[1], block_text))
 
@@ -449,9 +458,10 @@ _INLINE_DEF_SPLIT = re.compile(
 
 # ページヘッダーパターン（除去対象）
 # 旧形式: E/ECE/324/... 新形式（WP.29文書）: ECE/TRANS/WP.29/...（先頭の "E/" なし）
+# 一部の古い版では各ページに "Regulation No. N" / "page N" の繰り返しヘッダーも入る
 _PAGE_HEADER_RE = re.compile(
-    r'^(?:E/)?ECE/[^\n]*$',
-    re.MULTILINE,
+    r'^(?:(?:E/)?ECE/[^\n]*|(?:UN\s+)?Regulation\s+No\.?\s*\d+\s*|page\s+\d+\s*)$',
+    re.MULTILINE | re.IGNORECASE,
 )
 
 
@@ -581,10 +591,15 @@ def parse_blocks(
     img_by_uid = {b.uid: b for b in image_blocks}
 
     # 目次を除外（"1. Scope" が最初に現れる行まで）
+    # 番号とタイトルが別行に分かれているレイアウトにも対応するため、
+    # 当該行と次行を連結した上でマッチさせる。
     lines = text_with_markers.splitlines()
     start_line = 0
     for i, line in enumerate(lines):
-        if re.match(r'^1\.\s+Scope', line.strip(), re.IGNORECASE):
+        window = line.strip()
+        if i + 1 < len(lines):
+            window += ' ' + lines[i + 1].strip()
+        if re.match(r'^1\.?\s+Scope', window, re.IGNORECASE):
             start_line = i
             break
     body = "\n".join(lines[start_line:])

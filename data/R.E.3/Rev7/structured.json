@@ -289,7 +289,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "前文"
     },
     {
       "uid": "R.E.3-fbd3b33a",
@@ -306,7 +307,8 @@
       "justification": null,
       "prev_uid": null,
       "annex_id": null,
-      "_nav_hidden": true
+      "_nav_hidden": true,
+      "title_ja": "改正されたTRANS/WP.29/1045"
     },
     {
       "uid": "R.E.3-de820a71",
@@ -322,7 +324,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "はじめに"
     },
     {
       "uid": "R.E.3-db7e1d86",
@@ -338,7 +341,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両の定義"
     },
     {
       "uid": "R.E.3-277613fa",
@@ -354,7 +358,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「動力車両」の定義"
     },
     {
       "uid": "R.E.3-24611024",
@@ -370,7 +375,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「自動車」の定義"
     },
     {
       "uid": "R.E.3-ac5f8020",
@@ -386,7 +392,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「自動二輪車」の定義"
     },
     {
       "uid": "R.E.3-40775338",
@@ -402,7 +409,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「原動機付自転車」の定義"
     },
     {
       "uid": "R.E.3-33b1a4c4",
@@ -418,7 +426,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「被牽引車」の定義"
     },
     {
       "uid": "R.E.3-1b887f86",
@@ -434,7 +443,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「連結車両」の定義"
     },
     {
       "uid": "R.E.3-9f5c20f1",
@@ -450,7 +460,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「連接車両」の定義"
     },
     {
       "uid": "R.E.3-3efae740",
@@ -602,7 +613,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "Lカテゴリー車両"
     },
     {
       "uid": "R.E.3-9dbb2ade",
@@ -618,7 +630,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「L1カテゴリー」の定義"
     },
     {
       "uid": "R.E.3-03ed50b3",
@@ -634,7 +647,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「L2カテゴリー」の定義"
     },
     {
       "uid": "R.E.3-9c1ca001",
@@ -735,7 +749,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "Mカテゴリー車両"
     },
     {
       "uid": "R.E.3-22470b9f",
@@ -1040,7 +1055,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "Nカテゴリー車両"
     },
     {
       "uid": "R.E.3-82814698",
@@ -1158,7 +1174,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "Oカテゴリー車両"
     },
     {
       "uid": "R.E.3-82494ec0",
@@ -1327,7 +1344,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「特殊用途車両」の定義"
     },
     {
       "uid": "R.E.3-873c443c",
@@ -1411,7 +1429,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "農業用車両（T, R, S）"
     },
     {
       "uid": "R.E.3-f83372e1",
@@ -1478,7 +1497,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「非道路移動機械」の定義"
     },
     {
       "uid": "R.E.3-d5f5f5d4",
@@ -1494,7 +1514,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "Gカテゴリー車両"
     },
     {
       "uid": "R.E.3-13adb145",
@@ -1845,7 +1866,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車体形式の定義"
     },
     {
       "uid": "R.E.3-bbfcf394",
@@ -2716,7 +2738,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "V = 初速度（km/h）"
     },
     {
       "uid": "R.E.3-cac6785f",
@@ -10181,7 +10204,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点と実体幹角の標準付属書"
     },
     {
       "uid": "R.E.3-fafb3ddc",
@@ -10197,7 +10221,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "目的"
     },
     {
       "uid": "R.E.3-9581791a",
@@ -10213,7 +10238,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "定義"
     },
     {
       "uid": "R.E.3-f314926a",
@@ -10229,7 +10255,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「参照データ」の定義"
     },
     {
       "uid": "R.E.3-2b6b4bec",
@@ -10245,7 +10272,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点、R点とその関係"
     },
     {
       "uid": "R.E.3-a346c2ce",
@@ -10261,7 +10289,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "実体幹角、設計体幹角とその関係"
     },
     {
       "uid": "R.E.3-70134290",
@@ -10277,7 +10306,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「三次元H点測定装置」の定義"
     },
     {
       "uid": "R.E.3-ea13aeb4",
@@ -10293,7 +10323,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「H点」の定義"
     },
     {
       "uid": "R.E.3-42369531",
@@ -10309,7 +10340,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「R点」または「着座基準点」の定義"
     },
     {
       "uid": "R.E.3-54f60d4b",
@@ -10325,7 +10357,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「体幹線」の定義"
     },
     {
       "uid": "R.E.3-0e4d0556",
@@ -10341,7 +10374,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「実体幹角」の定義"
     },
     {
       "uid": "R.E.3-e99a5fe9",
@@ -10357,7 +10391,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「設計体幹角」の定義"
     },
     {
       "uid": "R.E.3-1ef2d542",
@@ -10373,7 +10408,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「乗員中心面」の定義"
     },
     {
       "uid": "R.E.3-d8cc5174",
@@ -10389,7 +10425,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "「三次元参照システム」の定義"
     },
     {
       "uid": "R.E.3-08a08064",
@@ -10439,7 +10476,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "要件"
     },
     {
       "uid": "R.E.3-252185b3",
@@ -10455,7 +10493,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "データ提示"
     },
     {
       "uid": "R.E.3-6dc44baf",
@@ -10471,7 +10510,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R点の三次元参照システム座標"
     },
     {
       "uid": "R.E.3-8b01b768",
@@ -10487,7 +10527,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "設計体幹角"
     },
     {
       "uid": "R.E.3-c326b40b",
@@ -10503,7 +10544,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "シート調整指示"
     },
     {
       "uid": "R.E.3-653dd55b",
@@ -10519,7 +10561,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "測定データと設計仕様の関係"
     },
     {
       "uid": "R.E.3-2c0f5a39",
@@ -10535,7 +10578,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点座標と実体幹角の値"
     },
     {
       "uid": "R.E.3-7d39a5d0",
@@ -10551,7 +10595,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R点とH点の相対位置関係"
     },
     {
       "uid": "R.E.3-1cc1e91c",
@@ -10567,7 +10612,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R点と設計体幹角の使用"
     },
     {
       "uid": "R.E.3-b29a2d56",
@@ -10583,7 +10629,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点または実体幹角が不適合の場合"
     },
     {
       "uid": "R.E.3-8d43b2c6",
@@ -10616,7 +10663,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点と実体幹角の決定手順"
     },
     {
       "uid": "R.E.3-5bcdb50b",
@@ -10632,7 +10680,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両の事前調整"
     },
     {
       "uid": "R.E.3-4cd53e9e",
@@ -10648,7 +10697,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両の測定姿勢"
     },
     {
       "uid": "R.E.3-6c2b0854",
@@ -10664,7 +10714,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "シートの調整"
     },
     {
       "uid": "R.E.3-3b92ed61",
@@ -10680,7 +10731,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "H点測定装置の設置"
     },
     {
       "uid": "R.E.3-9771dee0",
@@ -10815,7 +10867,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "傾斜角、シート取付高さ差、表面性状"
     },
     {
       "uid": "R.E.3-49d1d430",
@@ -11103,7 +11156,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "付属書1 - 追補1"
     },
     {
       "uid": "R.E.3-d41d0179",
@@ -11119,7 +11173,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "背部および座部パン"
     },
     {
       "uid": "R.E.3-7ce17777",
@@ -11135,7 +11190,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "胴体および脚部要素"
     },
     {
       "uid": "R.E.3-0d13aeb9",
@@ -11151,7 +11207,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "ISO標準6549-1980に準拠"
     },
     {
       "uid": "R.E.3-1e51507b",
@@ -11167,7 +11224,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "図1 3-D H点測定装置要素の名称"
     },
     {
       "uid": "R.E.3-img-232768d3",
@@ -11199,7 +11257,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "図2 3-D H点測定装置要素の寸法と荷重配分"
     },
     {
       "uid": "R.E.3-img-a6decfa8",
@@ -11231,7 +11290,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "付属書1 - 追補2"
     },
     {
       "uid": "R.E.3-e4f6540d",
@@ -11247,7 +11307,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "三次元参照システムの定義"
     },
     {
       "uid": "R.E.3-443b1356",
@@ -11263,7 +11324,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両測定姿勢の決定"
     },
     {
       "uid": "R.E.3-c16406dc",
@@ -11279,7 +11341,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R点とH点の座標設定"
     },
     {
       "uid": "R.E.3-img-d81f21c3",
@@ -11311,7 +11374,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "ISO標準4130:1978に準拠"
     },
     {
       "uid": "R.E.3-5def4a14",
@@ -11327,7 +11391,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "付属書1 - 追補3"
     },
     {
       "uid": "R.E.3-4b51053d",
@@ -11343,7 +11408,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "参照データの符号化"
     },
     {
       "uid": "R.E.3-fc3bc0e4",
@@ -11359,7 +11425,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両測定姿勢の説明"
     },
     {
       "uid": "R.E.3-892332da",
@@ -11375,7 +11442,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "基準マークの座標"
     },
     {
       "uid": "R.E.3-30590216",
@@ -11391,7 +11459,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "参照データリスト"
     },
     {
       "uid": "R.E.3-32716f98",
@@ -11407,7 +11476,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "着座位置"
     },
     {
       "uid": "R.E.3-9a41caf5",
@@ -11423,7 +11493,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R点の座標"
     },
     {
       "uid": "R.E.3-cb4bd3c0",
@@ -11439,7 +11510,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "設計体幹角"
     },
     {
       "uid": "R.E.3-883c3c2c",
@@ -11455,7 +11527,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "シート調整仕様"
     },
     {
       "uid": "R.E.3-35155d48",
@@ -11471,7 +11544,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "該当しないものを削除"
     },
     {
       "uid": "R.E.3-d20a5dae",
@@ -11487,7 +11561,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "ハイブリッド車等の可聴性確保指針"
     },
     {
       "uid": "R.E.3-ce6058ce",
@@ -11503,7 +11578,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "定義"
     },
     {
       "uid": "R.E.3-9122aa48",
@@ -11519,7 +11595,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "システム性能"
     },
     {
       "uid": "R.E.3-952875aa",
@@ -11535,7 +11612,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "作動条件"
     },
     {
       "uid": "R.E.3-43d2d136",
@@ -11551,7 +11629,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "音の種類と音量"
     },
     {
       "uid": "R.E.3-193b9357",
@@ -11567,7 +11646,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "1958年協定締約国の識別番号"
     },
     {
       "uid": "R.E.3-7dd640b2",
@@ -11583,7 +11663,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "市場燃料品質に関する勧告"
     },
     {
       "uid": "R.E.3-46d7a27b",
@@ -11599,7 +11680,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "勧告の目的"
     },
     {
       "uid": "R.E.3-ed4aea30",
@@ -11615,7 +11697,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "勧告の範囲"
     },
     {
       "uid": "R.E.3-429e8805",
@@ -11631,7 +11714,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "除外事項"
     },
     {
       "uid": "R.E.3-9a6b5d7f",
@@ -11647,7 +11731,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "略語"
     },
     {
       "uid": "R.E.3-8c1e138d",
@@ -11663,7 +11748,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "UN規則と改正シリーズ"
     },
     {
       "uid": "R.E.3-abf825f1",
@@ -11679,7 +11765,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "はじめに"
     },
     {
       "uid": "R.E.3-03ffb5f6",
@@ -11695,7 +11782,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "追補の内容"
     },
     {
       "uid": "R.E.3-a6ca9c83",
@@ -11711,7 +11799,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "市場燃料品質"
     },
     {
       "uid": "R.E.3-432dbd68",
@@ -11760,7 +11849,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "ガソリン中のメタノール含有量"
     },
     {
       "uid": "R.E.3-ff49a4f5",
@@ -11875,7 +11965,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "E値またはT値"
     },
     {
       "uid": "R.E.3-img-481908ff",
@@ -11940,7 +12031,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "寒冷地または厳冬期の値"
     },
     {
       "uid": "R.E.3-be0feb8a",
@@ -11956,7 +12048,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "FAMEの許容含有量"
     },
     {
       "uid": "R.E.3-2b7e0bba",
@@ -11972,7 +12065,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "検出限界以下"
     },
     {
       "uid": "R.E.3-e0c8c22e",
@@ -12021,7 +12115,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両構造統合決議の付属書"
     },
     {
       "uid": "R.E.3-39d6c24b",
@@ -12037,7 +12132,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "付属書4 - 追補1"
     },
     {
       "uid": "R.E.3-img-950f7594",
@@ -12117,7 +12213,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "付属書4 - 追補2"
     },
     {
       "uid": "R.E.3-img-c28c5245",
@@ -12149,7 +12246,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "EUの硫黄含有量規制"
     },
     {
       "uid": "R.E.3-4ec9d66d",
@@ -12165,7 +12263,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "路上走行車両"
     },
     {
       "uid": "R.E.3-img-e8c72019",
@@ -12197,7 +12296,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "EUの硫黄含有量規制"
     },
     {
       "uid": "R.E.3-b91ef690",
@@ -12213,7 +12313,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "付属書4 - 追補3"
     },
     {
       "uid": "R.E.3-img-6d7e936f",
@@ -12277,7 +12378,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "付属書4 - 追補4"
     },
     {
       "uid": "R.E.3-97da38e9",
@@ -12293,7 +12395,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "UN規則83, 49の改正シリーズ"
     },
     {
       "uid": "R.E.3-27928a2b",
@@ -12309,7 +12412,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "先進運転支援システム制御原則"
     },
     {
       "uid": "R.E.3-34238783",
@@ -12325,7 +12429,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "範囲"
     },
     {
       "uid": "R.E.3-31c5f50a",
@@ -12341,7 +12446,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "既存規則"
     },
     {
       "uid": "R.E.3-ac9072b3",
@@ -12357,7 +12463,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "制御原則"
     },
     {
       "uid": "R.E.3-0e55ce31",
@@ -12373,7 +12480,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "制御要素"
     },
     {
       "uid": "R.E.3-707a96fa",
@@ -12389,7 +12497,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "操作要素"
     },
     {
       "uid": "R.E.3-88054c90",
@@ -12405,7 +12514,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "表示要素"
     },
     {
       "uid": "R.E.3-b0725f65",
@@ -12421,7 +12531,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "補助要素"
     },
     {
       "uid": "R.E.3-51bcee52",
@@ -12437,7 +12548,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "要約"
     },
     {
       "uid": "R.E.3-583c0fe0",
@@ -12453,7 +12565,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "はじめに"
     },
     {
       "uid": "R.E.3-629c6ea1",
@@ -12469,7 +12582,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "運転自動化におけるヒューマンファクター"
     },
     {
       "uid": "R.E.3-e5265b63",
@@ -12485,7 +12599,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "ドライバー・イン・ザ・ループ"
     },
     {
       "uid": "R.E.3-b756879f",
@@ -12501,7 +12616,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "今後の作業"
     },
     {
       "uid": "R.E.3-a7ce8b56",
@@ -12517,7 +12633,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "参考文献"
     },
     {
       "uid": "R.E.3-3fea4443",
@@ -12533,7 +12650,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "序文"
     },
     {
       "uid": "R.E.3-45f5cf57",
@@ -12549,7 +12667,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "範囲"
     },
     {
       "uid": "R.E.3-a2823e76",
@@ -12565,7 +12684,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "既存規則"
     },
     {
       "uid": "R.E.3-1732538e",
@@ -12581,7 +12701,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "制御原則"
     },
     {
       "uid": "R.E.3-87c4924d",
@@ -12597,7 +12718,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "制御要素"
     },
     {
       "uid": "R.E.3-4757de33",
@@ -12613,7 +12735,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "操作要素"
     },
     {
       "uid": "R.E.3-cfe41357",
@@ -12629,7 +12752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "表示要素"
     },
     {
       "uid": "R.E.3-62aac6b3",
@@ -12645,7 +12769,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "補助要素"
     },
     {
       "uid": "R.E.3-feac673a",
@@ -12661,7 +12786,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "要約"
     },
     {
       "uid": "R.E.3-5bcddcb7",
@@ -12677,7 +12803,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "付属書5 - 追補"
     },
     {
       "uid": "R.E.3-caedb79a",
@@ -12693,7 +12820,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "はじめに"
     },
     {
       "uid": "R.E.3-img-4215b21b",
@@ -12725,7 +12853,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "運転自動化におけるヒューマンファクター"
     },
     {
       "uid": "R.E.3-13031c40",
@@ -12741,7 +12870,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "作業負荷"
     },
     {
       "uid": "R.E.3-55421750",
@@ -12757,7 +12887,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "信頼"
     },
     {
       "uid": "R.E.3-b553afd5",
@@ -12773,7 +12904,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "適応"
     },
     {
       "uid": "R.E.3-5995ebf1",
@@ -12789,7 +12921,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "ドライバー・イン・ザ・ループ"
     },
     {
       "uid": "R.E.3-f97cb095",
@@ -12806,7 +12939,8 @@
       "justification": null,
       "prev_uid": null,
       "annex_id": 5,
-      "_nav_hidden": true
+      "_nav_hidden": true,
+      "title_ja": "事務局注記"
     },
     {
       "uid": "R.E.3-6c2bb2c2",
@@ -12822,7 +12956,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "今後の作業"
     },
     {
       "uid": "R.E.3-612ac7c7",
@@ -12838,7 +12973,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "参考文献"
     },
     {
       "uid": "R.E.3-2f167a2d",
@@ -12854,7 +12990,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "サイバーセキュリティとデータ保護指針"
     },
     {
       "uid": "R.E.3-f0e0eedd",
@@ -12870,7 +13007,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "前文"
     },
     {
       "uid": "R.E.3-477cc878",
@@ -12886,7 +13024,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "モビリティのデジタル化"
     },
     {
       "uid": "R.E.3-59932018",
@@ -12902,7 +13041,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "データ暗号化とサイバーセキュリティ"
     },
     {
       "uid": "R.E.3-08cde540",
@@ -12918,7 +13058,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "コネクテッドカーとADT車両"
     },
     {
       "uid": "R.E.3-796b9bc8",
@@ -12934,7 +13075,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "本指針の対象"
     },
     {
       "uid": "R.E.3-187f5217",
@@ -12950,7 +13092,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "本指針の暫定的な位置付け"
     },
     {
       "uid": "R.E.3-7ede836d",
@@ -12966,7 +13109,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "UN規則の基礎としての本指針"
     },
     {
       "uid": "R.E.3-79228a85",
@@ -12982,7 +13126,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "既存のデータ保護法規への影響"
     },
     {
       "uid": "R.E.3-5d5ae5a1",
@@ -12998,7 +13143,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "範囲"
     },
     {
       "uid": "R.E.3-9e2cfa3a",
@@ -13014,7 +13160,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "本指針の対象車両"
     },
     {
       "uid": "R.E.3-5831fbbc",
@@ -13030,7 +13177,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "定義"
     },
     {
       "uid": "R.E.3-571b4b67",
@@ -13046,7 +13194,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "「コネクテッドカー」の定義"
     },
     {
       "uid": "R.E.3-35122fd1",
@@ -13147,7 +13296,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "本指針の要件"
     },
     {
       "uid": "R.E.3-a76dad9b",
@@ -13163,7 +13313,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "一般事項"
     },
     {
       "uid": "R.E.3-46cf2f0b",
@@ -13179,7 +13330,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "データ保護"
     },
     {
       "uid": "R.E.3-5026e86f",
@@ -13263,7 +13415,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "安全性"
     },
     {
       "uid": "R.E.3-5d7426f3",
@@ -13330,7 +13483,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "セキュリティ"
     },
     {
       "uid": "R.E.3-2e339176",
@@ -13414,7 +13568,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ソフトウェア識別番号規定"
     },
     {
       "uid": "R.E.3-8d777b42",
@@ -13430,7 +13585,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "「Rxソフトウェア識別番号（RXSWIN）」の定義"
     },
     {
       "uid": "R.E.3-0b36876d",
@@ -13446,7 +13602,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "「電子制御システム」の定義"
     },
     {
       "uid": "R.E.3-4b26697f",
@@ -13462,7 +13619,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "「ソフトウェア」の定義"
     },
     {
       "uid": "R.E.3-71309c2b",
@@ -13478,7 +13636,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "RXSWINの実施"
     },
     {
       "uid": "R.E.3-0e73e44f",
@@ -13494,7 +13653,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "RXSWIN実施時の適用事項"
     },
     {
       "uid": "R.E.3-df2044f0",
@@ -13510,7 +13670,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "車両メーカーの承認"
     },
     {
       "uid": "R.E.3-f5d92346",
@@ -13526,7 +13687,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "車両メーカーの情報提供"
     },
     {
       "uid": "R.E.3-b689ad52",
@@ -13542,7 +13704,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "車両メーカーのパラメータリスト提供"
     },
     {
       "uid": "R.E.3-30983a8b",
@@ -13558,7 +13721,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "車両メーカーの新規車両承認取得"
     },
     {
       "uid": "R.E.3-7349332b",
@@ -13574,7 +13738,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "承認の製造中止"
     },
     {
       "uid": "R.E.3-aedc1ef5",
@@ -13590,7 +13755,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "製造中止とみなされない場合"
     },
     {
       "uid": "R.E.3-dfd5ccb1",
@@ -13606,7 +13772,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "連絡票"
     },
     {
       "uid": "R.E.3-img-9b613105",
@@ -13638,7 +13805,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "承認付与国識別番号"
     }
   ]
 }

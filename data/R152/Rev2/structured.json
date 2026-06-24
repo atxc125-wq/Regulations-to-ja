@@ -273,7 +273,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "序文"
     },
     {
       "uid": "R152-c4123f29",
@@ -289,7 +290,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R152-38755cf7",
@@ -305,7 +307,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "定義"
     },
     {
       "uid": "R152-0761127c",
@@ -321,7 +324,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「先進緊急ブレーキシステム（AEBS）」の定義"
     },
     {
       "uid": "R152-cd4127fd",
@@ -337,7 +341,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「緊急ブレーキ」の定義"
     },
     {
       "uid": "R152-81a9d3ee",
@@ -353,7 +358,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「衝突警報」の定義"
     },
     {
       "uid": "R152-4ed09b67",
@@ -369,7 +375,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「先進緊急ブレーキシステムに関する車両型式」の定義"
     },
     {
       "uid": "R152-8eb10d85",
@@ -385,7 +392,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「被試験車両」の定義"
     },
     {
       "uid": "R152-92457b79",
@@ -401,7 +409,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「ソフトターゲット」の定義"
     },
     {
       "uid": "R152-f1942318",
@@ -417,7 +426,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「車両ターゲット」の定義"
     },
     {
       "uid": "R152-8c7e6368",
@@ -433,7 +443,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「歩行者ターゲット」の定義"
     },
     {
       "uid": "R152-35283637",
@@ -449,7 +460,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「自転車ターゲット」の定義"
     },
     {
       "uid": "R152-ba3555b4",
@@ -465,7 +477,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「共通表示領域」の定義"
     },
     {
       "uid": "R152-00cd3290",
@@ -600,7 +613,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "AEBSに関する車両型式承認申請"
     },
     {
       "uid": "R152-ea2baab5",
@@ -616,7 +630,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "添付書類"
     },
     {
       "uid": "R152-90e32468",
@@ -632,7 +647,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両型式の記述"
     },
     {
       "uid": "R152-0f6f463e",
@@ -648,7 +664,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "試験車両の提出"
     },
     {
       "uid": "R152-a609ecc5",
@@ -664,7 +681,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "承認の付与"
     },
     {
       "uid": "R152-c0c6d9e4",
@@ -680,7 +698,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "承認番号の付与"
     },
     {
       "uid": "R152-18020b3e",
@@ -3078,7 +3097,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "附属書1 通信書"
     },
     {
       "uid": "R152-img-0902a5d2",
@@ -3110,7 +3130,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "承認状況"
     },
     {
       "uid": "R152-4ee5a8e0",
@@ -3126,7 +3147,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "商標"
     },
     {
       "uid": "R152-47b09b06",
@@ -3142,7 +3164,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "型式および商標名"
     },
     {
       "uid": "R152-0f560e40",
@@ -3158,7 +3181,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "製造者の氏名および住所"
     },
     {
       "uid": "R152-5c69b99b",
@@ -3174,7 +3198,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "製造者代理人の氏名および住所"
     },
     {
       "uid": "R152-edff2f9e",
@@ -3190,7 +3215,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両の概要"
     },
     {
       "uid": "R152-5ef0e6a5",
@@ -3206,7 +3232,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "承認申請日"
     },
     {
       "uid": "R152-4a72b92f",
@@ -3222,7 +3249,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "承認試験実施機関"
     },
     {
       "uid": "R152-5469156e",
@@ -3238,7 +3266,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "報告書発行日"
     },
     {
       "uid": "R152-eb703182",
@@ -3254,7 +3283,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "報告書番号"
     },
     {
       "uid": "R152-6ece3a2f",
@@ -3270,7 +3300,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "承認"
     },
     {
       "uid": "R152-781553e5",
@@ -3286,7 +3317,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "場所"
     },
     {
       "uid": "R152-e782dac3",
@@ -3302,7 +3334,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "日付"
     },
     {
       "uid": "R152-c9def056",
@@ -3369,7 +3402,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "承認付与国識別番号"
     },
     {
       "uid": "R152-5a02a12c",
@@ -3385,7 +3419,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "承認マークの配置"
     },
     {
       "uid": "R152-img-c9a2e552",
@@ -3433,7 +3468,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "附属書3 電子制御の安全要件"
     },
     {
       "uid": "R152-9666e9a8",
@@ -3449,7 +3485,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "一般"
     },
     {
       "uid": "R152-d886a535",
@@ -3465,7 +3502,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "定義"
     },
     {
       "uid": "R152-749d7302",
@@ -3481,7 +3519,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」の定義"
     },
     {
       "uid": "R152-a396397c",
@@ -3497,7 +3536,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「安全コンセプト」の定義"
     },
     {
       "uid": "R152-fcb32d0d",
@@ -3513,7 +3553,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「電子制御システム」の定義"
     },
     {
       "uid": "R152-53fa5ce8",
@@ -3529,7 +3570,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「複雑な電子車両制御システム」の定義"
     },
     {
       "uid": "R152-5d978807",
@@ -3545,7 +3587,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「上位電子制御」の定義"
     },
     {
       "uid": "R152-ea6e26d5",
@@ -3561,7 +3604,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「ユニット」の定義"
     },
     {
       "uid": "R152-823dd406",
@@ -3577,7 +3621,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「伝送リンク」の定義"
     },
     {
       "uid": "R152-39d6e761",
@@ -3593,7 +3638,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「制御範囲」の定義"
     },
     {
       "uid": "R152-4c22696b",
@@ -3609,7 +3655,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「機能動作境界」の定義"
     },
     {
       "uid": "R152-44be0091",
@@ -3625,7 +3672,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「安全関連機能」の定義"
     },
     {
       "uid": "R152-26ce78d1",
@@ -3641,7 +3689,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "文書"
     },
     {
       "uid": "R152-fa9d9351",
@@ -3657,7 +3706,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "要件"
     },
     {
       "uid": "R152-4d7cc44b",
@@ -3707,7 +3757,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」機能の記述"
     },
     {
       "uid": "R152-2b7b1d86",
@@ -3723,7 +3774,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "入力変数と検出変数のリスト"
     },
     {
       "uid": "R152-862ec60c",
@@ -3773,7 +3825,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "システム構成と回路図"
     },
     {
       "uid": "R152-46cf8806",
@@ -3891,7 +3944,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の安全コンセプト"
     },
     {
       "uid": "R152-939baeb4",
@@ -4077,7 +4131,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "検証と試験"
     },
     {
       "uid": "R152-556df73f",
@@ -4093,7 +4148,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」機能動作試験"
     },
     {
       "uid": "R152-06af642f",
@@ -4160,7 +4216,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "技術機関による報告"
     },
     {
       "uid": "R152-cf0581c6",
@@ -4193,7 +4250,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "識別"
     },
     {
       "uid": "R152-be7a00e9",
@@ -4209,7 +4267,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車両メーカー"
     },
     {
       "uid": "R152-8cf7ffd6",
@@ -4225,7 +4284,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式"
     },
     {
       "uid": "R152-cf802bba",
@@ -4326,7 +4386,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験車両/システム記述"
     },
     {
       "uid": "R152-2ff0a21c",
@@ -4342,7 +4403,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "一般記述"
     },
     {
       "uid": "R152-70452aa8",
@@ -4358,7 +4420,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」制御機能と操作方法"
     },
     {
       "uid": "R152-996e5936",
@@ -4374,7 +4437,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」内部品と相互接続図"
     },
     {
       "uid": "R152-5f9d776a",
@@ -4390,7 +4454,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の安全コンセプト"
     },
     {
       "uid": "R152-12509b1f",
@@ -4406,7 +4471,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "信号フローと動作データ"
     },
     {
       "uid": "R152-978606b6",
@@ -4422,7 +4488,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の宣言"
     },
     {
       "uid": "R152-7acdba62",
@@ -4438,7 +4505,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "ソフトウェア概要アーキテクチャ"
     },
     {
       "uid": "R152-c24ac5bf",
@@ -4454,7 +4522,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "故障時の設計規定"
     },
     {
       "uid": "R152-07789f42",
@@ -4640,7 +4709,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "署名者"
     },
     {
       "uid": "R152-05baed08",
@@ -4673,7 +4743,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "対向車左折/右折シナリオ"
     },
     {
       "uid": "R152-1ead4bbc",
@@ -4689,7 +4760,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R152-85e81269",
@@ -4754,7 +4826,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "前方車両右左折シナリオ"
     },
     {
       "uid": "R152-5dae747c",
@@ -4770,7 +4843,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R152-df59eaf4",
@@ -4835,7 +4909,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "カーブ路ガードパイプシナリオ"
     },
     {
       "uid": "R152-3ee7c4a4",
@@ -4851,7 +4926,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R152-9c890c47",
@@ -4900,7 +4976,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車線変更標識シナリオ"
     },
     {
       "uid": "R152-a055eb4c",
@@ -4916,7 +4993,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R152-9995c21d",

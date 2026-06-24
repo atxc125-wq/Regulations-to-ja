@@ -324,15 +324,16 @@ def _summarize_gemini_batch(
 def translate_headings_gemini(
     api_key: str,
     system_prompt: str,
-    headings: list[tuple[str, str]],   # [(number, title_en), ...]
+    headings: list[tuple[str, str]],   # [(key, title_en), ...]
     model: str = "gemini-2.5-flash",
 ) -> dict[str, str]:
     """
     複数の見出しを1回のAPI呼び出しで一括翻訳する。
-    headings: [(段落番号, 英語タイトル), ...]
-    Returns: {段落番号: 日本語タイトル, ...}
+    headings: [(識別子, 英語タイトル), ...]
+    識別子は段落番号でなくてもよい（呼び出し側が一意なキーを渡せる）。
+    Returns: {識別子: 日本語タイトル, ...}
     """
-    lines = "\n".join(f'"{num}": "{title}"' for num, title in headings)
+    lines = "\n".join(f'"{key}": "{title}"' for key, title in headings)
     user_msg = textwrap.dedent(f"""\
         以下は UN法規の段落見出し（英語）の一覧です。
         各見出しを簡潔な日本語に翻訳してください。
@@ -341,7 +342,8 @@ def translate_headings_gemini(
 
         {lines}
 
-        段落番号をキー、日本語訳を値とするJSONオブジェクトで回答してください。
+        各エントリの識別子（左側の文字列）をキー、日本語訳を値とするJSONオブジェクトで
+        回答してください。識別子は与えられた文字列をそのまま変更せずに使うこと。
     """)
     payload = {
         "systemInstruction": {"parts": [{"text": system_prompt}]},
@@ -856,22 +858,15 @@ def headings_cmd(reg: str, version: str, engine: str, model: str,
     blocks = data['paragraphs']
 
     # 翻訳が必要な見出しを収集
-    all_targets = [
+    # uid をキーにして API へ送るため、同じ number が文書内で繰り返されても
+    # （附属書間でよく起こる）正しく1件ずつ翻訳できる。
+    targets = [
         b for b in blocks
         if b.get('type', 'paragraph') == 'paragraph'
         and (overwrite or not b.get('title_ja'))
     ]
 
-    # 重複番号の段落は title_ja が一意に決まらないためスキップ
-    from collections import Counter
-    all_nums = Counter(b['number'] for b in blocks if b.get('type', 'paragraph') == 'paragraph')
-    dup_nums = {n for n, c in all_nums.items() if c > 1}
-    targets = [b for b in all_targets if b['number'] not in dup_nums]
-    skipped = len(all_targets) - len(targets)
-
     click.echo(f"Headings to translate: {len(targets)}  (reg={reg} ver={version})")
-    if skipped:
-        click.echo(f"  Skipped {skipped} duplicate-numbered paragraphs (can't uniquely translate by number)")
 
     if dry_run:
         for b in targets:
@@ -883,7 +878,9 @@ def headings_cmd(reg: str, version: str, engine: str, model: str,
     if not api_key:
         raise click.ClickException(f"{key_var} 環境変数が設定されていません。")
 
-    heading_pairs = [(b['number'], b['title']) for b in targets]
+    # API へは number ではなく uid をキーとして送る（同じ number が文書内で
+    # 繰り返されても、附属書ごとに正しく1件ずつ翻訳結果を引き当てるため）
+    heading_pairs = [(b['uid'], b['title']) for b in targets]
     chunks = [heading_pairs[i:i+chunk_size] for i in range(0, len(heading_pairs), chunk_size)]
     click.echo(f"Translating in {len(chunks)} chunk(s) of up to {chunk_size} headings each...")
 
@@ -895,9 +892,9 @@ def headings_cmd(reg: str, version: str, engine: str, model: str,
                 results = translate_headings_gemini(api_key, system_prompt, chunk, model)
             else:
                 results = {}
-                for num, title in chunk:
-                    r = _translate_anthropic(api_key, system_prompt, num, title, title)
-                    results[num] = r.get('translation', title)
+                for uid, title in chunk:
+                    r = _translate_anthropic(api_key, system_prompt, uid, title, title)
+                    results[uid] = r.get('translation', title)
             all_results.update(results)
         except Exception as e:
             click.echo(f"  ✗ Chunk {ci+1} ERROR: {e}", err=True)
@@ -908,7 +905,7 @@ def headings_cmd(reg: str, version: str, engine: str, model: str,
     # title_ja を書き込む
     written = 0
     for b in targets:
-        ja = all_results.get(b['number'], '').strip()
+        ja = all_results.get(b['uid'], '').strip()
         if ja:
             b['title_ja'] = ja
             written += 1

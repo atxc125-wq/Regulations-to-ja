@@ -290,7 +290,8 @@
       "prev_uid": null,
       "annex_id": null,
       "translation": "適用範囲",
-      "summary_ja": "適用範囲を定める。"
+      "summary_ja": "適用範囲を定める。",
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R156-1ff2b5d2",
@@ -510,7 +511,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両型式承認申請"
     },
     {
       "uid": "R156-0ec7ce1b",
@@ -1818,7 +1820,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "生産適合性"
     },
     {
       "uid": "R156-0b0cae9f",
@@ -1953,7 +1956,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "情報文書"
     },
     {
       "uid": "R156-90e546f9",
@@ -1969,7 +1973,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "メーカー商号"
     },
     {
       "uid": "R156-d241e252",
@@ -1985,7 +1990,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "型式と一般商用説明"
     },
     {
       "uid": "R156-1689732a",
@@ -2001,7 +2007,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "型式識別表示"
     },
     {
       "uid": "R156-0d1ba226",
@@ -2017,7 +2024,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R156-2314796f",
@@ -2033,7 +2041,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両区分"
     },
     {
       "uid": "R156-368f869c",
@@ -2049,7 +2058,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "メーカー名と住所"
     },
     {
       "uid": "R156-590c6a33",
@@ -2065,7 +2075,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "組立工場名と住所"
     },
     {
       "uid": "R156-a595cfc3",
@@ -2081,7 +2092,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "代表車両の写真・図面"
     },
     {
       "uid": "R156-fe58a0a1",
@@ -2097,7 +2109,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "ソフトウェア更新"
     },
     {
       "uid": "R156-6ee65770",
@@ -2113,7 +2126,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両型式の一般構造特性"
     },
     {
       "uid": "R156-3e4e7a30",
@@ -2248,7 +2262,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "附属書1 追補1"
     },
     {
       "uid": "R156-4ec4f21f",
@@ -2264,7 +2279,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "通報書"
     },
     {
       "uid": "R156-img-d0cdfe34",
@@ -2296,7 +2312,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "メーカー商号"
     },
     {
       "uid": "R156-53ced870",
@@ -2312,7 +2329,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式と一般商用説明"
     },
     {
       "uid": "R156-1689732a",
@@ -2328,7 +2346,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式識別表示"
     },
     {
       "uid": "R156-1455143f",
@@ -2344,7 +2363,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R156-2314796f",
@@ -2360,7 +2380,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両区分"
     },
     {
       "uid": "R156-fbe33f50",
@@ -2376,7 +2397,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "メーカー名と住所"
     },
     {
       "uid": "R156-1080d280",
@@ -2392,7 +2414,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "生産工場名と住所"
     },
     {
       "uid": "R156-0358dfa0",
@@ -2408,7 +2431,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "ソフトウェア更新管理システム適合証明書番号"
     },
     {
       "uid": "R156-7ebd0eb0",
@@ -2424,7 +2448,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "OTAソフトウェア更新"
     },
     {
       "uid": "R156-db8d5a27",
@@ -2440,7 +2465,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験実施技術機関"
     },
     {
       "uid": "R156-55461902",
@@ -2456,7 +2482,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験報告書日付"
     },
     {
       "uid": "R156-5657735a",
@@ -2472,7 +2499,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験報告書番号"
     },
     {
       "uid": "R156-e0242dad",
@@ -2488,7 +2516,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "備考"
     },
     {
       "uid": "R156-e1535d04",
@@ -2572,7 +2601,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "承認国識別番号"
     },
     {
       "uid": "R156-0cc1d871",
@@ -2588,7 +2618,8 @@
       "prev_uid": null,
       "annex_id": 3,
       "translation": "附属書3 認可マークの配置",
-      "summary_ja": "認可マークの配置について定める。"
+      "summary_ja": "認可マークの配置について定める。",
+      "title_ja": "附属書3 承認マーク配置"
     },
     {
       "uid": "R156-img-34d011b0",
@@ -2620,7 +2651,8 @@
       "prev_uid": null,
       "annex_id": 4,
       "translation": "ソフトウェアアップデート管理システムの適合証明書モデル\nソフトウェアアップデート管理システムの適合証明書\n国連規則第156号に準拠\n証明書番号 [参照番号]\n[…… 認可当局]\n以下の製造業者が、\n製造業者: ..........................................................................................................................\n製造業者の住所: ...................................................................................................\n規則第[本規則]号の規定に適合することを証明する。\n検証は以下に対して実施された: ...................................................................................\n実施者（認可当局の名称および住所）: ..................................................................\n報告書番号: .....................................................................................................................\n本証明書は [….. 日付] まで有効である。\n作成地: […… 場所]\n作成日: [……. 日付]\n[…………. 署名]\n16",
-      "summary_ja": "ソフトウェアアップデート管理システムの適合証明書モデル。"
+      "summary_ja": "ソフトウェアアップデート管理システムの適合証明書モデル。",
+      "title_ja": "ソフトウェア更新管理システム適合証明書モデル"
     }
   ]
 }

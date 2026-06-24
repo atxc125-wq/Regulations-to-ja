@@ -121,45 +121,68 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
             p["_in_annex"] = True
 
 
-def build_annex_tree(paragraphs: list[dict]) -> list[dict]:
+def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None = None) -> list[dict]:
     """附属書ツリーを構築する（左ペイン用）。
     整数番号の第2出現ブロック（附属書 TOC セクション）から各附属書のタイトルを取得する。
     _nav_hidden フラグ付与前に呼ぶこと。
+
+    annex_titles_fallback: TOCセクションから附属書タイトルが1件も取れない場合
+    （例: "Annex N - Title" 形式のTOCで附属書見出しが段落として捕捉されない旧版PDF）
+    に使用するタイトル辞書。structured.json の "annex_titles" フィールド由来。
+    形式: {"1": {"title": "...", "title_ja": "..."}, ...}
     """
     import re as _re
 
     # num="1" の出現位置を列挙して TOC セクション境界を特定
     occ1 = [i for i, p in enumerate(paragraphs)
             if p.get("type") != "image" and p.get("number", "") == "1"]
-    if len(occ1) < 2:
-        return []
-
-    # 第2出現 (附属書TOCの先頭) ～ 第3出現 (本文の先頭) が附属書TOCセクション
-    annex_toc_start = occ1[1]
-    annex_toc_end   = occ1[2] if len(occ1) >= 3 else len(paragraphs)
 
     entries: dict = {}
-    for i, p in enumerate(paragraphs):
-        if i < annex_toc_start or i >= annex_toc_end:
-            continue
-        if p.get("type") == "image":
-            continue
-        num = p.get("number", "")
-        if not _re.fullmatch(r"\d+", num):
-            continue
-        n = int(num)
-        if not (1 <= n <= 22):
-            continue
-        title = (p.get("title") or "").strip()
-        # "......" ドットリーダーを除去
-        clean = _re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
-        if clean.lower().startswith("appendix"):
-            continue
-        if n not in entries:
+    if len(occ1) >= 2:
+        # 第2出現 (附属書TOCの先頭) ～ 第3出現 (本文の先頭) が附属書TOCセクション
+        annex_toc_start = occ1[1]
+        annex_toc_end   = occ1[2] if len(occ1) >= 3 else len(paragraphs)
+
+        for i, p in enumerate(paragraphs):
+            if i < annex_toc_start or i >= annex_toc_end:
+                continue
+            if p.get("type") == "image":
+                continue
+            num = p.get("number", "")
+            if not _re.fullmatch(r"\d+", num):
+                continue
+            n = int(num)
+            if not (1 <= n <= 22):
+                continue
+            title = (p.get("title") or "").strip()
+            # "......" ドットリーダーを除去
+            clean = _re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
+            if clean.lower().startswith("appendix"):
+                continue
+            if n not in entries:
+                entries[n] = {
+                    "number": n,
+                    "title": clean,
+                    "title_ja": (p.get("title_ja") or "").rstrip(". "),
+                }
+
+    if annex_titles_fallback:
+        # 段落に検出済みの annex_id（extract_pdf.py 由来の確定値）と
+        # ヒューリスティックが見つけた附属書番号集合を照合する。
+        # 一致しない場合、TOCセクション特定自体が誤っている（本文を附属書TOCと
+        # 誤認した等）と判断し、annex_id 集合 + annex_titles フィールドで再構築する。
+        annex_ids = sorted({p["annex_id"] for p in paragraphs
+                             if p.get("type") != "image" and p.get("annex_id") is not None})
+        if annex_ids and set(entries.keys()) != set(annex_ids):
+            entries = {}
+
+    if not entries and annex_titles_fallback:
+        for n in annex_ids:
+            info = annex_titles_fallback.get(str(n)) or {}
             entries[n] = {
                 "number": n,
-                "title": clean,
-                "title_ja": (p.get("title_ja") or "").rstrip(". "),
+                "title": (info.get("title") or "").strip(),
+                "title_ja": (info.get("title_ja") or "").strip(),
             }
 
     return [entries[n] for n in sorted(entries.keys())]
@@ -309,11 +332,14 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
         # 画像ブロック・ノイズはツリーナビに表示しない
         if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
+        # TOC のドットリーダー＋ページ番号の残骸（例: "....... 16"）を除去する
+        title_clean = _re.sub(r'\s*\.{4,}.*', '', p["title"]).rstrip(". ")
+        title_ja_clean = _re.sub(r'\s*\.{4,}.*', '', p.get("title_ja", "")).rstrip(". ")
         node = {
             "uid": p["uid"],
             "number": p["number"],
-            "title": p["title"].rstrip(". "),
-            "title_ja": p.get("title_ja", "").rstrip(". "),
+            "title": title_clean,
+            "title_ja": title_ja_clean,
             "level": p["level"],
             "modified": p.get("modified", False),
             "children": [],
@@ -515,7 +541,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
 
     # ノイズフラグ付与前にツリーを構築する
     tree = build_tree(paragraphs)
-    annex_tree = build_annex_tree(paragraphs)
+    annex_tree = build_annex_tree(paragraphs, data.get("annex_titles"))
 
     # ノイズフラグを付与してから用語アノテーションを追加
     mark_footnote_noise(paragraphs)

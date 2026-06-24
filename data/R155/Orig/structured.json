@@ -307,7 +307,8 @@
       "prev_uid": null,
       "annex_id": null,
       "translation": "適用範囲",
-      "summary_ja": "適用範囲を定める。"
+      "summary_ja": "適用範囲を定める。",
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R155-f9b8e1fa",
@@ -612,7 +613,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "サイバーセキュリティの車両型式承認申請"
     },
     {
       "uid": "R155-98612a4b",
@@ -1750,7 +1752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "生産適合性"
     },
     {
       "uid": "R155-a25a2620",
@@ -1868,7 +1871,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "情報書類"
     },
     {
       "uid": "R155-dc1048f0",
@@ -1884,7 +1888,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "メーカー（商号）"
     },
     {
       "uid": "R155-e50f5112",
@@ -1900,7 +1905,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "型式および一般商用説明"
     },
     {
       "uid": "R155-483c67e0",
@@ -1916,7 +1922,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "型式識別表示"
     },
     {
       "uid": "R155-5897b869",
@@ -1932,7 +1939,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R155-c7e0984f",
@@ -1948,7 +1956,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両区分"
     },
     {
       "uid": "R155-966c4452",
@@ -1964,7 +1973,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "メーカー／代理人の氏名・住所"
     },
     {
       "uid": "R155-859f28b3",
@@ -1980,7 +1990,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "組立工場の名称・住所"
     },
     {
       "uid": "R155-346da925",
@@ -1996,7 +2007,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "代表車両の写真・図面"
     },
     {
       "uid": "R155-a37ca722",
@@ -2012,7 +2024,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "サイバーセキュリティ"
     },
     {
       "uid": "R155-837bd196",
@@ -2028,7 +2041,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "車両型式の一般構造特性"
     },
     {
       "uid": "R155-6f4ef0d4",
@@ -2163,7 +2177,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "附属書1－追補1"
     },
     {
       "uid": "R155-ee65aeae",
@@ -2179,7 +2194,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "通報（最大A4版）"
     },
     {
       "uid": "R155-img-938f55c2",
@@ -2211,7 +2227,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "メーカー（商号）"
     },
     {
       "uid": "R155-48d609d0",
@@ -2227,7 +2244,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式および一般商用説明"
     },
     {
       "uid": "R155-483c67e0",
@@ -2243,7 +2261,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式識別表示"
     },
     {
       "uid": "R155-5897b869",
@@ -2259,7 +2278,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R155-c7e0984f",
@@ -2275,7 +2295,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両区分"
     },
     {
       "uid": "R155-e42f44bf",
@@ -2291,7 +2312,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "メーカー／代理人の氏名・住所"
     },
     {
       "uid": "R155-1bb7b5a3",
@@ -2307,7 +2329,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "生産工場の名称・住所"
     },
     {
       "uid": "R155-2c252582",
@@ -2323,7 +2346,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "CSMS適合証明書番号"
     },
     {
       "uid": "R155-886411ae",
@@ -2339,7 +2363,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験実施責任技術機関"
     },
     {
       "uid": "R155-13864cb2",
@@ -2355,7 +2380,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験報告書日付"
     },
     {
       "uid": "R155-cca7a79e",
@@ -2371,7 +2397,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "試験報告書番号"
     },
     {
       "uid": "R155-ec3427ae",
@@ -2387,7 +2414,8 @@
       "prev_uid": null,
       "annex_id": 2,
       "translation": "備考: (もしあれば)。",
-      "summary_ja": "備考があれば記載する。"
+      "summary_ja": "備考があれば記載する。",
+      "title_ja": "備考"
     },
     {
       "uid": "R155-77701bb2",
@@ -2403,7 +2431,8 @@
       "prev_uid": null,
       "annex_id": 2,
       "translation": "場所: .................................................................................................................. ...........",
-      "summary_ja": "場所の記載が必要。"
+      "summary_ja": "場所の記載が必要。",
+      "title_ja": "場所"
     },
     {
       "uid": "R155-c774c678",
@@ -2436,7 +2465,8 @@
       "prev_uid": null,
       "annex_id": 2,
       "translation": "署名:  ............................................................................................................. ........",
-      "summary_ja": "署名欄を設ける必要がある。"
+      "summary_ja": "署名欄を設ける必要がある。",
+      "title_ja": "署名"
     },
     {
       "uid": "R155-da24d53d",
@@ -2469,7 +2499,8 @@
       "prev_uid": null,
       "annex_id": 2,
       "translation": "承認を与え、延長し、拒否し、又は撤回した国の識別番号（本規則の承認規定を参照すること）。該当しないものを抹消すること。",
-      "summary_ja": "承認を与えた国の識別番号を記載する。"
+      "summary_ja": "承認を与えた国の識別番号を記載する。",
+      "title_ja": "承認国識別番号"
     },
     {
       "uid": "R155-71f93e37",
@@ -2485,7 +2516,8 @@
       "prev_uid": null,
       "annex_id": 3,
       "translation": "附属書3 認可マークの配置",
-      "summary_ja": "認可マークの配置について定める。"
+      "summary_ja": "認可マークの配置について定める。",
+      "title_ja": "附属書3 承認マークの配置"
     },
     {
       "uid": "R155-img-1a2d2805",
@@ -2517,7 +2549,8 @@
       "prev_uid": null,
       "annex_id": 4,
       "translation": "サイバーセキュリティ管理システム（CSMS）適合証明書の様式\n国連規則第[本規則]号に基づく適合証明書\n証明書番号 [参照番号]\n[…… 認可当局]\n以下の製造業者を証明する。\n製造業者: ..................................................................................................................................\n製造業者の住所: ..........................................................................................................................\n規則第155号第7.2項の規定に適合している。\n以下の者により検査が実施された: ......................................................................................................\n（認可当局または技術機関の名称および住所）: ........................................................................\n報告書番号: ........................\n本証明書は [….. 日付] まで有効である。\n[…… 場所] にて作成\n[……. 日付] に\n[…………. 署名]\n添付書類: 製造業者によるサイバーセキュリティ管理システムの記述。",
-      "summary_ja": "CSMS適合証明書は規則第155号第7.2項への適合を証明する。"
+      "summary_ja": "CSMS適合証明書は規則第155号第7.2項への適合を証明する。",
+      "title_ja": "CSMS適合証明書モデル"
     },
     {
       "uid": "R155-7749bd7e",
@@ -2533,7 +2566,8 @@
       "prev_uid": null,
       "annex_id": 5,
       "translation": "附属書5 脅威のリストとそれに対応する緩和策",
-      "summary_ja": "脅威のリストと対応する緩和策を規定する。"
+      "summary_ja": "脅威のリストと対応する緩和策を規定する。",
+      "title_ja": "附属書5 脅威と緩和策リスト"
     },
     {
       "uid": "R155-6df44c32",
@@ -2549,7 +2583,8 @@
       "prev_uid": null,
       "annex_id": 5,
       "translation": "この附属書は、三つの部で構成される。この附属書のパートAは、脅威、脆弱性及び攻撃方法のベースラインを記述する。この附属書のパートBは、車両型式を対象とした脅威に対する緩和策を記述する。パートCは、車両外部、例えばITバックエンドにおける脅威に対する緩和策を記述する。",
-      "summary_ja": "この附属書は脅威、脆弱性、攻撃方法、及びそれらの緩和策を記述する。"
+      "summary_ja": "この附属書は脅威、脆弱性、攻撃方法、及びそれらの緩和策を記述する。",
+      "title_ja": "附属書の3部構成"
     },
     {
       "uid": "R155-a96f23c9",
@@ -2565,7 +2600,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "リスク評価と緩和策"
     },
     {
       "uid": "R155-39b5f237",
@@ -2581,7 +2617,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "脆弱性の索引付け"
     },
     {
       "uid": "R155-4f1bd412",
@@ -2597,7 +2634,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "脅威分析と攻撃影響"
     },
     {
       "uid": "R155-b0144723",
@@ -2613,7 +2651,8 @@
       "prev_uid": null,
       "annex_id": 5,
       "translation": "脅威および関連する脆弱性または攻撃方法の概要は、表A1に記載するものとする。",
-      "summary_ja": "脅威と脆弱性の概要は表A1に記載する。"
+      "summary_ja": "脅威と脆弱性の概要は表A1に記載する。",
+      "title_ja": "脅威と脆弱性の概要"
     },
     {
       "uid": "R155-304ccca7",
@@ -2761,7 +2800,8 @@
       "prev_uid": null,
       "annex_id": 5,
       "translation": "「車両通信チャネル」に関連する脅威に対する軽減策は、表B1に記載されている。表B1 「車両通信チャネル」に関連する脅威に対する軽減策",
-      "summary_ja": "車両通信チャネルの脅威軽減策は表B1に記載する。"
+      "summary_ja": "車両通信チャネルの脅威軽減策は表B1に記載する。",
+      "title_ja": "車両通信チャネルの緩和策"
     },
     {
       "uid": "R155-img-a0e2e93f",
@@ -2826,7 +2866,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "更新プロセスの緩和策"
     },
     {
       "uid": "R155-img-9c0710e2",
@@ -2858,7 +2899,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "意図しない人的行為の緩和策"
     },
     {
       "uid": "R155-c3be3011",
@@ -2907,7 +2949,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "外部接続の緩和策"
     },
     {
       "uid": "R155-img-a900ad22",
@@ -2939,7 +2982,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "攻撃標的・動機の緩和策"
     },
     {
       "uid": "R155-bb6d5309",
@@ -2988,7 +3032,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "脆弱性悪用の緩和策"
     },
     {
       "uid": "R155-img-108e1f6f",
@@ -3020,7 +3065,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "車両からのデータ損失・漏洩緩和策"
     },
     {
       "uid": "R155-img-76cd91ab",
@@ -3069,7 +3115,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "物理的システム操作の緩和策"
     },
     {
       "uid": "R155-img-1bb26ffb",
@@ -3101,7 +3148,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "バックエンドサーバの緩和策"
     },
     {
       "uid": "R155-img-db436533",
@@ -3133,7 +3181,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "意図しない人的行為の緩和策"
     },
     {
       "uid": "R155-img-0a231907",
@@ -3165,7 +3214,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "データ物理的損失の緩和策"
     },
     {
       "uid": "R155-img-3e91c0bb",

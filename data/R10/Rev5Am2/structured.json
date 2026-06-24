@@ -256,7 +256,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "附属書"
     },
     {
       "uid": "R10-b17a30c9",
@@ -612,7 +613,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R10-b938801a",
@@ -628,7 +630,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "L、M、N、O、T、R、Sカテゴリ車両の電磁両立性"
     },
     {
       "uid": "R10-e4393cf6",
@@ -644,7 +647,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両搭載部品・独立技術単位"
     },
     {
       "uid": "R10-25a3643b",
@@ -660,7 +664,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "対象"
     },
     {
       "uid": "R10-09d22bf2",
@@ -676,7 +681,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「電磁両立性」の定義"
     },
     {
       "uid": "R10-b52188c7",
@@ -692,7 +698,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「電磁妨害」の定義"
     },
     {
       "uid": "R10-93b3453c",
@@ -708,7 +715,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「電磁イミュニティ」の定義"
     },
     {
       "uid": "R10-48ff3c6e",
@@ -724,7 +732,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「電磁環境」の定義"
     },
     {
       "uid": "R10-156b3ad4",
@@ -740,7 +749,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「広帯域エミッション」の定義"
     },
     {
       "uid": "R10-d920f935",
@@ -1181,7 +1191,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両型の認可"
     },
     {
       "uid": "R10-45ca4d50",
@@ -1333,7 +1344,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "ESA型式認可"
     },
     {
       "uid": "R10-648a2571",
@@ -1349,7 +1361,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "ESAへの本規則の適用"
     },
     {
       "uid": "R10-img-e301a8e6",
@@ -1541,7 +1554,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "ESA型式認可申請"
     },
     {
       "uid": "R10-a8ad9508",
@@ -1557,7 +1571,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "情報書類の様式"
     },
     {
       "uid": "R10-c6d8987e",
@@ -1573,7 +1588,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "試験報告書による補足"
     },
     {
       "uid": "R10-1642206e",
@@ -1589,7 +1605,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "技術機関による試験"
     },
     {
       "uid": "R10-418eb7b0",
@@ -1605,7 +1622,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "試料の表示"
     },
     {
       "uid": "R10-3a436b68",
@@ -1621,7 +1639,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "使用制限の特定"
     },
     {
       "uid": "R10-68d53747",
@@ -1688,7 +1707,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "型式認可手続き"
     },
     {
       "uid": "R10-17483319",
@@ -1704,7 +1724,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両の型式認可"
     },
     {
       "uid": "R10-ef980bc7",
@@ -1771,7 +1792,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "ESAの型式認可"
     },
     {
       "uid": "R10-8b8bff91",
@@ -1804,7 +1826,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "型式認可の付与"
     },
     {
       "uid": "R10-ce41ef8e",
@@ -1820,7 +1843,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両"
     },
     {
       "uid": "R10-265ab796",
@@ -1870,7 +1894,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "ESA"
     },
     {
       "uid": "R10-4a6208bd",
@@ -1954,7 +1979,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "認可の通知"
     },
     {
       "uid": "R10-ba0060dd",
@@ -1970,7 +1996,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "認可番号の付与"
     },
     {
       "uid": "R10-fee59301",
@@ -1986,7 +2013,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "表示の存在"
     },
     {
       "uid": "R10-2f53b8ba",
@@ -2036,7 +2064,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "国際認可マークの貼付"
     },
     {
       "uid": "R10-8684809f",
@@ -2086,7 +2115,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "型式認可マークの例"
     },
     {
       "uid": "R10-a8fe52b2",
@@ -5689,7 +5719,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "対称線信号/制御ポート"
     },
     {
       "uid": "R10-img-813e3b20",
@@ -5721,7 +5752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "電力線PLC有線ネットワークポート"
     },
     {
       "uid": "R10-img-c3a1d362",
@@ -5769,7 +5801,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "制御パイロットPLC信号/制御ポート"
     },
     {
       "uid": "R10-img-b1560fbc",
@@ -5801,7 +5834,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "制御パイロット信号/制御ポート"
     },
     {
       "uid": "R10-img-6eb96640",
@@ -5833,7 +5867,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "認可マーク例 モデルA"
     },
     {
       "uid": "R10-img-d4791d6f",
@@ -5881,7 +5916,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "R – 06 2439"
     },
     {
       "uid": "R10-img-77126e81",
@@ -5929,7 +5965,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "2番目の数字は例示"
     },
     {
       "uid": "R10-6c06aad0",
@@ -5945,7 +5982,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両電磁両立性認可情報書類"
     },
     {
       "uid": "R10-ebc2b534",
@@ -5961,7 +5999,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者の商標"
     },
     {
       "uid": "R10-e7cbd40a",
@@ -5977,7 +6016,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式"
     },
     {
       "uid": "R10-51e96d32",
@@ -5993,7 +6033,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両カテゴリ"
     },
     {
       "uid": "R10-4f86aeef",
@@ -6009,7 +6050,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者の名称と住所"
     },
     {
       "uid": "R10-12599deb",
@@ -6025,7 +6067,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "組立工場の住所"
     },
     {
       "uid": "R10-f9672d3f",
@@ -6041,7 +6084,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "代表車両の写真/図面"
     },
     {
       "uid": "R10-bb21e8cb",
@@ -6057,7 +6101,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "機関の位置と配置"
     },
     {
       "uid": "R10-1c12b1eb",
@@ -6073,7 +6118,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者"
     },
     {
       "uid": "R10-5823ae66",
@@ -6089,7 +6135,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "機関に表示された製造者機関コード"
     },
     {
       "uid": "R10-f30829b8",
@@ -6105,7 +6152,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "内燃機関"
     },
     {
       "uid": "R10-ac6f5252",
@@ -6121,7 +6169,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "作動原理"
     },
     {
       "uid": "R10-d8e92417",
@@ -6137,7 +6186,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "シリンダ数と配置"
     },
     {
       "uid": "R10-5397d559",
@@ -6153,7 +6203,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "燃料供給"
     },
     {
       "uid": "R10-d5ef4248",
@@ -6169,7 +6220,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "燃料噴射（圧縮着火のみ）"
     },
     {
       "uid": "R10-88b4405e",
@@ -6185,7 +6237,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "電子制御ユニット"
     },
     {
       "uid": "R10-ee8de840",
@@ -6201,7 +6254,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者"
     },
     {
       "uid": "R10-c6f977c2",
@@ -6217,7 +6271,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "システムの記述"
     },
     {
       "uid": "R10-ee0657fb",
@@ -6233,7 +6288,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "燃料噴射（火花点火のみ）"
     },
     {
       "uid": "R10-884ca9ed",
@@ -6249,7 +6305,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "電気系統"
     },
     {
       "uid": "R10-91d8a5b0",
@@ -6265,7 +6322,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "該当しない方を抹消"
     },
     {
       "uid": "R10-99682d40",
@@ -6281,7 +6339,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "定格電圧"
     },
     {
       "uid": "R10-f0a0e459",
@@ -6297,7 +6356,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "発電機"
     },
     {
       "uid": "R10-e7cbd40a",
@@ -6313,7 +6373,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式"
     },
     {
       "uid": "R10-97ea0e29",
@@ -6737,7 +6798,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車体"
     },
     {
       "uid": "R10-ea334c04",
@@ -6838,7 +6900,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "電気/電子部品の概要"
     },
     {
       "uid": "R10-03cc814b",
@@ -6854,7 +6917,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "シートベルト等拘束装置"
     },
     {
       "uid": "R10-8dca55fb",
@@ -6870,7 +6934,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "電気/電子部品の概要"
     },
     {
       "uid": "R10-fe128700",
@@ -6937,7 +7002,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "無線妨害抑制装置の表と図"
     },
     {
       "uid": "R10-cafa3a2c",
@@ -6987,7 +7053,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両不正使用防止装置"
     },
     {
       "uid": "R10-8dca55fb",
@@ -7020,7 +7087,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両内RF送信機設置・使用表"
     },
     {
       "uid": "R10-img-f76baea1",
@@ -7069,7 +7137,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "付録3: 型式代表車両の記述"
     },
     {
       "uid": "R10-dd9c3be4",
@@ -7102,7 +7171,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "充電電流"
     },
     {
       "uid": "R10-fce50969",
@@ -7118,7 +7188,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "最大定格電流"
     },
     {
       "uid": "R10-868efff8",
@@ -7134,7 +7205,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "定格充電電圧"
     },
     {
       "uid": "R10-fb61eef4",
@@ -7150,7 +7222,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "基本車両インターフェース機能"
     },
     {
       "uid": "R10-c265e296",
@@ -7166,7 +7239,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "最小R sce値"
     },
     {
       "uid": "R10-98b541af",
@@ -7182,7 +7256,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両付属充電ハーネス"
     },
     {
       "uid": "R10-ddf33e41",
@@ -7198,7 +7273,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "車両付属充電ハーネスの場合"
     },
     {
       "uid": "R10-14a87983",
@@ -7214,7 +7290,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "附属書2B"
     },
     {
       "uid": "R10-b3b9e32b",
@@ -7230,7 +7307,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者の商標"
     },
     {
       "uid": "R10-e7cbd40a",
@@ -7246,7 +7324,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式"
     },
     {
       "uid": "R10-8dfc1fe6",
@@ -7262,7 +7341,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式識別手段"
     },
     {
       "uid": "R10-dbfb1dc9",
@@ -7278,7 +7358,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R10-eb22f97c",
@@ -7294,7 +7375,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "製造者の名称と住所"
     },
     {
       "uid": "R10-9e8ea212",
@@ -7310,7 +7392,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "認可マークの貼付位置・方法"
     },
     {
       "uid": "R10-6e46c7a9",
@@ -7326,7 +7409,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "組立工場の住所"
     },
     {
       "uid": "R10-b050239c",
@@ -7342,7 +7426,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "ESAの部品/STU認可"
     },
     {
       "uid": "R10-6391aaa5",
@@ -7358,7 +7443,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "使用制限と装着条件"
     },
     {
       "uid": "R10-f4c2e3fb",
@@ -7374,7 +7460,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "電気系統定格電圧"
     },
     {
       "uid": "R10-f9d41c62",
@@ -7390,7 +7477,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "充電器"
     },
     {
       "uid": "R10-4681a4fd",
@@ -7406,7 +7494,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "充電電流"
     },
     {
       "uid": "R10-e4f221d2",
@@ -7422,7 +7511,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "最大定格電流"
     },
     {
       "uid": "R10-99c31545",
@@ -7438,7 +7528,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "型式識別手段の文字"
     },
     {
       "uid": "R10-dda8a841",
@@ -7454,7 +7545,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "定格充電電圧"
     },
     {
       "uid": "R10-acf82371",
@@ -7470,7 +7562,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "基本ESAインターフェース機能"
     },
     {
       "uid": "R10-fef852c9",
@@ -7486,7 +7579,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 2
+      "annex_id": 2,
+      "title_ja": "最小R sce値"
     },
     {
       "uid": "R10-bfc76170",
@@ -7502,7 +7596,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "通信（最大A4判）"
     },
     {
       "uid": "R10-img-26814f67",
@@ -7534,7 +7629,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の商標"
     },
     {
       "uid": "R10-e7cbd40a",
@@ -7550,7 +7646,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式"
     },
     {
       "uid": "R10-2b074d12",
@@ -7566,7 +7663,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式識別手段"
     },
     {
       "uid": "R10-dbfb1dc9",
@@ -7582,7 +7680,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R10-51e96d32",
@@ -7598,7 +7697,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車両カテゴリ"
     },
     {
       "uid": "R10-1d8475ae",
@@ -7614,7 +7714,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の名称と住所"
     },
     {
       "uid": "R10-30811fd4",
@@ -7630,7 +7731,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可マークの貼付位置・方法"
     },
     {
       "uid": "R10-f35c654e",
@@ -7646,7 +7748,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "追加情報"
     },
     {
       "uid": "R10-7aa30a96",
@@ -7662,7 +7765,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験実施技術機関"
     },
     {
       "uid": "R10-08dc5184",
@@ -7678,7 +7782,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験報告書日付"
     },
     {
       "uid": "R10-021275df",
@@ -7694,7 +7799,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験報告書番号"
     },
     {
       "uid": "R10-4c9b19e4",
@@ -7710,7 +7816,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可付与国識別番号"
     },
     {
       "uid": "R10-da381bcf",
@@ -7726,7 +7833,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "備考"
     },
     {
       "uid": "R10-6d840cda",
@@ -7742,7 +7850,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "場所"
     },
     {
       "uid": "R10-c7d37c94",
@@ -7758,7 +7867,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "日付"
     },
     {
       "uid": "R10-3caf5479",
@@ -7774,7 +7884,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "署名"
     },
     {
       "uid": "R10-11491663",
@@ -7790,7 +7901,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可当局提出情報パッケージ索引"
     },
     {
       "uid": "R10-39ec98cb",
@@ -7806,7 +7918,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "延長理由"
     },
     {
       "uid": "R10-b962472f",
@@ -7822,7 +7935,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "追加情報"
     },
     {
       "uid": "R10-e6916676",
@@ -7838,7 +7952,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "電気系統定格電圧"
     },
     {
       "uid": "R10-e085f046",
@@ -7854,7 +7969,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車体型式"
     },
     {
       "uid": "R10-b889efdc",
@@ -7870,7 +7986,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験車両搭載電子システムリスト"
     },
     {
       "uid": "R10-eb3af9b6",
@@ -7886,7 +8003,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "24GHz短距離レーダー装備車両"
     },
     {
       "uid": "R10-6462e8db",
@@ -7902,7 +8020,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "ISO 17025認定試験機関"
     },
     {
       "uid": "R10-36e73383",
@@ -7918,7 +8037,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "備考"
     },
     {
       "uid": "R10-6ef04804",
@@ -7934,7 +8054,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "附属書3B"
     },
     {
       "uid": "R10-img-b4e5d486",
@@ -7966,7 +8087,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の商標"
     },
     {
       "uid": "R10-4f7fea0b",
@@ -7982,7 +8104,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式と一般商業記述"
     },
     {
       "uid": "R10-3b4828d8",
@@ -7998,7 +8121,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式識別手段"
     },
     {
       "uid": "R10-0fd6b9fd",
@@ -8014,7 +8138,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "表示位置"
     },
     {
       "uid": "R10-a4ff4209",
@@ -8030,7 +8155,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車両カテゴリ"
     },
     {
       "uid": "R10-ab416352",
@@ -8046,7 +8172,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の名称と住所"
     },
     {
       "uid": "R10-22777325",
@@ -8062,7 +8189,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可マークの貼付位置・方法"
     },
     {
       "uid": "R10-51be3745",
@@ -8078,7 +8206,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "組立工場の住所"
     },
     {
       "uid": "R10-f35c654e",
@@ -8094,7 +8223,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "追加情報"
     },
     {
       "uid": "R10-988c2ebf",
@@ -8110,7 +8240,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験実施技術機関"
     },
     {
       "uid": "R10-93650dcf",
@@ -8126,7 +8257,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験報告書日付"
     },
     {
       "uid": "R10-649dff45",
@@ -8142,7 +8274,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可発行国識別番号"
     },
     {
       "uid": "R10-9c1c73de",
@@ -8158,7 +8291,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "試験報告書番号"
     },
     {
       "uid": "R10-da381bcf",
@@ -8174,7 +8308,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "備考"
     },
     {
       "uid": "R10-eb88bd5b",
@@ -8190,7 +8325,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "場所"
     },
     {
       "uid": "R10-1dcb533d",
@@ -8206,7 +8342,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "日付"
     },
     {
       "uid": "R10-11207117",
@@ -8222,7 +8359,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "署名"
     },
     {
       "uid": "R10-99cb3525",
@@ -8238,7 +8376,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "認可当局提出情報パッケージ索引"
     },
     {
       "uid": "R10-70b57190",
@@ -8254,7 +8393,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "延長理由"
     },
     {
       "uid": "R10-86a09df9",
@@ -8270,7 +8410,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "追加情報"
     },
     {
       "uid": "R10-b1c00bfb",
@@ -8286,7 +8427,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "電気系統定格電圧"
     },
     {
       "uid": "R10-889bb63e",
@@ -8302,7 +8444,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "ESAの使用制限"
     },
     {
       "uid": "R10-ce1bc992",
@@ -8318,7 +8461,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "設置条件"
     },
     {
       "uid": "R10-ee0f0947",
@@ -8334,7 +8478,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "ESAの使用可能車両型式"
     },
     {
       "uid": "R10-ce1bc992",
@@ -8367,7 +8512,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "イミュニティ測定方法と周波数範囲"
     },
     {
       "uid": "R10-81721b74",
@@ -8400,7 +8546,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "備考"
     },
     {
       "uid": "R10-df95eced",
@@ -8416,7 +8563,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両放射広帯域電磁エミッション測定方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -8432,7 +8580,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-da13ea35",
@@ -8448,7 +8597,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両への試験方法適用"
     },
     {
       "uid": "R10-f1903e1e",
@@ -8464,7 +8614,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-92d94c76",
@@ -8480,7 +8631,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-9fd98f2f",
@@ -8496,7 +8648,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "「REESS充電モード」以外の車両"
     },
     {
       "uid": "R10-585249d7",
@@ -8512,7 +8665,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "機関"
     },
     {
       "uid": "R10-5857f8d0",
@@ -8528,7 +8682,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "その他の車両システム"
     },
     {
       "uid": "R10-553bb5bf",
@@ -8544,7 +8699,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "「REESS充電モード」車両"
     },
     {
       "uid": "R10-6515e856",
@@ -8560,7 +8716,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "複数バッテリーの場合"
     },
     {
       "uid": "R10-4b7cd341",
@@ -8576,7 +8733,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "充電モード1または2車両"
     },
     {
       "uid": "R10-441aebd5",
@@ -8592,7 +8750,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "充電ステーション／電源主電源"
     },
     {
       "uid": "R10-6d2ceb48",
@@ -8608,7 +8767,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "擬似電源回路網"
     },
     {
       "uid": "R10-48d14d9a",
@@ -8624,7 +8784,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "電力充電ハーネス"
     },
     {
       "uid": "R10-4984e2cf",
@@ -8640,7 +8801,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "充電モード3または4車両"
     },
     {
       "uid": "R10-e484c795",
@@ -8656,7 +8818,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "充電ステーション/電源"
     },
     {
       "uid": "R10-5bc6cf53",
@@ -8672,7 +8835,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "擬似電源回路網"
     },
     {
       "uid": "R10-a3baa044",
@@ -8688,7 +8852,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "非対称擬似電源回路網"
     },
     {
       "uid": "R10-3208feac",
@@ -8704,7 +8869,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "通信線接続"
     },
     {
       "uid": "R10-9a24e20f",
@@ -8720,7 +8886,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "充電／通信ハーネス"
     },
     {
       "uid": "R10-b4fde40c",
@@ -8736,7 +8903,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-a47d3635",
@@ -8752,7 +8920,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "Lカテゴリ車両の代替試験場所"
     },
     {
       "uid": "R10-d82bf0b1",
@@ -8768,7 +8937,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "電波吸収体貼付シールドルームと屋外試験場"
     },
     {
       "uid": "R10-16a0aaf2",
@@ -8784,7 +8954,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-4be239cd",
@@ -8800,7 +8971,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "周波数範囲の制限"
     },
     {
       "uid": "R10-3dd8b070",
@@ -8816,7 +8988,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "測定検出器"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -8832,7 +9005,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-ace144f2",
@@ -8880,7 +9054,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "測定"
     },
     {
       "uid": "R10-1e60ed3d",
@@ -8896,7 +9071,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "読み取り値"
     },
     {
       "uid": "R10-a2da1f28",
@@ -8912,7 +9088,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "アンテナ位置"
     },
     {
       "uid": "R10-e575a297",
@@ -8928,7 +9105,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "附属書4 – 付録1"
     },
     {
       "uid": "R10-img-6e43b43d",
@@ -8960,7 +9138,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "図2 アンテナと車両の位置"
     },
     {
       "uid": "R10-img-28326c3d",
@@ -9008,7 +9187,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "図3 「REESS充電モード」車両"
     },
     {
       "uid": "R10-img-1d9b0c9b",
@@ -9040,7 +9220,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-53e79e7a",
@@ -9056,7 +9237,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両前/後部ソケット試験設定例"
     },
     {
       "uid": "R10-img-86d93953",
@@ -9104,7 +9286,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両側面ソケット試験設定例"
     },
     {
       "uid": "R10-img-ca269180",
@@ -9136,7 +9319,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-9996d10b",
@@ -9152,7 +9336,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "車両前/後部ソケット試験設定例"
     },
     {
       "uid": "R10-img-0c5b0e45",
@@ -9200,7 +9385,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "アンテナ位置"
     },
     {
       "uid": "R10-img-339179bb",
@@ -9232,7 +9418,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "L"
     },
     {
       "uid": "R10-078f68f4",
@@ -9248,7 +9435,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "車両放射狭帯域電磁エミッション測定方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -9264,7 +9452,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-34d5c165",
@@ -9280,7 +9469,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "車両への試験方法適用"
     },
     {
       "uid": "R10-60daa895",
@@ -9296,7 +9486,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-92cb9aa5",
@@ -9312,7 +9503,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "FM帯エミッションレベル測定"
     },
     {
       "uid": "R10-650bab1a",
@@ -9328,7 +9520,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "Lカテゴリ車両の代替測定場所"
     },
     {
       "uid": "R10-92d94c76",
@@ -9344,7 +9537,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-1a244218",
@@ -9360,7 +9554,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "機関停止時の点火スイッチ"
     },
     {
       "uid": "R10-019848c1",
@@ -9376,7 +9571,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "車両電子システムの作動モード"
     },
     {
       "uid": "R10-cdbab02f",
@@ -9392,7 +9588,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "常時作動可能機器"
     },
     {
       "uid": "R10-b4fde40c",
@@ -9408,7 +9605,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-d82bf0b1",
@@ -9424,7 +9622,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "電波吸収体貼付シールドルームと屋外試験場"
     },
     {
       "uid": "R10-68eceea7",
@@ -9440,7 +9639,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-4be239cd",
@@ -9456,7 +9656,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "周波数範囲の制限"
     },
     {
       "uid": "R10-37ef65a4",
@@ -9472,7 +9673,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "平均値検波器による測定"
     },
     {
       "uid": "R10-7855c0b1",
@@ -9488,7 +9690,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "スペクトルアナライザ等による測定"
     },
     {
       "uid": "R10-cdd20fd9",
@@ -9553,7 +9756,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "測定"
     },
     {
       "uid": "R10-01470767",
@@ -9569,7 +9773,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "読み取り値"
     },
     {
       "uid": "R10-2b995e99",
@@ -9585,7 +9790,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "アンテナ位置"
     },
     {
       "uid": "R10-582818e5",
@@ -9634,7 +9840,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "L"
     },
     {
       "uid": "R10-db1c9221",
@@ -9650,7 +9857,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "被試験車両"
     },
     {
       "uid": "R10-81ca50aa",
@@ -9666,7 +9874,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "アンテナ（2位置）"
     },
     {
       "uid": "R10-8593022d",
@@ -9682,7 +9891,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "車両の電磁放射イミュニティ試験方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -9698,7 +9908,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-f2fe20a9",
@@ -9714,7 +9925,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "車両への試験方法の適用"
     },
     {
       "uid": "R10-0e51c221",
@@ -9730,7 +9942,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-c9c65396",
@@ -9746,7 +9959,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "代替試験方法"
     },
     {
       "uid": "R10-92d94c76",
@@ -9762,7 +9976,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-fef2e978",
@@ -9778,7 +9993,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "REESS充電モード以外の車両状態"
     },
     {
       "uid": "R10-f78733b6",
@@ -9794,7 +10010,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "車両の無負荷状態"
     },
     {
       "uid": "R10-4445e11f",
@@ -9910,7 +10127,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "イミュニティ関連機能のシステム"
     },
     {
       "uid": "R10-c180c393",
@@ -9926,7 +10144,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "非妨害機器の使用"
     },
     {
       "uid": "R10-80217c13",
@@ -9942,7 +10161,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "REESS充電モードの車両状態"
     },
     {
       "uid": "R10-f78733b6",
@@ -10076,7 +10296,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電モード1または2の車両"
     },
     {
       "uid": "R10-441aebd5",
@@ -10092,7 +10313,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電ステーション／電源主電源"
     },
     {
       "uid": "R10-6d2ceb48",
@@ -10108,7 +10330,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "擬似電源回路網"
     },
     {
       "uid": "R10-4fecc46d",
@@ -10124,7 +10347,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電ハーネス"
     },
     {
       "uid": "R10-6c1c5f5c",
@@ -10140,7 +10364,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電モード3または4の車両"
     },
     {
       "uid": "R10-2c7d04cf",
@@ -10156,7 +10381,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電ステーション／電源主電源"
     },
     {
       "uid": "R10-5bc6cf53",
@@ -10172,7 +10398,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "擬似電源回路網"
     },
     {
       "uid": "R10-a3baa044",
@@ -10188,7 +10415,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "非対称擬似電源回路網"
     },
     {
       "uid": "R10-172ae208",
@@ -10221,7 +10449,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "充電／通信ハーネス"
     },
     {
       "uid": "R10-1493d3a7",
@@ -10237,7 +10466,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "基準点"
     },
     {
       "uid": "R10-c3118400",
@@ -10253,7 +10483,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "基準点の定義"
     },
     {
       "uid": "R10-61ff50f3",
@@ -10269,7 +10500,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "M, N, O, T, R, Sカテゴリー車両"
     },
     {
       "uid": "R10-0ecdb7ac",
@@ -10285,7 +10517,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "Lカテゴリー車両"
     },
     {
       "uid": "R10-c5718c18",
@@ -10386,7 +10619,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-9f496a0d",
@@ -10402,7 +10636,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "周波数範囲、滞留時間、偏波"
     },
     {
       "uid": "R10-a8dd6d69",
@@ -10418,7 +10653,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "周波数範囲の試験実施"
     },
     {
       "uid": "R10-70fd57c4",
@@ -10434,7 +10670,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "要求電界強度の生成"
     },
     {
       "uid": "R10-0eed8112",
@@ -10450,7 +10687,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-ac5762dc",
@@ -10466,7 +10704,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "試験電界条件の設定"
     },
     {
       "uid": "R10-e41f0e68",
@@ -10482,7 +10721,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "校正"
     },
     {
       "uid": "R10-ffa40694",
@@ -10630,7 +10870,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-683169db",
@@ -10679,7 +10920,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-9518c2b9",
@@ -10728,7 +10970,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-399dbe89",
@@ -10744,7 +10987,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-35043e23",
@@ -10793,7 +11037,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-7d841a6d",
@@ -10809,7 +11054,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "広帯域電磁放射測定方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -10825,7 +11071,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-ea5e55d9",
@@ -10841,7 +11088,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ESAへの試験方法の適用"
     },
     {
       "uid": "R10-36276b7e",
@@ -10857,7 +11105,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-f2b50e3a",
@@ -10873,7 +11122,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-3215cbef",
@@ -10889,7 +11139,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ESAの通常動作モード"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -10905,7 +11156,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-0e04e4c3",
@@ -10921,7 +11173,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "REESS充電モード以外のESA試験"
     },
     {
       "uid": "R10-7f59e53c",
@@ -10937,7 +11190,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "REESS充電モードのESA試験配置"
     },
     {
       "uid": "R10-a8270907",
@@ -10953,7 +11207,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "シールド構成"
     },
     {
       "uid": "R10-f91d2ba4",
@@ -10969,7 +11224,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ESA電源リードの接続"
     },
     {
       "uid": "R10-32da56f2",
@@ -10985,7 +11241,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ハーネスの長さ"
     },
     {
       "uid": "R10-955cb798",
@@ -11001,7 +11258,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ハーネスの配置"
     },
     {
       "uid": "R10-f68164c0",
@@ -11017,7 +11275,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "HVラインのシールド電源線"
     },
     {
       "uid": "R10-69b2745a",
@@ -11033,7 +11292,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ESAケースの接地"
     },
     {
       "uid": "R10-d53cfcc0",
@@ -11049,7 +11309,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "オンボード充電器のAC/DC電源線"
     },
     {
       "uid": "R10-7e4b3d0f",
@@ -11065,7 +11326,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "代替測定場所"
     },
     {
       "uid": "R10-082c0bb0",
@@ -11081,7 +11343,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "周囲環境"
     },
     {
       "uid": "R10-68eceea7",
@@ -11097,7 +11360,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-3a4b0955",
@@ -11113,7 +11377,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "周波数範囲の制限"
     },
     {
       "uid": "R10-d04c268e",
@@ -11129,7 +11394,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "検波器の種類"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -11145,7 +11411,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-e1705c99",
@@ -11193,7 +11460,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "測定"
     },
     {
       "uid": "R10-6df98255",
@@ -11209,7 +11477,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "読み取り値"
     },
     {
       "uid": "R10-e1e9b7a2",
@@ -11275,7 +11544,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-d209d346",
@@ -11291,7 +11561,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-3cb6d1b3",
@@ -11307,7 +11578,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "狭帯域電磁放射測定方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -11323,7 +11595,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-190a6bd7",
@@ -11339,7 +11612,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ESAへの試験方法の適用"
     },
     {
       "uid": "R10-c5d527ee",
@@ -11355,7 +11629,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-62cbadb2",
@@ -11371,7 +11646,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "試験中のESA状態"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -11387,7 +11663,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-e36237b5",
@@ -11403,7 +11680,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ALSE法による試験"
     },
     {
       "uid": "R10-1b6bc135",
@@ -11419,7 +11697,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "代替測定場所"
     },
     {
       "uid": "R10-1b6de780",
@@ -11435,7 +11714,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "周囲環境"
     },
     {
       "uid": "R10-68eceea7",
@@ -11451,7 +11731,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-3a4b0955",
@@ -11467,7 +11748,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "周波数範囲の制限"
     },
     {
       "uid": "R10-37ef65a4",
@@ -11483,7 +11765,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "平均値検波器による測定"
     },
     {
       "uid": "R10-1d57e277",
@@ -11499,7 +11782,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "スペクトルアナライザ等による測定"
     },
     {
       "uid": "R10-cdd20fd9",
@@ -11564,7 +11848,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "測定"
     },
     {
       "uid": "R10-7c7233db",
@@ -11580,7 +11865,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "読み取り値"
     },
     {
       "uid": "R10-89422bfa",
@@ -11596,7 +11882,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "ESAのイミュニティ試験方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -11612,7 +11899,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-b7c821e2",
@@ -11628,7 +11916,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "ESAへの試験方法の適用"
     },
     {
       "uid": "R10-e5d6e994",
@@ -11644,7 +11933,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-45f2b6f9",
@@ -11660,7 +11950,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法の組み合わせ"
     },
     {
       "uid": "R10-2e001bc8",
@@ -11676,7 +11967,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験中のESA状態"
     },
     {
       "uid": "R10-70e9c1e9",
@@ -11692,7 +11984,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験条件"
     },
     {
       "uid": "R10-82428465",
@@ -11708,7 +12001,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "ESAの通常動作状態"
     },
     {
       "uid": "R10-3c7681c5",
@@ -11741,7 +12035,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "校正中の外部機器"
     },
     {
       "uid": "R10-79f5bf48",
@@ -11757,7 +12052,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "再現性のある測定結果"
     },
     {
       "uid": "R10-7f87c935",
@@ -11773,7 +12069,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "複数ユニットのESA"
     },
     {
       "uid": "R10-094ddb85",
@@ -11789,7 +12086,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "一般試験要件"
     },
     {
       "uid": "R10-435db870",
@@ -11805,7 +12103,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "周波数範囲、滞留時間"
     },
     {
       "uid": "R10-25902d87",
@@ -11821,7 +12120,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "周波数範囲の試験実施"
     },
     {
       "uid": "R10-d099786f",
@@ -11837,7 +12137,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "ESAの不合格時の検証"
     },
     {
       "uid": "R10-57da0555",
@@ -11853,7 +12154,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "特定試験要件"
     },
     {
       "uid": "R10-47985fe9",
@@ -11869,7 +12171,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "電波暗室試験"
     },
     {
       "uid": "R10-da7edbd9",
@@ -11885,7 +12188,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-13c08b3e",
@@ -11901,7 +12205,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-9dd0c39b",
@@ -12053,7 +12358,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "TEMセル試験"
     },
     {
       "uid": "R10-548f6e86",
@@ -12069,7 +12375,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-610845b6",
@@ -12085,7 +12392,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-23f384e0",
@@ -12101,7 +12409,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "バルク電流注入試験"
     },
     {
       "uid": "R10-feea6c3a",
@@ -12270,7 +12579,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "ストリップライン試験"
     },
     {
       "uid": "R10-8a18d325",
@@ -12553,7 +12863,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-59544095",
@@ -12618,7 +12929,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-01c8082c",
@@ -12667,7 +12979,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-3146b84c",
@@ -12716,7 +13029,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 9
+      "annex_id": 9,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-ba2c579c",
@@ -12732,7 +13046,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 10
+      "annex_id": 10,
+      "title_ja": "過渡現象のイミュニティ・エミッション試験"
     },
     {
       "uid": "R10-f7d48ad4",
@@ -12748,7 +13063,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 10
+      "annex_id": 10,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-c32f93c4",
@@ -12764,7 +13080,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 10
+      "annex_id": 10,
+      "title_ja": "電源線伝導性過渡妨害イミュニティ"
     },
     {
       "uid": "R10-78235254",
@@ -12780,7 +13097,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 10
+      "annex_id": 10,
+      "title_ja": "電源線伝導性過渡妨害エミッション"
     },
     {
       "uid": "R10-3dc87067",
@@ -12796,7 +13114,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "AC電源線高調波エミッション試験方法"
     },
     {
       "uid": "R10-72fe6b14",
@@ -12812,7 +13131,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-64717a65",
@@ -12828,7 +13148,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "REESS充電モード車両への適用"
     },
     {
       "uid": "R10-39deb424",
@@ -12844,7 +13165,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-92d94c76",
@@ -12860,7 +13182,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-bd1e0bff",
@@ -12876,7 +13199,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "REESS充電モードの車両状態"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -12892,7 +13216,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-115ace80",
@@ -12908,7 +13233,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "測定の観測時間"
     },
     {
       "uid": "R10-18cb8a9b",
@@ -12924,7 +13250,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "REESS充電モードの試験設定"
     },
     {
       "uid": "R10-68eceea7",
@@ -12940,7 +13267,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-4948eaa8",
@@ -12956,7 +13284,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "高調波電流の測定"
     },
     {
       "uid": "R10-317f132f",
@@ -12972,7 +13301,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "単相または三相REESS充電モードの制限"
     },
     {
       "uid": "R10-41eb168c",
@@ -12988,7 +13318,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "単相または不平衡三相REESS充電モードの制限"
     },
     {
       "uid": "R10-ca6f7c3d",
@@ -13004,7 +13335,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "平衡三相REESS充電モードの制限"
     },
     {
       "uid": "R10-898cdc24",
@@ -13020,7 +13352,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "三相REESS充電モードの制限"
     },
     {
       "uid": "R10-03518aa1",
@@ -13069,7 +13402,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-d6007910",
@@ -13085,7 +13419,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-1c8dc2b8",
@@ -13118,7 +13453,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "図1d"
     },
     {
       "uid": "R10-img-afecb94c",
@@ -13150,7 +13486,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 11
+      "annex_id": 11,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-5ba19c12",
@@ -13166,7 +13503,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "電圧変動・フリッカ・周波数エミッション試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -13182,7 +13520,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-09f310d9",
@@ -13198,7 +13537,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "REESS充電モード車両への適用"
     },
     {
       "uid": "R10-62449c53",
@@ -13214,7 +13554,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-92d94c76",
@@ -13230,7 +13571,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-bd1e0bff",
@@ -13246,7 +13588,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "REESS充電モードの車両状態"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -13262,7 +13605,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-faff7d46",
@@ -13278,7 +13622,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "定格電流16A以下の車両試験"
     },
     {
       "uid": "R10-ce6de048",
@@ -13294,7 +13639,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "定格電流16A超75A以下の車両試験"
     },
     {
       "uid": "R10-fd15adbc",
@@ -13310,7 +13656,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "REESS充電モードの試験設定"
     },
     {
       "uid": "R10-68eceea7",
@@ -13326,7 +13673,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-25a4c198",
@@ -13342,7 +13690,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "時間領域パラメータ"
     },
     {
       "uid": "R10-91c942c6",
@@ -13358,7 +13707,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "入力電流16A以下の車両の制限"
     },
     {
       "uid": "R10-aed43325",
@@ -13374,7 +13724,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "入力電流16A超の車両の制限"
     },
     {
       "uid": "R10-d170f128",
@@ -13423,7 +13774,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-44f5c14b",
@@ -13439,7 +13791,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-f4aafcfe",
@@ -13488,7 +13841,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "図1d"
     },
     {
       "uid": "R10-img-c911660f",
@@ -13536,7 +13890,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 12
+      "annex_id": 12,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-7e72a547",
@@ -13552,7 +13907,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "AC無線周波数伝導妨害エミッション試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -13568,7 +13924,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-09f310d9",
@@ -13584,7 +13941,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "REESS充電モード車両への適用"
     },
     {
       "uid": "R10-cc4af8df",
@@ -13600,7 +13958,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-92d94c76",
@@ -13616,7 +13975,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-fda47e78",
@@ -13632,7 +13992,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "REESS充電モードの車両状態"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -13648,7 +14009,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-65f55b55",
@@ -13664,7 +14026,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "床置き機器としての試験"
     },
     {
       "uid": "R10-fab892c3",
@@ -13680,7 +14043,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-168861ff",
@@ -13696,7 +14060,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "車両測定用擬似電源回路網"
     },
     {
       "uid": "R10-e2fc263d",
@@ -13712,7 +14077,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "REESS充電モードの試験設定"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -13728,7 +14094,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-1b6112f6",
@@ -13776,7 +14143,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-a69ce4a9",
@@ -13792,7 +14160,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "限度値の適用範囲"
     },
     {
       "uid": "R10-cc86cf6b",
@@ -13808,7 +14177,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "検波器の種類と制限"
     },
     {
       "uid": "R10-c2087951",
@@ -13873,7 +14243,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-bd3d9d7e",
@@ -13922,7 +14293,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "ケーブルの配置"
     },
     {
       "uid": "R10-d005212f",
@@ -13938,7 +14310,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 13
+      "annex_id": 13,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-f0eed115",
@@ -13954,7 +14327,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "無線周波数伝導妨害エミッション試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -13970,7 +14344,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-09f310d9",
@@ -13986,7 +14361,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "REESS充電モード車両への適用"
     },
     {
       "uid": "R10-812dac73",
@@ -14002,7 +14378,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-ca26cf17",
@@ -14018,7 +14395,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-b064f4b9",
@@ -14034,7 +14412,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "REESS充電モードの車両状態"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -14050,7 +14429,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-526180af",
@@ -14066,7 +14446,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "伝導エミッションの試験設定"
     },
     {
       "uid": "R10-fab892c3",
@@ -14082,7 +14463,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-dcf9e34e",
@@ -14098,7 +14480,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "通信線の接続"
     },
     {
       "uid": "R10-40af04e8",
@@ -14114,7 +14497,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "REESS充電モードの試験設定"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -14130,7 +14514,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-cb5d19b9",
@@ -14178,7 +14563,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-a69ce4a9",
@@ -14194,7 +14580,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "限度値の適用範囲"
     },
     {
       "uid": "R10-5006e5fe",
@@ -14210,7 +14597,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "検波器の種類と制限"
     },
     {
       "uid": "R10-623ee38e",
@@ -14275,7 +14663,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-0b3ab890",
@@ -14291,7 +14680,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-44bf550f",
@@ -14372,7 +14762,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-0b3ab890",
@@ -14388,7 +14779,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-c2a28222",
@@ -14453,7 +14845,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-2cc7d913",
@@ -14469,7 +14862,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-07317a02",
@@ -14550,7 +14944,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "ケーブルのZ折り"
     },
     {
       "uid": "R10-cbb17d90",
@@ -14566,7 +14961,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-620ab7b9",
@@ -14582,7 +14978,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-a3935df4",
@@ -14598,7 +14995,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 14
+      "annex_id": 14,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-8e8ec407",
@@ -14614,7 +15012,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両の電気的ファストトランジェント/バーストイミュニティ試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -14630,7 +15029,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-4e88d68d",
@@ -14646,7 +15046,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-2b712518",
@@ -14662,7 +15063,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-ffc04609",
@@ -14678,7 +15080,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-f78733b6",
@@ -14694,7 +15097,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両の無負荷状態"
     },
     {
       "uid": "R10-9c4a0fa9",
@@ -14710,7 +15114,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両の固定と電源オフ"
     },
     {
       "uid": "R10-b776025f",
@@ -14726,7 +15131,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両の基本条件"
     },
     {
       "uid": "R10-img-98a5bbfd",
@@ -14758,7 +15164,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "その他の機器のオフ"
     },
     {
       "uid": "R10-77e3f4ee",
@@ -14774,7 +15181,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "非妨害機器の使用"
     },
     {
       "uid": "R10-d2a43ee0",
@@ -14790,7 +15198,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験装置"
     },
     {
       "uid": "R10-2d2b49fc",
@@ -14806,7 +15215,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験装置の構成"
     },
     {
       "uid": "R10-a32aaa11",
@@ -14822,7 +15232,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "過渡/バースト発生器"
     },
     {
       "uid": "R10-47f772b7",
@@ -14838,7 +15249,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "結合/分離回路網"
     },
     {
       "uid": "R10-912eedc9",
@@ -14854,7 +15266,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験設定"
     },
     {
       "uid": "R10-c3f5a919",
@@ -14870,7 +15283,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両試験設定"
     },
     {
       "uid": "R10-51f19481",
@@ -14886,7 +15300,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "車両の配置"
     },
     {
       "uid": "R10-fe258bca",
@@ -14902,7 +15317,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "技術機関による試験実施"
     },
     {
       "uid": "R10-2e74b7e9",
@@ -14918,7 +15334,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "要求試験レベルの生成"
     },
     {
       "uid": "R10-0eed8112",
@@ -14934,7 +15351,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-1ffea252",
@@ -14950,7 +15368,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験レベル要件"
     },
     {
       "uid": "R10-994a8bb4",
@@ -14966,7 +15385,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験段階"
     },
     {
       "uid": "R10-feca6379",
@@ -15031,7 +15451,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-1f398925",
@@ -15047,7 +15468,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験対象車両"
     },
     {
       "uid": "R10-69921400",
@@ -15144,7 +15566,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 15
+      "annex_id": 15,
+      "title_ja": "試験対象車両"
     },
     {
       "uid": "R10-16ac0fd6",
@@ -15160,7 +15583,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "サージイミュニティ試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -15176,7 +15600,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-4e88d68d",
@@ -15192,7 +15617,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-22967113",
@@ -15208,7 +15634,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-ffc04609",
@@ -15224,7 +15651,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験中の車両状態"
     },
     {
       "uid": "R10-f78733b6",
@@ -15240,7 +15668,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "車両の無負荷状態"
     },
     {
       "uid": "R10-9c4a0fa9",
@@ -15256,7 +15685,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "車両の固定と電源オフ"
     },
     {
       "uid": "R10-b776025f",
@@ -15272,7 +15702,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "車両の基本条件"
     },
     {
       "uid": "R10-img-a3cce9b6",
@@ -15304,7 +15735,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "その他の機器のオフ"
     },
     {
       "uid": "R10-838acf3b",
@@ -15320,7 +15752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "非妨害機器の使用"
     },
     {
       "uid": "R10-d2a43ee0",
@@ -15336,7 +15769,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験装置"
     },
     {
       "uid": "R10-a21cf458",
@@ -15352,7 +15786,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験装置の構成"
     },
     {
       "uid": "R10-e421a143",
@@ -15368,7 +15803,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "サージ発生器"
     },
     {
       "uid": "R10-18e64f5d",
@@ -15384,7 +15820,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "結合/分離回路網"
     },
     {
       "uid": "R10-912eedc9",
@@ -15400,7 +15837,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験設定"
     },
     {
       "uid": "R10-f11da750",
@@ -15416,7 +15854,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "車両試験設定"
     },
     {
       "uid": "R10-51f19481",
@@ -15432,7 +15871,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "車両の配置"
     },
     {
       "uid": "R10-118736de",
@@ -15448,7 +15888,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "技術機関による試験実施"
     },
     {
       "uid": "R10-2e74b7e9",
@@ -15464,7 +15905,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "要求試験レベルの生成"
     },
     {
       "uid": "R10-0eed8112",
@@ -15480,7 +15922,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-ca4047a9",
@@ -15496,7 +15939,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験レベル要件"
     },
     {
       "uid": "R10-41b0a113",
@@ -15512,7 +15956,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験段階"
     },
     {
       "uid": "R10-264a3041",
@@ -15577,7 +16022,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験対象車両"
     },
     {
       "uid": "R10-32a2a85f",
@@ -15658,7 +16104,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 16
+      "annex_id": 16,
+      "title_ja": "試験対象車両"
     },
     {
       "uid": "R10-67a0953c",
@@ -15674,7 +16121,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "高調波放出試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -15690,7 +16138,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-9dfcc3e8",
@@ -15706,7 +16155,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-2e748ec8",
@@ -15722,7 +16172,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-f2b50e3a",
@@ -15738,7 +16189,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-052ca15d",
@@ -15754,7 +16206,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "ESAの充電モード"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -15770,7 +16223,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-1330619a",
@@ -15786,7 +16240,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "観測時間"
     },
     {
       "uid": "R10-a4d6afa4",
@@ -15802,7 +16257,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "単相ESAの試験設定"
     },
     {
       "uid": "R10-7c2029be",
@@ -15818,7 +16274,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "三相ESAの試験設定"
     },
     {
       "uid": "R10-68eceea7",
@@ -15834,7 +16291,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-2610af78",
@@ -15850,7 +16308,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "高調波電流の測定"
     },
     {
       "uid": "R10-94e5137a",
@@ -15866,7 +16325,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "単相または三相ESAの限度値"
     },
     {
       "uid": "R10-8572bf02",
@@ -15882,7 +16342,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "単相または不平衡三相ESAの限度値"
     },
     {
       "uid": "R10-b585fe79",
@@ -15898,7 +16359,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "平衡三相ESAの限度値"
     },
     {
       "uid": "R10-beb5f3b1",
@@ -15914,7 +16376,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 17
+      "annex_id": 17,
+      "title_ja": "三相ESAの限度値"
     },
     {
       "uid": "R10-f4b3e11c",
@@ -16011,7 +16474,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "電圧変動等放出試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -16027,7 +16491,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-9dfcc3e8",
@@ -16043,7 +16508,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-95060081",
@@ -16059,7 +16525,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-f2b50e3a",
@@ -16075,7 +16542,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-12b91eaf",
@@ -16091,7 +16559,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "ESAの充電モード"
     },
     {
       "uid": "R10-69fd06bf",
@@ -16107,7 +16576,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-b4c3501a",
@@ -16123,7 +16593,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "定格電流16A以下のESA試験"
     },
     {
       "uid": "R10-aff828a5",
@@ -16139,7 +16610,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "定格電流16A超75A以下のESA試験"
     },
     {
       "uid": "R10-24f4118c",
@@ -16155,7 +16627,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "ESAの試験設定"
     },
     {
       "uid": "R10-68eceea7",
@@ -16171,7 +16644,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-25a4c198",
@@ -16187,7 +16661,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "時間領域パラメータ"
     },
     {
       "uid": "R10-d2469ce6",
@@ -16203,7 +16678,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "入力電流16A以下のESA限度値"
     },
     {
       "uid": "R10-3da195bc",
@@ -16219,7 +16695,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 18
+      "annex_id": 18,
+      "title_ja": "入力電流16A超75A以下のESA限度値"
     },
     {
       "uid": "R10-b94f7188",
@@ -16300,7 +16777,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "伝導妨害波放出試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -16316,7 +16794,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-0c5be886",
@@ -16332,7 +16811,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-541a88fe",
@@ -16348,7 +16828,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-f2b50e3a",
@@ -16364,7 +16845,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-dc6f6809",
@@ -16380,7 +16862,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "ESAの充電モード"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -16396,7 +16879,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-78a8b944",
@@ -16412,7 +16896,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "人工電源回路網"
     },
     {
       "uid": "R10-fab892c3",
@@ -16428,7 +16913,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-0548721d",
@@ -16444,7 +16930,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "ESAの試験設定"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -16460,7 +16947,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-f4cf38f2",
@@ -16508,7 +16996,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-a69ce4a9",
@@ -16524,7 +17013,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "限度値の適用範囲"
     },
     {
       "uid": "R10-eb594f4e",
@@ -16540,7 +17030,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "検出器と限度値"
     },
     {
       "uid": "R10-7902e0da",
@@ -16669,7 +17160,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "凡例"
     },
     {
       "uid": "R10-77078533",
@@ -16685,7 +17177,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 19
+      "annex_id": 19,
+      "title_ja": "試験対象ESA"
     },
     {
       "uid": "R10-4303b3b9",
@@ -16701,7 +17194,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "有線通信線伝導妨害波放出試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -16717,7 +17211,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-0c5be886",
@@ -16733,7 +17228,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-f6244d6e",
@@ -16749,7 +17245,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-f2b50e3a",
@@ -16765,7 +17262,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-dc6f6809",
@@ -16781,7 +17279,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "ESAの充電モード"
     },
     {
       "uid": "R10-2bbd7c26",
@@ -16797,7 +17296,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "試験配置"
     },
     {
       "uid": "R10-b65db1dc",
@@ -16813,7 +17313,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "通信線の接続"
     },
     {
       "uid": "R10-dadcde91",
@@ -16846,7 +17347,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "測定場所"
     },
     {
       "uid": "R10-f03cde47",
@@ -16862,7 +17364,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "ESAの試験設定"
     },
     {
       "uid": "R10-afb2b4bf",
@@ -16878,7 +17381,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "測定機器とパラメータ"
     },
     {
       "uid": "R10-img-b41ed350",
@@ -16926,7 +17430,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "試験要件"
     },
     {
       "uid": "R10-a69ce4a9",
@@ -16942,7 +17447,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "限度値の適用範囲"
     },
     {
       "uid": "R10-aedb579f",
@@ -16958,7 +17464,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "検出器と限度値"
     },
     {
       "uid": "R10-bf0cd228",
@@ -16991,7 +17498,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 20
+      "annex_id": 20,
+      "title_ja": "試験対象ESA"
     },
     {
       "uid": "R10-2125dbc7",
@@ -17007,7 +17515,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "EFT/バーストイミュニティ試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -17023,7 +17532,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-6419056b",
@@ -17039,7 +17549,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-8e739220",
@@ -17055,7 +17566,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-05b1da7c",
@@ -17071,7 +17583,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-12a81010",
@@ -17087,7 +17600,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "ESAの基本条件"
     },
     {
       "uid": "R10-img-f1e2c4ec",
@@ -17119,7 +17633,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "非妨害機器の使用"
     },
     {
       "uid": "R10-d2a43ee0",
@@ -17135,7 +17650,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験装置"
     },
     {
       "uid": "R10-9431a831",
@@ -17151,7 +17667,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験装置の構成"
     },
     {
       "uid": "R10-a5548aba",
@@ -17167,7 +17684,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "過渡/バースト発生器"
     },
     {
       "uid": "R10-47f772b7",
@@ -17183,7 +17701,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "結合/分離回路網"
     },
     {
       "uid": "R10-8f8bd055",
@@ -17199,7 +17718,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験設定"
     },
     {
       "uid": "R10-9f6635e7",
@@ -17215,7 +17735,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "ESA試験設定"
     },
     {
       "uid": "R10-c2d88863",
@@ -17231,7 +17752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "ESAの配置"
     },
     {
       "uid": "R10-675b4d4d",
@@ -17247,7 +17769,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "技術機関による試験実施"
     },
     {
       "uid": "R10-2e74b7e9",
@@ -17263,7 +17786,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "要求試験レベルの生成"
     },
     {
       "uid": "R10-0eed8112",
@@ -17279,7 +17803,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-1ffea252",
@@ -17295,7 +17820,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験レベル要件"
     },
     {
       "uid": "R10-894884a9",
@@ -17311,7 +17837,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 21
+      "annex_id": 21,
+      "title_ja": "試験段階"
     },
     {
       "uid": "R10-63064fcb",
@@ -17360,7 +17887,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "サージイミュニティ試験"
     },
     {
       "uid": "R10-72fe6b14",
@@ -17376,7 +17904,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "一般"
     },
     {
       "uid": "R10-87272a79",
@@ -17392,7 +17921,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験方法の適用範囲"
     },
     {
       "uid": "R10-151f0f1d",
@@ -17408,7 +17938,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験方法"
     },
     {
       "uid": "R10-05b1da7c",
@@ -17424,7 +17955,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "ESAの試験状態"
     },
     {
       "uid": "R10-746481c2",
@@ -17440,7 +17972,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "ESAの充電モード"
     },
     {
       "uid": "R10-12a81010",
@@ -17456,7 +17989,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "ESAの基本条件"
     },
     {
       "uid": "R10-img-69a78eba",
@@ -17488,7 +18022,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "非妨害機器の使用"
     },
     {
       "uid": "R10-d2a43ee0",
@@ -17504,7 +18039,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験装置"
     },
     {
       "uid": "R10-a21cf458",
@@ -17520,7 +18056,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験装置の構成"
     },
     {
       "uid": "R10-56994e53",
@@ -17536,7 +18073,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "サージ発生器"
     },
     {
       "uid": "R10-18e64f5d",
@@ -17552,7 +18090,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "結合/分離回路網"
     },
     {
       "uid": "R10-8f8bd055",
@@ -17568,7 +18107,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験設定"
     },
     {
       "uid": "R10-af508af6",
@@ -17584,7 +18124,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "ESA試験設定"
     },
     {
       "uid": "R10-c2d88863",
@@ -17600,7 +18141,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "ESAの配置"
     },
     {
       "uid": "R10-05393689",
@@ -17616,7 +18158,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "技術機関による試験実施"
     },
     {
       "uid": "R10-2e74b7e9",
@@ -17632,7 +18175,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "要求試験レベルの生成"
     },
     {
       "uid": "R10-0eed8112",
@@ -17648,7 +18192,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験方法論"
     },
     {
       "uid": "R10-ca4047a9",
@@ -17664,7 +18209,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験レベル要件"
     },
     {
       "uid": "R10-2b3aa20d",
@@ -17680,7 +18226,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 22
+      "annex_id": 22,
+      "title_ja": "試験段階"
     },
     {
       "uid": "R10-db0a8554",

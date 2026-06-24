@@ -290,7 +290,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R131-90939fa7",
@@ -306,7 +307,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "定義"
     },
     {
       "uid": "R131-3d3bafc0",
@@ -322,7 +324,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「高度緊急ブレーキシステム（AEBS）」の定義"
     },
     {
       "uid": "R131-4cb4074b",
@@ -338,7 +341,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「緊急ブレーキ」の定義"
     },
     {
       "uid": "R131-50bf26c0",
@@ -354,7 +358,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「衝突警報」の定義"
     },
     {
       "uid": "R131-dfb26b89",
@@ -370,7 +375,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「高度緊急ブレーキシステムに関する車両型式」の定義"
     },
     {
       "uid": "R131-f5eb0427",
@@ -386,7 +392,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「被試験車両」の定義"
     },
     {
       "uid": "R131-3738c235",
@@ -402,7 +409,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「ソフトターゲット」の定義"
     },
     {
       "uid": "R131-2a04cd11",
@@ -418,7 +426,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「車両ターゲット」の定義"
     },
     {
       "uid": "R131-e8add283",
@@ -434,7 +443,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「歩行者ターゲット」の定義"
     },
     {
       "uid": "R131-f5b062e2",
@@ -450,7 +460,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「共通表示領域」の定義"
     },
     {
       "uid": "R131-8ee5b95e",
@@ -466,7 +477,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "「自己診断」の定義"
     },
     {
       "uid": "R131-3e8d8017",
@@ -601,7 +613,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "AEBSに関する車両型式承認申請"
     },
     {
       "uid": "R131-527c4e63",
@@ -617,7 +630,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "添付書類"
     },
     {
       "uid": "R131-357d1aa6",
@@ -633,7 +647,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "車両型式の記述"
     },
     {
       "uid": "R131-8db3bc8d",
@@ -649,7 +664,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "技術機関への車両提出"
     },
     {
       "uid": "R131-2f6a3f3c",
@@ -665,7 +681,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "承認の付与"
     },
     {
       "uid": "R131-805c3a0a",
@@ -681,7 +698,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": null
+      "annex_id": null,
+      "title_ja": "承認番号の付与"
     },
     {
       "uid": "R131-d0b6fa94",
@@ -2730,7 +2748,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」の定義"
     },
     {
       "uid": "R131-15b4f72b",
@@ -2746,7 +2765,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「安全コンセプト」の定義"
     },
     {
       "uid": "R131-3f0595e1",
@@ -2762,7 +2782,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「電子制御システム」の定義"
     },
     {
       "uid": "R131-1757f20d",
@@ -2778,7 +2799,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「複合電子車両制御システム」の定義"
     },
     {
       "uid": "R131-e5788942",
@@ -2794,7 +2816,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「上位電子制御」の定義"
     },
     {
       "uid": "R131-43752297",
@@ -2810,7 +2833,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「ユニット」の定義"
     },
     {
       "uid": "R131-da5d125b",
@@ -2826,7 +2850,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「伝送リンク」の定義"
     },
     {
       "uid": "R131-940d4e0f",
@@ -2842,7 +2867,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「制御範囲」の定義"
     },
     {
       "uid": "R131-10942a47",
@@ -2858,7 +2884,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「機能動作境界」の定義"
     },
     {
       "uid": "R131-e074b202",
@@ -2874,7 +2901,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「安全関連機能」の定義"
     },
     {
       "uid": "R131-fe719982",
@@ -2890,7 +2918,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "要件"
     },
     {
       "uid": "R131-f997a77d",
@@ -2923,7 +2952,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」機能の説明"
     },
     {
       "uid": "R131-c8cf2522",
@@ -2939,7 +2969,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "入力・検出変数リスト"
     },
     {
       "uid": "R131-f06b3485",
@@ -2989,7 +3020,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "システム構成と回路図"
     },
     {
       "uid": "R131-76ad4151",
@@ -3107,7 +3139,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の安全コンセプト"
     },
     {
       "uid": "R131-51c61ac5",
@@ -3276,7 +3309,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」機能動作試験"
     },
     {
       "uid": "R131-a70b0f4e",
@@ -3343,7 +3377,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車両メーカー"
     },
     {
       "uid": "R131-3c6ad3e9",
@@ -3359,7 +3394,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "型式"
     },
     {
       "uid": "R131-5b6b3de8",
@@ -3460,7 +3496,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "一般説明"
     },
     {
       "uid": "R131-ce9e0c79",
@@ -3476,7 +3513,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」制御機能と操作方法"
     },
     {
       "uid": "R131-2c5f2364",
@@ -3492,7 +3530,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "「システム」内部品と相互接続図"
     },
     {
       "uid": "R131-fc2f221b",
@@ -3508,7 +3547,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "信号の流れと動作データ"
     },
     {
       "uid": "R131-c576c7e8",
@@ -3524,7 +3564,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "製造者の宣言"
     },
     {
       "uid": "R131-bc681dcf",
@@ -3540,7 +3581,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "ソフトウェア概要と設計方法"
     },
     {
       "uid": "R131-e17d6a59",
@@ -3556,7 +3598,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "故障時の設計規定"
     },
     {
       "uid": "R131-d6aff4cb",
@@ -3708,7 +3751,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "シナリオ例：対向車との左折・右折"
     },
     {
       "uid": "R131-e242ef78",
@@ -3724,7 +3768,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R131-img-65c14232",
@@ -3770,7 +3815,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "シナリオ例：前方車両の右左折"
     },
     {
       "uid": "R131-7eac2a8a",
@@ -3786,7 +3832,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R131-img-d0324552",
@@ -3832,7 +3879,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "シナリオ例：カーブ路のガードパイプ"
     },
     {
       "uid": "R131-e26fec8a",
@@ -3848,7 +3896,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     },
     {
       "uid": "R131-img-7f57a4fc",
@@ -3879,7 +3928,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "シナリオ例：車線変更と標識"
     },
     {
       "uid": "R131-fe8049cd",
@@ -3895,7 +3945,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "詳細シナリオ例"
     }
   ]
 }

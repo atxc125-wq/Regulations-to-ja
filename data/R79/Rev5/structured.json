@@ -369,7 +369,8 @@
       "summary_ja": "本規則はM、N、Oカテゴリー車両のステアリング装置に適用される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "適用範囲"
     },
     {
       "uid": "R79-5ecdc892",
@@ -384,7 +385,8 @@
       "summary_ja": "本規則は特定のステアリングシステムには適用されない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "適用除外"
     },
     {
       "uid": "R79-0b80e6cb",
@@ -447,7 +449,8 @@
       "summary_ja": "「車両の認可」とは、ステアリング装置に関する車両型の認可をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両の認可"
     },
     {
       "uid": "R79-5d2557d6",
@@ -462,7 +465,8 @@
       "summary_ja": "「車両型式」とは、製造者の指定および主要特性が同一の車両をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両型式"
     },
     {
       "uid": "R79-c00a6c00",
@@ -477,7 +481,8 @@
       "summary_ja": "ステアリング装置、制御、伝達、操舵輪、エネルギー源が同一であること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵装置の型式"
     },
     {
       "uid": "R79-455ab5db",
@@ -492,7 +497,8 @@
       "summary_ja": "操舵装置は車両の進行方向を決定する機器をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵装置"
     },
     {
       "uid": "R79-808ce1e0",
@@ -507,7 +513,8 @@
       "summary_ja": "操舵制御器は操舵装置の操作を制御する部分をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵制御装置"
     },
     {
       "uid": "R79-db4171ff",
@@ -522,7 +529,8 @@
       "summary_ja": "操舵伝達装置は操舵制御器と車輪を機能的に連結する部品をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵伝達装置"
     },
     {
       "uid": "R79-30ca9a57",
@@ -857,7 +865,8 @@
       "summary_ja": "操舵に関するパラメータを定義する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵パラメータ"
     },
     {
       "uid": "R79-4a85a36b",
@@ -872,7 +881,8 @@
       "summary_ja": "「操舵制御力」とは、車両を操舵するために操舵制御に加える力をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵制御力"
     },
     {
       "uid": "R79-04025e9e",
@@ -1175,7 +1185,8 @@
       "summary_ja": "操舵力の発生方法により操舵装置の種類を区別する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵装置の型式"
     },
     {
       "uid": "R79-ba9ff7eb",
@@ -1190,7 +1201,8 @@
       "summary_ja": "自動車の操舵装置について規定する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "自動車"
     },
     {
       "uid": "R79-e8bb52d3",
@@ -1317,7 +1329,8 @@
       "summary_ja": "トレーラーに関する規定。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "被牽引自動車"
     },
     {
       "uid": "R79-3ef5ae5c",
@@ -1508,7 +1521,8 @@
       "summary_ja": "操舵力の伝達方法により操舵伝達装置を分類する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵伝達装置の型式"
     },
     {
       "uid": "R79-51e15fe6",
@@ -1523,7 +1537,8 @@
       "summary_ja": "操舵力が完全に機械的手段で伝達される装置をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "純機械式操舵伝達装置"
     },
     {
       "uid": "R79-8f001dc7",
@@ -1586,7 +1601,8 @@
       "summary_ja": "トレーラに操舵制御機能を提供する電気接続をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "電気制御線"
     },
     {
       "uid": "R79-1667b69f",
@@ -1601,7 +1617,8 @@
       "summary_ja": "操舵装置の承認申請は製造者が提出する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "認可申請"
     },
     {
       "uid": "R79-f4e3b4e4",
@@ -1616,7 +1633,8 @@
       "summary_ja": "申請には3部作成された書類と詳細を添付する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "添付書類"
     },
     {
       "uid": "R79-cefb271d",
@@ -1631,7 +1649,8 @@
       "summary_ja": "車両型式は段落2.2の項目に従い記述する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両型式の説明"
     },
     {
       "uid": "R79-3cc74545",
@@ -1646,7 +1665,8 @@
       "summary_ja": "操舵装置の概要と全体図を添付する必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "操舵装置の概要"
     },
     {
       "uid": "R79-1e3fb702",
@@ -1661,7 +1681,8 @@
       "summary_ja": "全動力操舵システムは安全確保のため概要を示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "全動力操舵システム"
     },
     {
       "uid": "R79-16ef8e9f",
@@ -1676,7 +1697,8 @@
       "summary_ja": "承認対象車両は技術機関に提出しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "代表車両の提出"
     },
     {
       "uid": "R79-29d663d8",
@@ -1691,7 +1713,8 @@
       "summary_ja": "車両が要件を満たせば操舵装置の承認が与えられる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "認可の付与"
     },
     {
       "uid": "R79-7899b704",
@@ -1706,7 +1729,8 @@
       "summary_ja": "型式承認前に生産適合性の管理体制を確認する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "生産適合性"
     },
     {
       "uid": "R79-1ac42ffb",
@@ -1833,7 +1857,8 @@
       "summary_ja": "一般規定",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "一般規定"
     },
     {
       "uid": "R79-b68d8d07",
@@ -3064,7 +3089,8 @@
       "summary_ja": "トレーラには特別な規定が適用される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "被牽引自動車の特別規定"
     },
     {
       "uid": "R79-3621a186",
@@ -3111,7 +3137,8 @@
       "summary_ja": "故障時の規定と性能について定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "故障規定と性能"
     },
     {
       "uid": "R79-ffddeb72",
@@ -3382,7 +3409,8 @@
       "summary_ja": "警報信号に関する規定を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "警報信号"
     },
     {
       "uid": "R79-a5371093",
@@ -3589,7 +3617,8 @@
       "justification": null,
       "prev_uid": null,
       "translation": "操舵装置の定期技術検査に関する規定。",
-      "summary_ja": "操舵装置の定期技術検査に関する規定を設ける。"
+      "summary_ja": "操舵装置の定期技術検査に関する規定を設ける。",
+      "title_ja": "定期技術検査規定"
     },
     {
       "uid": "R79-679de316",
@@ -5582,7 +5611,8 @@
       "summary_ja": "一般規定",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "一般規定"
     },
     {
       "uid": "R79-70772751",
@@ -5597,7 +5627,8 @@
       "summary_ja": "試験は良好な接着性のある水平面で実施しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "試験路面"
     },
     {
       "uid": "R79-4c032fd7",
@@ -5612,7 +5643,8 @@
       "summary_ja": "試験中、車両は技術的に許容される最大質量で積載しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "車両積載状態"
     },
     {
       "uid": "R79-87e87808",
@@ -5659,7 +5691,8 @@
       "summary_ja": "自動車に関する規定",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "自動車の規定"
     },
     {
       "uid": "R79-06dd2c1e",
@@ -5833,7 +5866,8 @@
       "summary_ja": "トレーラに関する規定を定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "被牽引自動車の規定"
     },
     {
       "uid": "R79-7f22f755",
@@ -5944,7 +5978,8 @@
       "summary_ja": "承認保持者は生産適合性試験結果を記録し、10年間保管しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "生産適合性記録"
     },
     {
       "uid": "R79-0fd29714",
@@ -5959,7 +5994,8 @@
       "summary_ja": "型式承認機関は生産施設の適合性管理方法を2年ごとに検証できる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "生産適合性検証"
     },
     {
       "uid": "R79-19e617f0",
@@ -5974,7 +6010,8 @@
       "summary_ja": "承認は、要件不遵守または車両が不適合の場合に撤回されることがある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "認可の取り消し"
     },
     {
       "uid": "R79-572333da",
@@ -5989,7 +6026,8 @@
       "summary_ja": "承認を撤回した締約国は、他の締約国に直ちに通知しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "認可取り消しの通知"
     },
     {
       "uid": "R79-174d6233",
@@ -6436,7 +6474,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "操舵装置の型式"
     },
     {
       "uid": "R79-4a5dd5e7",
@@ -6452,7 +6491,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "操舵制御装置"
     },
     {
       "uid": "R79-23025c88",
@@ -6468,7 +6508,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "操舵伝達装置"
     },
     {
       "uid": "R79-c3e71f49",
@@ -6484,7 +6525,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "操舵車輪"
     },
     {
       "uid": "R79-1f8be88e",
@@ -6500,7 +6542,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "エネルギー源"
     },
     {
       "uid": "R79-aee2577f",
@@ -6516,7 +6559,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "操舵力"
     },
     {
       "uid": "R79-a2f75dbd",
@@ -6532,7 +6576,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "通常状態"
     },
     {
       "uid": "R79-de85e982",
@@ -6548,7 +6593,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 1
+      "annex_id": 1,
+      "title_ja": "特殊装置故障後"
     },
     {
       "uid": "R79-ced5f813",
@@ -6563,7 +6609,8 @@
       "summary_ja": "本規則が要求するその他の試験に合格すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "その他の試験"
     },
     {
       "uid": "R79-5df127d1",
@@ -6578,7 +6625,8 @@
       "summary_ja": "付属書6に従い十分な文書が提供されたこと。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "付属書6の文書"
     },
     {
       "uid": "R79-5971b910",
@@ -6593,7 +6641,8 @@
       "summary_ja": "牽引車は付属書7のコネクタを備えること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "牽引車の電気コネクタ"
     },
     {
       "uid": "R79-9f1e4850",
@@ -6608,7 +6657,8 @@
       "summary_ja": "利用可能な最大電流を特定すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "最大利用可能電流"
     },
     {
       "uid": "R79-ed433f39",
@@ -6623,7 +6673,8 @@
       "summary_ja": "トレーラの操舵システムはUN規則第79号付属書7に適合すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "被牽引車操舵システム"
     },
     {
       "uid": "R79-033d3b81",
@@ -6638,7 +6689,8 @@
       "summary_ja": "トレーラ操舵システムに必要な最大電流を特定すること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "被牽引車操舵システム所要電流"
     },
     {
       "uid": "R79-525e0da4",
@@ -6700,7 +6752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 3
+      "annex_id": 3,
+      "title_ja": "車両積載状態"
     },
     {
       "uid": "R79-d955274c",
@@ -6715,7 +6768,8 @@
       "summary_ja": "タイヤは車両停止時の冷間空気圧に調整しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "タイヤ空気圧"
     },
     {
       "uid": "R79-0bbc5b95",
@@ -6730,7 +6784,8 @@
       "summary_ja": "試験開始前、ブレーキは100℃未満の冷間状態でなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ブレーキ温度"
     },
     {
       "uid": "R79-img-d9caf08f",
@@ -6791,7 +6846,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "伝達装置"
     },
     {
       "uid": "R79-cddd39dc",
@@ -6807,7 +6863,8 @@
       "prev_uid": null,
       "translation": "機械式操舵伝達装置。本規則の5.3.1.1.項が適用される。",
       "summary_ja": "機械式操舵伝達装置は本規則5.3.1.1項を適用する。",
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "機械式操舵伝達装置"
     },
     {
       "uid": "R79-d323a1ff",
@@ -6823,7 +6880,8 @@
       "prev_uid": null,
       "translation": "油圧式操舵伝達装置。油圧式操舵伝達装置は、最大許容使用圧力Tを超えることから保護されなければならない。",
       "summary_ja": "油圧式操舵伝達装置は最大許容使用圧力を超えないよう保護しなければならない。",
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "液圧式操舵伝達装置"
     },
     {
       "uid": "R79-735725df",
@@ -6839,7 +6897,8 @@
       "prev_uid": null,
       "translation": "電気式操舵伝達装置。電気式操舵伝達装置は、過剰なエネルギー供給から保護されなければならない。",
       "summary_ja": "電気式操舵伝達装置は過剰なエネルギー供給から保護しなければならない。",
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "電気式操舵伝達装置"
     },
     {
       "uid": "R79-2e546513",
@@ -6872,7 +6931,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "故障試験要件"
     },
     {
       "uid": "R79-312e9ef3",
@@ -6887,7 +6947,8 @@
       "summary_ja": "ASE故障時も車両挙動は急変せず、制御可能であること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ASEの故障"
     },
     {
       "uid": "R79-b2dba8ac",
@@ -6968,7 +7029,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 4
+      "annex_id": 4,
+      "title_ja": "故障時の警報信号"
     },
     {
       "uid": "R79-19114d7f",
@@ -6983,7 +7045,8 @@
       "summary_ja": "ASEの故障は運転者に明確に通知されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ASEの故障"
     },
     {
       "uid": "R79-bbfa41ad",
@@ -7050,7 +7113,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "液圧ライン性能"
     },
     {
       "uid": "R79-71e42eea",
@@ -7065,7 +7129,8 @@
       "summary_ja": "油圧配管は最大常用圧力の4倍以上の破裂圧力に耐えること。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "液圧ラインの耐圧"
     },
     {
       "uid": "R79-75158a3f",
@@ -7081,7 +7146,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "エネルギー供給依存システム"
     },
     {
       "uid": "R79-f04d4d25",
@@ -7097,7 +7163,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "エネルギー供給保護"
     },
     {
       "uid": "R79-d403366c",
@@ -7113,7 +7180,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "操舵伝達装置の保護"
     },
     {
       "uid": "R79-5dd1ea7b",
@@ -7129,7 +7197,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 5
+      "annex_id": 5,
+      "title_ja": "操舵伝達装置保護"
     },
     {
       "uid": "R79-80d07541",
@@ -7144,7 +7213,8 @@
       "summary_ja": "「システム」とは、本法規が適用される機能の制御伝達を提供する電子制御システムをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "システム"
     },
     {
       "uid": "R79-5d3be1de",
@@ -7159,7 +7229,8 @@
       "summary_ja": "「安全コンセプト」とは、システムの完全性を確保し安全な動作を保証する対策をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "安全コンセプト"
     },
     {
       "uid": "R79-fec1db37",
@@ -7174,7 +7245,8 @@
       "summary_ja": "「電子制御システム」とは、電子データ処理により車両制御機能を実現するユニットの組み合わせをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "電子制御システム"
     },
     {
       "uid": "R79-a501e564",
@@ -7189,7 +7261,8 @@
       "summary_ja": "「複雑電子車両制御システム」とは、上位の電子制御システムにより機能が上書きされるシステムをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "複雑電子車両制御システム"
     },
     {
       "uid": "R79-803fb6f6",
@@ -7204,7 +7277,8 @@
       "summary_ja": "「上位電子制御」とは、車両挙動を修正するために追加の処理やセンシングを用いるシステムをいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "上位電子制御システム"
     },
     {
       "uid": "R79-79358a36",
@@ -7219,7 +7293,8 @@
       "summary_ja": "「ユニット」とは、システム構成要素の最小区分をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ユニット"
     },
     {
       "uid": "R79-ae6a62ae",
@@ -7234,7 +7309,8 @@
       "summary_ja": "「伝送リンク」とは、信号等を伝達する相互接続手段をいう。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "伝送リンク"
     },
     {
       "uid": "R79-2ddf6ca3",
@@ -7313,7 +7389,8 @@
       "summary_ja": "製造者は、システムの設計、機能、安全概念を説明する文書を提出しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "要件"
     },
     {
       "uid": "R79-f182aab9",
@@ -7328,7 +7405,8 @@
       "summary_ja": "文書は2つの部分に分けて提供されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "文書化"
     },
     {
       "uid": "R79-d0ddb43c",
@@ -7344,7 +7422,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "システム機能の説明"
     },
     {
       "uid": "R79-8970daa4",
@@ -7359,7 +7438,8 @@
       "summary_ja": "全ての入力変数と感知変数のリストおよびその動作範囲を提供しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "入力・感知変数リスト"
     },
     {
       "uid": "R79-477d1891",
@@ -7374,7 +7454,8 @@
       "summary_ja": "システム制御出力変数と制御範囲を定義する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "出力変数リスト"
     },
     {
       "uid": "R79-bf9e73d3",
@@ -7389,7 +7470,8 @@
       "summary_ja": "機能動作の境界を定義する制限を明記する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "機能動作限界"
     },
     {
       "uid": "R79-0d2cb00b",
@@ -7405,7 +7487,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "システム構成と回路図"
     },
     {
       "uid": "R79-5c8cbdb8",
@@ -7421,7 +7504,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "構成部品リスト"
     },
     {
       "uid": "R79-1f9534a8",
@@ -7437,7 +7521,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "ユニットの機能"
     },
     {
       "uid": "R79-5315972d",
@@ -7452,7 +7537,8 @@
       "summary_ja": "相互接続を明確に示す必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "相互接続"
     },
     {
       "uid": "R79-4883603a",
@@ -7468,7 +7554,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "信号の流れとデータ"
     },
     {
       "uid": "R79-079c12a6",
@@ -7484,7 +7571,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "ユニットの識別"
     },
     {
       "uid": "R79-3d3c0ac3",
@@ -7517,7 +7605,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "製造者の安全コンセプト"
     },
     {
       "uid": "R79-18bee307",
@@ -7532,7 +7621,8 @@
       "summary_ja": "システムは故障がない場合、車両の安全な運行を損なってはならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "製造者の声明"
     },
     {
       "uid": "R79-22a69fb4",
@@ -7548,7 +7638,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "ソフトウェア概要"
     },
     {
       "uid": "R79-2ee76024",
@@ -7677,7 +7768,8 @@
       "summary_ja": "システム機能は、文書に記載されたとおりに試験されなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "システム機能試験"
     },
     {
       "uid": "R79-5ec0b0a9",
@@ -7692,7 +7784,8 @@
       "summary_ja": "システムの機能検証を行う必要がある。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "システム機能の検証"
     },
     {
       "uid": "R79-51b9cc82",
@@ -7757,7 +7850,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "車両メーカー"
     },
     {
       "uid": "R79-a5ad42b5",
@@ -7773,7 +7867,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "型式"
     },
     {
       "uid": "R79-b95544cb",
@@ -7789,7 +7884,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "型式識別表示"
     },
     {
       "uid": "R79-b0a27dc2",
@@ -7873,7 +7969,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "一般説明"
     },
     {
       "uid": "R79-bd474bc0",
@@ -7889,7 +7986,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "制御機能の説明"
     },
     {
       "uid": "R79-6029d409",
@@ -7904,7 +8002,8 @@
       "summary_ja": "システム内の構成部品と相互接続図を記述する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "構成部品と接続図"
     },
     {
       "uid": "R79-8bf3a5ba",
@@ -7920,7 +8019,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "信号の流れとデータ"
     },
     {
       "uid": "R79-a8250e6f",
@@ -7935,7 +8035,8 @@
       "summary_ja": "システムは非故障時に車両の安全を損なわない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "製造者の宣言"
     },
     {
       "uid": "R79-7b4fdd18",
@@ -7951,7 +8052,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "ソフトウェア概要と設計方法"
     },
     {
       "uid": "R79-c182e83c",
@@ -7967,7 +8069,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "故障時の設計規定"
     },
     {
       "uid": "R79-7f12a210",
@@ -7982,7 +8085,8 @@
       "summary_ja": "個別の危険・故障時のシステム挙動分析を文書化する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "危険・故障分析"
     },
     {
       "uid": "R79-bf0bd6f1",
@@ -7998,7 +8102,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 6
+      "annex_id": 6,
+      "title_ja": "環境条件対策"
     },
     {
       "uid": "R79-5252bd9b",
@@ -8013,7 +8118,8 @@
       "summary_ja": "システムの定期技術検査規定を記載する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "システム定期検査規定"
     },
     {
       "uid": "R79-4ef00c3d",
@@ -8111,7 +8217,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "エネルギー供給"
     },
     {
       "uid": "R79-4a89290e",
@@ -8126,7 +8233,8 @@
       "summary_ja": "車両製造者はエネルギー源の容量を定義しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "エネルギー源容量"
     },
     {
       "uid": "R79-a28b1b08",
@@ -8141,7 +8249,8 @@
       "summary_ja": "運転者マニュアルにトレーラ用電力情報を含めなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "運転者マニュアル"
     },
     {
       "uid": "R79-4805264c",
@@ -8156,7 +8265,8 @@
       "summary_ja": "トレーラ操舵システムには所定の電源を使用しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "電源供給"
     },
     {
       "uid": "R79-ea7fc5f4",
@@ -8172,7 +8282,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "公称動作電圧"
     },
     {
       "uid": "R79-6eb3056f",
@@ -8187,7 +8298,8 @@
       "summary_ja": "最大供給電流は牽引車製造者が定める。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "最大電流供給"
     },
     {
       "uid": "R79-f64ac1d0",
@@ -8203,7 +8315,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "電気系統の保護"
     },
     {
       "uid": "R79-81eea23b",
@@ -8218,7 +8331,8 @@
       "summary_ja": "牽引車の電気系統は過負荷から保護される。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "牽引車の電気系統保護"
     },
     {
       "uid": "R79-cb63d4ab",
@@ -8234,7 +8348,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "配線とコネクタ"
     },
     {
       "uid": "R79-bd9dc216",
@@ -8250,7 +8365,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ケーブル断面積"
     },
     {
       "uid": "R79-d9201cc0",
@@ -8266,7 +8382,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "コネクタ要件"
     },
     {
       "uid": "R79-4bdb0d22",
@@ -8282,7 +8399,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "表示"
     },
     {
       "uid": "R79-a3535f3b",
@@ -8297,7 +8415,8 @@
       "summary_ja": "牽引車は最大電流を恒久的に表示する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "牽引車の表示"
     },
     {
       "uid": "R79-6940ca48",
@@ -8313,7 +8432,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "被牽引車操舵システム電流要件"
     },
     {
       "uid": "R79-ea7fc5f4",
@@ -8329,7 +8449,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "公称動作電圧"
     },
     {
       "uid": "R79-20dee623",
@@ -8345,7 +8466,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "電気エネルギーの使用"
     },
     {
       "uid": "R79-cb63d4ab",
@@ -8361,7 +8483,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "配線とコネクタ"
     },
     {
       "uid": "R79-79389c54",
@@ -8377,7 +8500,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "ケーブル断面積"
     },
     {
       "uid": "R79-dc168c11",
@@ -8393,7 +8517,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "コネクタ要件"
     },
     {
       "uid": "R79-b76b651f",
@@ -8409,7 +8534,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "故障警報"
     },
     {
       "uid": "R79-eb1f118c",
@@ -8425,7 +8551,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "操舵システム動作実証"
     },
     {
       "uid": "R79-e9d0fa87",
@@ -8440,7 +8567,8 @@
       "summary_ja": "型式承認時に操舵システムの機能性を実演しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "型式認可時の実証"
     },
     {
       "uid": "R79-f8e3f645",
@@ -8456,7 +8584,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "故障条件"
     },
     {
       "uid": "R79-240dfcd3",
@@ -8472,7 +8601,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "定常状態"
     },
     {
       "uid": "R79-93da02ef",
@@ -8487,7 +8617,8 @@
       "summary_ja": "操舵システムの電気制御伝達故障時、車両安定性を維持しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "過渡状態"
     },
     {
       "uid": "R79-25e499b7",
@@ -8519,7 +8650,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 7
+      "annex_id": 7,
+      "title_ja": "表示"
     },
     {
       "uid": "R79-9035383a",
@@ -8552,7 +8684,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "車線表示"
     },
     {
       "uid": "R79-283935c9",
@@ -8568,7 +8701,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "許容差"
     },
     {
       "uid": "R79-b887e64e",
@@ -8584,7 +8718,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "車両条件"
     },
     {
       "uid": "R79-de95b942",
@@ -8600,7 +8735,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "試験質量"
     },
     {
       "uid": "R79-173bca68",
@@ -8616,7 +8752,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "タイヤ空気圧"
     },
     {
       "uid": "R79-a8fe7fe0",
@@ -8631,7 +8768,8 @@
       "summary_ja": "車両重心における横加速度と横方向ジャークを測定しなければならない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "横加速度"
     },
     {
       "uid": "R79-95f1df90",
@@ -8647,7 +8785,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "オーバーライド力"
     },
     {
       "uid": "R79-471f3260",
@@ -8663,7 +8802,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "CSFの試験"
     },
     {
       "uid": "R79-36c8d2ad",
@@ -8679,7 +8819,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "CSFの警報試験"
     },
     {
       "uid": "R79-56c2c531",
@@ -8793,7 +8934,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ACSFカテゴリーB1試験"
     },
     {
       "uid": "R79-57156e5c",
@@ -8809,7 +8951,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "車線維持機能試験"
     },
     {
       "uid": "R79-f8925c54",
@@ -8873,7 +9016,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "最大横加速度試験"
     },
     {
       "uid": "R79-814816ab",
@@ -8922,7 +9066,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "オーバーライド力試験"
     },
     {
       "uid": "R79-05a92f42",
@@ -9068,7 +9213,8 @@
       "summary_ja": "ESF試験は車線内走行で実施し、要件が満たされることを示す。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ESFの試験"
     },
     {
       "uid": "R79-b7db2a27",
@@ -9084,7 +9230,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ESFタイプa i/ii試験"
     },
     {
       "uid": "R79-e5a04ca9",
@@ -9100,7 +9247,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ESFタイプa iii試験"
     },
     {
       "uid": "R79-13e8e36d",
@@ -9116,7 +9264,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "ESFタイプb試験"
     },
     {
       "uid": "R79-f90dc557",
@@ -9132,7 +9281,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "車線表示なしシステム試験"
     },
     {
       "uid": "R79-c446a6a4",
@@ -9147,7 +9297,8 @@
       "summary_ja": "車両は車線表示内のプラスチックシートを通過する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ESFタイプb誤反応試験"
     },
     {
       "uid": "R79-dd071733",
@@ -9162,7 +9313,8 @@
       "summary_ja": "ACSFカテゴリCの試験はVapp=130km/hが基準。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "ACSFカテゴリーC試験"
     },
     {
       "uid": "R79-86f55e27",
@@ -9717,7 +9869,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "RMFの試験"
     },
     {
       "uid": "R79-d60ebd92",
@@ -9732,7 +9885,8 @@
       "summary_ja": "RMFは車両を自車線内で安全に停止させ、警告を発する。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "RMF車線内停止試験"
     },
     {
       "uid": "R79-ff5f4b94",
@@ -9748,7 +9902,8 @@
       "modified": false,
       "justification": null,
       "prev_uid": null,
-      "annex_id": 8
+      "annex_id": 8,
+      "title_ja": "RMF車線外停止試験"
     },
     {
       "uid": "R79-3959c85a",
@@ -9763,7 +9918,8 @@
       "summary_ja": "RMFは車線変更を行い、警告を発し、車両を安全に停止させる。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "シナリオA"
     },
     {
       "uid": "R79-2aaa6e9f",
@@ -9778,7 +9934,8 @@
       "summary_ja": "車線変更不可時、RMF介入は警告とハザード点灯を伴い、車線変更は行わない。",
       "modified": false,
       "justification": null,
-      "prev_uid": null
+      "prev_uid": null,
+      "title_ja": "シナリオB"
     }
   ]
 }

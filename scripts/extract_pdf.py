@@ -13,6 +13,7 @@ Usage:
 import re
 import json
 import hashlib
+from collections import Counter
 from pathlib import Path
 from difflib import SequenceMatcher
 from dataclasses import dataclass, field, asdict
@@ -507,6 +508,35 @@ def _is_valid_sequence(last_tuple: tuple, new_tuple: tuple) -> bool:
     return False
 
 
+_NOISE_TITLE_RE = re.compile(
+    r'^Note by the secretariat\b'
+    r'|(?:E/)?ECE/(?:TRANS/WP\.29)?/\S'
+    r'|TRANS/WP\.29/\S',
+    re.IGNORECASE,
+)
+
+
+def _looks_like_noise(title: str) -> bool:
+    """脚注・文書参照・図ラベル残骸など、実質的な見出しではないテキストを判定する。
+    章タイトルとして妥当な短い名詞句かどうかを内容ベースで判定する
+    （脱稿前は出現位置ベースで判定していたが、サブ番号を持たない短い章
+    （例: "9. Production definitively discontinued"）を誤って脚注と
+    みなし内容を丸ごと欠落させてしまうため、内容ベースの判定に変更）。
+    """
+    if _NOISE_TITLE_RE.search(title):
+        return True
+    if not re.search(r'[A-Za-z]{3,}', title):
+        return True  # 英字3文字以上の単語を含まない（図ラベル等の残骸）
+    # TOC のドットリーダー＋ページ番号残骸（例: "Place ........... 16"）を
+    # 除去してから長さを判定する。除去前の生文字列で判定すると、短い欄名
+    # （Place/Date/Signature 等）がドットの分だけ長くなり誤って脚注と
+    # みなされてしまう。
+    title_clean = re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
+    if len(title_clean) > 100:
+        return True  # 見出し1行に収まらない長さ＝地の文や脚注の誤検出
+    return False
+
+
 def _infer_level(number: str) -> int:
     return number.count('.') + 1
 
@@ -705,22 +735,45 @@ def parse_blocks(
                 annex_id=current_annex_id,
             ))
 
-    # ポストプロセス: インライン定義を分割し、ページヘッダー段落を除去
+    # ポストプロセス: インライン定義を分割し、脚注・文書参照等のノイズ段落を除去
+    # ページ脚注（各ページに同一文面が繰り返される注記）はタイトルが複数回
+    # 重複出現することで見分けられる（実章タイトルが偶然重複することはない）。
+    # ただし附属書ごとに独立して「1. Test conditions」等の汎用的な短い見出しを
+    # 持つことは珍しくないため、重複判定は (annex_id, title) 単位で行う
+    # （附属書をまたいだ同名見出しの偶然の一致を誤って脚注とみなさないため）。
+    # さらに、附属書内のページ見出し（"Annex 3" 等）が本文の冒頭に紛れ込んで
+    # 同一タイトルとして複数回検出されるケースや、連続する図のキャプションが
+    # 定型文を共有して見出しが一致してしまうケースがあるため、タイトルが
+    # 重複する候補は本文全体の類似度も確認し、実際にほぼ同一の文面が繰り返
+    # されている（= ページ脚注である）場合のブロックのみを重複ノイズと判定
+    # する（グループ単位ではなく、高い類似度を持つペアそのものだけを除去
+    # することで、たまたま同じタイトルを共有する別々の実段落を保護する）。
+    DUP_TEXT_SIM_THRESHOLD = 0.9
+    candidates_by_key: dict = {}
+    for b in raw_result:
+        if isinstance(b, ImageBlock):
+            continue
+        if b.level == 1 and re.fullmatch(r'\d{1,2}', b.number):
+            candidates_by_key.setdefault((b.annex_id, b.title), []).append(b)
+
+    duplicate_block_ids = set()
+    for group in candidates_by_key.values():
+        if len(group) < 2:
+            continue
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                if SequenceMatcher(None, group[i].text, group[j].text).ratio() >= DUP_TEXT_SIM_THRESHOLD:
+                    duplicate_block_ids.add(id(group[i]))
+                    duplicate_block_ids.add(id(group[j]))
+
     result: list = []
-    seen_content = False  # level>=2 の段落が出た後の単純整数段落は脚注とみなす
     for block in raw_result:
         if isinstance(block, ImageBlock):
             result.append(block)
             continue
-        # level>=2 段落を見たら seen_content=True
-        if block.level >= 2:
-            seen_content = True
-        # 脚注段落を除外: level=1、数字のみの番号、本文コンテンツ以降に出現
-        # ただし附属書内は対象外（附属書は1から番号が再始まるのが通常であり、
-        # 実質的な見出し段落を脚注と誤判定してしまうため）
-        if (seen_content and block.level == 1
-                and block.annex_id is None
-                and re.fullmatch(r'\d{1,2}', block.number)):
+        # ノイズ候補: level=1、数字のみの番号（脚注記号・文書参照はこの形を取る）
+        if (block.level == 1 and re.fullmatch(r'\d{1,2}', block.number)
+                and (_looks_like_noise(block.title) or id(block) in duplicate_block_ids)):
             continue
         # インライン定義を分割して追加
         for split_block in _split_inline_definitions(block, regulation):

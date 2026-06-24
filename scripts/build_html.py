@@ -43,12 +43,91 @@ def reg_sort_key(reg: str):
     return (2, 0, reg)
 
 
-def is_nav_noise(p: dict) -> bool:
+def find_toc_dup_uids(paragraphs: list[dict]) -> set:
+    """目次のドットリーダー行（"Scope .......... 5" 等）を検出する。
+
+    同じ (annex_id, number) を持つ「本物」の章見出し（ドットリーダーを含まない）
+    が別に存在する場合のみ、ドットリーダー行を目次の重複とみなす。Annex 1 の
+    通信書式の欄名（"Place ........."、"Signature........." 等）は同じ番号を
+    持つ本物の対応段落が存在しないため、ここでは重複と判定されず、誤って
+    完全非表示にされることはない。
+    """
+    import re as _re
+    buckets: dict = {}
+    for p in paragraphs:
+        if p.get("type") == "image":
+            continue
+        number = (p.get("number") or "").strip()
+        if p.get("level", 1) != 1 or not _re.fullmatch(r"\d{1,2}", number):
+            continue
+        buckets.setdefault((p.get("annex_id"), number), []).append(p)
+
+    dup_uids = set()
+    for group in buckets.values():
+        if len(group) < 2:
+            continue
+        has_clean = any("......" not in (g.get("title") or "") for g in group)
+        if not has_clean:
+            continue
+        for g in group:
+            if "......" in (g.get("title") or ""):
+                dup_uids.add(g.get("uid"))
+    return dup_uids
+
+
+def find_pseudo_number_dup_uids(paragraphs: list[dict]) -> set:
+    """ページ番号が段落番号として誤認識された見出し
+    （例: ページ番号 "106" の直後に来る "Annex 9 - Appendix 1" のような
+    タイトル行が連結され、見かけ上 number="106" の段落になってしまうケース）
+    のうち、内容を持たない重複（同一タイトルの繰り返し走りヘッダー等）だけを
+    ノイズと判定する。
+
+    extract_pdf.py 側の脚注重複検出（同一 (annex_id, title) 内で本文の類似度
+    >= 0.9 のペアを重複とみなす）と同じロジックを、3桁以上の番号を持つ段落
+    （誤認識防止のため脚注重複検出の対象外にしていたグループ）にも適用する。
+    実質的な本文が付随する場合は重複ペアが見つからず、ここではノイズと判定
+    されない（"Annex 9 - Appendix 1" や "F (MHz)" の定義など、ページ番号が
+    たまたま紛れ込んだだけの本物の見出し・内容を保護する）。
+    """
+    import re as _re
+    from difflib import SequenceMatcher
+
+    buckets: dict = {}
+    for p in paragraphs:
+        if p.get("type") == "image":
+            continue
+        number = (p.get("number") or "").strip()
+        if not _re.fullmatch(r"\d{3,}", number):
+            continue
+        key = (p.get("annex_id"), (p.get("title") or "").strip())
+        buckets.setdefault(key, []).append(p)
+
+    dup_uids = set()
+    for group in buckets.values():
+        if len(group) < 2:
+            continue
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                a, b = group[i], group[j]
+                sim = SequenceMatcher(None, a.get("text") or "", b.get("text") or "").ratio()
+                if sim >= 0.9:
+                    dup_uids.add(a.get("uid"))
+                    dup_uids.add(b.get("uid"))
+    return dup_uids
+
+
+def is_nav_noise(
+    p: dict,
+    toc_dup_uids: set | None = None,
+    pseudo_num_dup_uids: set | None = None,
+) -> bool:
     """ナビゲーションツリーに表示すべきでないノイズ段落かどうかを判定する。
     - PDFページヘッダー（文書番号行、"E/ECE/..."）
-    - 目次ドット行（"......"）
-    - PDFページ走りヘッダー（3桁以上の純整数番号 = ページ番号）
-      → 章番号は最大でも2桁（22章以下）なので3桁以上は全てページヘッダー
+    - 目次ドット行（"......"）。ただし本物の対応段落がない場合は欄名等の
+      実内容とみなし非表示にしない（find_toc_dup_uids 参照）。
+    - PDFページ走りヘッダー（3桁以上の純整数番号 = ページ番号が段落番号に
+      誤認識されたもの）。ただし内容を伴う重複でない場合は実質的な見出し・
+      内容とみなし非表示にしない（find_pseudo_number_dup_uids 参照）。
     """
     import re as _re
     text = (p.get("text") or "").strip()
@@ -58,30 +137,87 @@ def is_nav_noise(p: dict) -> bool:
             or title.startswith("E/ECE/") or title.startswith("ECE/")):
         return True
     if "......" in title or "......" in text:
+        if toc_dup_uids is not None:
+            return p.get("uid") in toc_dup_uids
         return True
     if _re.fullmatch(r"\d{3,}", number):
+        if pseudo_num_dup_uids is not None:
+            return p.get("uid") in pseudo_num_dup_uids
+        return True
+    return False
+
+
+_NOISE_TITLE_RE_BH = None  # 遅延初期化
+
+
+def _looks_like_noise_bh(title: str) -> bool:
+    """脚注・文書参照・図ラベル残骸など、実質的な見出しではないテキストを判定する
+    （extract_pdf.py の _looks_like_noise と同じ判定基準。位置ベースではなく
+    内容ベースで判定することで、サブ番号を持たない短い章を誤って脚注とみなし
+    内容を隠してしまう問題を避ける）。
+    """
+    global _NOISE_TITLE_RE_BH
+    import re
+    if _NOISE_TITLE_RE_BH is None:
+        _NOISE_TITLE_RE_BH = re.compile(
+            r'^Note by the secretariat\b'
+            r'|(?:E/)?ECE/(?:TRANS/WP\.29)?/\S'
+            r'|TRANS/WP\.29/\S',
+            re.IGNORECASE,
+        )
+    if _NOISE_TITLE_RE_BH.search(title):
+        return True
+    if not re.search(r'[A-Za-z]{3,}', title):
+        return True
+    # ドットリーダー残骸を除去してから長さ判定（extract_pdf.py 側と同じ理由）
+    title_clean = re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
+    if len(title_clean) > 100:
         return True
     return False
 
 
 def mark_footnote_noise(paragraphs: list[dict]) -> None:
-    """本文内容（level 2以上）の後に出現する level=1 かつ数字のみ番号の段落を
-    ページ脚注とみなし _nav_hidden=True にする（インプレース変更）。
+    """level=1 かつ数字のみ番号の段落のうち、脚注・文書参照・ページ走り等の
+    ノイズと判定された段落を _nav_hidden=True にする（インプレース変更）。
 
-    附属書内の段落（annex_id が設定済み）は対象外とする。附属書は1から
-    番号が再始まるのが通常であり、実質的な見出し段落を脚注と誤判定して
-    しまうため（extract_pdf.py の同名フィルタと同じ理由）。
+    同一タイトルが複数回出現する場合もページ脚注（繰り返し注記）と判定する
+    （実章タイトルが文書内で偶然重複することはないため）。ただし附属書ごとに
+    独立して同じ汎用見出し（例: "Test conditions"）を持つことがあるため、
+    重複判定は (annex_id, title) 単位で行う。さらに、附属書内のページ見出し
+    （"Annex 3" 等）が本文冒頭に紛れ込んで同一タイトルとして複数回検出される
+    ケースや、連続する図のキャプションが定型文を共有して見出しが一致してし
+    まうケースがあるため、本文全体の類似度も確認し、実際にほぼ同一の文面が
+    繰り返されている（＝ページ脚注である）ペアそのものだけを重複ノイズと判定
+    する（グループ単位ではなく、高い類似度を持つペアだけを除去することで、
+    たまたま同じタイトルを共有する別々の実段落を保護する）。
+    extract_pdf.py の parse_blocks() 内の同名フィルタと判定基準を揃えている。
     """
     import re
-    seen_content = False
-    for p in paragraphs:
-        if p.get("type") == "image":
+    from difflib import SequenceMatcher
+    DUP_TEXT_SIM_THRESHOLD = 0.9
+    candidates = [
+        p for p in paragraphs
+        if p.get("type") != "image" and p.get("level", 1) == 1
+        and re.fullmatch(r"\d{1,2}", p.get("number", ""))
+    ]
+    groups: dict = {}
+    for p in candidates:
+        key = (p.get("annex_id"), p.get("title", ""))
+        groups.setdefault(key, []).append(p)
+
+    duplicate_ids = set()
+    for group in groups.values():
+        if len(group) < 2:
             continue
-        level = p.get("level", 1)
-        if level >= 2:
-            seen_content = True
-        if (seen_content and level == 1 and p.get("annex_id") is None
-                and re.fullmatch(r"\d{1,2}", p.get("number", ""))):
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                sim = SequenceMatcher(None, group[i].get("text", ""), group[j].get("text", "")).ratio()
+                if sim >= DUP_TEXT_SIM_THRESHOLD:
+                    duplicate_ids.add(id(group[i]))
+                    duplicate_ids.add(id(group[j]))
+
+    for p in candidates:
+        if _looks_like_noise_bh(p.get("title", "")) or id(p) in duplicate_ids:
             p["_nav_hidden"] = True
 
 
@@ -545,12 +681,14 @@ def build_regulation_page(regulation: str, version: str) -> None:
 
     # ノイズフラグを付与してから用語アノテーションを追加
     mark_footnote_noise(paragraphs)
+    toc_dup_uids = find_toc_dup_uids(paragraphs)
+    pseudo_num_dup_uids = find_pseudo_number_dup_uids(paragraphs)
     for p in paragraphs:
         if p.get("type") == "image":
             continue
         # ナビゲーションノイズフラグを付与（ページヘッダー・目次ドット行）
         if not p.get("_nav_hidden"):
-            p["_nav_hidden"] = is_nav_noise(p)
+            p["_nav_hidden"] = is_nav_noise(p, toc_dup_uids, pseudo_num_dup_uids)
         # テーブルセル検出: "パラメータ名  単位  列番号" 形式（PDFテーブルの誤抽出）
         if not p.get("_nav_hidden"):
             import re as _re2

@@ -51,6 +51,13 @@ def find_toc_dup_uids(paragraphs: list[dict]) -> set:
     通信書式の欄名（"Place ........."、"Signature........." 等）は同じ番号を
     持つ本物の対応段落が存在しないため、ここでは重複と判定されず、誤って
     完全非表示にされることはない。
+
+    判定は title フィールドのみで行う（text フィールドには証明書フォームの
+    記入欄（"Signed: ......... Date: ........."）等、目次とは無関係なドット
+    リーダーが含まれることがあり、これを重複判定に使うと OCR でドットが
+    "……"（省略記号）と "...."（ピリオド）に分かれて抽出された同種の記入欄
+    同士が誤って「片方が本物・片方が目次重複」と誤判定され、本文を消してし
+    まう）。
     """
     import re as _re
     buckets: dict = {}
@@ -227,12 +234,16 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
     _nav_hidden（TOC ノイズ）付与後に呼ぶこと。
     番号後退ヒューリスティックで附属書ゾーンを検出する。
     annex_id フィールドは mark_annex_ids() で附属書ID付与に使用する。
-    """
-    max_top = 0
-    in_annex = False
-    seen_body = False  # level>=2 段落が出現したら True（本文に入ったと判定）
 
-    for p in paragraphs:
+    脚注がページ下部の参照テキスト（"1 As defined in the Consolidated
+    Resolution..." 等）を本文の見出しと誤認識し、たまたま小さい番号
+    （例: "1"）を持ってしまうことがある。これを後退と誤判定して附属書
+    ゾーンに入ったと即断すると、以降の本物の章（例: 3, 4, 5 章）が軒並み
+    附属書扱いになってしまう。そこで後退を検出しても即座に確定させず、
+    それ以降ずっと番号が戻らない（=本物の附属書境界）場合のみ確定する。
+    """
+    items: list[tuple[int, int, int]] = []  # (paragraphs内インデックス, top番号, level)
+    for idx, p in enumerate(paragraphs):
         if p.get("type") == "image" or p.get("_nav_hidden"):
             continue
         num = p.get("number", "")
@@ -243,18 +254,50 @@ def mark_annex_paragraphs(paragraphs: list[dict]) -> None:
             continue
         if top <= 0:
             continue
+        items.append((idx, top, level))
 
+    max_top = 0
+    seen_body = False  # level>=2 段落が出現したら True（本文に入ったと判定）
+    annex_start_idx = None
+
+    for k, (idx, top, level) in enumerate(items):
         if level >= 2:
             seen_body = True
 
-        if not in_annex:
-            if seen_body and max_top >= 2 and top < max_top // 2 + 1:
-                in_annex = True
-            elif seen_body:
-                max_top = max(max_top, top)
+        if (annex_start_idx is None and seen_body and max_top >= 2
+                and top < max_top // 2 + 1):
+            # 後退を検出。以降ずっと max_top を超えなければ本物の附属書境界と確定する。
+            if not any(later_top > max_top for _, later_top, _ in items[k + 1:]):
+                annex_start_idx = idx
+                break
 
-        if in_annex:
-            p["_in_annex"] = True
+        if annex_start_idx is None and seen_body:
+            max_top = max(max_top, top)
+
+    if annex_start_idx is not None:
+        for idx, p in enumerate(paragraphs):
+            if idx >= annex_start_idx and p.get("type") != "image":
+                p["_in_annex"] = True
+
+
+def _is_toc_like_entry(p: dict) -> bool:
+    """段落がドットリーダー＋ページ番号だけの目次行（実質的な本文を持たない）
+    かどうかを判定する。ドットリーダー（"...." または "……"）をすべて除去し、
+    末尾のページ番号を取り除いた「素の文字列」が title と text でほぼ同じ長さ
+    であれば、本文を持たない目次行と判定する。"Introduction"・"Preamble" など
+    タイトルだけが短く、本文（text）には実質的な内容が続く段落を、目次セクション
+    の番号レンジ内に紛れ込んだという理由だけで誤って隠してしまわないようにする。
+    """
+    import re as _re
+
+    def _bare(s: str) -> str:
+        s = _re.sub(r'[.…]{2,}', ' ', s)
+        s = _re.sub(r'\s+\d+\s*$', '', s)
+        return _re.sub(r'\s+', ' ', s).strip()
+
+    bare_title = _bare(p.get("title") or "")
+    bare_text = _bare(p.get("text") or "")
+    return len(bare_text) <= len(bare_title) + 20
 
 
 def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None = None) -> list[dict]:
@@ -274,6 +317,9 @@ def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None 
             if p.get("type") != "image" and p.get("number", "") == "1"]
 
     entries: dict = {}
+    candidate_indices: list[int] = []
+    annex_toc_start = None
+    annex_toc_end = None
     if len(occ1) >= 2:
         # 第2出現 (附属書TOCの先頭) ～ 第3出現 (本文の先頭) が附属書TOCセクション
         annex_toc_start = occ1[1]
@@ -295,6 +341,7 @@ def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None 
             clean = _re.sub(r'\s*\.{4,}.*', '', title).rstrip('. ')
             if clean.lower().startswith("appendix"):
                 continue
+            candidate_indices.append(i)
             if n not in entries:
                 entries[n] = {
                     "number": n,
@@ -302,6 +349,7 @@ def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None 
                     "title_ja": (p.get("title_ja") or "").rstrip(". "),
                 }
 
+    toc_section_valid = bool(entries)
     if annex_titles_fallback:
         # 段落に検出済みの annex_id（extract_pdf.py 由来の確定値）と
         # ヒューリスティックが見つけた附属書番号集合を照合する。
@@ -311,6 +359,24 @@ def build_annex_tree(paragraphs: list[dict], annex_titles_fallback: dict | None 
                              if p.get("type") != "image" and p.get("annex_id") is not None})
         if annex_ids and set(entries.keys()) != set(annex_ids):
             entries = {}
+            toc_section_valid = False
+
+    if toc_section_valid and annex_toc_start is not None:
+        # 附属書TOCセクション（各附属書の見出し行＋Appendix小項目行）は
+        # ページ番号がドットリーダーの後に続く形式のため、find_toc_dup_uids()
+        # の重複判定（本文に同一番号の対応段落がある場合のみ検出）では、対応する
+        # 本文側の番号が一致しない（Appendix小項目はページ番号がそのまま番号
+        # 欄に入り、本文側に同じ番号の段落が存在しない）ケースを検出できない。
+        # この区間は第2出現～第3出現の "1" で挟まれた附属書TOCセクションだが、
+        # "Introduction"・"Preamble" のような実質的な本文を持つ段落が偶然この
+        # 範囲に入り込むこともあるため、_is_toc_like_entry() で本文を持たない
+        # ドットリーダー＋ページ番号のみの行であることを確認した段落だけを隠す
+        # （TOCセクション特定がフォールバックで無効化された場合は本文を誤認
+        # している可能性があるため隠さない）。
+        for i in range(annex_toc_start, annex_toc_end):
+            p_i = paragraphs[i]
+            if p_i.get("type") != "image" and _is_toc_like_entry(p_i):
+                p_i["_nav_hidden"] = True
 
     if not entries and annex_titles_fallback:
         for n in annex_ids:
@@ -463,10 +529,25 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
     chapter_list_entries: dict[str, dict] = {}  # int-num → chapters リスト内のノード
     seen_top_numbers: set[str] = set()
     top_level_closed = False  # 主要章の番号が重複した時点で左ペイン追加を終了
+    next_chapter_num = 1  # 主要章は 1 から始まる連番のはず
 
     for p in paragraphs:
         # 画像ブロック・ノイズはツリーナビに表示しない
         if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        num = p["number"]
+        is_integer = bool(_re.fullmatch(r"\d+", num))
+        # 目次の区切り行（例: "Annexes" や "Appendix N"）がページ番号を章番号として
+        # 誤って取り込んだものは、主要章の連番（1, 2, 3, …）から外れることで判別できる。
+        # ただし表紙ページの注記等、たまたま章番号と無関係な数字（発行年・ページ番号等）
+        # を持つだけの実質的な本文段落を誤って消してしまわないよう、_is_toc_like_entry()
+        # で本文を持たない目次行であることを確認した場合のみ完全非表示にする。
+        # 本文を持つ場合（表紙の注記等）は本文表示は維持しつつ、左ペインの章一覧には
+        # 連番から外れた章として追加しない（is_seq_mismatch）。
+        is_seq_mismatch = (p["level"] == 1 and is_integer and not top_level_closed
+                            and num not in seen_top_numbers and int(num) != next_chapter_num)
+        if is_seq_mismatch and _is_toc_like_entry(p):
+            p["_nav_hidden"] = True
             continue
         # TOC のドットリーダー＋ページ番号の残骸（例: "....... 16"）を除去する
         title_clean = _re.sub(r'\s*\.{4,}.*', '', p["title"]).rstrip(". ")
@@ -481,8 +562,6 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
             "children": [],
         }
         if p["level"] == 1:
-            num = p["number"]
-            is_integer = bool(_re.fullmatch(r"\d+", num))
             if is_integer and num in seen_top_numbers:
                 top_level_closed = True  # 附属書の繰り返し番号が始まった
                 # 本文の後出現に title_ja があれば chapters リストのエントリを更新する
@@ -491,11 +570,12 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
                     if not existing["title_ja"]:
                         existing["title_ja"] = node["title_ja"]
                         existing["title"] = node["title"]
-            if not top_level_closed:
+            if not top_level_closed and not is_seq_mismatch:
                 chapters.append(node)
                 if is_integer:
                     seen_top_numbers.add(num)
                     chapter_list_entries[num] = node
+                    next_chapter_num = int(num) + 1
             chapter_map[num] = node
         else:
             parent_num = p.get("parent")

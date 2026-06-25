@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ regulation }} 差分: {{ from_version }} → {{ to_version }} | UN法規日本語訳</title>
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body class="page-diff">
+
+<header class="site-header">
+  <div class="header-inner">
+    <span class="header-logo">UN Regulations 日本語訳</span>
+    <p class="header-tagline">{{ regulation }} 版間差分: {{ from_version }} → {{ to_version }}</p>
+  </div>
+</header>
+
+<main class="diff-main">
+  <p class="diff-back"><a href="../index.html">&larr; {{ regulation }} 本文に戻る</a></p>
+
+  <div class="diff-summary">
+    <span class="diff-summary-item diff-summary-added">追加 {{ summary.added or 0 }}</span>
+    <span class="diff-summary-item diff-summary-deleted">削除 {{ summary.deleted or 0 }}</span>
+    <span class="diff-summary-item diff-summary-modified">変更 {{ summary.modified or 0 }}</span>
+    <span class="diff-summary-item diff-summary-slid">移動 {{ summary.slid or 0 }}</span>
+    <span class="diff-summary-item diff-summary-unchanged">変更なし {{ summary.unchanged or 0 }}</span>
+  </div>
+
+  <div class="diff-list">
+    {% for c in changes %}
+    <article class="diff-entry diff-entry--{{ c.type | lower }}">
+      <div class="diff-entry-header">
+        <span class="diff-badge diff-badge--{{ c.type | lower }}">
+          {% if c.type == 'ADDED' %}+ 追加
+          {% elif c.type == 'DELETED' %}− 削除
+          {% elif c.type == 'SLID' %}移動
+          {% else %}変更
+          {% endif %}
+        </span>
+        <span class="diff-number">{{ c.number }}</span>
+        <span class="diff-title">{{ c.title }}</span>
+      </div>
+      {% if c.text_old %}
+      <div class="diff-text diff-text-old">{{ c.text_old }}</div>
+      {% endif %}
+      {% if c.text_new %}
+      <div class="diff-text diff-text-new">{{ c.text_new }}</div>
+      {% endif %}
+      {% if c.justification %}
+      <div class="diff-justification"><strong>理由:</strong> {{ c.justification }}</div>
+      {% endif %}
+    </article>
+    {% else %}
+    <p class="no-diff">差分データがありません。</p>
+    {% endfor %}
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclaimer">
+      <strong>免責事項:</strong>
+      本サイトの日本語訳は非公式の参考訳であり、法的効力は国連が発行するオリジナルの英語テキストにのみあります。
+      翻訳の正確性について一切の保証をいたしません。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

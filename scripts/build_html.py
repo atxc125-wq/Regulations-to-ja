@@ -906,6 +906,18 @@ def build_regulation_page(regulation: str, version: str) -> None:
     output_path.write_text(html, encoding="utf-8")
     click.echo(f"Built: {output_path}")
 
+    # R13 限定: 他のAI/外部ツールが段落単位で読み取れるよう、元データを
+    # そのまま docs/R13/data.json として静的公開する（全フィールドを含む）。
+    # data はビルド処理中に _nav_hidden 等の内部フィールドが書き込まれているため、
+    # ここでは structured.json を読み直した未加工のコピーを書き出す。
+    if regulation == "R13":
+        raw_data = load_json(structured_path)
+        data_json_path = output_dir / "data.json"
+        data_json_path.write_text(
+            json.dumps(raw_data, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        click.echo(f"Built: {data_json_path}")
+
 
 def build_index_page(regulations: list[str]) -> None:
     env = Environment(
@@ -948,6 +960,35 @@ def build_index_page(regulations: list[str]) -> None:
     click.echo(f"Built: {SITE_DIR / 'index.html'}")
 
 
+def build_diff_page(regulation: str, from_ver: str, to_ver: str) -> None:
+    """改正提案などの版間差分一覧ページ（別ページ）を生成する。"""
+    diff_path = DATA_DIR / regulation / "diff" / f"{from_ver}_to_{to_ver}.json"
+    if not diff_path.exists():
+        raise click.ClickException(f"Not found: {diff_path}")
+
+    data = load_json(diff_path)
+
+    env = Environment(
+        loader=FileSystemLoader(str(TEMPLATES_DIR)),
+        autoescape=select_autoescape(["html"]),
+    )
+    template = env.get_template("diff_page.html")
+
+    output_dir = SITE_DIR / regulation / "diff"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{from_ver}_to_{to_ver}.html"
+
+    html = template.render(
+        regulation=regulation,
+        from_version=data.get("from_version", from_ver),
+        to_version=data.get("to_version", to_ver),
+        summary=data.get("summary", {}),
+        changes=data.get("changes", []),
+    )
+    output_path.write_text(html, encoding="utf-8")
+    click.echo(f"Built: {output_path}")
+
+
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
@@ -963,6 +1004,15 @@ def cli():
 def page(reg: str, version: str):
     """特定の法規ページを生成する"""
     build_regulation_page(reg, version)
+
+
+@cli.command(name='diff-page')
+@click.option('--reg', required=True, help='法規番号 (例: R13)')
+@click.option('--from', 'from_ver', required=True, help='比較元バージョン')
+@click.option('--to', 'to_ver', required=True, help='比較先バージョン')
+def diff_page(reg: str, from_ver: str, to_ver: str):
+    """改正提案などの版間差分一覧ページを生成する（data/<reg>/diff/<from>_to_<to>.json が必要）"""
+    build_diff_page(reg, from_ver, to_ver)
 
 
 @cli.command()

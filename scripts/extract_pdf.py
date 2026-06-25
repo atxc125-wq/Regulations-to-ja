@@ -48,6 +48,7 @@ class Paragraph:
     modified: bool = False
     justification: Optional[str] = None
     prev_uid: Optional[str] = None
+    text_old: Optional[str] = None
     annex_id: Optional[int] = None
 
 
@@ -890,6 +891,8 @@ def apply_diff_to_new(new_paras: list[Paragraph], diff_entries: list[DiffEntry])
             p.modified = True
             p.prev_uid = entry.prev_uid
             p.justification = entry.justification
+            # 旧文を段落自体に保持する（中間ペインの薄色表示用、1世代分のみ）
+            p.text_old = entry.text_old
             if entry.type == "MODIFIED":
                 p.status = "untranslated"
         result.append(p)

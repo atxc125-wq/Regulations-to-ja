@@ -279,6 +279,13 @@
           </div>
           {% endif %}
 
+          {% if p.modified and p.text_old %}
+          <details class="old-text-box">
+            <summary>旧文（一世代前・参考）</summary>
+            <div class="para-text old-text">{{ p.text_old }}</div>
+          </details>
+          {% endif %}
+
           {% if p._refs %}
           <div class="para-refs-section">
             <span class="para-refs-label">参照段落</span>

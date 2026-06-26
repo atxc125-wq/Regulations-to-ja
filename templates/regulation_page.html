@@ -226,7 +226,7 @@
 
       {% else %}
       {# ---- テキスト段落ブロック ---- #}
-      <article class="para-card {% if p.modified %}para-card--modified{% endif %}"
+      <article class="para-card {% if p.modified %}para-card--modified{% endif %} {% if p._proposals %}para-card--proposal-{{ p._proposals[0].type | lower }}{% endif %}"
                id="para-{{ p.uid }}"
                data-uid="{{ p.uid }}"
                data-number="{{ p.number }}"
@@ -254,6 +254,14 @@
             </button>
             {% endif %}
             {% endif %}
+            {% if p._proposals %}
+            <span class="badge badge-proposal-{{ p._proposals[0].type | lower }}">
+              {% if p._proposals[0].type == 'ADDED' %}追加提案
+              {% elif p._proposals[0].type == 'DELETED' %}削除提案
+              {% else %}修正提案
+              {% endif %}
+            </span>
+            {% endif %}
             {% if p.status == 'untranslated' %}
             <span class="badge badge-untranslated">未翻訳</span>
             {% endif %}
@@ -262,6 +270,56 @@
         </div>
 
         <div class="para-card-body" id="body-{{ p.uid }}" hidden>
+          {% if p._proposals %}
+          {% set latest = p._proposals[0] %}
+          <div class="proposal-block proposal-block--{{ latest.type | lower }}">
+            <div class="proposal-block-header">
+              <span class="proposal-badge proposal-badge--{{ latest.type | lower }}">
+                {% if latest.type == 'ADDED' %}追加提案
+                {% elif latest.type == 'DELETED' %}削除提案
+                {% else %}修正提案
+                {% endif %}
+              </span>
+              {% if latest.source_label or latest.source_date %}
+              <span class="proposal-source">{{ latest.source_label or '' }}{% if latest.source_date %} ({{ latest.source_date }}){% endif %}</span>
+              {% endif %}
+            </div>
+            {% if latest.text_new %}
+            <div class="para-text proposal-text">{{ latest.text_new }}</div>
+            {% endif %}
+            {% if latest.justification %}
+            <div class="proposal-justification"><strong>提案理由:</strong> {{ latest.justification }}</div>
+            {% endif %}
+          </div>
+          {% if p._proposals | length > 1 %}
+          <details class="proposal-history">
+            <summary>他の提案を見る（{{ p._proposals | length - 1 }}件）</summary>
+            {% for prop in p._proposals[1:] %}
+            <div class="proposal-block proposal-block--{{ prop.type | lower }} proposal-block--history">
+              <div class="proposal-block-header">
+                <span class="proposal-badge proposal-badge--{{ prop.type | lower }}">
+                  {% if prop.type == 'ADDED' %}追加提案
+                  {% elif prop.type == 'DELETED' %}削除提案
+                  {% else %}修正提案
+                  {% endif %}
+                </span>
+                {% if prop.source_label or prop.source_date %}
+                <span class="proposal-source">{{ prop.source_label or '' }}{% if prop.source_date %} ({{ prop.source_date }}){% endif %}</span>
+                {% endif %}
+              </div>
+              {% if prop.text_new %}
+              <div class="para-text proposal-text">{{ prop.text_new }}</div>
+              {% endif %}
+              {% if prop.justification %}
+              <div class="proposal-justification"><strong>提案理由:</strong> {{ prop.justification }}</div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </details>
+          {% endif %}
+          {% endif %}
+
+          {% if not p._is_proposal_only %}
           <div class="bilingual-container">
             <div class="bilingual-col bilingual-en">
               <div class="col-label">English (Original)</div>
@@ -272,6 +330,7 @@
               <div class="para-text ja-text">{% if p.translation_annotated %}{{ p.translation_annotated | safe }}{% else %}<span class="translation-pending">翻訳中...</span>{% endif %}</div>
             </div>
           </div>
+          {% endif %}
 
           {% if p.modified and p.justification %}
           <div class="justification-box" id="justification-{{ p.uid }}">

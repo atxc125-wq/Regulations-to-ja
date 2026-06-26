@@ -62,7 +62,7 @@ def find_toc_dup_uids(paragraphs: list[dict]) -> set:
     import re as _re
     buckets: dict = {}
     for p in paragraphs:
-        if p.get("type") == "image":
+        if p.get("type") == "image" or p.get("_is_proposal_only"):
             continue
         number = (p.get("number") or "").strip()
         if p.get("level", 1) != 1 or not _re.fullmatch(r"\d{1,2}", number):
@@ -101,7 +101,7 @@ def find_pseudo_number_dup_uids(paragraphs: list[dict]) -> set:
 
     buckets: dict = {}
     for p in paragraphs:
-        if p.get("type") == "image":
+        if p.get("type") == "image" or p.get("_is_proposal_only"):
             continue
         number = (p.get("number") or "").strip()
         if not _re.fullmatch(r"\d{3,}", number):
@@ -204,7 +204,8 @@ def mark_footnote_noise(paragraphs: list[dict]) -> None:
     DUP_TEXT_SIM_THRESHOLD = 0.9
     candidates = [
         p for p in paragraphs
-        if p.get("type") != "image" and p.get("level", 1) == 1
+        if p.get("type") != "image" and not p.get("_is_proposal_only")
+        and p.get("level", 1) == 1
         and re.fullmatch(r"\d{1,2}", p.get("number", ""))
     ]
     groups: dict = {}
@@ -729,6 +730,77 @@ def annotate_glossary_ja(text: str, glossary_ja_terms: dict[str, dict]) -> str:
     return text
 
 
+def load_proposals(regulation: str) -> list[dict]:
+    """改正提案データ（data/<reg>/proposals.json）を読み込む。存在しない場合は空リスト。
+
+    確定差分（modified/text_old、diff_versions()）とは別系統のデータであり、
+    structured.json には一切書き戻さない（未採択の提案と確定済み改正を混同しないため）。
+    """
+    path = DATA_DIR / regulation / "proposals.json"
+    if not path.exists():
+        return []
+    return load_json(path).get("proposals", [])
+
+
+def apply_proposals(paragraphs: list[dict], proposals: list[dict]) -> None:
+    """改正提案（ADDED/MODIFIED/DELETED）を段落リストに適用する（インプレース変更）。
+
+    MODIFIED/DELETED は対象段落（target_uid）に _proposals リスト（新しい提案が先頭）
+    として付与する。ADDED は anchor_uid の直後に仮想段落を挿入し、_is_proposal_only=True
+    で印をつける（他のノイズ判定・章/附属書判定ロジックをそのまま素通りさせるため、
+    実在の段落と同じ level/parent/number 形式で構築する）。
+    """
+    by_target: dict[str, list[dict]] = {}
+    by_anchor: dict[str, list[dict]] = {}
+    for prop in proposals:
+        if prop.get("type") == "ADDED":
+            anchor = prop.get("anchor_uid")
+            if anchor:
+                by_anchor.setdefault(anchor, []).append(prop)
+        else:
+            target = prop.get("target_uid")
+            if target:
+                by_target.setdefault(target, []).append(prop)
+
+    for props in by_target.values():
+        props.sort(key=lambda p: p.get("source_date") or "", reverse=True)
+    for props in by_anchor.values():
+        props.sort(key=lambda p: p.get("source_date") or "")
+
+    for p in paragraphs:
+        props = by_target.get(p.get("uid"))
+        if props:
+            p["_proposals"] = props
+
+    if not by_anchor:
+        return
+
+    new_paragraphs: list[dict] = []
+    for p in paragraphs:
+        new_paragraphs.append(p)
+        for prop in by_anchor.get(p.get("uid"), []):
+            new_paragraphs.append({
+                "uid": f"PROPOSAL-{prop.get('id')}",
+                "number": prop.get("number", ""),
+                "title": prop.get("title", ""),
+                "text": "",
+                "level": p.get("level", 1),
+                "parent": p.get("parent"),
+                "type": "paragraph",
+                "status": "proposal",
+                "translation": None,
+                "summary_ja": None,
+                "modified": False,
+                "justification": None,
+                "prev_uid": None,
+                "text_old": None,
+                "annex_id": None,
+                "_is_proposal_only": True,
+                "_proposals": [prop],
+            })
+    paragraphs[:] = new_paragraphs
+
+
 def build_regulation_page(regulation: str, version: str) -> None:
     structured_path = DATA_DIR / regulation / version / "structured.json"
     glossary_path = DATA_DIR / regulation / "glossary.json"
@@ -755,6 +827,12 @@ def build_regulation_page(regulation: str, version: str) -> None:
     # テキスト段落のみに用語アノテーションを付与（画像ブロックはスキップ）
     paragraphs = data["paragraphs"]
 
+    # 改正提案（未採択）の適用。ツリー構築前に行うことで、ADDED提案の仮想段落も
+    # 通常の段落と同様に左ペイン・章/附属書判定に参加させる。
+    proposals = load_proposals(regulation)
+    if proposals:
+        apply_proposals(paragraphs, proposals)
+
     # ノイズフラグ付与前にツリーを構築する
     tree = build_tree(paragraphs)
     annex_tree = build_annex_tree(paragraphs, data.get("annex_titles"))
@@ -765,6 +843,13 @@ def build_regulation_page(regulation: str, version: str) -> None:
     pseudo_num_dup_uids = find_pseudo_number_dup_uids(paragraphs)
     for p in paragraphs:
         if p.get("type") == "image":
+            continue
+        if p.get("_is_proposal_only"):
+            # 改正提案の仮想段落は実在が確定しているため、ノイズ判定をスキップする
+            p["_nav_hidden"] = False
+            p["text_annotated"] = ""
+            p["translation_annotated"] = None
+            p["summary_ja_short"] = ""
             continue
         # ナビゲーションノイズフラグを付与（ページヘッダー・目次ドット行）
         if not p.get("_nav_hidden"):
@@ -843,6 +928,10 @@ def build_regulation_page(regulation: str, version: str) -> None:
     seen_para_numbers: set[str] = set()
     for p in paragraphs:
         if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        if p.get("_is_proposal_only"):
+            # 改正提案の仮想段落は重複排除の対象外（常に表示し、既存段落の番号も奪わない）
+            p["_first_occ"] = True
             continue
         num = p.get("number", "")
         if num and num not in seen_para_numbers:

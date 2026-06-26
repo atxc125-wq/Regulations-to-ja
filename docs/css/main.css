@@ -19,6 +19,12 @@
   --color-added-bg:    #e8f5e9;
   --color-deleted:     #c62828;
   --color-deleted-bg:  #ffebee;
+  --color-proposal-add:       #c62828;
+  --color-proposal-add-bg:    #ffebee;
+  --color-proposal-modify:    #1565c0;
+  --color-proposal-modify-bg: #e3f2fd;
+  --color-proposal-delete:    #757575;
+  --color-proposal-delete-bg: #f0f0f0;
   --color-untrans:     #9e9e9e;
   --color-en:          #e8f0fe;
   --color-ja:          #e8f5e9;
@@ -219,6 +225,12 @@ button { cursor: pointer; font-family: inherit; }
 .badge-modified    { background: var(--color-modified); color: #fff; }
 .badge-untranslated { background: #e0e0e0; color: #555; }
 .badge.badge-modified { font-size: .65rem; }
+.badge-proposal-added    { background: var(--color-proposal-add); color: #fff; }
+.badge-proposal-modified { background: var(--color-proposal-modify); color: #fff; }
+.badge-proposal-deleted  { background: var(--color-proposal-delete); color: #fff; }
+.badge.badge-proposal-added,
+.badge.badge-proposal-modified,
+.badge.badge-proposal-deleted { font-size: .65rem; }
 
 /* ツリー用の小さいバッジ */
 .tree-btn .badge-modified {
@@ -259,6 +271,9 @@ button { cursor: pointer; font-family: inherit; }
   background: var(--color-modified-bg);
 }
 .para-card--modified .para-card-header { background: #fffde7; }
+.para-card--proposal-added    { border-left: 3px solid var(--color-proposal-add); }
+.para-card--proposal-modified { border-left: 3px solid var(--color-proposal-modify); }
+.para-card--proposal-deleted  { border-left: 3px solid var(--color-proposal-delete); }
 
 /* ページヘッダー・ノイズ段落（折りたたみなし、薄いスタイル） */
 .para-noise {
@@ -401,6 +416,48 @@ button { cursor: pointer; font-family: inherit; }
   text-decoration: line-through;
   text-decoration-color: #bbb;
 }
+
+/* ---------- 改正提案ブロック（未採択） ---------- */
+.proposal-block {
+  margin: 1rem 1rem;
+  padding: .65rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+.proposal-block--added    { background: var(--color-proposal-add-bg);    border-color: var(--color-proposal-add); }
+.proposal-block--modified { background: var(--color-proposal-modify-bg); border-color: var(--color-proposal-modify); }
+.proposal-block--deleted  { background: var(--color-proposal-delete-bg); border-color: var(--color-proposal-delete); }
+.proposal-block--history { margin: .6rem 0 0; opacity: .85; }
+.proposal-block-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .4rem;
+}
+.proposal-badge {
+  display: inline-block;
+  padding: .15rem .5rem;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: 700;
+  color: #fff;
+}
+.proposal-badge--added    { background: var(--color-proposal-add); }
+.proposal-badge--modified { background: var(--color-proposal-modify); }
+.proposal-badge--deleted  { background: var(--color-proposal-delete); }
+.proposal-source { font-size: .76rem; color: var(--color-text-muted); }
+.proposal-text { font-size: .9rem; line-height: 1.6; }
+.proposal-justification {
+  margin-top: .5rem;
+  font-size: .84rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+.proposal-history {
+  margin: 0 1rem 1rem;
+  font-size: .84rem;
+}
+.proposal-history summary { cursor: pointer; color: var(--color-text-muted); }
 .btn-justification {
   background: none;
   border: none;

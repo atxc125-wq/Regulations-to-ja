@@ -43,6 +43,32 @@ def reg_sort_key(reg: str):
     return (2, 0, reg)
 
 
+_TOC_TRAILING_DOTS_RE = None  # 遅延初期化
+
+
+def _is_toc_title_overflow(title: str, text: str) -> bool:
+    """title フィールドが目次のドットリーダー手前で途切れ、続き＋ドット
+    リーダー（＋ページ番号）がそのまま text フィールドに漏れている行を検出する。
+
+    例（R.E.3）: title="Standard annex on the procedure for determining the
+    "H" point and the actual torso angle for"（ドットの直前で切れている）、
+    text="...for seating positions in motor vehicles ....................."。
+
+    text 全体が「本文（コロンを含まない） + 4連続以上のドット + 任意の
+    ページ番号」のみで構成される場合に限り目次行とみなす。コロンを含む場合
+    （証明書フォームの "Signed: ......... Date: ........." 等）は除外する
+    ことで、本物の記入欄を誤って隠さないようにする。
+    """
+    global _TOC_TRAILING_DOTS_RE
+    import re as _re
+    if _TOC_TRAILING_DOTS_RE is None:
+        _TOC_TRAILING_DOTS_RE = _re.compile(r'^(?P<core>.*?)\.{4,}(?:\s*\d{1,3})?\s*$', _re.DOTALL)
+    m = _TOC_TRAILING_DOTS_RE.match(text or "")
+    if not m:
+        return False
+    return ":" not in m.group("core")
+
+
 def find_toc_dup_uids(paragraphs: list[dict]) -> set:
     """目次のドットリーダー行（"Scope .......... 5" 等）を検出する。
 
@@ -52,12 +78,13 @@ def find_toc_dup_uids(paragraphs: list[dict]) -> set:
     持つ本物の対応段落が存在しないため、ここでは重複と判定されず、誤って
     完全非表示にされることはない。
 
-    判定は title フィールドのみで行う（text フィールドには証明書フォームの
-    記入欄（"Signed: ......... Date: ........."）等、目次とは無関係なドット
-    リーダーが含まれることがあり、これを重複判定に使うと OCR でドットが
-    "……"（省略記号）と "...."（ピリオド）に分かれて抽出された同種の記入欄
-    同士が誤って「片方が本物・片方が目次重複」と誤判定され、本文を消してし
-    まう）。
+    判定は基本的に title フィールドのみで行う（text フィールドには証明書
+    フォームの記入欄（"Signed: ......... Date: ........."）等、目次とは無関係
+    なドットリーダーが含まれることがあり、これを単純に重複判定に使うと
+    本物の記入欄を誤って消してしまう）。ただし title が長い目次行の途中で
+    切れてドットリーダー自体が text 側にしか現れないケース（_is_toc_title_
+    overflow 参照）は、text 全体がコロンを含まない「本文＋ドット＋ページ番号」
+    だけで構成されることを確認したうえで例外的に重複とみなす。
     """
     import re as _re
     buckets: dict = {}
@@ -77,7 +104,8 @@ def find_toc_dup_uids(paragraphs: list[dict]) -> set:
         if not has_clean:
             continue
         for g in group:
-            if "......" in (g.get("title") or ""):
+            title = g.get("title") or ""
+            if "......" in title or _is_toc_title_overflow(title, g.get("text") or ""):
                 dup_uids.add(g.get("uid"))
     return dup_uids
 

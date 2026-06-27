@@ -640,8 +640,12 @@ def find_para_refs(text: str, current_annex_id=None) -> list[dict]:
             r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+this\s+Regulation',
             _re.IGNORECASE,
         )
+        # "X, Y, or Z"のようなオックスフォードコンマ付きリストは、YとZの間に
+        # コンマと接続詞が両方現れる（",|and|to|or"を単独でしか許さないと3件目
+        # 以降が繋がらず欠落する）ため、コンマの後に接続詞が続くケースも許容する。
         _PLAIN_REF_RE = _re.compile(
-            r'\bparagraphs?\s+(\d+(?:\.\d+)+\.?)((?:\s*(?:,|and|to|or)\s+\d+(?:\.\d+)+\.?)*)',
+            r'\bparagraphs?\s+(\d+(?:\.\d+)+\.?)'
+            r'((?:(?:\s*,\s*(?:and|or|to)?\s+|\s+(?:and|or|to)\s+)\d+(?:\.\d+)+\.?)*)',
             _re.IGNORECASE,
         )
 

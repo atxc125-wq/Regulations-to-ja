@@ -512,7 +512,9 @@ def _is_valid_sequence(last_tuple: tuple, new_tuple: tuple) -> bool:
 _NOISE_TITLE_RE = re.compile(
     r'^Note by the secretariat\b'
     r'|(?:E/)?ECE/(?:TRANS/WP\.29)?/\S'
-    r'|TRANS/WP\.29/\S',
+    r'|TRANS/WP\.29/\S'
+    r'|^As defined in the Consolidated Resolution on the Construction of Vehicles\b'
+    r'|^The distinguish(?:ing)? numbers? of the Contracting Parties\b',
     re.IGNORECASE,
 )
 

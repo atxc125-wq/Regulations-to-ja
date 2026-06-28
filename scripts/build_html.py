@@ -197,7 +197,15 @@ def _looks_like_noise_bh(title: str) -> bool:
         _NOISE_TITLE_RE_BH = re.compile(
             r'^Note by the secretariat\b'
             r'|(?:E/)?ECE/(?:TRANS/WP\.29)?/\S'
-            r'|TRANS/WP\.29/\S',
+            r'|TRANS/WP\.29/\S'
+            # 多くの規則で繰り返される定型脚注（"As defined in the Consolidated
+            # Resolution on the Construction of Vehicles (R.E.3)..."）。文書参照
+            # 番号の表記がページごとに僅かに異なるため完全一致での重複検出に
+            # 漏れることがあり、内容ベースでも直接検出する。
+            r'|^As defined in the Consolidated Resolution on the Construction of Vehicles\b'
+            # 同様に多くの規則で繰り返される定型脚注（締約国の識別番号一覧への
+            # 参照）。"distinguishing"/"distinguish"の表記ゆれがある。
+            r'|^The distinguish(?:ing)? numbers? of the Contracting Parties\b',
             re.IGNORECASE,
         )
     if _NOISE_TITLE_RE_BH.search(title):

@@ -473,6 +473,12 @@ def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
         if m:
             n = int(m.group(1))
             if n >= 10:
+                # JSON の annex_id が候補番号より小さい場合はより小さい附属書の
+                # 内部見出し（例：「Annex 19 test reports」が附属書2の中にある）
+                # と判断して除外する。
+                json_aid = p.get("annex_id")
+                if json_aid is not None and int(json_aid) < n:
+                    continue
                 annex_10plus.append((n, i))
 
     # Step 3: Annex 1–9 グループを検出（リスタート検出）
@@ -641,7 +647,8 @@ def find_para_refs(text: str, current_annex_id=None) -> list[dict]:
     import re as _re
     if _PLAIN_REF_RE is None:
         _ANNEX_REF_RE = _re.compile(
-            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+Annex\s+(\d+)(?:\s+to\s+this\s+Regulation)?',
+            r'\bparagraphs?\s+([\d.]+?\.?)\s+of\s+(?:Part\s+\w+\s+of\s+)?Annex\s+(\d+)'
+            r'(?:\s+to\s+this\s+Regulation)?',
             _re.IGNORECASE,
         )
         _THIS_REG_RE = _re.compile(

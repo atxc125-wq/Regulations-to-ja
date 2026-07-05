@@ -124,7 +124,8 @@
           data-level="{{ p.level }}"
           {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}
           {% if not p._first_occ %}data-dup="1"{% endif %}
-          {% if p._in_annex %}data-annex="1"{% endif %}>
+          {% if p._in_annex %}data-annex="1"{% endif %}
+          {% if p._in_annex and not p._first_occ_annex %}data-annex-dup="1"{% endif %}>
         <button class="nav-expand-btn" onclick="toggleNavExpand('{{ p.uid }}')" tabindex="-1" aria-label="展開">▶</button>
         <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}', '{{ p._annex_id or '' }}')">
           <span class="tree-num">{{ p.number }}</span>

@@ -987,6 +987,27 @@ def build_regulation_page(regulation: str, version: str) -> None:
         else:
             p["_first_occ"] = False
 
+    # 附属書内ナビの重複排除: 同じ附属書内で同じ number が複数回出現する場合（複数 Part 構成など）、
+    # 附属書単位で最初に出現した段落のみ _first_occ_annex=True とする。
+    seen_annex_numbers: dict = {}
+    for p in paragraphs:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            continue
+        annex_id = p.get("_annex_id")
+        if not p.get("_in_annex") or annex_id is None:
+            p["_first_occ_annex"] = True
+            continue
+        num = p.get("number", "")
+        if not num:
+            p["_first_occ_annex"] = True
+            continue
+        key = (annex_id, num)
+        if key not in seen_annex_numbers:
+            p["_first_occ_annex"] = True
+            seen_annex_numbers[key] = True
+        else:
+            p["_first_occ_annex"] = False
+
     # 本文章番号のギャップ検出: 本文章番号が連続していない場合（例 ch5→ch7）、
     # 中間章の区切りを最初に出現する章の直前段落に _gap_chapters_before として付与する。
     tree_chapter_map: dict[int, dict] = {}

@@ -23,10 +23,16 @@
 
   // ---------- 中ペイン: 段落ナビをクリックでスクロール ----------
 
-  window.selectParagraph = function (uid, annexId) {
+  window.selectParagraph = function (uid, annexId, partIdx) {
     var target = null;
-    // UID重複対策: AnnexIDが指定されていれば data-annex-id+data-uid で絞り込む
-    if (annexId) {
+    // Part指定あり: data-annex-id + data-uid + data-part-idx で絞り込む
+    if (annexId && partIdx !== undefined && partIdx !== '') {
+      target = document.querySelector(
+        '.para-card[data-annex-id="' + annexId + '"][data-uid="' + uid + '"][data-part-idx="' + partIdx + '"]'
+      );
+    }
+    // PartなしだがAnnexIDあり: data-annex-id + data-uid で絞り込む
+    if (!target && annexId) {
       target = document.querySelector(
         '.para-card[data-annex-id="' + annexId + '"][data-uid="' + uid + '"]'
       );
@@ -37,22 +43,37 @@
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    setActiveNavItem(uid);
+    setActiveNavItem(uid, annexId, partIdx);
     closeMobilePane();
   };
 
-  function setActiveNavItem(uid) {
+  function setActiveNavItem(uid, annexId, partIdx) {
+    var hasPartCtx = annexId && partIdx !== undefined && partIdx !== '';
     document.querySelectorAll('.para-nav-item').forEach(function (el) {
-      el.classList.toggle('active', el.dataset.uid === uid);
+      var match = el.dataset.uid === uid;
+      // Part情報があれば annexId+partIdx でも一致確認
+      if (match && hasPartCtx) {
+        match = el.dataset.annexId === String(annexId) && el.dataset.partIdx === String(partIdx);
+      }
+      el.classList.toggle('active', match);
     });
-    scrollMiddlePaneTo(uid);
-    updateMobileParaRow(uid);
+    scrollMiddlePaneTo(uid, annexId, partIdx);
+    updateMobileParaRow(uid, annexId, partIdx);
   }
 
-  function scrollMiddlePaneTo(uid) {
+  function scrollMiddlePaneTo(uid, annexId, partIdx) {
     var candidates = document.querySelectorAll('.para-nav-item[data-uid="' + uid + '"]');
     var item = null;
-    candidates.forEach(function (el) { if (!item && el.style.display !== 'none') item = el; });
+    // Part情報があれば完全一致優先、なければ最初の可視項目
+    if (annexId && partIdx !== undefined && partIdx !== '') {
+      candidates.forEach(function (el) {
+        if (!item && el.style.display !== 'none' &&
+            el.dataset.annexId === String(annexId) && el.dataset.partIdx === String(partIdx)) {
+          item = el;
+        }
+      });
+    }
+    if (!item) candidates.forEach(function (el) { if (!item && el.style.display !== 'none') item = el; });
     if (!item) item = candidates[0];
     var pane = document.getElementById('pane-paragraphs');
     if (!item || !pane) return;
@@ -181,8 +202,8 @@
     var placeholder = document.getElementById('para-nav-placeholder');
     if (placeholder) placeholder.style.display = anyVisible ? 'none' : '';
 
-    // 中ペイン区切りの表示を同期
-    document.querySelectorAll('.para-nav-divider').forEach(function (div) {
+    // 中ペイン区切り・Part 区切りの表示を同期
+    document.querySelectorAll('.para-nav-divider, .para-nav-part-divider').forEach(function (div) {
       div.style.display = (div.dataset.dividerAnnex === String(annexId)) ? '' : 'none';
     });
 
@@ -367,12 +388,20 @@
     el.textContent = num + (title ? ' ' + title : '');
   }
 
-  function updateMobileParaRow(uid) {
+  function updateMobileParaRow(uid, annexId, partIdx) {
     var el = document.getElementById('mobile-para-text');
     if (!el || !uid) return;
     var candidates = document.querySelectorAll('.para-nav-item[data-uid="' + uid + '"]');
     var item = null;
-    candidates.forEach(function (c) { if (!item && c.style.display !== 'none') item = c; });
+    if (annexId && partIdx !== undefined && partIdx !== '') {
+      candidates.forEach(function (c) {
+        if (!item && c.style.display !== 'none' &&
+            c.dataset.annexId === String(annexId) && c.dataset.partIdx === String(partIdx)) {
+          item = c;
+        }
+      });
+    }
+    if (!item) candidates.forEach(function (c) { if (!item && c.style.display !== 'none') item = c; });
     if (!item) item = candidates[0];
     if (!item) return;
     var numEl  = item.querySelector('.tree-num');

@@ -560,6 +560,63 @@ def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
             p["_in_annex"] = True
 
 
+def mark_annex_parts(paragraphs: list[dict]) -> None:
+    """附属書内の Part 境界を検出し _part_idx / _part_label / _part_first / _has_multiple_parts を付与する。
+
+    同一附属書内で level=1 かつ空でない number が再出現した時点を新 Part の開始と判定する。
+    例: R13 Annex 7 = Part A (§1–2.6) + Part B (§1–2.2) + Part C (§1–3)
+    非附属書段落はデフォルト値（_part_idx=0, _part_label='', _has_multiple_parts=False）を付与。
+    mark_annex_ids() の後に呼ぶこと。
+    """
+    import string as _string
+    from collections import defaultdict
+
+    annex_groups: dict = defaultdict(list)
+    for p in paragraphs:
+        if p.get("_in_annex") and p.get("_annex_id") is not None:
+            annex_groups[p["_annex_id"]].append(p)
+
+    for _aid, group in annex_groups.items():
+        part_idx = 0
+        seen_level1: set = set()
+
+        for p in group:
+            level = p.get("level", 1)
+            num = p.get("number", "")
+            if level == 1 and num:
+                if num in seen_level1:
+                    part_idx += 1
+                    seen_level1 = set()
+                seen_level1.add(num)
+            p["_part_idx"] = part_idx
+            p["_part_first"] = False
+
+        # 各 Part の最初の可視段落に _part_first=True を付与
+        max_part = part_idx
+        seen_parts: set = set()
+        for p in group:
+            if p.get("_nav_hidden") or p.get("type") == "image":
+                continue
+            pidx = p.get("_part_idx", 0)
+            if pidx not in seen_parts:
+                p["_part_first"] = True
+                seen_parts.add(pidx)
+
+        has_multi = max_part > 0
+        for p in group:
+            p["_has_multiple_parts"] = has_multi
+            pidx = p.get("_part_idx", 0)
+            p["_part_label"] = _string.ascii_uppercase[pidx] if pidx < 26 else str(pidx + 1)
+
+    # 非附属書段落のデフォルト
+    for p in paragraphs:
+        if "_part_idx" not in p:
+            p["_part_idx"] = 0
+            p["_part_label"] = ""
+            p["_part_first"] = False
+            p["_has_multiple_parts"] = False
+
+
 def build_tree(paragraphs: list[dict]) -> list[dict]:
     """段落リストから階層ツリーを構築する（左ペイン・中ペイン用）。
     type=="image" およびノイズ段落はナビツリーに含めない。
@@ -924,6 +981,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
     last_chapter = max(chapter_numbers_int) if chapter_numbers_int else 12
     mark_annex_paragraphs(paragraphs)
     mark_annex_ids(paragraphs, last_chapter=last_chapter)
+    mark_annex_parts(paragraphs)
 
     # 参照段落チップ: "paragraph N.N..." 参照を検出し _refs リストを付与する。
     # _nav_hidden・_annex_id が確定した後に実行すること。
@@ -987,8 +1045,8 @@ def build_regulation_page(regulation: str, version: str) -> None:
         else:
             p["_first_occ"] = False
 
-    # 附属書内ナビの重複排除: 同じ附属書内で同じ number が複数回出現する場合（複数 Part 構成など）、
-    # 附属書単位で最初に出現した段落のみ _first_occ_annex=True とする。
+    # 附属書内ナビの重複排除: 同じ (annex_id, part_idx, number) 内で最初に出現した
+    # 段落のみを _first_occ_annex=True とする（各 Part 内で番号が重複するケースに対応）。
     seen_annex_numbers: dict = {}
     for p in paragraphs:
         if p.get("type") == "image" or p.get("_nav_hidden"):
@@ -1001,7 +1059,8 @@ def build_regulation_page(regulation: str, version: str) -> None:
         if not num:
             p["_first_occ_annex"] = True
             continue
-        key = (annex_id, num)
+        part_idx = p.get("_part_idx", 0)
+        key = (annex_id, part_idx, num)
         if key not in seen_annex_numbers:
             p["_first_occ_annex"] = True
             seen_annex_numbers[key] = True

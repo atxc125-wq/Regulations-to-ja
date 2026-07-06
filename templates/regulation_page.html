@@ -117,17 +117,21 @@
         </div>
       </li>
       {% endif %}
+      {% if p._in_annex and p._has_multiple_parts and p._part_first %}
+      <li class="para-nav-part-divider" data-divider-annex="{{ p._annex_id }}" data-part-idx="{{ p._part_idx }}" style="display:none" aria-hidden="true">Part {{ p._part_label }}</li>
+      {% endif %}
       <li class="tree-item para-nav-item {% if p.modified %}para-nav-modified{% endif %}"
           data-uid="{{ p.uid }}"
           data-parent="{{ p.parent or '' }}"
           data-number="{{ p.number }}"
           data-level="{{ p.level }}"
           {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}
+          {% if p._in_annex %}data-part-idx="{{ p._part_idx }}"{% endif %}
           {% if not p._first_occ %}data-dup="1"{% endif %}
           {% if p._in_annex %}data-annex="1"{% endif %}
           {% if p._in_annex and not p._first_occ_annex %}data-annex-dup="1"{% endif %}>
         <button class="nav-expand-btn" onclick="toggleNavExpand('{{ p.uid }}')" tabindex="-1" aria-label="展開">▶</button>
-        <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}', '{{ p._annex_id or '' }}')">
+        <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}', '{{ p._annex_id or '' }}', '{{ p._part_idx if p._in_annex else '' }}')">
           <span class="tree-num">{{ p.number }}</span>
           <span class="tree-title-block">
             {% if p.title_ja %}
@@ -232,7 +236,8 @@
                data-uid="{{ p.uid }}"
                data-number="{{ p.number }}"
                data-parent="{{ p.parent or '' }}"
-               {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}>
+               {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}
+               {% if p._in_annex %}data-part-idx="{{ p._part_idx }}"{% endif %}>
 
         <div class="para-card-header" onclick="toggleParagraph('{{ p.uid }}')">
           <div class="para-meta">

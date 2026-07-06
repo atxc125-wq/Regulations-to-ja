@@ -597,6 +597,20 @@ button { cursor: pointer; font-family: inherit; }
   overflow: hidden;
 }
 
+/* Part 区切り（複数 Part 構成の附属書内） */
+.para-nav-part-divider {
+  list-style: none;
+  padding: .3rem 1rem .2rem;
+  border-top: 1px dashed var(--color-border);
+  margin-top: .2rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
 /* 展開ボタン */
 .nav-expand-btn {
   visibility: hidden;

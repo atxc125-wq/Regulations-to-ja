@@ -133,7 +133,7 @@
           {% if p._part_header %}data-part-header="1"{% endif %}>
         <button class="nav-expand-btn" onclick="toggleNavExpand('{{ p.uid }}')" tabindex="-1" aria-label="展開">▶</button>
         <button class="tree-btn" onclick="selectParagraph('{{ p.uid }}', '{{ p._annex_id or '' }}', '{{ p._part_idx if p._in_annex else '' }}')">
-          <span class="tree-num">{{ p.number }}{% if p._part_header %}.{% endif %}</span>
+          <span class="tree-num">{{ p._display_number }}{% if p._part_header %}.{% endif %}</span>
           <span class="tree-title-block">
             {% if p.title_ja %}
               <span class="tree-title-ja">{{ p.title_ja }}</span>
@@ -240,9 +240,9 @@
                {% if p._annex_id %}data-annex-id="{{ p._annex_id }}"{% endif %}
                {% if p._in_annex %}data-part-idx="{{ p._part_idx }}"{% endif %}>
 
-        <div class="para-card-header" onclick="toggleParagraph('{{ p.uid }}')">
+        <div class="para-card-header" onclick="toggleParagraph(this.closest('.para-card'))">
           <div class="para-meta">
-            <span class="para-number">{{ p.number }}</span>
+            <span class="para-number">{{ p._display_number }}</span>
             <span class="tree-title-block para-title-block">
               {% if p.summary_ja_short %}
                 <span class="tree-title-ja">{{ p.summary_ja_short }}</span>

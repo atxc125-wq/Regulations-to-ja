@@ -7,9 +7,13 @@
 
   // ---------- アコーディオン ----------
 
-  window.toggleParagraph = function (uid) {
-    var card = document.getElementById('para-' + uid);
-    var body = document.getElementById('body-' + uid);
+  window.toggleParagraph = function (cardEl) {
+    // cardEl は .para-card 要素そのもの（onclick="toggleParagraph(this.closest('.para-card'))" で渡す）。
+    // 後方互換のため文字列 uid が渡された場合は getElementById にフォールバック。
+    var card = (typeof cardEl === 'string')
+      ? document.getElementById('para-' + cardEl)
+      : cardEl;
+    var body = card ? card.querySelector('.para-card-body') : null;
     if (!card || !body) return;
 
     var isExpanded = !body.hidden;

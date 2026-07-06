@@ -632,9 +632,18 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
         for p in group:
             p["_has_multiple_parts"] = has_multi
             pidx = p.get("_part_idx", 0)
-            p["_part_label"] = _string.ascii_uppercase[pidx] if pidx < 26 else str(pidx + 1)
+            label = _string.ascii_uppercase[pidx] if pidx < 26 else str(pidx + 1)
+            p["_part_label"] = label
+            # _display_number: アルファベット Part ヘッダーのある多 Part 附属書では
+            # 「A-1.2」のように Part ラベルを番号の前に付加する。
+            # Part ヘッダー自体（A./B./C.）は変更なし。
+            num = (p.get("number") or "")
+            if has_alpha_parts and has_multi and num and not p.get("_part_header"):
+                p["_display_number"] = f"{label}-{num}"
+            else:
+                p["_display_number"] = num
 
-    # 非附属書段落のデフォルト
+    # 非附属書段落 + _display_number 未設定段落のデフォルト
     for p in paragraphs:
         if "_part_idx" not in p:
             p["_part_idx"] = 0
@@ -642,6 +651,8 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
             p["_part_first"] = False
             p["_part_header"] = False
             p["_has_multiple_parts"] = False
+        if "_display_number" not in p:
+            p["_display_number"] = (p.get("number") or "")
 
 
 def build_tree(paragraphs: list[dict]) -> list[dict]:

@@ -15286,6 +15286,23 @@
       "title_ja": "附属書7 エネルギー源およびエネルギー貯蔵装置に関する規定"
     },
     {
+      "uid": "R13-f3dd9713",
+      "number": "A",
+      "title": "Compressed-Air braking systems",
+      "text": "Compressed-Air braking systems",
+      "level": 1,
+      "parent": null,
+      "type": "paragraph",
+      "status": "done",
+      "translation": "A. 圧縮空気式制動装置",
+      "summary_ja": "附属書7 パートA: 圧縮空気式制動装置に関する規定。",
+      "modified": false,
+      "justification": null,
+      "prev_uid": "R13-57b4c3fc",
+      "annex_id": 7,
+      "title_ja": "圧縮空気式制動装置"
+    },
+    {
       "uid": "R13-14a8b3e5",
       "number": "1",
       "title": "Capacity of energy storage devices (Energy reservoirs)",
@@ -15949,6 +15966,23 @@
       "title_ja": "トレーラ牽引許可動力車の要件"
     },
     {
+      "uid": "R13-fd4cb55c",
+      "number": "B",
+      "title": "Vacuum braking systems",
+      "text": "Vacuum braking systems",
+      "level": 1,
+      "parent": null,
+      "type": "paragraph",
+      "status": "done",
+      "translation": "B. 真空式制動装置",
+      "summary_ja": "附属書7 パートB: 真空式制動装置に関する規定。",
+      "modified": false,
+      "justification": null,
+      "prev_uid": null,
+      "annex_id": 7,
+      "title_ja": "真空式制動装置"
+    },
+    {
       "uid": "R13-88455bb8",
       "number": "1",
       "title": "Capacity of energy storage devices (energy reservoirs)",
@@ -16406,6 +16440,23 @@
       "prev_uid": null,
       "annex_id": 7,
       "title_ja": "真空式トレーラ連結"
+    },
+    {
+      "uid": "R13-998681a6",
+      "number": "C",
+      "title": "Hydraulic braking systems with stored energy",
+      "text": "Hydraulic braking systems with stored energy",
+      "level": 1,
+      "parent": null,
+      "type": "paragraph",
+      "status": "done",
+      "translation": "C. 蓄圧式液圧制動装置",
+      "summary_ja": "附属書7 パートC: 蓄圧式液圧制動装置に関する規定。",
+      "modified": false,
+      "justification": null,
+      "prev_uid": null,
+      "annex_id": 7,
+      "title_ja": "蓄圧式液圧制動装置"
     },
     {
       "uid": "R13-b105b0a3",

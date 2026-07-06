@@ -597,7 +597,7 @@ button { cursor: pointer; font-family: inherit; }
   overflow: hidden;
 }
 
-/* Part 区切り（複数 Part 構成の附属書内） */
+/* Part 区切り（複数 Part 構成の附属書内、アルファベットヘッダーなしの場合） */
 .para-nav-part-divider {
   list-style: none;
   padding: .3rem 1rem .2rem;
@@ -609,6 +609,20 @@ button { cursor: pointer; font-family: inherit; }
   color: var(--color-text-muted);
   pointer-events: none;
   user-select: none;
+}
+
+/* Part ヘッダー（A./B./C. 段落がある場合のクリッカブルな Part 見出し） */
+.para-nav-part-header {
+  border-top: 1px solid var(--color-border);
+  margin-top: .3rem;
+}
+.para-nav-part-header .tree-btn {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.para-nav-part-header .tree-num {
+  font-weight: 700;
+  min-width: 2rem;
 }
 
 /* 展開ボタン */

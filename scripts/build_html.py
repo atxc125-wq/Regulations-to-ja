@@ -561,11 +561,16 @@ def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
 
 
 def mark_annex_parts(paragraphs: list[dict]) -> None:
-    """附属書内の Part 境界を検出し _part_idx / _part_label / _part_first / _has_multiple_parts を付与する。
+    """附属書内の Part 境界を検出し各種フラグを付与する。
 
-    同一附属書内で level=1 かつ空でない number が再出現した時点を新 Part の開始と判定する。
-    例: R13 Annex 7 = Part A (§1–2.6) + Part B (§1–2.2) + Part C (§1–3)
-    非附属書段落はデフォルト値（_part_idx=0, _part_label='', _has_multiple_parts=False）を付与。
+    2通りの検出モード:
+    (a) アルファベット番号モード: 附属書内に level=1 で number が単一大文字アルファベット
+        (A, B, C …) の段落が存在する場合、それを Part ヘッダーとみなす。
+        _part_header=True を付与し、part_idx = ord(num) - ord('A') とする。
+    (b) 番号再出現モード: アルファベットヘッダーがない場合、同一附属書内で level=1 の
+        number が再出現した時点を新 Part の開始と判定する（従来ロジック）。
+
+    付与フィールド: _part_idx / _part_label / _part_first / _part_header / _has_multiple_parts
     mark_annex_ids() の後に呼ぶこと。
     """
     import string as _string
@@ -577,26 +582,47 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
             annex_groups[p["_annex_id"]].append(p)
 
     for _aid, group in annex_groups.items():
+        # アルファベット Part ヘッダーが存在するか判定
+        has_alpha_parts = any(
+            p.get("level") == 1
+            and len(p.get("number") or "") == 1
+            and (p.get("number") or "").isalpha()
+            and (p.get("number") or "").upper() in "ABCDEFGHIJ"
+            for p in group
+        )
+
         part_idx = 0
         seen_level1: set = set()
 
         for p in group:
             level = p.get("level", 1)
-            num = p.get("number", "")
-            if level == 1 and num:
-                if num in seen_level1:
-                    part_idx += 1
-                    seen_level1 = set()
-                seen_level1.add(num)
+            num = (p.get("number") or "")
+            p["_part_header"] = False
+
+            if has_alpha_parts:
+                if level == 1 and len(num) == 1 and num.isalpha() and num.upper() in "ABCDEFGHIJ":
+                    part_idx = ord(num.upper()) - ord("A")
+                    p["_part_header"] = True
+            else:
+                if level == 1 and num:
+                    if num in seen_level1:
+                        part_idx += 1
+                        seen_level1 = set()
+                    seen_level1.add(num)
+
             p["_part_idx"] = part_idx
             p["_part_first"] = False
 
         # 各 Part の最初の可視段落に _part_first=True を付与
+        # アルファベット Part モードの場合は附属書タイトル行（number=''）を除外し、
+        # Part ヘッダー段落 (A./B./C.) が _part_first を取得するようにする。
         max_part = part_idx
         seen_parts: set = set()
         for p in group:
             if p.get("_nav_hidden") or p.get("type") == "image":
                 continue
+            if has_alpha_parts and p.get("level") == 1 and not (p.get("number") or ""):
+                continue  # 附属書タイトルはPartに属させない
             pidx = p.get("_part_idx", 0)
             if pidx not in seen_parts:
                 p["_part_first"] = True
@@ -614,6 +640,7 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
             p["_part_idx"] = 0
             p["_part_label"] = ""
             p["_part_first"] = False
+            p["_part_header"] = False
             p["_has_multiple_parts"] = False
 
 

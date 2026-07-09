@@ -798,6 +798,22 @@ def find_para_refs(text: str, current_annex_id=None) -> list[dict]:
     return result
 
 
+def _format_inline_list_items(html: str) -> str:
+    """(a)(b)(c)... 形式のインライン列挙に改行タグを挿入する。
+
+    UN規則に頻出する "(a) 項目A、(b) 項目B、(c) 項目C" 形式を
+    読みやすいよう各項目の手前に <br> を挿入する。
+    (a) が存在し、かつ (b) 以降も続く場合のみ適用する。
+    """
+    import re as _re
+    if not html or '(a)' not in html:
+        return html
+    if not _re.search(r'\([b-z]\)', html):
+        return html
+    # (b)〜(z) の前の空白を <br> に置換
+    return _re.sub(r' \(([b-z])\)', r'<br>(\1)', html)
+
+
 def annotate_glossary(text: str, glossary_terms: dict[str, dict]) -> str:
     """テキスト内の用語を右→左挿入でHTMLスパンに置換する（大文字小文字無視、最長優先）。"""
     if not text:
@@ -1010,10 +1026,14 @@ def build_regulation_page(regulation: str, version: str) -> None:
             if len(title) < 50 and _re2.search(r'\s{2,}\S+\s{2,}\d\s*$', title):
                 p["_nav_hidden"] = True
                 p["_table_cell"] = True
-        p["text_annotated"] = annotate_glossary(p.get("text", "") or "", glossary_terms)
+        p["text_annotated"] = _format_inline_list_items(
+            annotate_glossary(p.get("text", "") or "", glossary_terms)
+        )
         if p.get("translation"):
             # 日本語訳は日本語用語アノテーションのみ（英語アノテーション HTML に再適用しない）
-            p["translation_annotated"] = annotate_glossary_ja(p["translation"], glossary_ja_terms)
+            p["translation_annotated"] = _format_inline_list_items(
+                annotate_glossary_ja(p["translation"], glossary_ja_terms)
+            )
         else:
             p["translation_annotated"] = None
         # 要約の1文目を抽出（カードヘッダーの短い日本語表示用）

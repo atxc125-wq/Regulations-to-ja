@@ -439,24 +439,31 @@ def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
     import re as _re
 
     # Step 1: main_body_end（最後の実質的な最終章段落）を特定
+    # last_chapter から降順に試し、目次エントリのみで本文が存在しない場合は
+    # ひとつ手前の章で再試行する（例: R155 の "13. Annexes" TOC エントリ問題）。
     main_body_end = -1
-    for i, p in enumerate(paragraphs):
-        if p.get("type") == "image":
-            continue
-        num = p.get("number", "")
-        try:
-            top = int(num.split('.')[0])
-        except (ValueError, IndexError):
-            continue
-        if top != last_chapter:
-            continue
-        text = p.get("text", "") or ""
-        title = p.get("title", "") or ""
-        if "......" in text or "......" in title:
-            continue
-        if text.strip().startswith("E/ECE/") or title.strip().startswith("E/ECE/"):
-            continue
-        main_body_end = i
+    for try_chapter in range(last_chapter, 0, -1):
+        for i, p in enumerate(paragraphs):
+            if p.get("type") == "image":
+                continue
+            num = p.get("number", "")
+            try:
+                top = int(num.split('.')[0])
+            except (ValueError, IndexError):
+                continue
+            if top != try_chapter:
+                continue
+            text = p.get("text", "") or ""
+            title = p.get("title", "") or ""
+            if "......" in text or "......" in title:
+                continue
+            if text.strip().startswith("E/ECE/") or title.strip().startswith("E/ECE/"):
+                continue
+            if _is_toc_like_entry(p):
+                continue
+            main_body_end = i
+        if main_body_end >= 0:
+            break
 
     if main_body_end < 0:
         return

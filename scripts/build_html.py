@@ -810,8 +810,8 @@ def _format_inline_list_items(html: str) -> str:
         return html
     if not _re.search(r'\([b-z]\)', html):
         return html
-    # (b)〜(z) の前の空白を <br> に置換
-    return _re.sub(r' \(([b-z])\)', r'<br>(\1)', html)
+    # (b)〜(z) の前の区切り文字（スペース・読点・句点）を保持して <br> を挿入
+    return _re.sub(r'([ 、。])\(([b-z])\)', r'\1<br>(\2)', html)
 
 
 def annotate_glossary(text: str, glossary_terms: dict[str, dict]) -> str:

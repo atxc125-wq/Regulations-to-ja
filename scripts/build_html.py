@@ -678,7 +678,7 @@ def build_tree(paragraphs: list[dict]) -> list[dict]:
 
     for p in paragraphs:
         # 画像ブロック・ノイズはツリーナビに表示しない
-        if p.get("type") == "image" or p.get("_nav_hidden"):
+        if p.get("type") == "image" or p.get("_nav_hidden") or p.get("_nav_only_hidden"):
             continue
         num = p["number"]
         is_integer = bool(_re.fullmatch(r"\d+", num))
@@ -1097,7 +1097,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
     # 文書順で最初に出現した可視段落のみ _first_occ=True とする
     seen_para_numbers: set[str] = set()
     for p in paragraphs:
-        if p.get("type") == "image" or p.get("_nav_hidden"):
+        if p.get("type") == "image" or p.get("_nav_hidden") or p.get("_nav_only_hidden"):
             continue
         if p.get("_is_proposal_only"):
             # 改正提案の仮想段落は重複排除の対象外（常に表示し、既存段落の番号も奪わない）

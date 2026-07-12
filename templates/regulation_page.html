@@ -90,7 +90,7 @@
       <li class="para-nav-placeholder" id="para-nav-placeholder">← 章・附属書を選択してください</li>
       {% set ns = namespace(last_annex_id=none) %}
       {% for p in paragraphs %}
-      {% if not p._nav_hidden and p.type != 'image' %}
+      {% if not p._nav_hidden and not p._nav_only_hidden and p.type != 'image' %}
       {% if p._in_annex and p._annex_id and p._annex_id != ns.last_annex_id %}
       {% set ann_list = annex_tree | selectattr('number', 'equalto', p._annex_id) | list %}
       {% set ann = ann_list[0] if ann_list else none %}
@@ -232,7 +232,7 @@
 
       {% else %}
       {# ---- テキスト段落ブロック ---- #}
-      <article class="para-card {% if p.modified %}para-card--modified{% endif %} {% if p._proposals %}para-card--proposal-{{ p._proposals[0].type | lower }}{% endif %}"
+      <article class="para-card {% if p.modified %}para-card--modified{% endif %} {% if p._proposals %}para-card--proposal-{{ p._proposals[0].type | lower }}{% endif %}{% if p._nav_only_hidden %} para-card--nav-excl{% endif %}"
                id="para-{{ p.uid }}"
                data-uid="{{ p.uid }}"
                data-number="{{ p.number }}"

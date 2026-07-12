@@ -159,8 +159,8 @@
       updateMobileChapterRow(chapterNumber, title);
     }
 
-    var firstVisible = document.querySelector('.para-card[data-number="' + chapterNumber + '"]')
-                    || document.querySelector('.para-card[data-parent="' + chapterNumber + '"]');
+    var firstVisible = document.querySelector('.para-card:not(.para-card--nav-excl)[data-number="' + chapterNumber + '"]')
+                    || document.querySelector('.para-card:not(.para-card--nav-excl)[data-parent="' + chapterNumber + '"]');
     if (firstVisible) {
       firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

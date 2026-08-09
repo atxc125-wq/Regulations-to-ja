@@ -173,7 +173,12 @@ def is_nav_noise(
         return True
     if "......" in title or "......" in text:
         if toc_dup_uids is not None:
-            return p.get("uid") in toc_dup_uids
+            if p.get("uid") in toc_dup_uids:
+                return True
+            # title がドット前で途切れ text 側にドット＋ページ番号が来るケース
+            if "......" not in title and _is_toc_title_overflow(title, text):
+                return True
+            return False
         return True
     if _re.fullmatch(r"\d{3,}", number):
         if pseudo_num_dup_uids is not None:

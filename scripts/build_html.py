@@ -572,18 +572,175 @@ def mark_annex_ids(paragraphs: list[dict], last_chapter: int = 12) -> None:
             p["_in_annex"] = True
 
 
+_PAGE_HDR_RE = None  # 遅延初期化
+
+
+def page_running_header_kind(p: dict) -> int | None:
+    """PDFのページ走りヘッダー（各ページ上端の "Annex 13" / "Annex 13 - Appendix 2"）
+    を判定する。
+
+    Returns:
+        None … ページ走りヘッダーではない
+        0    … 附属書本体のページヘッダー（"Annex 13"）
+        N>0  … 追補 N のページヘッダー（"Annex 13 - Appendix N"）
+
+    番号欄にページ番号（3桁以上の整数）が誤って入っていることを条件に加えることで、
+    本物の見出し（"Annex 13 - Appendix 1" を number="" で持つ附属書タイトル行等）を
+    誤検出しないようにする。
+    """
+    global _PAGE_HDR_RE
+    import re as _re
+    if _PAGE_HDR_RE is None:
+        _PAGE_HDR_RE = _re.compile(
+            r'^Annex\s+\d+\s*(?:[-–—]\s*Appendix\s+(\d+)\s*)?$', _re.IGNORECASE)
+    if p.get("type") == "image":
+        return None
+    if not _re.fullmatch(r"\d{3,}", (p.get("number") or "").strip()):
+        return None
+    m = _PAGE_HDR_RE.match((p.get("title") or "").strip())
+    if not m:
+        return None
+    return int(m.group(1)) if m.group(1) else 0
+
+
+def _strip_repeated_header(body: str, header: str) -> str:
+    """本文先頭で繰り返されているページヘッダー文字列を取り除く。
+
+    例: "Annex 13 - Appendix 1 Annex 13 - Appendix 1 Symbols and definitions"
+        → "Symbols and definitions"
+    """
+    import re as _re
+    if not body or not header:
+        return body
+    out = body.strip()
+    pat = _re.compile(r'^' + _re.escape(header.strip()) + r'\s*[-–—:：]?\s*', _re.IGNORECASE)
+    while True:
+        new = pat.sub('', out, count=1)
+        if new == out:
+            break
+        out = new.strip()
+    return out
+
+
+def mark_annex_page_noise(paragraphs: list[dict]) -> None:
+    """附属書内のページ走りヘッダーと脚注ブロックを左右ナビから外す。
+
+    いずれも `_nav_only_hidden` を用いるため、本文（右ペイン）には残り内容は
+    失われない。ナビ階層とPart境界判定だけをきれいにする。
+
+    (1) ページ走りヘッダー: 本文が見出しの複製だけのものは既存の
+        find_pseudo_number_dup_uids() が `_nav_hidden` にするが、次ページへ
+        続く本文が結合してしまったもの（"Annex 13 be stopped and an energy …"）
+        は重複と判定されず、ページ番号を章番号としてナビに現れてしまう。
+    (2) 脚注ブロック: ページ下端の脚注が level=1 の連番段落として抽出され、
+        本文の節見出しに混ざって順序を乱す。ページ走りヘッダーの直前（＝ページ
+        末尾）で終わる連続ランであり、かつ先頭の番号が節番号の昇順を継がない
+        ものだけを脚注と判定する。実在の節見出し（番号が昇順を継ぐもの）や
+        記入欄（ドットリーダー・末尾コロン）は対象外とする。
+
+    mark_annex_ids() の後、mark_annex_parts() の前に呼ぶこと。
+    """
+    import re as _re
+
+    def _footnote_candidate(p: dict) -> bool:
+        if p.get("type") == "image" or p.get("_nav_hidden"):
+            return False
+        if p.get("level") != 1 or p.get("_annex_id") is None:
+            return False
+        if not _re.fullmatch(r"\d{1,2}", (p.get("number") or "").strip()):
+            return False
+        title = (p.get("title") or "").strip()
+        text = p.get("text") or ""
+        if len(title) < 60:
+            return False          # 実在の節見出しは短い名詞句
+        if "......" in title or "......" in text:
+            return False          # 通信書式の記入欄
+        if title.endswith(":") or title.endswith("："):
+            return False          # 記入欄ラベル
+        return True
+
+    def _has_immediate_child(idx: int) -> bool:
+        num = (paragraphs[idx].get("number") or "").strip()
+        for j in range(idx + 1, min(idx + 4, len(paragraphs))):
+            q = paragraphs[j]
+            if q.get("type") == "image":
+                continue
+            if (q.get("parent") or "").strip() == num:
+                return True
+            if q.get("level") == 1:
+                return False
+        return False
+
+    # (1) ページ走りヘッダー（本文が結合しているもの）
+    first_appendix_hdr: dict = {}   # (annex_id, appendix_no) → 最初の出現段落
+    for p in paragraphs:
+        kind = page_running_header_kind(p)
+        if kind is None:
+            continue
+        key = (p.get("_annex_id"), kind)
+        if kind > 0 and key not in first_appendix_hdr:
+            # 追補の開始見出しは Part ヘッダーとして活かすので隠さない
+            first_appendix_hdr[key] = p
+            continue
+        if not p.get("_nav_hidden"):
+            p["_nav_only_hidden"] = True
+
+    # (2) 脚注ラン
+    n = len(paragraphs)
+    last_section: dict = {}   # annex_id → 直近の実節番号
+    i = 0
+    while i < n:
+        p = paragraphs[i]
+        aid = p.get("_annex_id")
+        if not _footnote_candidate(p) or _has_immediate_child(i):
+            # 実在の level=1 節見出しなら昇順追跡を更新する
+            if (p.get("type") != "image" and p.get("level") == 1
+                    and aid is not None and not p.get("_nav_hidden")
+                    and _re.fullmatch(r"\d{1,2}", (p.get("number") or "").strip())):
+                last_section[aid] = int(p["number"])
+            i += 1
+            continue
+        # 連続する脚注候補のランを取る
+        j = i
+        while (j + 1 < n and _footnote_candidate(paragraphs[j + 1])
+               and paragraphs[j + 1].get("_annex_id") == aid
+               and not _has_immediate_child(j + 1)):
+            j += 1
+        # ランの直後がページ走りヘッダー、または附属書の終端か
+        k = j + 1
+        while k < n and paragraphs[k].get("type") == "image":
+            k += 1
+        ends_page = (k >= n
+                     or page_running_header_kind(paragraphs[k]) is not None
+                     or paragraphs[k].get("_annex_id") != aid)
+        # 先頭の番号が節番号の昇順を継ぐなら実在の節見出しとみなす
+        continues_seq = int(paragraphs[i]["number"]) == last_section.get(aid, 0) + 1
+        if ends_page and not continues_seq:
+            for m in range(i, j + 1):
+                if not paragraphs[m].get("_nav_hidden"):
+                    paragraphs[m]["_nav_only_hidden"] = True
+        else:
+            last_section[aid] = int(paragraphs[j]["number"])
+        i = j + 1
+
+
 def mark_annex_parts(paragraphs: list[dict]) -> None:
     """附属書内の Part 境界を検出し各種フラグを付与する。
 
-    2通りの検出モード:
+    3通りの検出モード:
     (a) アルファベット番号モード: 附属書内に level=1 で number が単一大文字アルファベット
         (A, B, C …) の段落が存在する場合、それを Part ヘッダーとみなす。
         _part_header=True を付与し、part_idx = ord(num) - ord('A') とする。
-    (b) 番号再出現モード: アルファベットヘッダーがない場合、同一附属書内で level=1 の
+    (b) 追補（Appendix）モード: ページ走りヘッダー "Annex N - Appendix M" が存在する
+        場合、その最初の出現を追補 M の開始とみなす。part_idx = M（本体は 0）。
+        番号再出現ヒューリスティックは脚注やページヘッダーに撹乱されやすいため、
+        明示的な追補見出しがあるときはこちらを優先する。
+    (c) 番号再出現モード: 上記いずれもない場合、同一附属書内で level=1 の
         number が再出現した時点を新 Part の開始と判定する（従来ロジック）。
 
-    付与フィールド: _part_idx / _part_label / _part_first / _part_header / _has_multiple_parts
-    mark_annex_ids() の後に呼ぶこと。
+    付与フィールド: _part_idx / _part_label / _part_prefix / _part_first /
+                    _part_header / _has_multiple_parts
+    mark_annex_ids() ・ mark_annex_page_noise() の後に呼ぶこと。
     """
     import string as _string
     from collections import defaultdict
@@ -602,8 +759,18 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
             and (p.get("number") or "").upper() in "ABCDEFGHIJ"
             for p in group
         )
+        # 追補ヘッダー（"Annex N - Appendix M"）の最初の出現を集める
+        appendix_head: dict = {}   # appendix_no → 段落
+        if not has_alpha_parts:
+            for p in group:
+                kind = page_running_header_kind(p)
+                if kind and kind not in appendix_head:
+                    appendix_head[kind] = p
+        has_appendix_parts = bool(appendix_head)
+        appendix_head_ids = {id(p) for p in appendix_head.values()}
 
         part_idx = 0
+        max_part = 0
         seen_level1: set = set()
 
         for p in group:
@@ -615,6 +782,10 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
                 if level == 1 and len(num) == 1 and num.isalpha() and num.upper() in "ABCDEFGHIJ":
                     part_idx = ord(num.upper()) - ord("A")
                     p["_part_header"] = True
+            elif has_appendix_parts:
+                if id(p) in appendix_head_ids:
+                    part_idx = page_running_header_kind(p)
+                    p["_part_header"] = True
             else:
                 if level == 1 and num:
                     if num in seen_level1:
@@ -624,14 +795,28 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
 
             p["_part_idx"] = part_idx
             p["_part_first"] = False
+            max_part = max(max_part, part_idx)
+
+        # 追補モードでは見出し段落のタイトル・本文から繰り返しヘッダーを除去する
+        if has_appendix_parts:
+            for no, p in appendix_head.items():
+                hdr = (p.get("title") or "").strip()
+                body = _strip_repeated_header(p.get("text") or "", hdr)
+                if body:
+                    p["title"] = body
+                    p["text"] = body
+                ja_hdr = (p.get("title_ja") or "").strip()
+                ja_body = _strip_repeated_header(p.get("translation") or "", ja_hdr)
+                if ja_body:
+                    p["title_ja"] = ja_body
+                    p["translation"] = ja_body
 
         # 各 Part の最初の可視段落に _part_first=True を付与
         # アルファベット Part モードの場合は附属書タイトル行（number=''）を除外し、
         # Part ヘッダー段落 (A./B./C.) が _part_first を取得するようにする。
-        max_part = part_idx
         seen_parts: set = set()
         for p in group:
-            if p.get("_nav_hidden") or p.get("type") == "image":
+            if p.get("_nav_hidden") or p.get("_nav_only_hidden") or p.get("type") == "image":
                 continue
             if has_alpha_parts and p.get("level") == 1 and not (p.get("number") or ""):
                 continue  # 附属書タイトルはPartに属させない
@@ -644,14 +829,21 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
         for p in group:
             p["_has_multiple_parts"] = has_multi
             pidx = p.get("_part_idx", 0)
-            label = _string.ascii_uppercase[pidx] if pidx < 26 else str(pidx + 1)
-            p["_part_label"] = label
+            if has_appendix_parts:
+                p["_part_prefix"] = "追補"
+                p["_part_label"] = str(pidx)
+            else:
+                p["_part_prefix"] = "Part"
+                p["_part_label"] = _string.ascii_uppercase[pidx] if pidx < 26 else str(pidx + 1)
             # _display_number: アルファベット Part ヘッダーのある多 Part 附属書では
             # 「A-1.2」のように Part ラベルを番号の前に付加する。
             # Part ヘッダー自体（A./B./C.）は変更なし。
             num = (p.get("number") or "")
             if has_alpha_parts and has_multi and num and not p.get("_part_header"):
-                p["_display_number"] = f"{label}-{num}"
+                p["_display_number"] = f"{p['_part_label']}-{num}"
+            elif has_appendix_parts and p.get("_part_header"):
+                # 誤認識されたページ番号ではなく追補番号を見出しに出す
+                p["_display_number"] = f"追補{pidx}"
             else:
                 p["_display_number"] = num
 
@@ -660,6 +852,7 @@ def mark_annex_parts(paragraphs: list[dict]) -> None:
         if "_part_idx" not in p:
             p["_part_idx"] = 0
             p["_part_label"] = ""
+            p["_part_prefix"] = "Part"
             p["_part_first"] = False
             p["_part_header"] = False
             p["_has_multiple_parts"] = False
@@ -1051,6 +1244,7 @@ def build_regulation_page(regulation: str, version: str) -> None:
     last_chapter = max(chapter_numbers_int) if chapter_numbers_int else 12
     mark_annex_paragraphs(paragraphs)
     mark_annex_ids(paragraphs, last_chapter=last_chapter)
+    mark_annex_page_noise(paragraphs)
     mark_annex_parts(paragraphs)
 
     # 参照段落チップ: "paragraph N.N..." 参照を検出し _refs リストを付与する。
